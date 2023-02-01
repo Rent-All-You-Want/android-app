@@ -1,0 +1,18 @@
+ext {
+    versions = [
+            gradle: '7.0.1',
+
+    ]
+    application = [
+            versionCode: 1,
+            versionName: "0.0.1",
+
+            minSdk     : 21,
+            compileSdk : 33,
+            targetSdk  : 33,
+
+            javaVersion: JavaVersion.VERSION_1_8,
+
+            testRunner : "androidx.test.runner.AndroidJUnitRunner",
+    ]
+}

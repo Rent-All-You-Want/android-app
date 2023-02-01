@@ -1,0 +1,25 @@
+ext.lastCommitHash = {
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'rev-parse', '--short', 'HEAD'
+        standardOutput = stdout
+    }
+    return stdout.toString().trim().take(7).toUpperCase()
+}
+
+ext.commitsCount = {
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'rev-parse', '--count', 'HEAD'
+        standardOutput = stdout
+    }
+    return Integer.valueOf(stdout.toString().trim())
+}
+
+ext.localProperties = {
+    Properties localProperties = new Properties()
+    if (rootProject.file(local_properties_name).exists()) {
+        localProperties.load(rootProject.file(local_properties_name).newDataInputStream())
+    }
+    return localProperties
+}
