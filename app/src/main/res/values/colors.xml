@@ -5,6 +5,27 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--main-->
+    <color name="radical_red">#FF416C</color>
+    <color name="reddish_orange">#FF4B2B</color>
+
+    <!--darker-->
+    <color name="cool_red">#ff003c</color>
+    <color name="hestia_red">#e62200</color>
+
+    <!--lighter-->
+    <color name="warm_pink">#ff4d76</color>
+    <color name="portland_orange">#ff5233</color>
+
+    <color name="whitest_white">#FAF7F5</color>
+    <color name="diamonds_in_the_sky">#E5E3E1</color>
+    <color name="praise_giving">#B2B0AF</color>
+    <color name="platinum_granite">#807E7D</color>
+    <color name="deep_earth">#4D4C4B</color>
+    <color name="dark_charcoal">#333232</color>
+    <color name="thamar_black">#1A1919</color>
 </resources>
