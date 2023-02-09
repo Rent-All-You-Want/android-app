@@ -1,16 +1,30 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Theme.Rayw" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Rayw" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/reddish_orange</item>
         <item name="colorPrimaryVariant">@color/hestia_red</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/whitest_white</item>
+
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/warm_pink</item>
         <item name="colorSecondaryVariant">@color/cool_red</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorOnSecondary">@color/whitest_white</item>
+
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor">@color/diamonds_in_the_sky</item>
+
+        <!-- Cards, sheets, and menus colors. -->
+        <item name="android:colorBackground">@color/whitest_white</item>
+        <item name="colorOnBackground">@color/thamar_black</item>
+
+        <!-- Cards, sheets, and menus colors. -->
+        <item name="colorSurface">@color/dark_charcoal</item>
+        <item name="colorOnSurface">@color/thamar_black</item>
+
+        <!-- Error colors. -->
+        <item name="colorError">@color/coral_red</item>
+        <item name="colorOnError">@color/thamar_black</item>
     </style>
 </resources>
