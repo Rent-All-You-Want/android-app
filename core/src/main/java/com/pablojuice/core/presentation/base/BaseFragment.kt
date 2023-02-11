@@ -9,7 +9,11 @@ import androidx.viewbinding.ViewBinding
 
 abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
-    lateinit var binding: VB
+    private var _binding: VB? = null
+
+    val binding: VB
+        get() = _binding!!
+
 
     abstract fun bindLayout(
         inflater: LayoutInflater,
@@ -24,13 +28,13 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         bindLayout(inflater, container).run {
-            binding = this
+            _binding = this
             return root
         }
     }
 
     override fun onDestroyView() {
-        //binding = null TODO
+        _binding = null
         super.onDestroyView()
     }
 }
