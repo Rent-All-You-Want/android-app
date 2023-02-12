@@ -12,6 +12,10 @@ import java.lang.reflect.Type
 import javax.inject.Inject
 
 private const val PREFERENCES_KEY = "RAYW_KEY"
+private const val DEFAULT_STRING = StringUtils.EMPTY
+private const val DEFAULT_INT = 0
+private const val DEFAULT_BOOLEAN = false
+private const val DEFAULT_OBJECT = StringUtils.EMPTY_JSON
 
 class EncryptedUserPreferences @Inject constructor(
     context: Context,
@@ -33,11 +37,12 @@ class EncryptedUserPreferences @Inject constructor(
 
     override fun <T> get(key: UserPreference): T? = preferences.run {
         val keyName = key.encryptedName
-        return when (val default = key.details.default) {
-            is String -> getString(keyName, default) as T
-            is Boolean -> getBoolean(keyName, default) as T
-            is Int -> getInt(keyName, default) as T
-            else -> getJsonObject(keyName, key.details.type)
+        val default = key.details.default
+        return when (key.details.type) {
+            String::class.java -> getString(keyName, default as? String? ?: DEFAULT_STRING) as T
+            Boolean::class.java -> getBoolean(keyName, default as? Boolean ?: DEFAULT_BOOLEAN) as T
+            Int::class.java -> getInt(keyName, default as? Int ?: DEFAULT_INT) as T
+            else -> getJsonObject(keyName, key.details.type, DEFAULT_OBJECT)
         }
     }
 
@@ -46,8 +51,8 @@ class EncryptedUserPreferences @Inject constructor(
     private fun <T> SharedPreferences.Editor.putJsonObject(key: String, value: T, type: Type) =
         putString(key, jsonConverter.toJson(value, type))
 
-    private fun <T> SharedPreferences.getJsonObject(key: String, type: Type): T? =
-        jsonConverter.fromJson<T>(getString(key, StringUtils.EMPTY_JSON)!!, type)
+    private fun <T> SharedPreferences.getJsonObject(key: String, type: Type, default: String): T? =
+        jsonConverter.fromJson<T>(getString(key, default)!!, type)
 
     private fun Context.createPreferences(preferencesName: String): SharedPreferences =
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

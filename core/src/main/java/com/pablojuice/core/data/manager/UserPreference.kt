@@ -1,14 +1,16 @@
 package com.pablojuice.core.data.manager
 
 enum class UserPreference(
-    val details: Details<*>
+    val details: PreferenceDetails<*>
 ) {
-    LOGIN(Details(String::class.java)),
-    PASS(Details(String::class.java));
+    LOGIN(PreferenceDetails(String::class.java)),
+    PASS(PreferenceDetails(String::class.java)),
+    AUTH_TOKEN(PreferenceDetails(String::class.java)),
+    REFRESH_TOKEN(PreferenceDetails(String::class.java));
 
     //TODO
     val encryptedName: String = name.lowercase().filterNot { it == '_' }.reversed()
 
-    class Details<T>(val type: Class<T>, val default: T? = null)
+    class PreferenceDetails<T>(val type: Class<T>, val default: T? = null)
 }
 

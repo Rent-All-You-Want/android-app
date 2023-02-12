@@ -1,9 +1,11 @@
 package com.pablojuice.core.data.remote.api.http.config
 
-class DebugNetworkConfig(baseApiUrl: String) : NetworkConfig(
+import com.pablojuice.core.data.remote.api.http.interception.RequestInterceptor
+
+class DebugNetworkConfig(baseApiUrl: String, customInterceptor: RequestInterceptor) : NetworkConfig(
     baseApiUrl = baseApiUrl,
     withCache = true,
     addProfilerInterceptor = true,
     addBodyLoggingInterceptor = false,
-    customInterceptor = null
+    customInterceptor = customInterceptor
 )
