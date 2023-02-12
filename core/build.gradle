@@ -59,6 +59,7 @@ dependencies {
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
 
     // Database
+    implementation 'androidx.security:security-crypto-ktx:1.1.0-alpha04'
     implementation "androidx.room:room-runtime:2.5.0"
     annotationProcessor "androidx.room:room-compiler:2.5.0"
 
