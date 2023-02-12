@@ -2,9 +2,9 @@ package com.pablojuice.core.di
 
 import android.content.Context
 import com.pablojuice.core.app.config.AppConfig
-import com.pablojuice.core.data.remote.NetworkingUtils.createRetrofit
 import com.pablojuice.core.data.remote.api.factory.ApiFactory
 import com.pablojuice.core.data.remote.api.factory.RetrofitApiFactory
+import com.pablojuice.core.data.remote.api.http.NetworkUtils.createRetrofit
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,5 +21,5 @@ object CoreNetworkModule {
 
     @Provides
     fun provideRetrofit(@ApplicationContext appContext: Context, appConfig: AppConfig): Retrofit =
-        appContext.createRetrofit(appConfig.apiUrl)
+        appContext.createRetrofit(appConfig.networkConfig)
 }

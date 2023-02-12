@@ -1,8 +1,9 @@
-package com.pablojuice.core.data.remote
+package com.pablojuice.core.data.remote.api.http
 
 import android.content.Context
 import com.localebro.okhttpprofiler.OkHttpProfilerInterceptor
 import com.pablojuice.core.data.remote.NetworkHelper.isNetworkAvailable
+import com.pablojuice.core.data.remote.api.http.config.NetworkConfig
 import com.pablojuice.core.data.remote.converter.EnumConverterFactory
 import okhttp3.Cache
 import okhttp3.Interceptor
@@ -14,7 +15,7 @@ import java.io.File
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 
-internal object NetworkingUtils {
+internal object NetworkUtils {
 
     private const val TIME_OUT_CONNECTION = 60L
     private const val STANDARD_HTTP_CACHE_SIZE = 10 * 1024 * 1024L
@@ -24,28 +25,29 @@ internal object NetworkingUtils {
     private const val CACHE_FOLDER_NAME = "cachedResponses"
     private const val CACHE_CONTROL = "Cache-Control"
 
-    fun Context.createRetrofit(baseUrl: String): Retrofit =
+    fun Context.createRetrofit(networkConfig: NetworkConfig): Retrofit =
         Retrofit.Builder()
-            .baseUrl(baseUrl)
+            .baseUrl(networkConfig.baseApiUrl)
             .addConverterFactory(EnumConverterFactory())
             .callbackExecutor(Executors.newSingleThreadExecutor())
             .addConverterFactory(MoshiConverterFactory.create())
-            .client(createOkHttpClient(withCache = true))
+            .client(createOkHttpClient(networkConfig))
             .build()
 
     private fun Context.createOkHttpClient(
-        withCache: Boolean = true,
-        addProfilerInterceptor: Boolean = false,
-        addBodyLoggingInterceptor: Boolean = false
+        networkConfig: NetworkConfig
     ): OkHttpClient {
-        val builder = OkHttpClient.Builder()
-            .connectTimeout(TIME_OUT_CONNECTION, TimeUnit.SECONDS)
-            .readTimeout(TIME_OUT_CONNECTION, TimeUnit.SECONDS)
-            .writeTimeout(TIME_OUT_CONNECTION, TimeUnit.SECONDS)
-        if (withCache) addCacheManager(builder)
-        if (addProfilerInterceptor) builder.addInterceptor(OkHttpProfilerInterceptor())
-        if (addBodyLoggingInterceptor) builder.addInterceptor(createHttpLoggingInterceptor())
-        return builder.build()
+        networkConfig.run {
+            val builder = OkHttpClient.Builder()
+                .connectTimeout(TIME_OUT_CONNECTION, TimeUnit.SECONDS)
+                .readTimeout(TIME_OUT_CONNECTION, TimeUnit.SECONDS)
+                .writeTimeout(TIME_OUT_CONNECTION, TimeUnit.SECONDS)
+            if (withCache) addCacheManager(builder)
+            if (addProfilerInterceptor) builder.addInterceptor(OkHttpProfilerInterceptor())
+            if (addBodyLoggingInterceptor) builder.addInterceptor(createHttpLoggingInterceptor())
+            if (customInterceptor != null) builder.addInterceptor(customInterceptor)
+            return builder.build()
+        }
     }
 
     private fun Context.addCacheManager(builder: OkHttpClient.Builder) {

@@ -1,7 +1,11 @@
 package com.pablojuice.core.app.config
 
-class DebugAppConfig : AppConfig(
+import com.pablojuice.core.data.remote.api.http.config.NetworkConfig
+
+class DebugAppConfig(
+    networkConfig: NetworkConfig
+) : AppConfig(
     debuggingEnabled = true,
-    apiUrl = "http://localhost:8080/api/",
+    networkConfig = networkConfig,
     splashAnimationDuration = 1000
 )

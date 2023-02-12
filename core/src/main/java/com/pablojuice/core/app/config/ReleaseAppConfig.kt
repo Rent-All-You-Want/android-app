@@ -1,7 +1,11 @@
 package com.pablojuice.core.app.config
 
-class ReleaseAppConfig : AppConfig(
+import com.pablojuice.core.data.remote.api.http.config.NetworkConfig
+
+class ReleaseAppConfig(
+    networkConfig: NetworkConfig
+) : AppConfig(
     debuggingEnabled = false,
-    apiUrl = TODO(),
+    networkConfig = networkConfig,
     splashAnimationDuration = 3000
 )
