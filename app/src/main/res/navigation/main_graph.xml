@@ -9,7 +9,7 @@
         android:id="@+id/home"
         android:name="com.pablojuice.rayw.feature.home.presentation.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home"></fragment>
+        tools:layout="@layout/fragment_home" />
     <!--    <fragment-->
     <!--        android:id="@+id/userDetailsFragment"-->
     <!--        android:name="com.pablojuice.lsiapp.ui.user.details.UserDetailsFragment"-->
