@@ -2,6 +2,8 @@ package com.pablojuice.core.presentation.basic
 
 import android.os.Bundle
 import android.view.View
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.addCallback
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
@@ -19,9 +21,21 @@ abstract class BasicFragment<VB : ViewBinding, VM : BasicViewModel> : BaseFragme
     private val navController: NavController
         get() = findNavController()
 
+    private lateinit var navigateBackCallback: OnBackPressedCallback
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupNavigation()
+    }
+
+    private fun setupNavigation() {
+        navigateBackCallback =
+            requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) { navigateBack() }
         viewModel.navigationEvents.observeSafely(::navigate)
+    }
+
+    fun setNavigationBackEnabled(isEnabled: Boolean) {
+        navigateBackCallback.isEnabled = isEnabled
     }
 
     override fun navigateBack() {
