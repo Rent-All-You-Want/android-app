@@ -6,6 +6,8 @@ interface Preferences<KEY> {
 
     fun <T> get(key: KEY): T?
 
+    fun <T> getUnsafe(key: KEY): T = get(key)!!
+
     fun remove(key: KEY)
 
     fun clear()
