@@ -3,6 +3,7 @@ package com.pablojuice.core.data.remote.api.http
 import android.content.Context
 import com.localebro.okhttpprofiler.OkHttpProfilerInterceptor
 import com.pablojuice.core.data.remote.NetworkHelper.isNetworkAvailable
+import com.pablojuice.core.data.remote.api.http.call.ResultCallAdapterFactory
 import com.pablojuice.core.data.remote.api.http.config.NetworkConfig
 import com.pablojuice.core.data.remote.converter.EnumConverterFactory
 import okhttp3.Cache
@@ -31,6 +32,7 @@ internal object NetworkUtils {
             .addConverterFactory(EnumConverterFactory())
             .callbackExecutor(Executors.newSingleThreadExecutor())
             .addConverterFactory(MoshiConverterFactory.create())
+            .addCallAdapterFactory(ResultCallAdapterFactory())
             .client(createOkHttpClient(networkConfig))
             .build()
 

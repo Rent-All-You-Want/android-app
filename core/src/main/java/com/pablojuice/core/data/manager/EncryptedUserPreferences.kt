@@ -5,7 +5,6 @@ import android.content.SharedPreferences
 import android.os.Build
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
-import androidx.security.crypto.MasterKeys.AES256_GCM_SPEC
 import com.pablojuice.core.data.converter.StringJsonConverter
 import com.pablojuice.core.utils.StringUtils
 import java.lang.reflect.Type
@@ -35,16 +34,19 @@ class EncryptedUserPreferences @Inject constructor(
         apply()
     }
 
+    @Suppress("UNCHECKED_CAST")
     override fun <T> get(key: UserPreference): T? = preferences.run {
         val keyName = key.encryptedName
         val default = key.details.default
         return when (key.details.type) {
-            String::class.java -> getString(keyName, default as? String? ?: DEFAULT_STRING) as T
+            String::class.java -> getString(keyName, default as? String ?: DEFAULT_STRING) as T
             Boolean::class.java -> getBoolean(keyName, default as? Boolean ?: DEFAULT_BOOLEAN) as T
             Int::class.java -> getInt(keyName, default as? Int ?: DEFAULT_INT) as T
             else -> getJsonObject(keyName, key.details.type, DEFAULT_OBJECT)
         }
     }
+
+    override fun remove(key: UserPreference) = preferences.edit().remove(key.encryptedName).apply()
 
     override fun clear() = preferences.edit().clear().apply()
 
@@ -59,7 +61,7 @@ class EncryptedUserPreferences @Inject constructor(
             EncryptedSharedPreferences.create(
                 this,
                 preferencesName,
-                MasterKey.Builder(this).setKeyGenParameterSpec(AES256_GCM_SPEC).build(),
+                MasterKey.Builder(this).setKeyScheme(MasterKey.KeyScheme.AES256_GCM).build(),
                 EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
                 EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
             )

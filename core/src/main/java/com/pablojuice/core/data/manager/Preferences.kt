@@ -6,5 +6,7 @@ interface Preferences<KEY> {
 
     fun <T> get(key: KEY): T?
 
+    fun remove(key: KEY)
+
     fun clear()
 }
