@@ -3,7 +3,7 @@ ext {
             gradle      : "7.0.1",
             splashscreen: "1.0.0",
             daggerHilt  : "2.44.2",
-
+            lol: "123"
 
     ]
     application = [
@@ -22,7 +22,7 @@ ext {
             apiUrlType           : "String",
             apiUrl               : "API_URL",
 
-            localUrl             : "\"http://localhost:8080/api/\"",
+            localUrl             : ":8080/api/\"",
             stageUrl             : "\"http://stage.com\"",
             prodUrl              : "\"http://prod.com\""
     ]
