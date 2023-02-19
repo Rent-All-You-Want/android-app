@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.home.presentation
+package com.pablojuice.rayw.feature.signin.presentation.onboarding.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,21 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.pablojuice.core.presentation.basic.BasicFragment
-import com.pablojuice.rayw.databinding.FragmentHomeBinding
+import com.pablojuice.rayw.databinding.FragmentOnboardingBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : BasicFragment<FragmentHomeBinding, HomeViewModel>() {
+class OnBoardingFragment : BasicFragment<FragmentOnboardingBinding, OnBoardingViewModel>() {
 
-    override val viewModel: HomeViewModel by viewModels()
+    override val viewModel: OnBoardingViewModel by viewModels()
 
     override fun bindLayout(
         inflater: LayoutInflater,
         container: ViewGroup?,
         attachToParent: Boolean
-    ) = FragmentHomeBinding.inflate(inflater, container, attachToParent)
+    ) = FragmentOnboardingBinding.inflate(inflater, container, attachToParent)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.close.setOnClickListener { viewModel.onOnBoardingViewed() }
     }
 }
