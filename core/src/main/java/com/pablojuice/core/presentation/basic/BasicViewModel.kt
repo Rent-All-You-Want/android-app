@@ -1,6 +1,6 @@
 package com.pablojuice.core.presentation.basic
 
-import com.pablojuice.core.presentation.base.BaseViewModel
+import com.pablojuice.core.presentation.base.screen.BaseViewModel
 import com.pablojuice.core.presentation.navigation.NavigationEvent
 import com.pablojuice.core.presentation.navigation.NavigationEvents
 import kotlinx.coroutines.flow.MutableStateFlow

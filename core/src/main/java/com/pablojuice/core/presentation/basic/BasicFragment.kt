@@ -4,12 +4,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
+import androidx.annotation.CallSuper
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
-import com.pablojuice.core.presentation.base.BaseFragment
+import com.pablojuice.core.presentation.base.screen.BaseFragment
 import com.pablojuice.core.presentation.navigation.NavigationEvent
 import com.pablojuice.core.presentation.navigation.NavigationHandler
 import kotlinx.coroutines.flow.Flow
@@ -23,8 +24,8 @@ abstract class BasicFragment<VB : ViewBinding, VM : BasicViewModel> : BaseFragme
 
     private lateinit var navigateBackCallback: OnBackPressedCallback
 
+    @CallSuper
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         setupNavigation()
     }
 
