@@ -19,7 +19,9 @@ abstract class BasicFragment<VB : ViewBinding, VM : BasicViewModel> : BaseFragme
     NavigationHandler {
     abstract val viewModel: VM
 
-    private val navController: NavController
+    protected open val canNavigateBack = true
+
+    protected val navController: NavController
         get() = findNavController()
 
     private lateinit var navigateBackCallback: OnBackPressedCallback
@@ -40,13 +42,13 @@ abstract class BasicFragment<VB : ViewBinding, VM : BasicViewModel> : BaseFragme
     }
 
     override fun navigateBack() {
-        navController.popBackStack()
+        if (canNavigateBack) navController.popBackStack()
     }
 
     override fun navigate(event: NavigationEvent) {
         event.destination?.let { destination ->
             navController.currentDestination?.getAction(destination.actionId)
-                ?.also { navController.navigate(destination) }
+                ?.also { navController.navigate(destination, event.options) }
         }
     }
 
