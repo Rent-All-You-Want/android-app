@@ -14,6 +14,8 @@ class ItemListFragment : BasicFragment<FragmentItemListBinding, ItemListViewMode
 
     override val viewModel: ItemListViewModel by viewModels()
 
+    override val canNavigateBack: Boolean = false
+
     override fun bindLayout(
         inflater: LayoutInflater,
         container: ViewGroup?,

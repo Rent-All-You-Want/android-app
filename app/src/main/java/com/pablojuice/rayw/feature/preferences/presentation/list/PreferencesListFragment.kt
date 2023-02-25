@@ -15,6 +15,8 @@ class PreferencesListFragment :
 
     override val viewModel: PreferencesListViewModel by viewModels()
 
+    override val canNavigateBack: Boolean = false
+
     override fun bindLayout(
         inflater: LayoutInflater,
         container: ViewGroup?,

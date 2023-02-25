@@ -14,6 +14,8 @@ class WishListFragment : BasicFragment<FragmentWishListBinding, WishListViewMode
 
     override val viewModel: WishListViewModel by viewModels()
 
+    override val canNavigateBack: Boolean = false
+
     override fun bindLayout(
         inflater: LayoutInflater,
         container: ViewGroup?,

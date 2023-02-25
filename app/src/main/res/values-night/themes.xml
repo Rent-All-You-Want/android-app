@@ -12,15 +12,15 @@
         <item name="colorSecondaryVariant">@color/radical_red</item>
         <item name="colorOnSecondary">@color/whitest_white</item>
 
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">@android:color/transparent</item>
-
         <!-- Cards, sheets, and menus colors. -->
         <item name="colorBackground">@color/thamar_black</item>
         <item name="colorBackgroundVariant">@color/dark_charcoal</item>
         <item name="colorOnBackground">@color/whitest_white</item>
-
         <item name="android:colorBackground">?attr/colorBackground</item>
+
+        <!-- Status & navigation bar color. -->
+        <item name="android:statusBarColor">?attr/colorBackground</item>
+        <item name="android:navigationBarColor">?attr/colorBackground</item>
 
         <!-- Cards, sheets, and menus colors. -->
         <item name="colorSurface">@color/dark_charcoal</item>

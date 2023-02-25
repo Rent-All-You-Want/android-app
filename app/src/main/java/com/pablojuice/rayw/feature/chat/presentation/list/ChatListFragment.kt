@@ -15,6 +15,8 @@ class ChatListFragment : BasicFragment<FragmentChatListBinding, WishListViewMode
 
     override val viewModel: WishListViewModel by viewModels()
 
+    override val canNavigateBack: Boolean = false
+
     override fun bindLayout(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -24,6 +26,5 @@ class ChatListFragment : BasicFragment<FragmentChatListBinding, WishListViewMode
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
-
 
 }
