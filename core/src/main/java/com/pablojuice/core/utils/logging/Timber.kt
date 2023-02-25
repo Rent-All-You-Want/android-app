@@ -141,22 +141,22 @@ class Timber private constructor() {
                 return
             }
 
-            var message = message
-            if (message.isNullOrEmpty()) {
+            var messageFormatted = message
+            if (messageFormatted.isNullOrEmpty()) {
                 if (t == null) {
                     return  // Swallow message if it's null and there's no throwable.
                 }
-                message = getStackTraceString(t)
+                messageFormatted = getStackTraceString(t)
             } else {
                 if (args.isNotEmpty()) {
-                    message = formatMessage(message, args)
+                    messageFormatted = formatMessage(messageFormatted, args)
                 }
                 if (t != null) {
-                    message += "\n" + getStackTraceString(t)
+                    messageFormatted += "\n" + getStackTraceString(t)
                 }
             }
 
-            log(priority, tag, message, t)
+            log(priority, tag, messageFormatted, t)
         }
 
         /** Formats a log message with optional arguments. */
@@ -474,6 +474,7 @@ class Timber private constructor() {
 
         // Both fields guarded by 'trees'.
         private val trees = ArrayList<Tree>()
+
         @Volatile
         private var treeArray = emptyArray<Tree>()
     }

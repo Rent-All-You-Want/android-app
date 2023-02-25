@@ -5,6 +5,7 @@ import com.squareup.moshi.Moshi
 import java.lang.reflect.Type
 import javax.inject.Inject
 
+@Suppress("UNCHECKED_CAST")
 class MoshiConverter @Inject constructor(
     private val moshi: Moshi
 ) : StringJsonConverter {

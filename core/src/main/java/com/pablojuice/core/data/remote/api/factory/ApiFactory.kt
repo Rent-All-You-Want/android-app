@@ -2,6 +2,7 @@ package com.pablojuice.core.data.remote.api.factory
 
 import com.pablojuice.core.data.remote.api.Api
 
+@Suppress("UNCHECKED_CAST")
 abstract class ApiFactory {
     private val map = HashMap<Class<out Api>, Api>()
 
