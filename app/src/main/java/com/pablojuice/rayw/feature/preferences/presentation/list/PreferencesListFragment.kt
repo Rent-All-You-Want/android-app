@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.home.presentation
+package com.pablojuice.rayw.feature.preferences.presentation.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,21 +6,24 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.pablojuice.core.presentation.basic.BasicFragment
-import com.pablojuice.rayw.databinding.FragmentHomeBinding
+import com.pablojuice.rayw.databinding.FragmentPreferencesListBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : BasicFragment<FragmentHomeBinding, HomeViewModel>() {
+class PreferencesListFragment :
+    BasicFragment<FragmentPreferencesListBinding, PreferencesListViewModel>() {
 
-    override val viewModel: HomeViewModel by viewModels()
+    override val viewModel: PreferencesListViewModel by viewModels()
 
     override fun bindLayout(
         inflater: LayoutInflater,
         container: ViewGroup?,
         attachToParent: Boolean
-    ) = FragmentHomeBinding.inflate(inflater, container, attachToParent)
+    ) = FragmentPreferencesListBinding.inflate(inflater, container, attachToParent)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
+
+
 }
