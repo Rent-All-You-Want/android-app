@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/item_list_graph"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_item_list"
+        android:title="@string/menu_item_item_list" />
+    <item
+        android:id="@id/wish_graph"
+        android:enabled="true"
+        android:icon="@drawable/ic_favorite_medium"
+        android:title="@string/menu_item_wish_list" />
+    <item
+        android:id="@id/new_item"
+        android:enabled="true"
+        android:icon="@drawable/ic_add_large"
+        android:title="@string/menu_item_new_item" />
+    <item
+        android:id="@id/chat_graph"
+        android:enabled="true"
+        android:icon="@drawable/ic_chat_medium"
+        android:title="@string/menu_item_chat_list" />
+    <item
+        android:id="@id/preferences_graph"
+        android:enabled="true"
+        android:icon="@drawable/ic_account_circle_medium"
+        android:title="@string/menu_item_preferences_list" />
+</menu>
