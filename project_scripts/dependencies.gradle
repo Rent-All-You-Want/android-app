@@ -2,8 +2,7 @@ ext {
     versions = [
             gradle      : "7.0.1",
             splashscreen: "1.0.0",
-            daggerHilt  : "2.44.2",
-            lol: "123"
+            daggerHilt  : '2.45',
 
     ]
     application = [
