@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/onboarding_graph"
     app:startDestination="@id/onboarding">
+
     <fragment
         android:id="@+id/onboarding"
         android:name="com.pablojuice.rayw.feature.signin.presentation.onboarding.view.OnBoardingFragment"
-        android:label="OnBoardingFragment"
+        android:label="On Boarding Screen"
         tools:layout="@layout/fragment_onboarding">
 
         <action
