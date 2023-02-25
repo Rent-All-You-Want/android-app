@@ -1,6 +1,6 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Theme.Rayw" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Rayw" parent="Theme.Material3.DayNight.NoActionBar">
 
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/reddish_orange</item>
@@ -16,8 +16,11 @@
         <item name="android:statusBarColor">@color/diamonds_in_the_sky</item>
 
         <!-- Cards, sheets, and menus colors. -->
-        <item name="android:colorBackground">@color/whitest_white</item>
+        <item name="colorBackground">@color/whitest_white</item>
+        <item name="colorBackgroundVariant">@color/dark_charcoal</item>
         <item name="colorOnBackground">@color/thamar_black</item>
+
+        <item name="android:colorBackground">?attr/colorBackground</item>
 
         <!-- Cards, sheets, and menus colors. -->
         <item name="colorSurface">@color/dark_charcoal</item>
@@ -26,5 +29,28 @@
         <!-- Error colors. -->
         <item name="colorError">@color/coral_red</item>
         <item name="colorOnError">@color/thamar_black</item>
+
+        <!-- Disabled colors. -->
+        <item name="colorDisabled">@color/platinum_granite</item>
+
+        <!-- Shapes. -->
+        <item name="shapeAppearanceCornerExtraSmall">@style/shape.extraSmall</item>
+        <item name="shapeAppearanceCornerSmall">@style/shape.small</item>
+        <item name="shapeAppearanceCornerMedium">@style/shape.medium</item>
+        <item name="shapeAppearanceCornerLarge">@style/shape.large</item>
+        <item name="shapeAppearanceCornerExtraLarge">@style/shape.extraLarge</item>
+
+        <!-- Views. TODO -->
+        <item name="bottomNavigationStyle">@style/view.bottomNavigationView</item>
+        <!--        <item name="borderlessButtonStyle">@style/Widget.App.Button.TextButton</item>-->
+        <!--        <item name="materialButtonOutlinedStyle">@style/Widget.App.Button.OutlinedButton</item>-->
+        <!--        <item name="materialButtonStyle">@style/Widget.App.Button</item>-->
+        <!--        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>-->
+        <!--        <item name="materialSwitchStyle">@style/Widget.App.Switch</item>-->
+        <!--        <item name="sliderStyle">@style/Widget.App.Slider</item>-->
+        <!--        <item name="materialCardViewStyle">@style/Widget.App.CardView</item>-->
+        <!--        <item name="chipStyle">@style/Widget.App.Chip</item>-->
+        <!--        <item name="snackbarStyle">@style/Widget.App.Snackbar</item>-->
+        <!--        <item name="snackbarButtonStyle">@style/Widget.App.SnackbarButton</item>-->
     </style>
 </resources>
