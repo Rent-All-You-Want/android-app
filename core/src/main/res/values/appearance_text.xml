@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="text_size_40">40sp</dimen>
+    <dimen name="text_size_48">48sp</dimen>
+    <dimen name="text_size_34">34sp</dimen>
     <dimen name="text_size_24">24sp</dimen>
     <dimen name="text_size_20">20sp</dimen>
     <dimen name="text_size_16">16sp</dimen>
@@ -8,26 +9,31 @@
     <dimen name="text_size_12">12sp</dimen>
     <dimen name="text_size_10">10sp</dimen>
 
-
     <style name="text.h1" parent="TextAppearance.MaterialComponents.Headline1">
         <item name="fontFamily">@font/roboto_medium</item>
         <item name="android:fontFamily">@font/roboto_medium</item>
-        <item name="android:textSize">@dimen/text_size_40</item>
+        <item name="android:textSize">@dimen/text_size_48</item>
     </style>
 
     <style name="text.h2" parent="TextAppearance.MaterialComponents.Headline2">
         <item name="fontFamily">@font/roboto_medium</item>
         <item name="android:fontFamily">@font/roboto_medium</item>
-        <item name="android:textSize">@dimen/text_size_24</item>
+        <item name="android:textSize">@dimen/text_size_34</item>
     </style>
 
     <style name="text.h3" parent="TextAppearance.MaterialComponents.Headline3">
         <item name="fontFamily">@font/roboto_medium</item>
         <item name="android:fontFamily">@font/roboto_medium</item>
-        <item name="android:textSize">@dimen/text_size_20</item>
+        <item name="android:textSize">@dimen/text_size_24</item>
     </style>
 
     <style name="text.h4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">@dimen/text_size_20</item>
+    </style>
+
+    <style name="text.h5" parent="TextAppearance.MaterialComponents.Headline5">
         <item name="fontFamily">@font/roboto_medium</item>
         <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:textSize">@dimen/text_size_16</item>
