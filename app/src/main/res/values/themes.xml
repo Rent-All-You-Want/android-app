@@ -14,11 +14,12 @@
 
         <!-- Cards, sheets, and menus colors. -->
         <item name="colorBackground">@color/whitest_white</item>
-        <item name="colorBackgroundVariant">@color/dark_charcoal</item>
+        <item name="colorBackgroundVariant">@color/diamonds_in_the_sky</item>
         <item name="colorOnBackground">@color/thamar_black</item>
         <item name="android:colorBackground">?attr/colorBackground</item>
 
         <!-- Status & navigation bar color. -->
+        <item name="android:windowLightStatusBar">true</item>
         <item name="android:statusBarColor">?attr/colorBackground</item>
         <item name="android:navigationBarColor">?attr/colorBackground</item>
 

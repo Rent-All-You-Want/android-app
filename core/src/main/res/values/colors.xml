@@ -23,4 +23,8 @@
     <!--darker-->
     <color name="cool_red">#ff003c</color>
     <color name="hestia_red">#e62200</color>
+
+    <!--transparent-->
+    <color name="cool_red_transparent">#1Aff003c</color>
+    <color name="hestia_red_transparent">#1Ae62200</color>
 </resources>
