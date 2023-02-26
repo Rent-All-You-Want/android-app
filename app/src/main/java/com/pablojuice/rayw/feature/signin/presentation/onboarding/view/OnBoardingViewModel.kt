@@ -11,7 +11,7 @@ import javax.inject.Inject
 @HiltViewModel
 class OnBoardingViewModel @Inject constructor(
     private val userPreferences: UserPreferences,
-    private val itemProvider: ProvideOnBoardingItemsUseCase
+    private val provideOnBoardingItems: ProvideOnBoardingItemsUseCase
 ) : BasicViewModel() {
 
     fun onOnBoardingViewed() {
@@ -19,5 +19,5 @@ class OnBoardingViewModel @Inject constructor(
         _navigationEvents.value = ToHomeScreen()
     }
 
-    fun provideItems() = itemProvider()
+    fun provideItems() = provideOnBoardingItems()
 }
