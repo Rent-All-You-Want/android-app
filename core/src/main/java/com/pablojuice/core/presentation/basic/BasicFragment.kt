@@ -5,7 +5,6 @@ import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
 import androidx.annotation.CallSuper
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
@@ -51,9 +50,6 @@ abstract class BasicFragment<VB : ViewBinding, VM : BasicViewModel> : BaseFragme
                 ?.also { navController.navigate(destination, event.options) }
         }
     }
-
-    fun <T> LiveData<T>.observeSafely(block: (T) -> Unit) =
-        observe(viewLifecycleOwner) { it?.let(block) }
 
     fun <T> Flow<T>.observeSafely(block: (T) -> Unit) =
         lifecycleScope.launchWhenStarted { collect(block) }

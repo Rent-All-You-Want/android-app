@@ -9,6 +9,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.pablojuice.core.presentation.basic.BasicFragment
 import com.pablojuice.core.presentation.navigation.NavigationAnimation
+import com.pablojuice.rayw.R
 import com.pablojuice.rayw.databinding.FragmentHomeBinding
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToCreateNewItemScreen
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,19 +33,16 @@ class HomeFragment : BasicFragment<FragmentHomeBinding, HomeViewModel>() {
     }
 
     private fun setupNavigationListener() {
-        val navController =
+        val controller =
             binding.homeFragmentContainer.getFragment<NavHostFragment>().findNavController()
+
         binding.homeBottomNavigation.setOnItemSelectedListener { item ->
-            var itemSelected = false
-            if (item.itemId != binding.homeBottomNavigation.selectedItemId) {
-                if (item.itemId == com.pablojuice.rayw.R.id.new_item) {
-                    navigate(ToCreateNewItemScreen())
-                } else {
-                    itemSelected = true
-                    navController.navigate(item.itemId, null, NavigationAnimation.Fade().options)
-                }
+            when (item.itemId) {
+                binding.homeBottomNavigation.selectedItemId -> false
+                R.id.new_item -> navigate(ToCreateNewItemScreen()).let { false }
+                else -> controller
+                    .navigate(item.itemId, null, NavigationAnimation.Fade().options).let { true }
             }
-            itemSelected
         }
     }
 }

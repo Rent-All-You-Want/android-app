@@ -33,6 +33,7 @@ class MainViewModel @Inject constructor(
 
 
     fun fetchData() {
+        if (navigationGraphId.value != UNDEFINED) return
         launch {
             listOf(
                 setupApp(),

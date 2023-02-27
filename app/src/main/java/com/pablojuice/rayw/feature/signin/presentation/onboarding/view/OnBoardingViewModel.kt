@@ -16,7 +16,7 @@ class OnBoardingViewModel @Inject constructor(
 
     fun onOnBoardingViewed() {
         userPreferences.put(UserPreference.ON_BOARDING_VIEWED, true)
-        _navigationEvents.value = ToHomeScreen()
+        submitNavigationEvent(ToHomeScreen())
     }
 
     fun provideItems() = provideOnBoardingItems()

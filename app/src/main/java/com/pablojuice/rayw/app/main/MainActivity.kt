@@ -7,6 +7,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavGraph
 import androidx.navigation.fragment.NavHostFragment
+import com.pablojuice.core.utils.NumberUtils.UNDEFINED
 import com.pablojuice.rayw.R
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -23,10 +24,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupScreen() {
-        viewModel.fetchData()
         lifecycleScope.launchWhenCreated {
             viewModel.navigationGraphId.collect(::onNavGraphChanged)
         }
+        viewModel.fetchData()
     }
 
     private fun showSplashScreen() {
@@ -36,6 +37,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onNavGraphChanged(navGraphId: Int) {
+        if (navGraphId == UNDEFINED) return
+
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         val inflater = navHostFragment.navController.navInflater
