@@ -23,6 +23,42 @@ sealed class NavigationAnimation(val options: NavOptions?) {
                 .build()
         )
 
+    class SlideToRight(launchSingleTop: Boolean = false, restoreState: Boolean = true) :
+        NavigationAnimation(
+            NavOptions.Builder()
+                .setLaunchSingleTop(launchSingleTop)
+                .setRestoreState(restoreState)
+                .setEnterAnim(R.anim.slide_right)
+                .setExitAnim(R.anim.fragment_fade_out_anim)
+                .setPopEnterAnim(R.anim.fragment_fade_in_anim)
+                .setPopExitAnim(R.anim.fragment_fade_out_anim)
+                .build()
+        )
+
+    class SlideToLeft(launchSingleTop: Boolean = false, restoreState: Boolean = true) :
+        NavigationAnimation(
+            NavOptions.Builder()
+                .setLaunchSingleTop(launchSingleTop)
+                .setRestoreState(restoreState)
+                .setEnterAnim(R.anim.slide_left)
+                .setExitAnim(R.anim.fragment_fade_out_anim)
+                .setPopEnterAnim(R.anim.fragment_fade_in_anim)
+                .setPopExitAnim(R.anim.fragment_fade_out_anim)
+                .build()
+        )
+
+    class SlideToTop(launchSingleTop: Boolean = false, restoreState: Boolean = true) :
+        NavigationAnimation(
+            NavOptions.Builder()
+                .setLaunchSingleTop(launchSingleTop)
+                .setRestoreState(restoreState)
+                .setEnterAnim(R.anim.slide_up)
+                .setExitAnim(R.anim.fragment_fade_out_anim)
+                .setPopEnterAnim(R.anim.fragment_fade_in_anim)
+                .setPopExitAnim(R.anim.slide_down)
+                .build()
+        )
+
 
     object None : NavigationAnimation(null)
 }

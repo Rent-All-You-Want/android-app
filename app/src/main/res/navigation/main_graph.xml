@@ -11,11 +11,12 @@
         android:label="Home Screen"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_home_to_home_graph"
-            app:destination="@id/home_graph" />
-        <action
             android:id="@+id/action_home_create_item_graph"
-            app:destination="@id/create_item_graph" />
+            app:destination="@id/create_item_graph"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/fragment_fade_out_anim"
+            app:popEnterAnim="@anim/fragment_fade_in_anim"
+            app:popExitAnim="@anim/slide_down" />
     </fragment>
 
     <include app:graph="@navigation/home_graph" />

@@ -6,7 +6,7 @@
     app:startDestination="@id/preferences_list">
     <fragment
         android:id="@+id/preferences_list"
-        android:name="com.pablojuice.rayw.feature.preferences.presentation.list.PreferencesListFragment"
+        android:name="com.pablojuice.rayw.feature.preferences.presentation.view.PreferencesListFragment"
         android:label="Preferences List Screen"
         tools:layout="@layout/fragment_preferences_list" />
 </navigation>
