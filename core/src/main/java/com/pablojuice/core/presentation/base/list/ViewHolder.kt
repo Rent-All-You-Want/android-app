@@ -7,5 +7,7 @@ abstract class ViewHolder<Item : ListItem, VB : ViewBinding>(
     val binding: VB,
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    abstract fun bind(item: Item)
+    open fun bind(item: Item) {
+
+    }
 }

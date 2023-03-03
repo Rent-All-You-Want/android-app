@@ -11,6 +11,34 @@ abstract class Adapter<Item : ListItem>(
 
     private val items: MutableList<Item> = items.toMutableList()
 
+    fun addItem(item: Item, position: Int = items.size) {
+        items.add(position, item)
+        notifyItemInserted(position)
+    }
+
+    fun removeItemAt(position: Int) {
+        items.removeAt(position)
+        notifyItemRemoved(position)
+    }
+
+    fun setItems(newItems: List<Item>) {
+        items.clear()
+        items.addAll(newItems)
+        notifyDataSetChanged()
+    }
+
+    fun addItems(newItems: List<Item>, position: Int = items.size) {
+        val size = items.size
+        items.addAll(position, newItems)
+        notifyItemRangeInserted(size - 1, items.size - size)
+    }
+
+    fun clearItems() {
+        val size = items.size
+        items.clear()
+        notifyItemRangeRemoved(0, size)
+    }
+
     override fun onBindViewHolder(holder: ViewHolder<Item, out ViewBinding>, position: Int) =
         holder.bind(item = items[position])
 
