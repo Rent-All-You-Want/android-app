@@ -4,9 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/preferences_graph"
     app:startDestination="@id/preferences_list">
+
     <fragment
         android:id="@+id/preferences_list"
         android:name="com.pablojuice.rayw.feature.preferences.presentation.view.PreferencesListFragment"
         android:label="Preferences List Screen"
         tools:layout="@layout/fragment_preferences_list" />
+
+    <include app:graph="@navigation/signin_graph" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.preferences.presentation.list
+package com.pablojuice.rayw.feature.preferences.presentation.view
 
 import com.pablojuice.core.presentation.basic.BasicViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

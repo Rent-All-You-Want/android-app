@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.preferences.presentation.list
+package com.pablojuice.rayw.feature.preferences.presentation.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,7 +11,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class PreferencesListFragment :
-    BasicFragment<FragmentPreferencesListBinding, PreferencesListViewModel>() {
+    HomeFragment.HomeChildFragment<FragmentPreferencesListBinding, PreferencesListViewModel>() {
 
     override val viewModel: PreferencesListViewModel by viewModels()
 

@@ -5,10 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.viewbinding.ViewBinding
 import com.pablojuice.core.presentation.basic.BasicFragment
+import com.pablojuice.core.presentation.basic.BasicViewModel
 import com.pablojuice.core.presentation.navigation.NavigationAnimation
+import com.pablojuice.core.presentation.navigation.NavigationEvent
 import com.pablojuice.rayw.R
 import com.pablojuice.rayw.databinding.FragmentHomeBinding
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToCreateNewItemScreen
@@ -44,5 +48,23 @@ class HomeFragment : BasicFragment<FragmentHomeBinding, HomeViewModel>() {
                     .navigate(item.itemId, null, NavigationAnimation.Fade().options).let { true }
             }
         }
+    }
+
+    abstract class HomeChildFragment<VB : ViewBinding, VM : BasicViewModel> :
+        BasicFragment<VB, VM>() {
+
+        override fun navigate(event: NavigationEvent) {
+            homeNavigationController?.let { navigateIfDestinationExists(event, it) }
+        }
+
+        fun navigateInsideHome(event: NavigationEvent) = super.navigate(event)
+
+        protected val homeNavigationController: NavController?
+            get() {
+                var fragment = parentFragment
+                while (fragment !is HomeFragment)
+                    fragment = fragment?.parentFragment
+                return fragment?.findNavController()
+            }
     }
 }

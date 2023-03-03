@@ -4,11 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.pablojuice.core.presentation.basic.BasicFragment
-import com.pablojuice.rayw.databinding.FragmentHomeBinding
+import com.pablojuice.rayw.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LoginFragment : BasicFragment<FragmentHomeBinding, LoginViewModel>() {
+class LoginFragment : BasicFragment<FragmentLoginBinding, LoginViewModel>() {
 
     override val viewModel: LoginViewModel by viewModels()
 
@@ -16,5 +16,5 @@ class LoginFragment : BasicFragment<FragmentHomeBinding, LoginViewModel>() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         attachToParent: Boolean
-    ) = FragmentHomeBinding.inflate(inflater, container, attachToParent)
+    ) = FragmentLoginBinding.inflate(inflater, container, attachToParent)
 }

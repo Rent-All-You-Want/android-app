@@ -8,6 +8,7 @@ import com.pablojuice.rayw.databinding.ItemOnboardingBinding
 import com.pablojuice.rayw.feature.signin.domain.usecase.OnBoardingListItem
 
 class OnBoardingAdapter(items: List<OnBoardingListItem>) : Adapter<OnBoardingListItem>(items) {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = OnBoardingViewHolder(
         ItemOnboardingBinding.inflate(parent.layoutInflater, parent, false)
     )

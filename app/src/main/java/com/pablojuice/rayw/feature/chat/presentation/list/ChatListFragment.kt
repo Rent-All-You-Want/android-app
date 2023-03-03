@@ -5,13 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.pablojuice.core.presentation.basic.BasicFragment
 import com.pablojuice.rayw.databinding.FragmentChatListBinding
+import com.pablojuice.rayw.feature.home.presentation.view.HomeFragment
 import com.pablojuice.rayw.feature.wish.presentation.list.WishListViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ChatListFragment : BasicFragment<FragmentChatListBinding, WishListViewModel>() {
+class ChatListFragment :
+    HomeFragment.HomeChildFragment<FragmentChatListBinding, WishListViewModel>() {
 
     override val viewModel: WishListViewModel by viewModels()
 
