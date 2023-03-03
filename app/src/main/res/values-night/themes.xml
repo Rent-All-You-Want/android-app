@@ -16,6 +16,7 @@
         <item name="colorBackground">@color/thamar_black</item>
         <item name="colorBackgroundVariant">@color/dark_charcoal</item>
         <item name="colorOnBackground">@color/whitest_white</item>
+        <item name="colorOnBackgroundVariant">@color/diamonds_in_the_sky</item>
         <item name="android:colorBackground">?attr/colorBackground</item>
 
         <!-- Status & navigation bar color. -->

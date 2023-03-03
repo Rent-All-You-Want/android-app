@@ -2,6 +2,7 @@
 <resources>
     <attr format="color" name="colorBackground" />
     <attr format="color" name="colorBackgroundVariant" />
+    <attr format="color" name="colorOnBackgroundVariant" />
 
     <attr format="color" name="colorDisabled" />
 </resources>
