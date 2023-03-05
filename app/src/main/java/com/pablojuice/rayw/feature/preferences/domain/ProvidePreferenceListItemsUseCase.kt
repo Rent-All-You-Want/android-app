@@ -1,9 +1,11 @@
 package com.pablojuice.rayw.feature.preferences.domain
 
 import com.pablojuice.core.R
+import com.pablojuice.core.app.config.AppConfig
 import com.pablojuice.core.presentation.base.list.ListItem
 import com.pablojuice.core.presentation.navigation.NavigationEvent
 import com.pablojuice.core.presentation.text.label.asLabel
+import com.pablojuice.rayw.feature.home.presentation.navigation.ToDevOptionsScreen
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToLoginScreen
 import com.pablojuice.rayw.feature.preferences.data.local.Preference
 import com.pablojuice.rayw.feature.preferences.presentation.list.PreferenceItem
@@ -13,13 +15,14 @@ import com.pablojuice.rayw.feature.preferences.presentation.list.PreferenceTitle
 import javax.inject.Inject
 
 class ProvidePreferenceListItemsUseCase @Inject constructor(
-
+    private val appConfig: AppConfig,
 ) {
     operator fun invoke(navigationHandler: (NavigationEvent) -> Unit): List<ListItem> {
         return mutableListOf<ListItem>().apply {
             addProfileSection("Pablo")
             addLoginSection(navigationHandler)
-            repeat(10) {
+            addDevOptionsItem(navigationHandler)
+            repeat(10) { it ->
                 addSectionTitle("Section Header $it")
                 Preference.values().forEach { addSectionItem(it, navigationHandler) }
             }
@@ -40,13 +43,24 @@ class ProvidePreferenceListItemsUseCase @Inject constructor(
 
     private fun MutableList<ListItem>.addSectionItem(
         item: Preference,
-        navigationHandler: (NavigationEvent) -> Unit
+        navigationHandler: (NavigationEvent) -> Unit,
     ) {
         add(
             PreferenceItem(
                 item.title.asLabel(),
-                item.icon
-            ) { navigationHandler(item.navigationEvent) }
+                item.icon,
+            ) { navigationHandler(item.navigationEvent) },
         )
+    }
+
+    private fun MutableList<ListItem>.addDevOptionsItem(navigationHandler: (NavigationEvent) -> Unit) {
+        if (appConfig.debuggingEnabled) {
+            add(
+                PreferenceItem(
+                    "Dev Options".asLabel(),
+                    R.drawable.ic_android_medium,
+                ) { navigationHandler(ToDevOptionsScreen()) },
+            )
+        }
     }
 }

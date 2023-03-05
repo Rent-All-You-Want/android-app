@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_16">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TEXT STYLE"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_20"
+            android:layout_gravity="center"
+            android:textColor="@android:color/holo_red_light"
+            android:layout_margin="@dimen/dimen_8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="text.display"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_16"
+            android:textColor="@android:color/holo_green_dark"
+            android:layout_marginVertical="@dimen/dimen_8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sample text 123455667890"
+            android:textAppearance="@style/text.displayLarge" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sample text 123455667890"
+            android:textAppearance="@style/text.displayMedium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sample text 123455667890"
+            android:textAppearance="@style/text.displaySmall" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="text.headline"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_16"
+            android:textColor="@android:color/holo_green_dark"
+            android:layout_marginVertical="@dimen/dimen_8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sample text 123455667890"
+            android:textAppearance="@style/text.headlineLarge" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sample text 123455667890"
+            android:textAppearance="@style/text.headlineMedium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sample text 123455667890"
+            android:textAppearance="@style/text.headlineSmall" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="text.title"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_16"
+            android:textColor="@android:color/holo_green_dark"
+            android:layout_marginVertical="@dimen/dimen_8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sample text 123455667890"
+            android:textAppearance="@style/text.titleLarge" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sample text 123455667890"
+            android:textAppearance="@style/text.titleMedium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sample text 123455667890"
+            android:textAppearance="@style/text.titleSmall" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="text.body"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_16"
+            android:textColor="@android:color/holo_green_dark"
+            android:layout_marginVertical="@dimen/dimen_8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sample text 123455667890"
+            android:textAppearance="@style/text.bodyLarge" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sample text 123455667890"
+            android:textAppearance="@style/text.bodyMedium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sample text 123455667890"
+            android:textAppearance="@style/text.bodySmall" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="text.label"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_16"
+            android:textColor="@android:color/holo_green_dark"
+            android:layout_marginVertical="@dimen/dimen_8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sample text 123455667890"
+            android:textAppearance="@style/text.labelLarge" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sample text 123455667890"
+            android:textAppearance="@style/text.labelMedium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sample text 123455667890"
+            android:textAppearance="@style/text.labelSmall" />
+    </LinearLayout>
+</ScrollView>
