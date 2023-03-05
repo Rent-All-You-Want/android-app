@@ -8,18 +8,6 @@ import com.pablojuice.rayw.databinding.ItemPreferencesProfileBinding
 import com.pablojuice.rayw.databinding.ItemPreferencesSectionBinding
 import com.pablojuice.rayw.databinding.ItemPreferencesSectionTitleBinding
 
-class PreferenceSectionViewHolder(binding: ItemPreferencesSectionBinding) :
-    ViewHolder<ListItem, ItemPreferencesSectionBinding>(binding) {
-
-    override fun bind(item: ListItem) {
-        if (item is PreferenceItem) {
-            binding.sectionIcon.setImageResource(item.icon)
-            binding.sectionNameLabel.setLabel(item.title)
-            binding.openSectionButton.setOnClickListener { item.onClick() }
-        }
-    }
-}
-
 class ProfileViewHolder(binding: ItemPreferencesProfileBinding) :
     ViewHolder<ListItem, ItemPreferencesProfileBinding>(binding) {
 
@@ -47,6 +35,18 @@ class PreferenceSectionTitleViewHolder(binding: ItemPreferencesSectionTitleBindi
     override fun bind(item: ListItem) {
         if (item is PreferenceTitleItem) {
             binding.titleLabel.setLabel(item.title)
+        }
+    }
+}
+
+class PreferenceSectionViewHolder(binding: ItemPreferencesSectionBinding) :
+    ViewHolder<ListItem, ItemPreferencesSectionBinding>(binding) {
+
+    override fun bind(item: ListItem) {
+        if (item is PreferenceItem) {
+            binding.sectionIcon.setImageResource(item.icon)
+            binding.sectionNameLabel.setLabel(item.title)
+            binding.sectionContainer.setOnClickListener { item.onClick() }
         }
     }
 }

@@ -10,6 +10,4 @@
         android:name="com.pablojuice.rayw.feature.preferences.presentation.view.PreferencesListFragment"
         android:label="Preferences List Screen"
         tools:layout="@layout/fragment_preferences_list" />
-
-    <include app:graph="@navigation/signin_graph" />
 </navigation>

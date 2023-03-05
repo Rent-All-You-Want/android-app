@@ -53,18 +53,17 @@ class HomeFragment : BasicFragment<FragmentHomeBinding, HomeViewModel>() {
     abstract class HomeChildFragment<VB : ViewBinding, VM : BasicViewModel> :
         BasicFragment<VB, VM>() {
 
-        override fun navigate(event: NavigationEvent) {
-            homeNavigationController?.let { navigateIfDestinationExists(event, it) }
-        }
+        override fun navigate(event: NavigationEvent) =
+            navigateIfDestinationExists(event, homeNavigationController)
 
         fun navigateInsideHome(event: NavigationEvent) = super.navigate(event)
 
-        protected val homeNavigationController: NavController?
+        protected val homeNavigationController: NavController
             get() {
                 var fragment = parentFragment
                 while (fragment !is HomeFragment)
                     fragment = fragment?.parentFragment
-                return fragment?.findNavController()
+                return fragment.findNavController()
             }
     }
 }
