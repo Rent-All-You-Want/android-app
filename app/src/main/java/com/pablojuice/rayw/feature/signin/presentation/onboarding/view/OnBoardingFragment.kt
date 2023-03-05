@@ -62,10 +62,10 @@ class OnBoardingFragment : BasicFragment<FragmentOnboardingBinding, OnBoardingVi
     private fun addOnPageChangeCallback(adapter: OnBoardingAdapter) {
         binding.viewPager.registerOnPageChangeCallback(object : OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
-                animateProgressBar(position)
                 binding.previous.setVisible(position > 0)
                 binding.next.setVisible(position < adapter.itemCount - 1)
                 binding.rentOut.setVisible(position == adapter.itemCount - 1)
+                animateProgressBar(position)
             }
         })
     }

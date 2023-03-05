@@ -41,7 +41,7 @@
         android:layout_marginBottom="@dimen/dimen_48"
         android:scaleType="fitXY"
         android:src="@drawable/ic_chevron_right_medium"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="?attr/colorOnBackground"
@@ -49,19 +49,15 @@
 
     <Button
         android:id="@+id/rent_out"
+        style="@style/view.button.extraLarge.primary"
         android:layout_width="0dp"
-        android:layout_height="@dimen/dimen_64"
         android:layout_margin="@dimen/dimen_40"
-        android:fontFamily="@font/roboto_medium"
-        android:orientation="horizontal"
         android:text="@string/rent_out"
-        android:textAllCaps="true"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_percent="0.5"
-        app:shapeAppearanceOverlay="@style/shape.large"
         tools:visibility="visible" />
 
     <ProgressBar

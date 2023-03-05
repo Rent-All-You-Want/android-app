@@ -19,11 +19,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="@dimen/dimen_8"
                 android:text="BUTTON STYLE"
                 android:textColor="@android:color/holo_red_light"
                 android:textSize="@dimen/text_size_20"
                 android:textStyle="bold" />
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -34,33 +34,35 @@
                 android:textSize="@dimen/text_size_16"
                 android:textStyle="bold" />
 
-            <Button
-                style="@style/view.button.icon"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                app:icon="@drawable/ic_settings_medium" />
+                android:gravity="center">
 
-            <Button
-                style="@style/view.button.icon.filled"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                app:icon="@drawable/ic_settings_medium" />
+                <Button
+                    style="@style/view.button.icon"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    app:icon="@drawable/ic_settings_medium" />
 
-            <Button
-                style="@style/view.button.icon.filled.primary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                app:icon="@drawable/ic_settings_medium" />
+                <Button
+                    style="@style/view.button.icon.filled"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    app:icon="@drawable/ic_settings_medium" />
 
-            <Button
-                style="@style/view.button.icon.filled.secondary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                app:icon="@drawable/ic_settings_medium" />
+                <Button
+                    style="@style/view.button.icon.filled.primary"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    app:icon="@drawable/ic_settings_medium" />
+
+                <Button
+                    style="@style/view.button.icon.filled.secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    app:icon="@drawable/ic_settings_medium" />
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -78,68 +80,103 @@
                 android:layout_gravity="center"
                 android:text="Button" />
 
-            <Button
-                style="@style/view.button.small"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Button" />
+                android:layout_marginTop="@dimen/dimen_16"
+                android:gravity="center">
 
-            <Button
-                style="@style/view.button.small.primary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Button" />
+                <Button
+                    style="@style/view.button.small"
+                    android:layout_gravity="center"
+                    android:text="Button" />
 
-            <Button
-                style="@style/view.button.small.secondary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Button" />
+                <Button
+                    style="@style/view.button.small.primary"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen_8"
+                    android:text="Button" />
 
-            <Button
-                style="@style/view.button.medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Button" />
+                <Button
+                    style="@style/view.button.small.secondary"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen_8"
+                    android:text="Button" />
+            </LinearLayout>
 
-            <Button
-                style="@style/view.button.medium.primary"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Button" />
+                android:layout_marginTop="@dimen/dimen_16"
+                android:gravity="center">
 
-            <Button
-                style="@style/view.button.medium.secondary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Button" />
+                <Button
+                    style="@style/view.button.medium"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Button" />
 
-            <Button
-                style="@style/view.button.large"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Button" />
+                <Button
+                    style="@style/view.button.medium.primary"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen_8"
+                    android:text="Button" />
 
-            <Button
-                style="@style/view.button.large.primary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Button" />
+                <Button
+                    style="@style/view.button.medium.secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen_8"
+                    android:text="Button" />
+            </LinearLayout>
 
-            <Button
-                style="@style/view.button.large.secondary"
-                android:layout_width="wrap_content"
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Button" />
+                android:layout_marginTop="@dimen/dimen_16"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    style="@style/view.button.large"
+                    android:layout_gravity="center"
+                    android:text="Button" />
+
+                <Button
+                    style="@style/view.button.large.primary"
+                    android:layout_gravity="center"
+                    android:text="Button" />
+
+                <Button
+                    style="@style/view.button.large.secondary"
+                    android:layout_gravity="center"
+                    android:text="Button" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    style="@style/view.button.extraLarge"
+                    android:layout_width="wrap_content"
+                    android:text="Button" />
+
+                <Button
+                    style="@style/view.button.extraLarge.primary"
+                    android:layout_gravity="center"
+                    android:text="Button" />
+
+                <Button
+                    style="@style/view.button.extraLarge.secondary"
+                    android:layout_gravity="center"
+                    android:text="Button" />
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -150,34 +187,43 @@
                 android:textSize="@dimen/text_size_16"
                 android:textStyle="bold" />
 
-            <Button
-                style="@style/view.button.text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Button" />
 
-            <Button
-                style="@style/view.button.text.primary"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Button" />
+                android:gravity="center">
 
-            <Button
-                style="@style/view.button.text.secondary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Button" />
+                <Button
+                    style="@style/view.button.text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Button" />
+
+                <Button
+                    style="@style/view.button.text.primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen_8"
+                    android:text="Button" />
+
+                <Button
+                    style="@style/view.button.text.secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen_8"
+                    android:text="Button" />
+            </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="@dimen/dimen_16">
+            android:layout_marginTop="@dimen/dimen_16"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"

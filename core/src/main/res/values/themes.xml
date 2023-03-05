@@ -67,9 +67,10 @@
 
         <!-- Views. TODO -->
         <item name="bottomNavigationStyle">@style/view.bottomNavigationView</item>
-        <!--        <item name="borderlessButtonStyle">@style/Widget.App.Button.TextButton</item>-->
-        <!--        <item name="materialButtonOutlinedStyle">@style/Widget.App.Button.OutlinedButton</item>-->
-        <!--        <item name="materialButtonStyle">@style/Widget.App.Button</item>-->
+        <item name="materialButtonStyle">@style/view.button</item>
+        <item name="materialIconButtonStyle">@style/view.button.icon</item>
+        <item name="materialIconButtonFilledStyle">@style/view.button.icon.filled</item>
+
         <!--        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>-->
         <!--        <item name="materialSwitchStyle">@style/Widget.App.Switch</item>-->
         <!--        <item name="sliderStyle">@style/Widget.App.Slider</item>-->

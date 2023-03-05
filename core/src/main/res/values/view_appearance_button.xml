@@ -3,6 +3,7 @@
 
     <!-- Icon Button -->
     <style name="view.button.icon" parent="Widget.Material3.Button.IconButton">
+        <item name="android:layout_height">@dimen/dimen_48</item>
         <item name="shapeAppearance">@style/shape.small</item>
         <item name="iconSize">@dimen/dimen_32</item>
         <item name="android:paddingLeft">@dimen/dimen_4</item>
@@ -12,6 +13,7 @@
     </style>
 
     <style name="view.button.icon.filled" parent="Widget.Material3.Button.IconButton.Filled">
+        <item name="android:layout_height">@dimen/dimen_48</item>
         <item name="shapeAppearance">@style/shape.small</item>
         <item name="iconSize">@dimen/dimen_32</item>
         <item name="android:paddingLeft">@dimen/dimen_4</item>
@@ -33,23 +35,18 @@
         <item name="android:textAppearance">@style/text.titleSmall</item>
         <item name="android:textAllCaps">true</item>
         <item name="shapeAppearance">@style/shape.small</item>
+        <item name="elevation">@dimen/dimen_1</item>
+        <item name="android:paddingTop">@dimen/dimen_4</item>
+        <item name="android:paddingBottom">@dimen/dimen_4</item>
     </style>
 
     <style name="view.button.small" parent="view.button">
         <item name="android:textAppearance">@style/text.titleSmall</item>
         <item name="android:textAllCaps">true</item>
-        <item name="shapeAppearance">@style/shape.small</item>
-    </style>
-
-    <style name="view.button.medium" parent="view.button">
-        <item name="android:textAppearance">@style/text.titleSmall</item>
-        <item name="android:textAllCaps">true</item>
-        <item name="shapeAppearance">@style/shape.small</item>
-    </style>
-
-    <style name="view.button.large" parent="view.button">
-        <item name="android:textAppearance">@style/text.titleSmall</item>
-        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_height">@dimen/dimen_40</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/dimen_2</item>
+        <item name="android:paddingRight">@dimen/dimen_2</item>
         <item name="shapeAppearance">@style/shape.small</item>
     </style>
 
@@ -61,6 +58,16 @@
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Secondary</item>
     </style>
 
+    <style name="view.button.medium" parent="view.button">
+        <item name="android:textAppearance">@style/text.titleSmall</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_height">@dimen/dimen_48</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/dimen_8</item>
+        <item name="android:paddingRight">@dimen/dimen_8</item>
+        <item name="shapeAppearance">@style/shape.small</item>
+    </style>
+
     <style name="view.button.medium.primary" parent="view.button.medium">
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Primary</item>
     </style>
@@ -69,11 +76,37 @@
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Secondary</item>
     </style>
 
+    <style name="view.button.large" parent="view.button">
+        <item name="android:textAppearance">@style/text.titleSmall</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_height">@dimen/dimen_56</item>
+        <item name="android:layout_width">@dimen/dimen_192</item>
+        <item name="android:paddingLeft">@dimen/dimen_8</item>
+        <item name="android:paddingRight">@dimen/dimen_8</item>
+        <item name="shapeAppearance">@style/shape.small</item>
+    </style>
+
     <style name="view.button.large.primary" parent="view.button.large">
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Primary</item>
     </style>
 
     <style name="view.button.large.secondary" parent="view.button.large">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Secondary</item>
+    </style>
+
+    <style name="view.button.extraLarge" parent="view.button">
+        <item name="android:textAppearance">@style/text.titleMedium</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_height">@dimen/dimen_64</item>
+        <item name="android:layout_width">@dimen/dimen_256</item>
+        <item name="shapeAppearance">@style/shape.medium</item>
+    </style>
+
+    <style name="view.button.extraLarge.primary" parent="view.button.extraLarge">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Primary</item>
+    </style>
+
+    <style name="view.button.extraLarge.secondary" parent="view.button.extraLarge">
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Secondary</item>
     </style>
 
