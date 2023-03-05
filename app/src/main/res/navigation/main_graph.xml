@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/home"
-        android:name="com.pablojuice.rayw.feature.home.presentation.HomeFragment"
-        android:label="HomeFragment"
-        tools:layout="@layout/fragment_home"></fragment>
-    <!--    <fragment-->
-    <!--        android:id="@+id/userDetailsFragment"-->
-    <!--        android:name="com.pablojuice.lsiapp.ui.user.details.UserDetailsFragment"-->
-    <!--        android:label="UserDetailsFragment"-->
-    <!--        tools:layout="@layout/fragment_user_details">-->
-    <!--        <argument-->
-    <!--            android:name="userItem"-->
-    <!--            app:argType="com.pablojuice.lsiapp.data.model.UserItem" />-->
-    <!--        <action-->
-    <!--            android:id="@+id/action_userDetailsFragment_to_userHomeFragment"-->
-    <!--            app:destination="@id/userHomeFragment" />-->
-    <!--    </fragment>-->
+        android:name="com.pablojuice.rayw.feature.home.presentation.view.HomeFragment"
+        android:label="Home Screen"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_home_graph"
+            app:destination="@id/home_graph" />
+        <action
+            android:id="@+id/action_home_create_item_graph"
+            app:destination="@id/create_item_graph" />
+    </fragment>
+
+    <include app:graph="@navigation/home_graph" />
+
+    <include app:graph="@navigation/create_item_graph" />
+
 </navigation>

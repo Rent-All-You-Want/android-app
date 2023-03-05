@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFFFF</color>
+    <color name="whitest_white">#f7f7f7</color>
+    <color name="diamonds_in_the_sky">#E5E5E5</color>
+    <color name="praise_giving">#b4b2b1</color>
+    <color name="platinum_granite">#807E7D</color>
+    <color name="deep_earth">#4D4C4B</color>
+    <color name="dark_charcoal">#333232</color>
+    <color name="thamar_black">#1A1919</color>
+    <color name="black">#FF000000</color>
+
+    <color name="coral_red">#ff3333</color>
+
+    <!--lighter-->
+    <color name="warm_pink">#ff4d76</color>
+    <color name="portland_orange">#ff5233</color>
+
+    <!--main-->
+    <color name="radical_red">#FF416C</color>
+    <color name="reddish_orange">#FF4B2B</color>
+
+    <!--darker-->
+    <color name="cool_red">#ff003c</color>
+    <color name="hestia_red">#e62200</color>
+</resources>

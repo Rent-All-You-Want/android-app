@@ -19,6 +19,7 @@ android {
             storePassword props.getProperty("certificate.storePassword")
         }
         debug {
+
         }
     }
 
@@ -49,6 +50,18 @@ android {
         }
     }
 
+    flavorDimensions application.defautFlavorDimension
+
+    productFlavors {
+        local {
+            setupLocalApiUrl()
+            println "Local api url: " + application.localUrl
+            buildConfigField application.apiUrlType, application.apiUrl, application.localUrl
+        }
+        stage { buildConfigField application.apiUrlType, application.apiUrl, application.stageUrl }
+        prod { buildConfigField application.apiUrlType, application.apiUrl, application.prodUrl }
+    }
+
     compileOptions {
         sourceCompatibility application.javaVersion
         targetCompatibility application.javaVersion
@@ -77,6 +90,11 @@ dependencies {
 
     implementation project(":feature:test")
 
-    implementation "com.google.dagger:hilt-android:2.44.2"
-    kapt "com.google.dagger:hilt-android-compiler:2.44.2"
+    implementation "androidx.core:core-splashscreen:$versions.splashscreen"
+
+    implementation "com.google.dagger:hilt-android:$versions.daggerHilt"
+    kapt "com.google.dagger:hilt-android-compiler:$versions.daggerHilt"
+
+    testImplementation project(":utils:unittest")
+    androidTestImplementation project(":utils:uitest")
 }

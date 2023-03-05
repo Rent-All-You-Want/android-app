@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:animateLayoutChanges="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/item_onboarding"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/previous"
+        android:layout_width="@dimen/dimen_48"
+        android:layout_height="@dimen/dimen_48"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginBottom="@dimen/dimen_48"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_chevron_left_medium"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="?attr/colorOnBackground"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/next"
+        android:layout_width="@dimen/dimen_48"
+        android:layout_height="@dimen/dimen_48"
+        android:layout_marginEnd="@dimen/dimen_16"
+        android:layout_marginBottom="@dimen/dimen_48"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_chevron_right_medium"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="?attr/colorOnBackground"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/rent_out"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dimen_64"
+        android:layout_margin="@dimen/dimen_40"
+        android:fontFamily="@font/roboto_bold"
+        android:orientation="horizontal"
+        android:text="@string/rent_out"
+        android:textAllCaps="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.5"
+        app:shapeAppearanceOverlay="@style/shape.large"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>

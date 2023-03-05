@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="first_onboarding_title">Anywhere, anytime</string>
+    <string name="first_onboarding_description">Use only your phone to rent any available product directly from owner in the shortest time period</string>
+
+    <string name="second_onboarding_title">Easy income</string>
+    <string name="second_onboarding_description">Rent out thing you are not using any more, surely someone needs them! And earn additional income for yourself</string>
+
+    <string name="third_onboarding_title">Develop business</string>
+    <string name="third_onboarding_description">We are happy to help you out developing your own business by renting out different types of goods! Make a legal income together with us</string>
+
+    <string name="next">Next</string>
+    <string name="rent_out">Rent Out</string>
+</resources>

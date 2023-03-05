@@ -1,16 +1,59 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Theme.Rayw" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Rayw" parent="Theme.Material3.Dark.NoActionBar">
+
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/portland_orange</item>
+        <item name="colorPrimaryVariant">@color/hestia_red</item>
+        <item name="colorOnPrimary">@color/whitest_white</item>
+
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="colorSecondary">@color/warm_pink</item>
+        <item name="colorSecondaryVariant">@color/radical_red</item>
+        <item name="colorOnSecondary">@color/whitest_white</item>
+
+        <!-- Cards, sheets, and menus colors. -->
+        <item name="colorBackground">@color/thamar_black</item>
+        <item name="colorBackgroundVariant">@color/dark_charcoal</item>
+        <item name="colorOnBackground">@color/whitest_white</item>
+        <item name="android:colorBackground">?attr/colorBackground</item>
+
+        <!-- Status & navigation bar color. -->
+        <item name="android:statusBarColor">?attr/colorBackground</item>
+        <item name="android:navigationBarColor">?attr/colorBackground</item>
+
+        <!-- Cards, sheets, and menus colors. -->
+        <item name="colorSurface">@color/dark_charcoal</item>
+        <item name="colorOnSurface">@color/whitest_white</item>
+
+        <!-- Error colors. -->
+        <item name="colorError">@color/coral_red</item>
+        <item name="colorOnError">@color/white</item>
+
+        <!-- Disabled colors. -->
+        <item name="colorDisabled">@color/platinum_granite</item>
+
+        <!-- Shapes. -->
+        <item name="shapeAppearanceCornerExtraSmall">@style/shape.extraSmall</item>
+        <item name="shapeAppearanceCornerSmall">@style/shape.small</item>
+        <item name="shapeAppearanceCornerMedium">@style/shape.medium</item>
+        <item name="shapeAppearanceCornerLarge">@style/shape.large</item>
+        <item name="shapeAppearanceCornerExtraLarge">@style/shape.extraLarge</item>
+
+        <!-- Text. -->
+
+        <!-- Views. TODO -->
+        <item name="bottomNavigationStyle">@style/view.bottomNavigationView</item>
+        <item name="bottomAppBarStyle">@style/view.bottomNavigationView</item>
+        <!--        <item name="borderlessButtonStyle">@style/Widget.App.Button.TextButton</item>-->
+        <!--        <item name="materialButtonOutlinedStyle">@style/Widget.App.Button.OutlinedButton</item>-->
+        <!--        <item name="materialButtonStyle">@style/Widget.App.Button</item>-->
+        <!--        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>-->
+        <!--        <item name="materialSwitchStyle">@style/Widget.App.Switch</item>-->
+        <!--        <item name="sliderStyle">@style/Widget.App.Slider</item>-->
+        <!--        <item name="materialCardViewStyle">@style/Widget.App.CardView</item>-->
+        <!--        <item name="chipStyle">@style/Widget.App.Chip</item>-->
+        <!--        <item name="snackbarStyle">@style/Widget.App.Snackbar</item>-->
+        <!--        <item name="snackbarButtonStyle">@style/Widget.App.SnackbarButton</item>-->
     </style>
 </resources>

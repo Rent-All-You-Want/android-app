@@ -39,3 +39,6 @@ local.properties
 /core/build/
 /feature/test/build/
 /.idea/git_toolbox_prj.xml
+/.idea/
+/utils/uitest/build/
+/utils/unittest/build/

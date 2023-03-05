@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    <style name="Widget.App.Chip" parent="Widget.Material3.Chip.Input">-->
+    <!--        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Chip</item>-->
+    <!--        <item name="android:textAppearance">@style/TextAppearance.App.BodyMedium</item>-->
+    <!--        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>-->
+    <!--        ...-->
+    <!--    </style>-->
+
+    <!--    <style name="ThemeOverlay.App.Chip" parent="">-->
+    <!--        <item name="colorOnSurface">@color/shrine_pink_900</item>-->
+    <!--    </style>-->
+</resources>

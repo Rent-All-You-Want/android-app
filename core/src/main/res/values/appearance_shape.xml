@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="shape.none" parent="ShapeAppearance.Material3.Corner.None" />
+
+    <style name="shape.extraSmall" parent="ShapeAppearance.Material3.Corner.ExtraSmall">
+        <item name="cornerSize">@dimen/dimen_4</item>
+    </style>
+
+    <style name="shape.small" parent="ShapeAppearance.Material3.Corner.Small">
+        <item name="cornerSize">@dimen/dimen_8</item>
+    </style>
+
+    <style name="shape.medium" parent="ShapeAppearance.Material3.Corner.Medium">
+        <item name="cornerSize">@dimen/dimen_12</item>
+    </style>
+
+    <style name="shape.large" parent="ShapeAppearance.Material3.Corner.Large">
+        <item name="cornerSize">@dimen/dimen_16</item>
+    </style>
+
+    <style name="shape.extraLarge" parent="ShapeAppearance.Material3.Corner.ExtraLarge">
+        <item name="cornerSize">@dimen/dimen_28</item>
+    </style>
+
+    <style name="shape.full" parent="ShapeAppearance.Material3.Corner.Full" />
+</resources>
