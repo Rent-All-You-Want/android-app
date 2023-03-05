@@ -1,9 +1,9 @@
-package com.pablojuice.core.app.dev
+package com.pablojuice.rayw.feature.dev
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.pablojuice.core.databinding.FragmentDevOptionsBinding
 import com.pablojuice.core.presentation.base.screen.BaseFragment
+import com.pablojuice.rayw.databinding.FragmentDevOptionsBinding
 
 class DevOptionsFragment : BaseFragment<FragmentDevOptionsBinding>() {
 

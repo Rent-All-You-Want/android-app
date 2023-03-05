@@ -11,8 +11,7 @@
     <style name="ThemeOverlay.App.BottomNavigationView" parent="">
         <item name="colorOnSurfaceVariant">?attr/colorDisabled</item><!--unselected-->
         <item name="colorSecondaryContainer">@android:color/transparent</item><!--overlay-->
-        <item name="colorOnSecondaryContainer">?attr/colorPrimary
-        </item><!--selected icon?attr/colorOnPrimary-->
+        <item name="colorOnSecondaryContainer">?attr/colorPrimary</item><!--selected icon-->
         <item name="colorOnSurface">?attr/colorDisabled</item><!--selected text-->
     </style>
 </resources>
