@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true">
@@ -51,7 +52,7 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/dimen_64"
         android:layout_margin="@dimen/dimen_40"
-        android:fontFamily="@font/roboto_bold"
+        android:fontFamily="@font/roboto_medium"
         android:orientation="horizontal"
         android:text="@string/rent_out"
         android:textAllCaps="true"
@@ -62,4 +63,18 @@
         app:layout_constraintWidth_percent="0.5"
         app:shapeAppearanceOverlay="@style/shape.large"
         tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dimen_4"
+        android:background="?attr/colorBackground"
+        android:progressTint="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@color/dark_charcoal"
+        tools:progress="50"
+        tools:progressTint="@color/reddish_orange" />
 </androidx.constraintlayout.widget.ConstraintLayout>

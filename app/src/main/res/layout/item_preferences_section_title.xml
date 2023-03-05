@@ -6,10 +6,11 @@
 
     <TextView
         android:id="@+id/title_label"
-        style="@style/text.h4"
+        style="@style/text.titleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/dimen_16"
-        android:layout_marginVertical="@dimen/dimen_8"
+        android:layout_marginBottom="@dimen/dimen_8"
+        android:layout_marginTop="@dimen/dimen_16"
         tools:text="Title 123" />
 </FrameLayout>

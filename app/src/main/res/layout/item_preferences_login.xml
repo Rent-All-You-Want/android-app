@@ -11,12 +11,12 @@
     <Button
         android:id="@+id/log_in_button"
         android:layout_width="0dp"
-        android:layout_height="@dimen/dimen_48"
+        android:layout_height="@dimen/dimen_56"
         android:layout_weight="3"
         android:fontFamily="@font/roboto_bold"
         android:orientation="horizontal"
         android:text="@string/signin_log_in"
         android:textAllCaps="true"
-        app:shapeAppearanceOverlay="@style/shape.large" />
+        app:shapeAppearanceOverlay="@style/shape.small" />
 
 </LinearLayout>

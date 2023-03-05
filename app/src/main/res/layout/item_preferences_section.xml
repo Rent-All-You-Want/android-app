@@ -22,14 +22,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/black"
+            app:tint="?attr/colorBackground"
             tools:backgroundTint="@color/black"
             tools:srcCompat="@drawable/ic_recycling_medium"
             tools:tint="@color/white" />
 
         <TextView
             android:id="@+id/section_name_label"
-            style="@style/text.body"
+            style="@style/text.bodyLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/dimen_16"

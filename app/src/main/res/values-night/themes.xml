@@ -42,6 +42,25 @@
         <item name="shapeAppearanceCornerExtraLarge">@style/shape.extraLarge</item>
 
         <!-- Text. -->
+        <item name="textAppearanceDisplayLarge">@style/text.displayLarge</item>
+        <item name="textAppearanceDisplayMedium">@style/text.displayMedium</item>
+        <item name="textAppearanceDisplaySmall">@style/text.displaySmall</item>
+
+        <item name="textAppearanceHeadlineLarge">@style/text.headlineLarge</item>
+        <item name="textAppearanceHeadlineMedium">@style/text.headlineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/text.headlineSmall</item>
+
+        <item name="textAppearanceTitleLarge">@style/text.titleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/text.titleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/text.titleSmall</item>
+
+        <item name="textAppearanceBodyLarge">@style/text.bodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/text.bodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/text.bodySmall</item>
+
+        <item name="textAppearanceLabelLarge">@style/text.labelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/text.labelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/text.labelSmall</item>
 
         <!-- Views. TODO -->
         <item name="bottomNavigationStyle">@style/view.bottomNavigationView</item>

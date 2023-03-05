@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="text_size_48">48sp</dimen>
-    <dimen name="text_size_34">34sp</dimen>
+    <dimen name="text_size_54">54sp</dimen>
+    <dimen name="text_size_44">44sp</dimen>
+    <dimen name="text_size_36">36sp</dimen>
+    <dimen name="text_size_32">32sp</dimen>
+    <dimen name="text_size_28">28sp</dimen>
     <dimen name="text_size_24">24sp</dimen>
     <dimen name="text_size_20">20sp</dimen>
     <dimen name="text_size_16">16sp</dimen>
@@ -9,63 +12,78 @@
     <dimen name="text_size_12">12sp</dimen>
     <dimen name="text_size_10">10sp</dimen>
 
-    <style name="text.h1" parent="TextAppearance.MaterialComponents.Headline1">
-        <item name="fontFamily">@font/roboto_medium</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
-        <item name="android:textSize">@dimen/text_size_48</item>
+    <style name="text.displayLarge" parent="TextAppearance.Material3.DisplayLarge">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/text_size_54</item>
     </style>
 
-    <style name="text.h2" parent="TextAppearance.MaterialComponents.Headline2">
-        <item name="fontFamily">@font/roboto_medium</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
-        <item name="android:textSize">@dimen/text_size_34</item>
+    <style name="text.displayMedium" parent="TextAppearance.Material3.DisplayMedium">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/text_size_44</item>
     </style>
 
-    <style name="text.h3" parent="TextAppearance.MaterialComponents.Headline3">
-        <item name="fontFamily">@font/roboto_medium</item>
-        <item name="android:fontFamily">@font/roboto_medium</item>
+    <style name="text.displaySmall" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/text_size_36</item>
+    </style>
+
+    <style name="text.headlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/text_size_32</item>
+    </style>
+
+    <style name="text.headlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/text_size_28</item>
+    </style>
+
+    <style name="text.headlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="android:textSize">@dimen/text_size_24</item>
     </style>
 
-    <style name="text.h4" parent="TextAppearance.MaterialComponents.Headline4">
-        <item name="fontFamily">@font/roboto_medium</item>
+    <style name="text.titleLarge" parent="TextAppearance.Material3.TitleLarge">
         <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:textSize">@dimen/text_size_20</item>
     </style>
 
-    <style name="text.h5" parent="TextAppearance.MaterialComponents.Headline5">
-        <item name="fontFamily">@font/roboto_medium</item>
+    <style name="text.titleMedium" parent="TextAppearance.Material3.TitleMedium">
         <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:textSize">@dimen/text_size_16</item>
     </style>
 
-    <style name="text.body" parent="TextAppearance.MaterialComponents.Body1">
-        <item name="fontFamily">@font/roboto_regular</item>
+    <style name="text.titleSmall" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
+
+    <style name="text.bodyLarge" parent="TextAppearance.Material3.BodyLarge">
         <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="android:textSize">@dimen/text_size_16</item>
     </style>
 
-    <style name="text.medium" parent="TextAppearance.MaterialComponents.Body2">
-        <item name="fontFamily">@font/roboto_regular</item>
+    <style name="text.bodyMedium" parent="TextAppearance.Material3.BodyMedium">
         <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="android:textSize">@dimen/text_size_14</item>
     </style>
 
-    <style name="text.small" parent="TextAppearance.MaterialComponents.Overline">
-        <item name="fontFamily">@font/roboto_regular</item>
+    <style name="text.bodySmall" parent="TextAppearance.Material3.BodySmall">
         <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="android:textSize">@dimen/text_size_12</item>
     </style>
 
-    <style name="text.overline" parent="TextAppearance.MaterialComponents.Overline">
-        <item name="fontFamily">@font/roboto_regular</item>
+    <style name="text.labelLarge" parent="TextAppearance.Material3.LabelLarge">
         <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="android:textSize">@dimen/text_size_10</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
     </style>
 
-    <style name="text.Button" parent="TextAppearance.MaterialComponents.Button">
-        <item name="fontFamily">@font/roboto_regular</item>
+    <style name="text.labelMedium" parent="TextAppearance.Material3.LabelMedium">
         <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">@dimen/text_size_12</item>
+    </style>
+
+    <style name="text.labelSmall" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/text_size_10</item>
     </style>
 </resources>
