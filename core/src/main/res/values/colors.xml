@@ -27,4 +27,6 @@
     <!--transparent-->
     <color name="cool_red_transparent">#1Aff003c</color>
     <color name="hestia_red_transparent">#1Ae62200</color>
+    <color name="whitest_white_transparent">#40f7f7f7</color>
+    <color name="thamar_black_transparent">#401A1919</color>
 </resources>

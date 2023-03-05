@@ -1,35 +1,38 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Theme.Rayw" parent="Theme.Material3.Dark.NoActionBar">
+    <style name="Theme.Rayw" parent="Theme.Material3.DayNight.NoActionBar">
 
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/portland_orange</item>
+        <item name="colorPrimary">@color/reddish_orange</item>
         <item name="colorPrimaryVariant">@color/hestia_red</item>
         <item name="colorOnPrimary">@color/whitest_white</item>
 
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/warm_pink</item>
-        <item name="colorSecondaryVariant">@color/radical_red</item>
+        <item name="colorSecondaryVariant">@color/cool_red</item>
         <item name="colorOnSecondary">@color/whitest_white</item>
 
         <!-- Cards, sheets, and menus colors. -->
-        <item name="colorBackground">@color/thamar_black</item>
-        <item name="colorBackgroundVariant">@color/dark_charcoal</item>
-        <item name="colorOnBackground">@color/whitest_white</item>
-        <item name="colorOnBackgroundVariant">@color/diamonds_in_the_sky</item>
+        <item name="colorBackground">@color/whitest_white</item>
+        <item name="colorBackgroundVariant">@color/diamonds_in_the_sky</item>
+        <item name="colorOnBackground">@color/thamar_black</item>
+        <item name="colorOnBackgroundVariant">@color/dark_charcoal</item>
         <item name="android:colorBackground">?attr/colorBackground</item>
 
         <!-- Status & navigation bar color. -->
+        <item name="android:windowLightStatusBar">true</item>
         <item name="android:statusBarColor">?attr/colorBackground</item>
         <item name="android:navigationBarColor">?attr/colorBackground</item>
 
         <!-- Cards, sheets, and menus colors. -->
-        <item name="colorSurface">@color/dark_charcoal</item>
-        <item name="colorOnSurface">@color/whitest_white</item>
+        <item name="colorSurface">@color/diamonds_in_the_sky</item>
+        <item name="colorOnSurface">@color/thamar_black</item>
+        <item name="colorOnSurfaceOverlay">@color/thamar_black_transparent</item>
+        <item name="colorControlHighlight">?attr/colorOnSurfaceOverlay</item>
 
         <!-- Error colors. -->
         <item name="colorError">@color/coral_red</item>
-        <item name="colorOnError">@color/white</item>
+        <item name="colorOnError">@color/thamar_black</item>
 
         <!-- Disabled colors. -->
         <item name="colorDisabled">@color/platinum_granite</item>
@@ -64,7 +67,6 @@
 
         <!-- Views. TODO -->
         <item name="bottomNavigationStyle">@style/view.bottomNavigationView</item>
-        <item name="bottomAppBarStyle">@style/view.bottomNavigationView</item>
         <!--        <item name="borderlessButtonStyle">@style/Widget.App.Button.TextButton</item>-->
         <!--        <item name="materialButtonOutlinedStyle">@style/Widget.App.Button.OutlinedButton</item>-->
         <!--        <item name="materialButtonStyle">@style/Widget.App.Button</item>-->
