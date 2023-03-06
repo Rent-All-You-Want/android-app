@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--    <style name="Widget.App.TextInputLayout" parent="Widget.Material3.TextInputLayout.*">-->
-    <!--        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>-->
-    <!--        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>-->
-    <!--        <item name="hintTextColor">?attr/colorOnSurface</item>-->
-    <!--    </style>-->
 
-    <!--    <style name="ThemeOverlay.App.TextInputLayout" parent="">-->
-    <!--        <item name="colorPrimary">@color/shrine_pink_100</item>-->
-    <!--        <item name="colorOnSurface">@color/shrine_pink_900</item>-->
-    <!--        <item name="colorError">@color/shrine_red</item>-->
-    <!--        <item name="textAppearanceTitleMedium">@style/TextAppearance.App.TitleMedium</item>-->
-    <!--        <item name="textAppearanceBodySmall">@style/TextAppearance.App.BodySmall</item>-->
-    <!--        <item name="editTextStyle">@style/Widget.Material3.TextInputEditText.*</item>-->
-    <!--    </style>-->
+    <style name="view.textInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
+        <item name="boxBackgroundColor">?attr/colorBackgroundVariant</item>
+        <item name="boxBackgroundMode">outline</item>
+        <item name="hintTextColor">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="ThemeOverlay.App.TextInputLayout" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
+        <item name="colorOnSurface">?attr/colorOnPrimary</item>
+        <item name="colorOutline">?attr/colorBackgroundVariant</item>
+    </style>
 </resources>
