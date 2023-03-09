@@ -5,7 +5,7 @@
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
         <item name="boxBackgroundColor">?attr/colorBackgroundVariant</item>
         <item name="boxBackgroundMode">outline</item>
-        <item name="hintTextColor">?attr/colorOnPrimary</item>
+        <item name="hintTextColor">?attr/colorOnBackground</item>
     </style>
 
     <style name="ThemeOverlay.App.TextInputLayout" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox">

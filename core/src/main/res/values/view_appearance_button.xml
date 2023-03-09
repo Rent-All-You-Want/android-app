@@ -3,6 +3,7 @@
 
     <!-- Icon Button -->
     <style name="view.button.icon" parent="Widget.Material3.Button.IconButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Icon</item>
         <item name="android:layout_height">@dimen/dimen_48</item>
         <item name="shapeAppearance">@style/shape.small</item>
         <item name="iconSize">@dimen/dimen_32</item>
@@ -35,7 +36,7 @@
         <item name="android:textAppearance">@style/text.titleSmall</item>
         <item name="android:textAllCaps">true</item>
         <item name="shapeAppearance">@style/shape.small</item>
-        <item name="elevation">@dimen/dimen_1</item>
+        <item name="elevation">@dimen/elevation_small</item>
         <item name="android:paddingTop">@dimen/dimen_4</item>
         <item name="android:paddingBottom">@dimen/dimen_4</item>
     </style>
@@ -125,6 +126,12 @@
     </style>
 
     <!-- Theme Overlay -->
+
+    <style name="ThemeOverlay.App.Button.Icon" parent="ThemeOverlay.Material3.Button.IconButton">
+        <item name="colorContainer">@android:color/transparent</item>
+        <item name="colorOnContainer">?attr/colorOnPrimary</item>
+    </style>
+
     <style name="ThemeOverlay.App.Button.Primary" parent="">
         <item name="colorContainer">?attr/colorPrimary</item>
         <item name="colorOnContainer">?attr/colorOnPrimary</item>

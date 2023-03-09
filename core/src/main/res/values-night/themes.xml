@@ -71,9 +71,10 @@
         <item name="materialButtonStyle">@style/view.button</item>
         <item name="materialIconButtonStyle">@style/view.button.icon</item>
         <item name="materialIconButtonFilledStyle">@style/view.button.icon.filled</item>
+        <item name="materialCardViewStyle">@style/view.card</item>
+
         <!--        <item name="materialSwitchStyle">@style/Widget.App.Switch</item>-->
         <!--        <item name="sliderStyle">@style/Widget.App.Slider</item>-->
-        <!--        <item name="materialCardViewStyle">@style/Widget.App.CardView</item>-->
         <!--        <item name="chipStyle">@style/Widget.App.Chip</item>-->
         <!--        <item name="snackbarStyle">@style/Widget.App.Snackbar</item>-->
         <!--        <item name="snackbarButtonStyle">@style/Widget.App.SnackbarButton</item>-->
