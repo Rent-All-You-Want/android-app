@@ -115,6 +115,7 @@
     <style name="view.button.text" parent="Widget.Material3.Button.TextButton">
         <item name="android:textAppearance">@style/text.titleSmall</item>
         <item name="shapeAppearance">@style/shape.small</item>
+        <item name="android:textAllCaps">false</item>
     </style>
 
     <style name="view.button.text.primary" parent="view.button.text">

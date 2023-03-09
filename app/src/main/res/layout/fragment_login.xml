@@ -5,14 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".feature.home.presentation.view.HomeFragment">
+    tools:context=".feature.signin.presentation.login.LogInFragment">
 
     <View
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:visibility="gone"
         android:background="@drawable/color_primary_to_secondary_gradient"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="1"
@@ -22,16 +22,16 @@
         tools:background="@color/reddish_orange" />
 
     <com.pablojuice.core.presentation.view.toolbar.ToolBarView
-        android:id="@+id/textView2"
+        android:id="@+id/tool_bar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:titleText="Login" />
+        app:titleText="@string/signin_login" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cardView"
+        android:id="@+id/log_in_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_rectangle_with_round_corners_medium"
@@ -41,17 +41,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/tool_bar"
         app:layout_constraintVertical_bias="0.20"
         app:layout_constraintWidth_percent="0.80">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout"
+            android:id="@+id/login_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dimen_8"
-            android:hint="Login"
-            app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
+            android:hint="@string/signin_login"
+            app:layout_constraintBottom_toTopOf="@+id/password_input_layout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -65,16 +65,16 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout2"
+            android:id="@+id/password_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dimen_8"
             android:hint="Password"
             app:endIconMode="password_toggle"
-            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintBottom_toTopOf="@+id/log_in_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+            app:layout_constraintTop_toBottomOf="@+id/login_input_layout">
 
             <com.google.android.material.textfield.TextInputEditText
                 style="@style/view.textInput"
@@ -86,32 +86,32 @@
 
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/recover_password_view"
             style="@style/text.bodySmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="@dimen/dimen_8"
-            android:text="Do not remember the password?"
-            app:layout_constraintBottom_toTopOf="@+id/button"
+            android:text="@string/signin_dont_remember_pass"
+            app:layout_constraintBottom_toTopOf="@+id/log_in_button"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+            app:layout_constraintTop_toBottomOf="@+id/password_input_layout" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/log_in_button"
             style="@style/view.button.medium.primary"
             android:layout_width="@dimen/dimen_128"
             android:layout_marginTop="@dimen/dimen_16"
-            android:text="LOGIN"
+            android:text="@string/signin_login"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintTop_toBottomOf="@+id/recover_password_view" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@id/contr1"
+        android:id="@id/continue_with_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginVertical="@dimen/dimen_16"
@@ -121,15 +121,15 @@
         android:gravity="center"
         android:orientation="vertical"
         android:padding="@dimen/dimen_16"
-        app:layout_constraintEnd_toEndOf="@+id/cardView"
-        app:layout_constraintStart_toStartOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/cardView">
+        app:layout_constraintEnd_toEndOf="@+id/log_in_container"
+        app:layout_constraintStart_toStartOf="@+id/log_in_container"
+        app:layout_constraintTop_toBottomOf="@+id/log_in_container">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Or continue with"
+            android:text="@string/signin_continue_with"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -170,7 +170,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
-        android:id="@+id/contr"
+        android:id="@+id/register_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginVertical="@dimen/dimen_16"
@@ -180,23 +180,23 @@
         android:gravity="center"
         android:orientation="vertical"
         android:padding="@dimen/dimen_16"
-        app:layout_constraintEnd_toEndOf="@+id/cardView"
-        app:layout_constraintStart_toStartOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/contr1">
+        app:layout_constraintEnd_toEndOf="@+id/log_in_container"
+        app:layout_constraintStart_toStartOf="@+id/log_in_container"
+        app:layout_constraintTop_toBottomOf="@+id/continue_with_container">
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Don't have account yet?" />
+            android:text="@string/signin_dont_have_account" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/register_button"
             style="@style/view.button.medium.secondary"
             android:layout_width="@dimen/dimen_128"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_8"
-            android:text="Register" />
+            android:text="@string/signin_register" />
     </LinearLayout>
 
 

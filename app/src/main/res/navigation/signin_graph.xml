@@ -7,14 +7,35 @@
 
     <fragment
         android:id="@+id/login"
-        android:name="com.pablojuice.rayw.feature.signin.presentation.login.LoginFragment"
+        android:name="com.pablojuice.rayw.feature.signin.presentation.login.LogInFragment"
         android:label="Log In Screen"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/to_signup"
+            app:destination="@id/signup"
+            app:enterAnim="@anim/slide_right"
+            app:exitAnim="@anim/fragment_fade_out_anim"
+            app:popEnterAnim="@anim/fragment_fade_in_anim"
+            app:popExitAnim="@anim/fragment_fade_out_anim" />
+        <action
+            android:id="@+id/to_recovery"
+            app:destination="@id/recovery"
+            app:enterAnim="@anim/slide_right"
+            app:exitAnim="@anim/fragment_fade_out_anim"
+            app:popEnterAnim="@anim/fragment_fade_in_anim"
+            app:popExitAnim="@anim/fragment_fade_out_anim" />
+    </fragment>
 
-    <!--    <fragment-->
-    <!--        android:id="@+id/signup"-->
-    <!--        android:name="com.pablojuice.rayw.feature.signin.presentation.login.LoginFragment"-->
-    <!--        android:label="Sign Up Screen"-->
-    <!--        tools:layout="@layout/fragment_signup" />-->
+    <fragment
+        android:id="@+id/signup"
+        android:name="com.pablojuice.rayw.feature.signin.presentation.signup.SignUpFragment"
+        android:label="Sign Up Screen"
+        tools:layout="@layout/fragment_signup" />
+
+    <fragment
+        android:id="@+id/recovery"
+        android:name="com.pablojuice.rayw.feature.signin.presentation.recovery.RecoveryFragment"
+        android:label="Recovery Screen"
+        tools:layout="@layout/fragment_recovery" />
 
 </navigation>
