@@ -5,7 +5,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class RecoveryViewModel @Inject constructor(
+class SignUpViewModel @Inject constructor(
 
 ) : BasicViewModel() {
     // TODO: Implement the ViewModel

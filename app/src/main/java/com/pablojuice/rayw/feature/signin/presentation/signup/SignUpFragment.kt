@@ -4,17 +4,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.pablojuice.core.presentation.basic.BasicFragment
-import com.pablojuice.rayw.databinding.FragmentHomeBinding
+import com.pablojuice.rayw.databinding.FragmentSignupBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class RecoveryFragment : BasicFragment<FragmentHomeBinding, RecoveryViewModel>() {
+class SignUpFragment : BasicFragment<FragmentSignupBinding, SignUpViewModel>() {
 
-    override val viewModel: RecoveryViewModel by viewModels()
+    override val viewModel: SignUpViewModel by viewModels()
 
     override fun bindLayout(
         inflater: LayoutInflater,
         container: ViewGroup?,
         attachToParent: Boolean
-    ) = FragmentHomeBinding.inflate(inflater, container, attachToParent)
+    ) = FragmentSignupBinding.inflate(inflater, container, attachToParent)
 }

@@ -4,11 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.pablojuice.core.presentation.basic.BasicFragment
-import com.pablojuice.rayw.databinding.FragmentHomeBinding
+import com.pablojuice.rayw.databinding.FragmentRecoveryBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class RecoveryFragment : BasicFragment<FragmentHomeBinding, RecoveryViewModel>() {
+class RecoveryFragment : BasicFragment<FragmentRecoveryBinding, RecoveryViewModel>() {
 
     override val viewModel: RecoveryViewModel by viewModels()
 
@@ -16,5 +16,5 @@ class RecoveryFragment : BasicFragment<FragmentHomeBinding, RecoveryViewModel>()
         inflater: LayoutInflater,
         container: ViewGroup?,
         attachToParent: Boolean
-    ) = FragmentHomeBinding.inflate(inflater, container, attachToParent)
+    ) = FragmentRecoveryBinding.inflate(inflater, container, attachToParent)
 }
