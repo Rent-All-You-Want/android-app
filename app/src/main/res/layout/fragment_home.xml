@@ -32,7 +32,7 @@
         tools:layout_behavior="@null"
         android:layout_marginHorizontal="@dimen/dimen_32"
         android:layout_marginBottom="@dimen/dimen_16"
-        android:background="@drawable/shape_rectangle_with_round_corners_medium"
+        android:background="@drawable/shape_rectangle_with_round_corners_large"
         app:menu="@menu/menu_home" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
