@@ -6,7 +6,7 @@ enum class UserPreference(
     LOGIN(PreferenceDetails(String::class.java)),
     PASS(PreferenceDetails(String::class.java)),
     ON_BOARDING_VIEWED(PreferenceDetails(Boolean::class.java, false)),
-    AUTH_TOKEN(PreferenceDetails(String::class.java)),
+    ACCESS_TOKEN(PreferenceDetails(String::class.java)),
     REFRESH_TOKEN(PreferenceDetails(String::class.java));
 
     //TODO

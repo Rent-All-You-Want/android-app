@@ -2,10 +2,11 @@ package com.pablojuice.core.di
 
 import android.content.Context
 import com.pablojuice.core.app.config.AppConfig
+import com.pablojuice.core.data.manager.UserPreferences
 import com.pablojuice.core.data.remote.api.factory.ApiFactory
 import com.pablojuice.core.data.remote.api.factory.RetrofitApiFactory
 import com.pablojuice.core.data.remote.api.http.NetworkUtils.createRetrofit
-import com.pablojuice.core.data.remote.auth.TokenManager
+import com.pablojuice.core.data.remote.auth.UserManager
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
@@ -30,5 +31,5 @@ object CoreNetworkModule {
 
     @Provides
     @Singleton
-    fun provideTokenManager(): TokenManager = TokenManager()
+    fun provideTokenManager(preferences: UserPreferences) = UserManager(preferences)
 }

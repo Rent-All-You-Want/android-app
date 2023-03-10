@@ -8,20 +8,17 @@ import dagger.Reusable
 import javax.inject.Inject
 
 @Reusable
-class RefreshTokenUseCase @Inject constructor(
+class AuthUserUseCase @Inject constructor(
     private val repository: SignInRepository,
     private val userPreferences: UserPreferences
 ) {
 
-    suspend operator fun invoke(): String? {
+    suspend operator fun invoke(tokenToRefresh: String): String? {
         var currentToken: String? = null
-        userPreferences.getUnsafe<String>(UserPreference.REFRESH_TOKEN).let { tokenToRefresh ->
-            if (tokenToRefresh.isNotEmpty()) {
-                repository.auth(AuthRequest(tokenToRefresh)).getOrNull()?.run {
-                    userPreferences.put(UserPreference.REFRESH_TOKEN, refreshToken)
-                    currentToken = accessToken
-                }
-            }
+        repository.auth(AuthRequest(tokenToRefresh)).getOrNull()?.run {
+            userPreferences.put(UserPreference.REFRESH_TOKEN, refreshToken)
+            userPreferences.put(UserPreference.ACCESS_TOKEN, accessToken)
+            currentToken = accessToken
         }
         return currentToken
     }
