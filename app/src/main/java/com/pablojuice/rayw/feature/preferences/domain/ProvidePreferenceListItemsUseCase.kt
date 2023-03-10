@@ -2,6 +2,7 @@ package com.pablojuice.rayw.feature.preferences.domain
 
 import com.pablojuice.core.R
 import com.pablojuice.core.app.config.AppConfig
+import com.pablojuice.core.data.remote.auth.UserManager
 import com.pablojuice.core.presentation.base.list.ListItem
 import com.pablojuice.core.presentation.navigation.NavigationEvent
 import com.pablojuice.core.presentation.text.label.asLabel
@@ -16,16 +17,31 @@ import javax.inject.Inject
 
 class ProvidePreferenceListItemsUseCase @Inject constructor(
     private val appConfig: AppConfig,
+    private val userManager: UserManager
 ) {
     operator fun invoke(navigationHandler: (NavigationEvent) -> Unit): List<ListItem> {
         return mutableListOf<ListItem>().apply {
-            addProfileSection("Pablo")
-            addLoginSection(navigationHandler)
+            Preference.values().filter { it.shouldBeVisibleForUser(userManager.isUserLoggedIn()) }
+                .forEach { preference ->
+                    preference.sectionTitle?.let { addSectionTitle(it) }
+                    if (preference.title != null && preference.icon != null) {
+                        addSectionItem(preference, navigationHandler)
+                    } else addCustomItem(preference, navigationHandler)
+                }
             addDevOptionsItem(navigationHandler)
-            repeat(10) { it ->
-                addSectionTitle("Section Header $it")
-                Preference.values().forEach { addSectionItem(it, navigationHandler) }
-            }
+        }
+    }
+
+    private fun MutableList<ListItem>.addCustomItem(
+        preference: Preference,
+        navigationHandler: (NavigationEvent) -> Unit
+    ) {
+        when (preference) {
+            Preference.EMPTY_PROFILE_CARD -> addProfileSection("User is not logged in :(")
+            Preference.PROFILE_CARD -> addProfileSection("User is logged in :)")
+            Preference.LOG_IN_PROPOSAL -> addLoginProposalSection(navigationHandler)
+            Preference.LOG_OUT -> addLoginProposalSection(navigationHandler)
+            else -> Unit
         }
     }
 
@@ -33,11 +49,11 @@ class ProvidePreferenceListItemsUseCase @Inject constructor(
         add(PreferenceProfileItem(username.asLabel(), R.drawable.ic_account_circle_medium))
     }
 
-    private fun MutableList<ListItem>.addLoginSection(navigationHandler: (NavigationEvent) -> Unit) {
+    private fun MutableList<ListItem>.addLoginProposalSection(navigationHandler: (NavigationEvent) -> Unit) {
         add(PreferenceLogInItem { navigationHandler(ToLoginScreen()) })
     }
 
-    private fun MutableList<ListItem>.addSectionTitle(title: String) {
+    private fun MutableList<ListItem>.addSectionTitle(title: Int) {
         add(PreferenceTitleItem(title.asLabel()))
     }
 
@@ -47,8 +63,8 @@ class ProvidePreferenceListItemsUseCase @Inject constructor(
     ) {
         add(
             PreferenceItem(
-                item.title.asLabel(),
-                item.icon,
+                item.title!!.asLabel(),
+                item.icon!!,
             ) { navigationHandler(item.navigationEvent) },
         )
     }

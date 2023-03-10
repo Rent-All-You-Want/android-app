@@ -1,15 +1,16 @@
 package com.pablojuice.rayw.feature.preferences.presentation.list
 
+import android.view.ViewGroup
 import com.pablojuice.core.presentation.base.list.ListItem
 import com.pablojuice.core.presentation.base.list.ViewHolder
 import com.pablojuice.core.presentation.text.label.setLabel
-import com.pablojuice.rayw.databinding.ItemPreferencesLoginBinding
-import com.pablojuice.rayw.databinding.ItemPreferencesProfileBinding
-import com.pablojuice.rayw.databinding.ItemPreferencesSectionBinding
-import com.pablojuice.rayw.databinding.ItemPreferencesSectionTitleBinding
+import com.pablojuice.core.presentation.view.layoutInflater
+import com.pablojuice.rayw.databinding.*
 
-class ProfileViewHolder(binding: ItemPreferencesProfileBinding) :
-    ViewHolder<ListItem, ItemPreferencesProfileBinding>(binding) {
+class ProfileViewHolder(parent: ViewGroup) :
+    ViewHolder<ListItem, ItemPreferencesProfileBinding>(
+        ItemPreferencesProfileBinding.inflate(parent.layoutInflater, parent, false)
+    ) {
 
     override fun bind(item: ListItem) {
         if (item is PreferenceProfileItem) {
@@ -19,8 +20,10 @@ class ProfileViewHolder(binding: ItemPreferencesProfileBinding) :
     }
 }
 
-class PreferenceLogInViewHolder(binding: ItemPreferencesLoginBinding) :
-    ViewHolder<ListItem, ItemPreferencesLoginBinding>(binding) {
+class PreferenceLogInViewHolder(parent: ViewGroup) :
+    ViewHolder<ListItem, ItemPreferencesLogInBinding>(
+        ItemPreferencesLogInBinding.inflate(parent.layoutInflater, parent, false)
+    ) {
 
     override fun bind(item: ListItem) {
         if (item is PreferenceLogInItem) {
@@ -29,8 +32,22 @@ class PreferenceLogInViewHolder(binding: ItemPreferencesLoginBinding) :
     }
 }
 
-class PreferenceSectionTitleViewHolder(binding: ItemPreferencesSectionTitleBinding) :
-    ViewHolder<ListItem, ItemPreferencesSectionTitleBinding>(binding) {
+class PreferenceLogOutViewHolder(parent: ViewGroup) :
+    ViewHolder<ListItem, ItemPreferencesLogOutBinding>(
+        ItemPreferencesLogOutBinding.inflate(parent.layoutInflater, parent, false)
+    ) {
+
+    override fun bind(item: ListItem) {
+        if (item is PreferenceLogOutItem) {
+            binding.logOutButton.setOnClickListener { item.onClick() }
+        }
+    }
+}
+
+class PreferenceSectionTitleViewHolder(parent: ViewGroup) :
+    ViewHolder<ListItem, ItemPreferencesSectionTitleBinding>(
+        ItemPreferencesSectionTitleBinding.inflate(parent.layoutInflater, parent, false)
+    ) {
 
     override fun bind(item: ListItem) {
         if (item is PreferenceTitleItem) {
@@ -39,8 +56,10 @@ class PreferenceSectionTitleViewHolder(binding: ItemPreferencesSectionTitleBindi
     }
 }
 
-class PreferenceSectionViewHolder(binding: ItemPreferencesSectionBinding) :
-    ViewHolder<ListItem, ItemPreferencesSectionBinding>(binding) {
+class PreferenceSectionViewHolder(parent: ViewGroup) :
+    ViewHolder<ListItem, ItemPreferencesSectionBinding>(
+        ItemPreferencesSectionBinding.inflate(parent.layoutInflater, parent, false)
+    ) {
 
     override fun bind(item: ListItem) {
         if (item is PreferenceItem) {

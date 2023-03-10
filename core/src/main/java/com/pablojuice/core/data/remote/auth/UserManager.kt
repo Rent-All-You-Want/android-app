@@ -12,7 +12,7 @@ class UserManager(
 
     private var _token: Token? = null
 
-    fun isUserLoggedIn() = _token?.isValid()
+    fun isUserLoggedIn() = _token.isValid()
 
     val token: String?
         get() {

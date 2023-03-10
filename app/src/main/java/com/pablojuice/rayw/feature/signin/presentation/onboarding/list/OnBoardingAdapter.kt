@@ -4,6 +4,7 @@ import android.view.ViewGroup
 import com.pablojuice.core.presentation.base.list.Adapter
 import com.pablojuice.core.presentation.base.list.ViewHolder
 import com.pablojuice.core.presentation.text.label.setLabel
+import com.pablojuice.core.presentation.view.layoutInflater
 import com.pablojuice.rayw.databinding.ItemOnboardingBinding
 import com.pablojuice.rayw.feature.signin.domain.usecase.OnBoardingListItem
 

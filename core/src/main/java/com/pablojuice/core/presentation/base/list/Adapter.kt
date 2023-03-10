@@ -1,7 +1,5 @@
 package com.pablojuice.core.presentation.base.list
 
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 
@@ -45,7 +43,4 @@ abstract class Adapter<Item : ListItem>(
     override fun getItemViewType(position: Int) = items[position].layoutId
 
     override fun getItemCount() = items.size
-
-    protected val ViewGroup.layoutInflater: LayoutInflater
-        get() = LayoutInflater.from(context)
 }
