@@ -12,6 +12,7 @@ import androidx.viewbinding.ViewBinding
 import com.pablojuice.core.presentation.base.screen.BaseFragment
 import com.pablojuice.core.presentation.navigation.NavigationEvent
 import com.pablojuice.core.presentation.navigation.NavigationHandler
+import com.pablojuice.core.utils.logging.Timber
 import kotlinx.coroutines.flow.Flow
 
 abstract class BasicFragment<VB : ViewBinding, VM : BasicViewModel> : BaseFragment<VB>(),
@@ -54,7 +55,8 @@ abstract class BasicFragment<VB : ViewBinding, VM : BasicViewModel> : BaseFragme
         event.destination?.let { destination ->
             navController.currentDestination?.getAction(destination.actionId)
                 ?.also { navController.navigate(destination, event.options) }
-        }
+                ?: Timber.e("Destination missing for ${navController.currentDestination} and $destination")
+        } ?: Timber.e("Destination id is null")
     }
 
     fun <T> Flow<T>.observeSafely(block: (T) -> Unit) =
