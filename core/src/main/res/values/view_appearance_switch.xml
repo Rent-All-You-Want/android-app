@@ -7,8 +7,8 @@
 
     <style name="ThemeOverlay.App.Switch" parent="">
         <item name="colorPrimaryContainer">?attr/colorOnPrimary</item>
-        <item name="colorOnSurfaceVariant">?attr/colorOnSurface</item>
-        <item name="colorOutline">?attr/colorOnBackgroundVariant</item>
+        <item name="colorOnSurfaceVariant">?attr/colorDisabled</item>
+        <item name="colorOutline">?attr/colorDisabled</item>
         <item name="colorSurfaceVariant">?attr/colorBackgroundVariant</item>
     </style>
 </resources>

@@ -5,6 +5,7 @@
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
         <item name="boxBackgroundColor">?attr/colorBackgroundVariant</item>
         <item name="boxBackgroundMode">outline</item>
+        <item name="android:textColorHint">?attr/colorDisabled</item>
         <item name="hintTextColor">?attr/colorOnBackground</item>
     </style>
 
