@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.signin.presentation.recovery
+package com.pablojuice.rayw.feature.signin.presentation.recovery.view
 
 import com.pablojuice.core.presentation.basic.BasicViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

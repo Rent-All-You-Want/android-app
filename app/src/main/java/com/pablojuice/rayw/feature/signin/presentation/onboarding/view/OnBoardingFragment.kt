@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
-import com.pablojuice.core.presentation.animation.AnimationConstants.SHORT_ANIMATION_TIME
+import com.pablojuice.core.presentation.animation.AnimationConstants.EXTRA_SHORT_ANIMATION_TIME
 import com.pablojuice.core.presentation.animation.list.AlphaPageTransformer
 import com.pablojuice.core.presentation.basic.BasicFragment
 import com.pablojuice.core.presentation.view.setVisible
@@ -75,7 +75,7 @@ class OnBoardingFragment : BasicFragment<FragmentOnboardingBinding, OnBoardingVi
             binding.progressBar.progress,
             (position + 1) * PAGE_PROGRESS_SCALE,
         )
-        animator.duration = SHORT_ANIMATION_TIME
+        animator.duration = EXTRA_SHORT_ANIMATION_TIME
         animator.addUpdateListener {
             binding.progressBar.progress = Integer.parseInt(it.animatedValue.toString())
         }
