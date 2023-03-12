@@ -47,7 +47,7 @@
         style="@style/text.bodyLarge"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/dimen_16"
+        android:layout_marginVertical="@dimen/dimen_8"
         android:gravity="center"
         android:text="@string/signin_start_renting"
         app:layout_constraintEnd_toEndOf="@+id/signup_title"
@@ -59,7 +59,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/dimen_32"
-        android:layout_marginVertical="@dimen/dimen_16"
+        android:layout_marginVertical="@dimen/dimen_8"
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/dimen_16"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,63 +67,54 @@
         app:layout_constraintTop_toBottomOf="@+id/signup_description">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/signup_input_layout"
+            android:id="@+id/email_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/signin_name">
+            android:hint="@string/signin_email"
+            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/signup_input_text"
+                android:id="@+id/email_input_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:hint="@string/signin_password"
+            app:endIconMode="password_toggle"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_input_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/accept_rules_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_4"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:text="@string/signin_agree_with_rules" />
+
         <TextView
-            style="@style/text.bodyMedium"
+            android:id="@+id/accept_rules_error"
+            style="@style/text.labelMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/dimen_8"
-            android:layout_marginTop="@dimen/dimen_8"
-            android:text="@string/signin_account_type" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_48"
-            android:layout_margin="@dimen/dimen_8"
-            android:background="@drawable/shape_rectangle_with_round_corners_medium"
-            android:backgroundTint="?attr/colorBackgroundVariant"
-            android:clipToPadding="true"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <Button
-                style="@style/view.button.medium.primary"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textAllCaps="false"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:text="@string/signin_personal" />
-
-            <Button
-                style="@style/view.button.text.secondary"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:enabled="false"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:text="@string/signin_business" />
-        </LinearLayout>
-
-        <com.google.android.material.materialswitch.MaterialSwitch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/dimen_16"
-            android:text="@string/signin_agree_with_rules" />
+            android:textColor="?attr/colorError" />
 
     </LinearLayout>
 
@@ -132,21 +123,21 @@
         style="@style/view.button.large.primary"
         android:layout_width="0dp"
         android:layout_marginHorizontal="@dimen/dimen_32"
-        android:layout_marginVertical="@dimen/dimen_16"
+        android:layout_marginVertical="@dimen/dimen_8"
         android:text="@string/signin_proceed"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signup_container" />
+        app:layout_constraintBottom_toTopOf="@+id/return_to_login_button"
+        app:layout_constraintEnd_toEndOf="@+id/signup_container"
+        app:layout_constraintStart_toStartOf="@+id/signup_container" />
 
     <Button
         android:id="@+id/return_to_login_button"
         style="@style/view.button.text.secondary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/dimen_8"
+        android:layout_marginVertical="@dimen/dimen_16"
         android:text="@string/signin_have_account"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/proceed_button"
-        app:layout_constraintStart_toStartOf="@+id/proceed_button"
-        app:layout_constraintTop_toBottomOf="@+id/proceed_button" />
+        app:layout_constraintStart_toStartOf="@+id/proceed_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

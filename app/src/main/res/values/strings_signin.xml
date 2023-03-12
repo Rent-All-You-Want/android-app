@@ -8,9 +8,12 @@
     <string name="signin_continue_with">Or continue with</string>
     <string name="signin_login">Login</string>
     <string name="signin_proceed">Proceed</string>
+    <string name="signin_start_rayw">Start RAYW\'ing</string>
     <string name="signin_email">E-mail</string>
+    <string name="signin_date">Birth date</string>
     <string name="signin_name">Name</string>
     <string name="signin_password">Password</string>
+    <string name="signin_repeat_password">Repeat password</string>
     <string name="signin_dont_remember_pass">Do not remember the password?</string>
     <string name="signin_agree_with_rules">I agree with rules</string>
     <string name="signin_account_type">Choose account type:</string>
