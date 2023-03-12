@@ -1,19 +1,17 @@
-package com.pablojuice.core.presentation.basic
+package com.pablojuice.core.presentation.view.fragment
 
 import android.os.Bundle
 import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
 import androidx.annotation.CallSuper
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
-import com.pablojuice.core.presentation.base.screen.BaseFragment
 import com.pablojuice.core.presentation.navigation.NavigationEvent
 import com.pablojuice.core.presentation.navigation.NavigationHandler
+import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.core.utils.logging.Timber
-import kotlinx.coroutines.flow.Flow
 
 abstract class BasicFragment<VB : ViewBinding, VM : BasicViewModel> : BaseFragment<VB>(),
     NavigationHandler {
@@ -21,8 +19,7 @@ abstract class BasicFragment<VB : ViewBinding, VM : BasicViewModel> : BaseFragme
 
     protected open val canNavigateBack = true
 
-    protected val navController: NavController
-        get() = findNavController()
+    private val navController: NavController by lazy { findNavController() }
 
     private lateinit var navigateBackCallback: OnBackPressedCallback
 
@@ -34,7 +31,7 @@ abstract class BasicFragment<VB : ViewBinding, VM : BasicViewModel> : BaseFragme
     private fun setupNavigation() {
         navigateBackCallback =
             requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) { navigateBack() }
-        viewModel.navigationEvents.observeSafely(::navigate)
+        submitJob(viewModel.navigationEvents.observe(::navigate))
     }
 
     fun setNavigationBackEnabled(isEnabled: Boolean) {
@@ -58,7 +55,4 @@ abstract class BasicFragment<VB : ViewBinding, VM : BasicViewModel> : BaseFragme
                 ?: Timber.e("Destination missing for ${navController.currentDestination} and $destination")
         } ?: Timber.e("Destination id is null")
     }
-
-    fun <T> Flow<T>.observeSafely(block: (T) -> Unit) =
-        lifecycleScope.launchWhenStarted { collect(block) }
 }

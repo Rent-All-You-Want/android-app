@@ -1,6 +1,5 @@
-package com.pablojuice.core.presentation.basic
+package com.pablojuice.core.presentation.viewmodel
 
-import com.pablojuice.core.presentation.base.screen.BaseViewModel
 import com.pablojuice.core.presentation.navigation.NavigationEvent
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow

@@ -1,4 +1,4 @@
-package com.pablojuice.core.presentation.base.screen
+package com.pablojuice.core.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

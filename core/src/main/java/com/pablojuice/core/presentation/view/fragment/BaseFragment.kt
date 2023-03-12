@@ -1,4 +1,4 @@
-package com.pablojuice.core.presentation.base.screen
+package com.pablojuice.core.presentation.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.CallSuper
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collectLatest
 
 private const val INFLATE_METHOD = "inflate"
 
@@ -18,6 +22,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     val binding: VB
         get() = _binding!!
 
+    private val jobsToClear = mutableListOf<Job>()
 
     abstract fun bindLayout(
         inflater: LayoutInflater,
@@ -44,10 +49,21 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
         }
     }
 
+    @CallSuper
     override fun onDestroyView() {
         _binding = null
+        jobsToClear.forEach { job -> job.cancel() }
+        jobsToClear.clear()
         super.onDestroyView()
     }
+
+    fun submitJob(jobToClear: Job) = jobsToClear.add(jobToClear).let { jobToClear }
+
+    fun <T> Flow<T>.observe(block: (T) -> Unit) =
+        lifecycleScope.launchWhenCreated { collectLatest(block) }
+
+    fun <T> Flow<T>.observeCleanable(block: (T) -> Unit) =
+        submitJob(lifecycleScope.launchWhenCreated { collectLatest(block) })
 
     //TODO TEST SPEED
 //    protected var bindingClass: Class<VB>? = null
