@@ -6,6 +6,7 @@ data class RegisterRequest(
     val firstName: String,
     val secondName: String,
     val birthDate: String,
+    val phoneNumber: String,
     val email: String,
     val password: String
 ) : ApiRequest()

@@ -5,7 +5,7 @@ import com.pablojuice.core.presentation.base.list.Adapter
 import com.pablojuice.core.presentation.base.list.ListItem
 import com.pablojuice.rayw.R
 
-class PreferencesAdapter(items: List<ListItem> = emptyList()) : Adapter<ListItem>() {
+class PreferencesAdapter : Adapter<ListItem>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
