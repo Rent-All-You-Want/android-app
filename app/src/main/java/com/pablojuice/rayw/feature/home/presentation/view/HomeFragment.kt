@@ -9,10 +9,10 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
-import com.pablojuice.core.presentation.basic.BasicFragment
-import com.pablojuice.core.presentation.basic.BasicViewModel
 import com.pablojuice.core.presentation.navigation.NavigationAnimation
 import com.pablojuice.core.presentation.navigation.NavigationEvent
+import com.pablojuice.core.presentation.view.fragment.BasicFragment
+import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.rayw.R
 import com.pablojuice.rayw.databinding.FragmentHomeBinding
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToCreateNewItemScreen

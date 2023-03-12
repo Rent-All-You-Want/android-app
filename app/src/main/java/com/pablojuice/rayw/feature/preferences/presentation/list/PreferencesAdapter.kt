@@ -1,8 +1,8 @@
 package com.pablojuice.rayw.feature.preferences.presentation.list
 
 import android.view.ViewGroup
-import com.pablojuice.core.presentation.base.list.Adapter
-import com.pablojuice.core.presentation.base.list.ListItem
+import com.pablojuice.core.presentation.view.list.Adapter
+import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.rayw.R
 
 class PreferencesAdapter : Adapter<ListItem>() {

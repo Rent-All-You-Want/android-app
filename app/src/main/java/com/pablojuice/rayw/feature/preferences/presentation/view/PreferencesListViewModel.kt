@@ -1,7 +1,7 @@
 package com.pablojuice.rayw.feature.preferences.presentation.view
 
-import com.pablojuice.core.presentation.base.list.ListItem
-import com.pablojuice.core.presentation.basic.BasicViewModel
+import com.pablojuice.core.presentation.view.list.ListItem
+import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.rayw.feature.preferences.domain.ProvidePreferenceListItemsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

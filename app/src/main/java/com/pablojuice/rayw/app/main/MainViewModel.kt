@@ -4,7 +4,7 @@ import com.pablojuice.core.app.config.AppConfig
 import com.pablojuice.core.data.manager.UserPreference
 import com.pablojuice.core.data.manager.UserPreferences
 import com.pablojuice.core.data.remote.auth.UserManager
-import com.pablojuice.core.presentation.base.screen.BaseViewModel
+import com.pablojuice.core.presentation.viewmodel.BaseViewModel
 import com.pablojuice.core.utils.NumberUtils.UNDEFINED
 import com.pablojuice.core.utils.logging.Timber
 import com.pablojuice.rayw.R

@@ -1,7 +1,7 @@
 package com.pablojuice.rayw.feature.preferences.presentation.list
 
-import com.pablojuice.core.presentation.base.list.ListItem
 import com.pablojuice.core.presentation.text.label.Label
+import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.rayw.R
 
 class PreferenceProfileItem(val userName: Label, val userIcon: Int) :

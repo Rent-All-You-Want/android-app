@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.textfield.TextInputLayout
-import com.pablojuice.core.presentation.base.screen.BaseFragment
+import com.pablojuice.core.presentation.view.fragment.BaseFragment
 import com.pablojuice.rayw.databinding.FragmentDevOptionsBinding
 
 class DevOptionsFragment : BaseFragment<FragmentDevOptionsBinding>() {

@@ -27,8 +27,8 @@ class PreferencesListFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.recycler.adapter = PreferencesAdapter()
-        viewModel.items.observeSafely { items ->
-            if (items.isEmpty()) return@observeSafely
+        viewModel.items.observe { items ->
+            if (items.isEmpty()) return@observe
             (binding.recycler.adapter as? PreferencesAdapter)?.setItems(items)
         }
         viewModel.loadItems()

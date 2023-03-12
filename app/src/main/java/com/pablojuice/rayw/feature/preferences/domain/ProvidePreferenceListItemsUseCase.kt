@@ -3,9 +3,9 @@ package com.pablojuice.rayw.feature.preferences.domain
 import com.pablojuice.core.R
 import com.pablojuice.core.app.config.AppConfig
 import com.pablojuice.core.data.remote.auth.UserManager
-import com.pablojuice.core.presentation.base.list.ListItem
 import com.pablojuice.core.presentation.navigation.NavigationEvent
 import com.pablojuice.core.presentation.text.label.asLabel
+import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToDevOptionsScreen
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToLoginScreen
 import com.pablojuice.rayw.feature.preferences.data.local.Preference

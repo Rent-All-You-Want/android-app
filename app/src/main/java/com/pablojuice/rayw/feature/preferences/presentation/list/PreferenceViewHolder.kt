@@ -1,10 +1,10 @@
 package com.pablojuice.rayw.feature.preferences.presentation.list
 
 import android.view.ViewGroup
-import com.pablojuice.core.presentation.base.list.ListItem
-import com.pablojuice.core.presentation.base.list.ViewHolder
 import com.pablojuice.core.presentation.text.label.setLabel
 import com.pablojuice.core.presentation.view.layoutInflater
+import com.pablojuice.core.presentation.view.list.ListItem
+import com.pablojuice.core.presentation.view.list.ViewHolder
 import com.pablojuice.rayw.databinding.*
 
 class ProfileViewHolder(parent: ViewGroup) :
