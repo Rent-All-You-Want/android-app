@@ -1,6 +1,6 @@
 package com.pablojuice.rayw.feature.signin.presentation.recovery.view
 
-import com.pablojuice.core.presentation.basic.BasicViewModel
+import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

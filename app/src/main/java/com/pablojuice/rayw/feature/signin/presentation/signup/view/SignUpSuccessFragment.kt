@@ -4,16 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
-import com.pablojuice.core.presentation.basic.BasicFragment
+import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
+import com.pablojuice.core.presentation.view.fragment.BasicFragment
+import com.pablojuice.rayw.R
 import com.pablojuice.rayw.databinding.FragmentSignupSuccessBinding
-import com.pablojuice.rayw.feature.home.presentation.navigation.BackToHomeScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SignUpSuccessFragment : BasicFragment<FragmentSignupSuccessBinding, SignUpViewModel>() {
 
-    override val viewModel: SignUpViewModel by viewModels()
+    override val viewModel: SignUpViewModel by hiltNavGraphViewModels(R.id.signin_graph)
+
+    override val canNavigateBack: Boolean = false
 
     override fun bindLayout(
         inflater: LayoutInflater,
@@ -23,8 +25,6 @@ class SignUpSuccessFragment : BasicFragment<FragmentSignupSuccessBinding, SignUp
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.successProceed.setOnClickListener {
-            navigate(BackToHomeScreen())
-        }
+        binding.successProceed.setOnClickListener { viewModel.backToHomeScreen() }
     }
 }

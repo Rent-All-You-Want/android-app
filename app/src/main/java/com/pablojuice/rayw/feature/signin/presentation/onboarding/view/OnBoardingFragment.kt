@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.pablojuice.core.presentation.animation.AnimationConstants.EXTRA_SHORT_ANIMATION_TIME
 import com.pablojuice.core.presentation.animation.list.AlphaPageTransformer
-import com.pablojuice.core.presentation.basic.BasicFragment
+import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.setVisible
 import com.pablojuice.rayw.databinding.FragmentOnboardingBinding
 import com.pablojuice.rayw.feature.signin.presentation.onboarding.list.OnBoardingAdapter
