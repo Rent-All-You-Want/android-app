@@ -1,9 +1,6 @@
 package com.pablojuice.rayw.feature.signin.presentation.signup.view
 
-import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.view.children
 import androidx.core.widget.doOnTextChanged
 import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
@@ -23,19 +20,10 @@ class SignUpStepOneFragment : BasicFragment<FragmentSignupStepOneBinding, SignUp
 
     override val viewModel: SignUpViewModel by hiltNavGraphViewModels(R.id.signin_graph)
 
-    override fun bindLayout(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        attachToParent: Boolean
-    ) = FragmentSignupStepOneBinding.inflate(inflater, container, attachToParent)
+    override val layoutClass = FragmentSignupStepOneBinding::class.java
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setupListeners()
+    override fun setupScreen() {
         setupStateListener()
-    }
-
-    private fun setupListeners() {
         binding.signupToolBar.setIconClickListener(::navigateBack)
         binding.setOnKeyboardVisibilityChangedListener { isKeyboardVisible ->
             binding.signupIcon.setVisible(!isKeyboardVisible)

@@ -1,9 +1,6 @@
 package com.pablojuice.rayw.feature.signin.presentation.login.view
 
-import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.view.children
 import androidx.core.widget.doOnTextChanged
 import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
@@ -23,19 +20,10 @@ class LogInFragment : BasicFragment<FragmentLoginBinding, LogInViewModel>() {
 
     override val viewModel: LogInViewModel by hiltNavGraphViewModels(R.id.signin_graph)
 
-    override fun bindLayout(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        attachToParent: Boolean
-    ) = FragmentLoginBinding.inflate(inflater, container, attachToParent)
+    override val layoutClass = FragmentLoginBinding::class.java
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setupListeners()
+    override fun setupScreen() {
         setupStateListener()
-    }
-
-    private fun setupListeners() {
         binding.logInButton.setOnClickListener { viewModel.logIn() }
         binding.loginToolBar.setIconClickListener(::navigateBack)
         binding.setOnKeyboardVisibilityChangedListener { isKeyboardVisible ->

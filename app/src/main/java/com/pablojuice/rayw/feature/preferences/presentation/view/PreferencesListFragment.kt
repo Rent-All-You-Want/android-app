@@ -1,9 +1,5 @@
 package com.pablojuice.rayw.feature.preferences.presentation.view
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.pablojuice.rayw.databinding.FragmentPreferencesListBinding
 import com.pablojuice.rayw.feature.home.presentation.view.HomeFragment
@@ -16,16 +12,11 @@ class PreferencesListFragment :
 
     override val viewModel: PreferencesListViewModel by viewModels()
 
+    override val layoutClass = FragmentPreferencesListBinding::class.java
+
     override val canNavigateBack: Boolean = false
 
-    override fun bindLayout(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        attachToParent: Boolean
-    ) = FragmentPreferencesListBinding.inflate(inflater, container, attachToParent)
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun setupScreen() {
         binding.recycler.adapter = PreferencesAdapter()
         viewModel.items.observe { items ->
             if (items.isEmpty()) return@observe
@@ -33,6 +24,4 @@ class PreferencesListFragment :
         }
         viewModel.loadItems()
     }
-
-
 }

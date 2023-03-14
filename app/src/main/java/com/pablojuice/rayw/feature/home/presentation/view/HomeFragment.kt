@@ -1,9 +1,5 @@
 package com.pablojuice.rayw.feature.home.presentation.view
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -23,18 +19,11 @@ class HomeFragment : BasicFragment<FragmentHomeBinding, HomeViewModel>() {
 
     override val viewModel: HomeViewModel by viewModels()
 
+    override val layoutClass = FragmentHomeBinding::class.java
+
     override val canNavigateBack: Boolean = false
 
-    override fun bindLayout(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        attachToParent: Boolean
-    ) = FragmentHomeBinding.inflate(inflater, container, attachToParent)
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setupNavigationListener()
-    }
+    override fun setupScreen() = setupNavigationListener()
 
     private fun setupNavigationListener() {
         val controller =

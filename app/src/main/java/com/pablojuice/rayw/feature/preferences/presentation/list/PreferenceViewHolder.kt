@@ -5,6 +5,7 @@ import com.pablojuice.core.presentation.text.label.setLabel
 import com.pablojuice.core.presentation.view.layoutInflater
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.view.list.ViewHolder
+import com.pablojuice.core.presentation.view.setClickListener
 import com.pablojuice.rayw.databinding.*
 
 class ProfileViewHolder(parent: ViewGroup) :
@@ -27,7 +28,7 @@ class PreferenceLogInViewHolder(parent: ViewGroup) :
 
     override fun bind(item: ListItem) {
         if (item is PreferenceLogInItem) {
-            binding.logInButton.setOnClickListener { item.onClick() }
+            binding.logInButton.setClickListener(item.onClick)
         }
     }
 }
@@ -39,7 +40,7 @@ class PreferenceLogOutViewHolder(parent: ViewGroup) :
 
     override fun bind(item: ListItem) {
         if (item is PreferenceLogOutItem) {
-            binding.logOutButton.setOnClickListener { item.onClick() }
+            binding.logOutButton.setClickListener(item.onClick)
         }
     }
 }
@@ -65,7 +66,7 @@ class PreferenceSectionViewHolder(parent: ViewGroup) :
         if (item is PreferenceItem) {
             binding.sectionIcon.setImageResource(item.icon)
             binding.sectionNameLabel.setLabel(item.title)
-            binding.sectionContainer.setOnClickListener { item.onClick() }
+            binding.sectionContainer.setClickListener(item.onClick)
         }
     }
 }

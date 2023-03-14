@@ -1,9 +1,5 @@
 package com.pablojuice.rayw.feature.item.presentation.create
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.rayw.databinding.FragmentCreateNewItemBinding
@@ -15,13 +11,9 @@ class CreateNewItemFragment :
 
     override val viewModel: CreateNewItemViewModel by viewModels()
 
-    override fun bindLayout(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        attachToParent: Boolean
-    ) = FragmentCreateNewItemBinding.inflate(inflater, container, attachToParent)
+    override val layoutClass = FragmentCreateNewItemBinding::class.java
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun setupScreen() {
+        binding.itemToolBar.setIconClickListener(::navigateBack)
     }
 }

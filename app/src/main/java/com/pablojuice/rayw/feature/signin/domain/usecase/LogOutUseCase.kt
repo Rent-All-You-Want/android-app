@@ -7,9 +7,9 @@ import javax.inject.Inject
 class LogOutUseCase @Inject constructor(
     private val userManager: UserManager,
     private val userPreferences: UserPreferences
-) {
+) : () -> Unit {
 
-    operator fun invoke() {
+    override fun invoke() {
         userPreferences.clear()
         userManager.clearUser()
     }

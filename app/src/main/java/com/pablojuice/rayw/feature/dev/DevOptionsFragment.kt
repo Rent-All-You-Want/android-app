@@ -1,21 +1,14 @@
 package com.pablojuice.rayw.feature.dev
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import com.google.android.material.textfield.TextInputLayout
 import com.pablojuice.core.presentation.view.fragment.BaseFragment
 import com.pablojuice.rayw.databinding.FragmentDevOptionsBinding
 
 class DevOptionsFragment : BaseFragment<FragmentDevOptionsBinding>() {
 
-    override fun bindLayout(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        attachToParent: Boolean,
-    ) = FragmentDevOptionsBinding.inflate(inflater, container, attachToParent)
-
+    override val layoutClass = FragmentDevOptionsBinding::class.java
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
