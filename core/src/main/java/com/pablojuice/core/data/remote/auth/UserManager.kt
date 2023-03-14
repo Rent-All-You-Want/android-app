@@ -10,24 +10,22 @@ class UserManager(
     private val userPreferences: UserPreferences
 ) {
 
+    private var isUpdatingUser: Boolean = false
+
     var managedUser: ManagedUser? = null
         private set
 
     fun isUserLoggedIn() = managedUser.isTokenValid()
 
+    fun clearUser() {
+        managedUser = null
+    }
+
     val token: String?
         get() {
-            if (!managedUser.isTokenValid()) {
+            if (!managedUser.isTokenValid() && !isUpdatingUser) {
                 Timber.i("Token is not valid")
-                userPreferences.getUnsafe<String>(UserPreference.REFRESH_TOKEN)
-                    .let { tokenToRefresh ->
-                        Timber.i("Updating token with refresh token $tokenToRefresh")
-                        if (tokenToRefresh.isNotEmpty())
-                            onTokenExpire(tokenToRefresh)?.run {
-                                managedUser = this
-                                Timber.i("New token received $this")
-                            }
-                    }
+                updateToken()
             }
             return managedUser?.token
         }
@@ -37,11 +35,26 @@ class UserManager(
     var onTokenExpire: OnTokenExpire? = null
         set(value) {
             field = value
-            token
+            updateToken()
         }
 
     private fun ManagedUser?.isTokenValid() =
         this != null && expireTime > System.currentTimeMillis()
+
+    fun updateToken() {
+        isUpdatingUser = true
+        userPreferences.getUnsafe<String>(UserPreference.REFRESH_TOKEN)
+            .let { tokenToRefresh ->
+                if (tokenToRefresh.isNotEmpty()) {
+                    Timber.i("Updating token with refresh token $tokenToRefresh")
+                    onTokenExpire(tokenToRefresh)?.run {
+                        managedUser = this
+                        isUpdatingUser = false
+                        Timber.i("New token received $this")
+                    }
+                } else isUpdatingUser = false
+            }
+    }
 
     fun interface OnTokenExpire {
         operator fun invoke(refreshToken: String): String?

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.children
 import androidx.core.widget.doOnTextChanged
 import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import com.pablojuice.core.presentation.text.label.setErrorLabel
@@ -38,6 +39,7 @@ class SignUpStepOneFragment : BasicFragment<FragmentSignupStepOneBinding, SignUp
         binding.signupToolBar.setIconClickListener(::navigateBack)
         binding.setOnKeyboardVisibilityChangedListener { isKeyboardVisible ->
             binding.signupIcon.setVisible(!isKeyboardVisible)
+            if (isVisible) keepFocusAfterAnimation()
         }
         binding.proceedButton.setClickListener(viewModel::proceedToSecondStep)
         binding.returnToLoginButton.setClickListener(::navigateBack)
@@ -60,8 +62,16 @@ class SignUpStepOneFragment : BasicFragment<FragmentSignupStepOneBinding, SignUp
         }
     }
 
-    override fun onDestroyView() {
+    private fun keepFocusAfterAnimation() {
+        var focusedView: View? = null
+        binding.signupContainer.children.iterator().forEach { view ->
+            if (view.hasFocus()) focusedView = view
+        }
+        binding.signupIcon.post { focusedView?.requestFocus() }
+    }
+
+    override fun onPause() {
         hideKeyboardIfOpened()
-        super.onDestroyView()
+        super.onPause()
     }
 }

@@ -34,7 +34,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/dimen_32"
-        android:layout_marginVertical="@dimen/dimen_8"
+        android:layout_marginTop="@dimen/dimen_8"
+        app:layout_goneMarginTop="0dp"
         android:gravity="center"
         android:text="@string/signin_login_now"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +59,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/dimen_32"
-        android:layout_marginVertical="@dimen/dimen_16"
+        android:layout_marginVertical="@dimen/dimen_8"
         android:orientation="vertical"
         android:padding="@dimen/dimen_16"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,13 +67,13 @@
         app:layout_constraintTop_toBottomOf="@+id/login_description">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/login_input_layout"
+            android:id="@+id/email_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/signin_email">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/login_input_text"
+                android:id="@+id/email_input_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true" />
@@ -112,7 +113,7 @@
         style="@style/view.button.large.primary"
         android:layout_width="0dp"
         android:layout_marginHorizontal="@dimen/dimen_32"
-        android:layout_marginVertical="@dimen/dimen_8"
+        android:layout_marginVertical="@dimen/dimen_4"
         android:text="@string/signin_log_in"
         app:layout_constraintBottom_toTopOf="@+id/sign_up_button"
         app:layout_constraintEnd_toEndOf="@+id/log_in_container"
@@ -123,7 +124,6 @@
         style="@style/view.button.text.secondary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/dimen_16"
         android:text="@string/signin_dont_have_account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/log_in_button"

@@ -11,9 +11,9 @@ import com.pablojuice.rayw.databinding.FragmentLoginSuccessBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LogInSuccessFragment : BasicFragment<FragmentLoginSuccessBinding, LoginViewModel>() {
+class LogInSuccessFragment : BasicFragment<FragmentLoginSuccessBinding, LogInViewModel>() {
 
-    override val viewModel: LoginViewModel by hiltNavGraphViewModels(R.id.signin_graph)
+    override val viewModel: LogInViewModel by hiltNavGraphViewModels(R.id.signin_graph)
 
     override val canNavigateBack: Boolean = false
 

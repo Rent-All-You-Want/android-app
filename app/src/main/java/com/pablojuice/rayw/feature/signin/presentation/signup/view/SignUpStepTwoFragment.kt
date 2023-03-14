@@ -4,18 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.children
+import androidx.core.widget.doOnTextChanged
 import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.pablojuice.core.presentation.text.label.setErrorLabel
 import com.pablojuice.core.presentation.utils.setOnKeyboardVisibilityChangedListener
 import com.pablojuice.core.presentation.view.dialog.showDialog
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.fragment.hideKeyboardIfOpened
+import com.pablojuice.core.presentation.view.setClickListener
 import com.pablojuice.core.presentation.view.setVisible
-import com.pablojuice.core.utils.logging.Timber
 import com.pablojuice.rayw.R
 import com.pablojuice.rayw.databinding.FragmentSignupStepTwoBinding
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.*
 
 @AndroidEntryPoint
 class SignUpStepTwoFragment : BasicFragment<FragmentSignupStepTwoBinding, SignUpViewModel>() {
@@ -24,14 +26,9 @@ class SignUpStepTwoFragment : BasicFragment<FragmentSignupStepTwoBinding, SignUp
 
     private val dateDialog by lazy {
         MaterialDatePicker.Builder.datePicker()
-            .setTitleText("title")
+            .setTitleText(getString(R.string.signin_birth_date))
             .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
-            .build().also { dialog ->
-                dialog.addOnPositiveButtonClickListener {
-                    val date = Date(it)
-                    Timber.e("fuck $it $date")
-                }
-            }
+            .build()
     }
 
     override fun bindLayout(
@@ -43,20 +40,41 @@ class SignUpStepTwoFragment : BasicFragment<FragmentSignupStepTwoBinding, SignUp
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupListeners()
+        setupStateListener()
     }
 
     private fun setupListeners() {
-        binding.signupToolBar.setIconClickListener(::navigateBack)
         binding.setOnKeyboardVisibilityChangedListener { isKeyboardVisible ->
             binding.signupIcon.setVisible(!isKeyboardVisible)
+            if (isVisible) keepFocusAfterAnimation()
         }
-        binding.dateInputText.setOnClickListener { showDialog(dateDialog) }
-
-        binding.proceedButton.setOnClickListener { viewModel.proceedToSuccessStep() }
+        binding.signupToolBar.setIconClickListener(::navigateBack)
+        binding.proceedButton.setClickListener(viewModel::proceedToSuccessStep)
     }
 
-    override fun onDestroyView() {
+    private fun setupStateListener() {
+        dateDialog.addOnPositiveButtonClickListener(viewModel::setBirthDate)
+        binding.dateInputText.setOnClickListener { showDialog(dateDialog) }
+        binding.nameInputLayout.editText?.doOnTextChanged { text, _, _, _ ->
+            viewModel.setName(text.toString())
+        }
+        viewModel.state.observeCleanable { state ->
+            binding.nameInputLayout.setErrorLabel(state.nameError)
+            binding.dateInputLayout.editText?.setText(state.birthDate)
+            binding.dateInputLayout.setErrorLabel(state.birthDateError)
+        }
+    }
+
+    private fun keepFocusAfterAnimation() {
+        var focusedView: View? = null
+        binding.signupContainer.children.iterator().forEach { view ->
+            if (view.hasFocus()) focusedView = view
+        }
+        binding.signupIcon.post { focusedView?.requestFocus() }
+    }
+
+    override fun onPause() {
         hideKeyboardIfOpened()
-        super.onDestroyView()
+        super.onPause()
     }
 }

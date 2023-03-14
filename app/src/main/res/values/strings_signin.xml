@@ -3,6 +3,7 @@
     <string name="signin_log_in">Log in</string>
     <string name="signin_log_out">Log out</string>
     <string name="signin_sign_up">Sign Up</string>
+    <string name="signin_birth_date">Select your birth date</string>
     <string name="signin_dont_have_account">I don\'t have account yet</string>
     <string name="signin_have_account">I already have account</string>
     <string name="signin_continue_with">Or continue with</string>
