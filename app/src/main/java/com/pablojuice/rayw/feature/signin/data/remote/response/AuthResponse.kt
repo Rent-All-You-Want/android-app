@@ -15,7 +15,7 @@ data class Tokens(
 data class SimpleUser(
     val firstName: String,
     val secondName: String,
-    val avatarImage: UserAvatar,
+    val avatarImage: UserAvatar?,
     val roles: List<UserRole>
 )
 

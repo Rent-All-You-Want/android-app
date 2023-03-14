@@ -25,7 +25,10 @@ abstract class BasicFragment<VB : ViewBinding, VM : BasicViewModel> : BaseFragme
     @CallSuper
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setupNavigation()
+        setupScreen()
     }
+
+    protected open fun setupScreen() = Unit
 
     private fun setupNavigation() {
         navigateBackCallback =

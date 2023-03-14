@@ -2,4 +2,5 @@ package com.pablojuice.core.presentation.view
 
 import android.view.View
 
-fun View.setClickListener(listener: () -> Unit) = setOnClickListener { listener() }
+inline fun View.setClickListener(crossinline listener: () -> Unit) =
+    setOnClickListener { listener() }

@@ -11,6 +11,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:id="@+id/recycler"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/dimen_64"
         android:fadeScrollbars="true"
         android:scrollbarThumbVertical="@drawable/shape_scrollbar"
         android:overScrollMode="ifContentScrolls"

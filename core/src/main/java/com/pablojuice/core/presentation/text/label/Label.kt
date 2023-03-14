@@ -35,4 +35,5 @@ fun TextView.setErrorLabel(label: Label?) {
 
 fun TextInputLayout.setErrorLabel(label: Label?) {
     error = label?.get(context)
+    if (label == null) isErrorEnabled = false
 }
