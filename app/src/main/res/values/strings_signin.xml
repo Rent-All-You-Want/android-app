@@ -29,4 +29,9 @@
     <string name="signin_log_in_success">You\'ve been logged in successfully</string>
     <string name="signin_sign_up_success">You\'ve been signed up successfully</string>
     <string name="signin_recovery_success">Your password had been recovered successfully</string>
+    <string name="signin_logout_log_out">Log out</string>
+    <string name="signin_logout_are_you_sure_about_log_out">Are you definitely want to log out?</string>
+    <string name="signin_logout_yes">Yes, log out</string>
+    <string name="signin_logout_no">No</string>
+
 </resources>

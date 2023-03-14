@@ -21,43 +21,59 @@ enum class Preference(
     MY_RENTS_IN(
         sectionTitle = R.string.preference_section_rents,
         title = R.string.preference_rent_in,
-        icon = com.pablojuice.core.R.drawable.ic_android_medium
+        icon = com.pablojuice.core.R.drawable.ic_android_medium,
+        shouldBeVisibleForUser = { it }
     ),
     MY_RENTS_OUT(
         title = R.string.preference_rent_out,
-        icon = com.pablojuice.core.R.drawable.ic_android_medium
+        icon = com.pablojuice.core.R.drawable.ic_android_medium,
+        shouldBeVisibleForUser = { it }
+    ),
+    PENDING_RENTS(
+        title = R.string.preference_pending_rents,
+        icon = com.pablojuice.core.R.drawable.ic_android_medium,
+        shouldBeVisibleForUser = { it }
+    ),
+    RET_REQUESTS(
+        title = R.string.preference_rent_requests,
+        icon = com.pablojuice.core.R.drawable.ic_android_medium,
+        shouldBeVisibleForUser = { it }
     ),
     STATISTICS(
         title = R.string.preference_statistics,
-        icon = com.pablojuice.core.R.drawable.ic_insights_medium
+        icon = com.pablojuice.core.R.drawable.ic_insights_medium,
+        shouldBeVisibleForUser = { it }
     ),
 
-    PROFILE_SETTINGS(
-        sectionTitle = R.string.preference_section_settings,
-        title = R.string.preference_profile_settings,
-        icon = com.pablojuice.core.R.drawable.ic_manage_accounts_medium
-    ),
     APP_SETTINGS(
+        sectionTitle = R.string.preference_section_settings,
         title = R.string.preference_app_settings,
         icon = com.pablojuice.core.R.drawable.ic_settings_medium
+    ),
+    PROFILE_SETTINGS(
+        title = R.string.preference_profile_settings,
+        icon = com.pablojuice.core.R.drawable.ic_manage_accounts_medium,
+        shouldBeVisibleForUser = { it }
     ),
     HELP(
         title = R.string.preference_help,
         icon = com.pablojuice.core.R.drawable.ic_support_medium
     ),
 
-    ABOUT_RAYW(
-        sectionTitle = R.string.preference_section_about,
-        title = R.string.preference_about_rayw,
-        icon = com.pablojuice.core.R.drawable.ic_android_medium
-    ),
     PRIVACY_POLICY(
+        sectionTitle = R.string.preference_section_legal,
         title = R.string.preference_privacy_policy,
         icon = com.pablojuice.core.R.drawable.ic_security_medium
     ),
     TERMS_OF_USE(
         title = R.string.preference_terms_of_use,
         icon = com.pablojuice.core.R.drawable.ic_gavel_medium
+    ),
+
+    ABOUT_RAYW(
+        sectionTitle = R.string.preference_section_about,
+        title = R.string.preference_about_rayw,
+        icon = com.pablojuice.core.R.drawable.ic_android_medium
     ),
     ABOUT_APP(
         title = R.string.preference_about_app,
