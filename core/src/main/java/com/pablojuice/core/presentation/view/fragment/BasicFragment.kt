@@ -11,7 +11,6 @@ import androidx.viewbinding.ViewBinding
 import com.pablojuice.core.presentation.navigation.NavigationEvent
 import com.pablojuice.core.presentation.navigation.NavigationHandler
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
-import com.pablojuice.core.utils.logging.Timber
 
 abstract class BasicFragment<VB : ViewBinding, VM : BasicViewModel> : BaseFragment<VB>(),
     NavigationHandler {
@@ -42,17 +41,5 @@ abstract class BasicFragment<VB : ViewBinding, VM : BasicViewModel> : BaseFragme
         if (canNavigateBack) navController.popBackStack()
     }
 
-    override fun navigate(event: NavigationEvent) =
-        navigateIfDestinationExists(event, navController)
-
-    protected open fun navigateIfDestinationExists(
-        event: NavigationEvent,
-        navController: NavController
-    ) {
-        event.destination?.let { destination ->
-            navController.currentDestination?.getAction(destination.actionId)
-                ?.also { navController.navigate(destination, event.options) }
-                ?: Timber.e("Destination missing for ${navController.currentDestination} and $destination")
-        } ?: Timber.e("Destination id is null")
-    }
+    override fun navigate(event: NavigationEvent) = event.handle(navController)
 }

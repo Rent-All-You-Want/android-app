@@ -53,8 +53,7 @@ class HomeFragment : BasicFragment<FragmentHomeBinding, HomeViewModel>() {
     abstract class HomeChildFragment<VB : ViewBinding, VM : BasicViewModel> :
         BasicFragment<VB, VM>() {
 
-        override fun navigate(event: NavigationEvent) =
-            navigateIfDestinationExists(event, homeNavigationController)
+        override fun navigate(event: NavigationEvent) = event.handle(homeNavigationController)
 
         fun navigateInsideHome(event: NavigationEvent) = super.navigate(event)
 

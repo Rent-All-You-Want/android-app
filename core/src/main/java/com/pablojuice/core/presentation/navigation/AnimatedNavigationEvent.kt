@@ -7,7 +7,7 @@ import com.pablojuice.core.R
 abstract class AnimatedNavigationEvent(
     destination: NavDirections?,
     navigationAnimation: NavigationAnimation = NavigationAnimation.None
-) : NavigationEvent(destination, navigationAnimation.options)
+) : DirectionalNavigationEvent(destination, navigationAnimation.options)
 
 sealed class NavigationAnimation(val options: NavOptions?) {
 

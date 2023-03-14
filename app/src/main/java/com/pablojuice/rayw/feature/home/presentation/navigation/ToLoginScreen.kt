@@ -1,6 +1,6 @@
 package com.pablojuice.rayw.feature.home.presentation.navigation
 
-import com.pablojuice.core.presentation.navigation.NavigationEvent
+import com.pablojuice.core.presentation.navigation.DirectionalNavigationEvent
 import com.pablojuice.rayw.feature.home.presentation.view.HomeFragmentDirections
 
-class ToLoginScreen : NavigationEvent(HomeFragmentDirections.toSigninGraph())
+class ToLoginScreen : DirectionalNavigationEvent(HomeFragmentDirections.toSigninGraph())
