@@ -26,7 +26,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
     protected abstract val layoutClass: Class<VB>
 
-    protected val attachToParent: Boolean = false
+    protected open val attachToParent: Boolean = false
 
     @CallSuper
     override fun onCreateView(
@@ -56,7 +56,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     fun <T> Flow<T>.observeCleanable(block: (T) -> Unit) =
         submitJob(lifecycleScope.launchWhenCreated { collectLatest(block) })
 
-    private inline fun inflate(
+    private fun inflate(
         inflater: LayoutInflater,
         container: ViewGroup?
     ): VB {
@@ -68,7 +68,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
                 Boolean::class.java
             )
             method(null, inflater, container, attachToParent) as VB
-        } catch (e: NoSuchMethodException) {
+        } catch (e: RuntimeException) {
             val method = layoutClass.getMethod(
                 INFLATE_METHOD, LayoutInflater::class.java, ViewGroup::class.java
             )

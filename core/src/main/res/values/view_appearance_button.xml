@@ -130,7 +130,7 @@
 
     <style name="ThemeOverlay.App.Button.Icon" parent="ThemeOverlay.Material3.Button.IconButton">
         <item name="colorContainer">@android:color/transparent</item>
-        <item name="colorOnContainer">?attr/colorOnPrimary</item>
+        <item name="colorOnContainer">?attr/colorControlHighlight</item>
     </style>
 
     <style name="ThemeOverlay.App.Button.Primary" parent="">
