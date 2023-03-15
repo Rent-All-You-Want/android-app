@@ -11,7 +11,7 @@ import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.rayw.R
 import com.pablojuice.rayw.databinding.FragmentHomeBinding
-import com.pablojuice.rayw.feature.home.presentation.navigation.ToCreateNewItemScreen
+import com.pablojuice.rayw.feature.home.presentation.navigation.ToCreateNewRentScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,7 +32,7 @@ class HomeFragment : BasicFragment<FragmentHomeBinding, HomeViewModel>() {
         binding.homeBottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 binding.homeBottomNavigation.selectedItemId -> false
-                R.id.new_item -> navigate(ToCreateNewItemScreen()).let { false }
+                R.id.create_new_rent -> navigate(ToCreateNewRentScreen()).let { false }
                 else -> controller
                     .navigate(item.itemId, null, NavigationAnimation.Fade().options).let { true }
             }

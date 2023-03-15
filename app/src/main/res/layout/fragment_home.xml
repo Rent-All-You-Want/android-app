@@ -21,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/home_graph"
-        tools:layout="@layout/fragment_item_list" />
+        tools:layout="@layout/fragment_rent_list" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/home_bottom_navigation"

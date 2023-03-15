@@ -11,7 +11,7 @@
         android:icon="@drawable/ic_home_menu_wishlist"
         android:title="@string/home_menu_wishlist" />
     <item
-        android:id="@id/new_item"
+        android:id="@id/create_new_rent"
         android:enabled="true"
         android:icon="@drawable/ic_add_large"
         android:title="@string/home_menu_new_item" />

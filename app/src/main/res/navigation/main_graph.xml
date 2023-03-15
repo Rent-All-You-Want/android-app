@@ -12,8 +12,8 @@
         tools:layout="@layout/fragment_home">
 
         <action
-            android:id="@+id/to_create_item_graph"
-            app:destination="@id/create_item_graph"
+            android:id="@+id/to_create_rent_graph"
+            app:destination="@id/create_rent_graph"
             app:enterAnim="@anim/slide_from_down"
             app:exitAnim="@anim/fragment_fade_out_anim"
             app:popEnterAnim="@anim/fragment_fade_in_anim"
@@ -49,7 +49,7 @@
 
     <include app:graph="@navigation/dev_graph" />
 
-    <include app:graph="@navigation/create_item_graph" />
+    <include app:graph="@navigation/create_rent_graph" />
 
     <include app:graph="@navigation/signin_graph" />
 

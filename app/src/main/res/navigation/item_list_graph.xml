@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/item_list"
-        android:name="com.pablojuice.rayw.feature.item.presentation.list.ItemListFragment"
+        android:name="com.pablojuice.rayw.feature.rent.presentation.list.view.RentListFragment"
         android:label="Item List Screen"
-        tools:layout="@layout/fragment_item_list" />
+        tools:layout="@layout/fragment_rent_list" />
 
 </navigation>
