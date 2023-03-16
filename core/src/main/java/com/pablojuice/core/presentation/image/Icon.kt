@@ -1,27 +1,22 @@
 package com.pablojuice.core.presentation.image
 
-import android.content.Context
-import android.graphics.drawable.Drawable
-import android.widget.ImageView
-
 abstract class Icon {
-    private var cache: Drawable? = null
+//    private var cache: Drawable? = null
+//    fun get(view: ImageView) = cache ?: build(context).also { cache = it }
 
-    fun get(context: Context) = cache ?: build(context).also { cache = it }
-
-    protected abstract fun build(context: Context): Drawable?
-
+//    protected abstract fun load(view: ImageView)
+//
 //    class ResourceIcon(private val resId: Int) : Icon() {
-//        override fun build(context: Context) = AppCompatResources.getDrawable(context, resId)
+//        override fun load(view: ImageView) = view.setImageResource(resId)
 //    }
 //
 //    class StringIcon(private val string: String) : Icon() {
-//        override fun build(context: Context) =
-//            GlideApp.with(context).asDrawable().load(string).into
+//        override fun load(view: ImageView) =
+//            GlideApp.with(view).load(string).into(view)
 //    }
 //
 //    class UriIcon(private val uri: Uri) : Icon() {
-//        override fun build(context: Context) = string
+//        override fun load(view: ImageView) = string
 //    }
 }
 
@@ -29,6 +24,7 @@ abstract class Icon {
 //
 //fun Int.asIcon(): Icon = Icon.ResourceIcon(this)
 
-fun ImageView.setIcon(icon: Icon) {
-    setImageDrawable(icon.get(context))
-}
+//fun ImageView.setIcon(icon: Icon) {
+//    setImageResource()
+//    setImageDrawable(icon.get(context))
+//}
