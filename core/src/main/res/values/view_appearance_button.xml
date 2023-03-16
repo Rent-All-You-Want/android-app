@@ -5,7 +5,7 @@
     <style name="view.button.icon" parent="Widget.Material3.Button.IconButton">
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Icon</item>
         <item name="android:layout_height">@dimen/dimen_48</item>
-        <item name="shapeAppearance">@style/shape.small</item>
+        <item name="shapeAppearance">@style/shape.extraLarge</item>
         <item name="iconSize">@dimen/dimen_32</item>
         <item name="android:paddingLeft">@dimen/dimen_4</item>
         <item name="android:paddingRight">@dimen/dimen_4</item>
@@ -15,7 +15,7 @@
 
     <style name="view.button.icon.filled" parent="Widget.Material3.Button.IconButton.Filled">
         <item name="android:layout_height">@dimen/dimen_48</item>
-        <item name="shapeAppearance">@style/shape.small</item>
+        <item name="shapeAppearance">@style/shape.medium</item>
         <item name="iconSize">@dimen/dimen_32</item>
         <item name="android:paddingLeft">@dimen/dimen_4</item>
         <item name="android:paddingRight">@dimen/dimen_4</item>

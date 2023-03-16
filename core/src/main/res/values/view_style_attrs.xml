@@ -5,4 +5,9 @@
         <attr name="titleVisibility" format="boolean" />
         <attr name="backButtonVisibility" format="boolean" />
     </declare-styleable>
+
+    <declare-styleable name="RatingView">
+        <attr name="maxValue" format="integer" />
+        <attr name="value" format="float" />
+    </declare-styleable>
 </resources>
