@@ -13,7 +13,7 @@
     <item
         android:id="@id/create_new_rent"
         android:enabled="true"
-        android:icon="@drawable/ic_add_large"
+        android:icon="@drawable/ic_add_circle_large"
         android:title="@string/home_menu_new_item" />
     <item
         android:id="@id/chat_graph"
