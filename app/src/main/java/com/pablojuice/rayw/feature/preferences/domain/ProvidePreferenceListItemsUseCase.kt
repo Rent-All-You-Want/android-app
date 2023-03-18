@@ -47,7 +47,7 @@ class ProvidePreferenceListItemsUseCase @Inject constructor(
     }
 
     private fun MutableList<ListItem>.addProfileSection(username: String) =
-        add(PreferenceProfileItem(username.asLabel(), R.drawable.ic_account_circle_medium))
+        add(PreferenceProfileItem(username.asLabel(), R.drawable.ic_account_circle_filled_medium))
 
     private fun MutableList<ListItem>.addLogInProposalSection(
         navigationHandler: (NavigationEvent) -> Unit
@@ -74,8 +74,8 @@ class ProvidePreferenceListItemsUseCase @Inject constructor(
         add(
             indexOfFirst { it is PreferenceTitleItem },
             PreferenceItem(
-                "Dev Options".asLabel(),
-                R.drawable.ic_android_medium,
+                com.pablojuice.rayw.R.string.dev_options.asLabel(),
+                R.drawable.ic_terminal_medium,
             ) { navigationHandler(ToDevOptionsScreen()) },
         )
 }

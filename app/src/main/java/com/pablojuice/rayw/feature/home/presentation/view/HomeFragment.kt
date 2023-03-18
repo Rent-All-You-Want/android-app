@@ -42,6 +42,8 @@ class HomeFragment : BasicFragment<FragmentHomeBinding, HomeViewModel>() {
     abstract class HomeChildFragment<VB : ViewBinding, VM : BasicViewModel> :
         BasicFragment<VB, VM>() {
 
+        override val canNavigateBack: Boolean = false
+
         override fun navigate(event: NavigationEvent) = event.handle(homeNavigationController)
 
         fun navigateInsideHome(event: NavigationEvent) = super.navigate(event)

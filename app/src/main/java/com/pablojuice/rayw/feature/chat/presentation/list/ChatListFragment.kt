@@ -13,6 +13,4 @@ class ChatListFragment :
     override val viewModel: WishListViewModel by viewModels()
 
     override val layoutClass = FragmentChatListBinding::class.java
-
-    override val canNavigateBack: Boolean = false
 }

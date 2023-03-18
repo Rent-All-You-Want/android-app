@@ -12,6 +12,4 @@ class WishListFragment :
     override val viewModel: WishListViewModel by viewModels()
 
     override val layoutClass = FragmentWishListBinding::class.java
-
-    override val canNavigateBack: Boolean = false
 }

@@ -14,8 +14,6 @@ class PreferencesListFragment :
 
     override val layoutClass = FragmentPreferencesListBinding::class.java
 
-    override val canNavigateBack: Boolean = false
-
     override fun setupScreen() {
         binding.recycler.adapter = PreferencesAdapter()
         viewModel.items.observe { items ->

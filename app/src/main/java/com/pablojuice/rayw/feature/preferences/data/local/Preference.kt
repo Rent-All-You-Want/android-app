@@ -34,7 +34,7 @@ enum class Preference(
         icon = com.pablojuice.core.R.drawable.ic_android_medium,
         shouldBeVisibleForUser = { it }
     ),
-    RET_REQUESTS(
+    RENT_REQUESTS(
         title = R.string.preference_rent_requests,
         icon = com.pablojuice.core.R.drawable.ic_android_medium,
         shouldBeVisibleForUser = { it }
@@ -57,7 +57,7 @@ enum class Preference(
     ),
     HELP(
         title = R.string.preference_help,
-        icon = com.pablojuice.core.R.drawable.ic_support_medium
+        icon = com.pablojuice.core.R.drawable.ic_support_agent_medium
     ),
 
     PRIVACY_POLICY(
@@ -73,11 +73,11 @@ enum class Preference(
     ABOUT_RAYW(
         sectionTitle = R.string.preference_section_about,
         title = R.string.preference_about_rayw,
-        icon = com.pablojuice.core.R.drawable.ic_android_medium
+        icon = com.pablojuice.core.R.drawable.ic_logo_rayw
     ),
     ABOUT_APP(
         title = R.string.preference_about_app,
-        icon = com.pablojuice.core.R.drawable.ic_android_medium
+        icon = com.pablojuice.core.R.drawable.ic_info_medium
     ),
 
     LOG_OUT(shouldBeVisibleForUser = { it })
