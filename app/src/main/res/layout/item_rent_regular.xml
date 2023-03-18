@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_4"
+    android:background="@drawable/shape_rectangle_with_round_corners_small"
+    android:backgroundTint="?attr/colorSurface"
+    android:clickable="true"
+    android:elevation="@dimen/elevation_extra_small"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:paddingBottom="@dimen/dimen_8"
+    tools:layout_width="@dimen/dimen_192">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/shape_rectangle_with_round_corners_small"
+        android:backgroundTint="@android:color/transparent"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="w, 16:11"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:shapeAppearance="@style/shape.small"
+        tools:src="@drawable/ic_sample_rent_game" />
+
+    <CheckBox
+        android:id="@+id/add_to_wishlist"
+        style="@style/view.checkbox"
+        android:layout_width="@dimen/dimen_32"
+        android:layout_height="@dimen/dimen_32"
+        android:layout_marginVertical="@dimen/dimen_2"
+        android:layout_marginHorizontal="@dimen/dimen_4"
+        app:buttonCompat="@drawable/anim_ic_like"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/text.labelLarge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_12"
+        android:layout_marginEnd="@dimen/dimen_8"
+        android:layout_marginTop="@dimen/dimen_4"
+        android:ellipsize="end"
+        android:maxLines="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/price_description"
+        tools:text="Nintendo Switch very good very nice lol asdjknasd" />
+
+    <TextView
+        android:id="@+id/price"
+        style="@style/text.titleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:maxLines="1"
+        android:layout_marginStart="@dimen/dimen_2"
+        android:layout_marginEnd="@dimen/dimen_4"
+        app:layout_constraintEnd_toStartOf="@id/currency"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/rating_icon"
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        tools:text="999 999 999" />
+
+    <TextView
+        android:id="@+id/currency"
+        style="@style/text.titleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:layout_marginEnd="@dimen/dimen_4"
+        app:layout_constraintBottom_toBottomOf="@+id/price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/price"
+        app:layout_constraintTop_toTopOf="@+id/price"
+        tools:text="UAH" />
+
+    <TextView
+        android:id="@+id/price_description"
+        style="@style/text.labelSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="@+id/currency"
+        app:layout_constraintStart_toStartOf="@+id/price"
+        app:layout_constraintTop_toBottomOf="@+id/price"
+        tools:text="Paid monthly" />
+
+    <TextView
+        android:id="@+id/rating_label"
+        style="@style/text.labelMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_2"
+        app:layout_constraintBottom_toBottomOf="@+id/price_description"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toTopOf="@+id/price"
+        tools:text="4.5" />
+
+    <ImageView
+        android:id="@+id/rating_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_star_filled_medium"
+        app:layout_constraintBottom_toBottomOf="@+id/rating_label"
+        app:layout_constraintStart_toEndOf="@+id/rating_label"
+        app:layout_constraintTop_toTopOf="@+id/rating_label"
+        app:tint="?attr/colorOnBackground" />
+
+    <TextView
+        android:id="@+id/location"
+        style="@style/text.labelSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:layout_marginBottom="@dimen/dimen_2"
+        android:maxLines="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/time"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        tools:text="Lviv, Ukraine" />
+
+    <TextView
+        android:id="@+id/time"
+        style="@style/text.labelSmall"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_1"
+        android:layout_marginEnd="@dimen/dimen_8"
+        android:gravity="end"
+        android:maxLines="1"
+        app:layout_constraintBottom_toBottomOf="@+id/location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/location"
+        app:layout_constraintTop_toTopOf="@+id/location"
+        tools:text="Today 12:08" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
