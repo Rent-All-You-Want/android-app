@@ -26,9 +26,8 @@ abstract class Adapter<Item : ListItem>(
     }
 
     fun addItems(newItems: List<Item>, position: Int = items.size) {
-        val size = items.size
         items.addAll(position, newItems)
-        notifyItemRangeInserted(size - 1, items.size - size)
+        notifyItemRangeInserted(position, newItems.size)
     }
 
     fun clearItems() {
