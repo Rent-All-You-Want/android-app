@@ -5,13 +5,23 @@ import com.pablojuice.core.presentation.view.list.Adapter
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.rayw.R
 
-class RentAdapter : Adapter<ListItem>() {
+class RentAdapter(private val listener: Listener) : Adapter<ListItem>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ) = when (viewType) {
-        R.layout.item_rent_regular -> RentRegularViewHolder(parent)
-        else -> RentRegularViewHolder(parent)
+        R.layout.item_rent_regular -> RentViewHolder(
+            listener::onRentItemClicked,
+            listener::onIsInWishListChanged,
+            parent
+        )
+        else -> TODO()
+    }
+
+    interface Listener {
+        fun onRentItemClicked(id: Int)
+
+        fun onIsInWishListChanged(id: Int, isInWishList: Boolean)
     }
 }

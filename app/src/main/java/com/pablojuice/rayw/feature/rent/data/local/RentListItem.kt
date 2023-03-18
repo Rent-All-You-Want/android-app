@@ -1,10 +1,11 @@
-package com.pablojuice.rayw.feature.rent.presentation.list.list
+package com.pablojuice.rayw.feature.rent.data.local
 
 import com.pablojuice.core.presentation.text.label.Label
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.rayw.R
 
-class RentRegularItem(
+data class RentRegularItem(
+    val id: Int,
     val icon: Int,
     val title: Label,
     val isInWishList: Boolean,

@@ -6,23 +6,36 @@ import com.pablojuice.core.presentation.view.layoutInflater
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.view.list.ViewHolder
 import com.pablojuice.rayw.databinding.ItemRentRegularBinding
+import com.pablojuice.rayw.feature.rent.data.local.RentRegularItem
 
-class RentRegularViewHolder(parent: ViewGroup) :
-    ViewHolder<ListItem, ItemRentRegularBinding>(
-        ItemRentRegularBinding.inflate(parent.layoutInflater, parent, false)
-    ) {
+class RentViewHolder(
+    onClick: (Int) -> Unit,
+    onIsInWishListChanged: (Int, Boolean) -> Unit,
+    parent: ViewGroup
+) : ViewHolder<ListItem, ItemRentRegularBinding>(
+    ItemRentRegularBinding.inflate(parent.layoutInflater, parent, false)
+) {
+    private var currentItem: RentRegularItem? = null
+
+    init {
+        binding.container.setOnClickListener { currentItem?.run { onClick(id) } }
+        binding.addToWishlist.setOnCheckedChangeListener { _, isChecked ->
+            currentItem?.run { onIsInWishListChanged(id, isChecked) }
+        }
+    }
 
     override fun bind(item: ListItem) {
-        if (item is RentRegularItem) {
-            binding.image.setImageResource(item.icon)
-            binding.title.setLabel(item.title)
-            binding.addToWishlist.isChecked = item.isInWishList
-            binding.price.setLabel(item.price)
-            binding.currency.setLabel(item.priceCurrency)
-            binding.priceDescription.setLabel(item.priceDescription)
-            binding.ratingLabel.setLabel(item.rating)
-            binding.location.setLabel(item.location)
-            binding.time.setLabel(item.timeAdded)
+        if (item is RentRegularItem) item.run {
+            currentItem = this
+            binding.image.setImageResource(icon)
+            binding.addToWishlist.isChecked = isInWishList
+            binding.title.setLabel(title)
+            binding.price.setLabel(price)
+            binding.currency.setLabel(priceCurrency)
+            binding.priceDescription.setLabel(priceDescription)
+            binding.ratingLabel.setLabel(rating)
+            binding.location.setLabel(location)
+            binding.time.setLabel(timeAdded)
         }
     }
 }
