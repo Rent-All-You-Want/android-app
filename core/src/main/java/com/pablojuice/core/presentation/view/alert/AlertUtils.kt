@@ -1,4 +1,4 @@
-package com.pablojuice.core.presentation.view.dialog
+package com.pablojuice.core.presentation.view.alert
 
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment

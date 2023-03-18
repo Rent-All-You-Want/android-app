@@ -1,10 +1,10 @@
-package com.pablojuice.core.presentation.view.dialog
+package com.pablojuice.core.presentation.view.alert
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.pablojuice.core.presentation.navigation.ContextNavigationEvent
 import com.pablojuice.core.presentation.text.label.Label
 
-abstract class OpenAlertDialogEvent(
+abstract class ShowAlertDialogEvent(
     title: Label,
     description: Label,
     positive: Label,

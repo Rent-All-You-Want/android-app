@@ -7,7 +7,7 @@ import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.pablojuice.core.presentation.text.label.setErrorLabel
 import com.pablojuice.core.presentation.utils.setOnKeyboardVisibilityChangedListener
-import com.pablojuice.core.presentation.view.dialog.showDialog
+import com.pablojuice.core.presentation.view.alert.showDialog
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.fragment.hideKeyboardIfOpened
 import com.pablojuice.core.presentation.view.setClickListener
