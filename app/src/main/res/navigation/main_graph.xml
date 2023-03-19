@@ -48,20 +48,38 @@
         app:popUpToInclusive="false" />
 
     <action
-        android:id="@+id/to_item_details"
-        app:destination="@id/item_details"
+        android:id="@+id/to_rent_details"
+        app:destination="@id/rent_details"
         app:enterAnim="@anim/slide_from_right"
         app:exitAnim="@anim/fragment_fade_out_anim"
         app:popEnterAnim="@anim/fragment_fade_in_anim"
         app:popExitAnim="@anim/slide_to_right" />
 
     <fragment
-        android:id="@+id/item_details"
+        android:id="@+id/rent_details"
         android:name="com.pablojuice.rayw.feature.rent.presentation.details.RentDetailsFragment"
         android:label="Item Details Screen"
         tools:layout="@layout/fragment_rent_details">
         <argument
-            android:name="itemId"
+            android:name="rentId"
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/to_chat_conversation"
+        app:destination="@id/chat_conversation"
+        app:enterAnim="@anim/slide_from_right"
+        app:exitAnim="@anim/fragment_fade_out_anim"
+        app:popEnterAnim="@anim/fragment_fade_in_anim"
+        app:popExitAnim="@anim/slide_to_right" />
+
+    <fragment
+        android:id="@+id/chat_conversation"
+        android:name="com.pablojuice.rayw.feature.chat.presentation.conversation.view.ChatConversationFragment"
+        android:label="Chat Conversation Screen"
+        tools:layout="@layout/fragment_chat_conversation">
+        <argument
+            android:name="conversationId"
             app:argType="string" />
     </fragment>
 

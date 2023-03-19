@@ -4,9 +4,9 @@ import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.view.list.PagingScrollListener
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.core.utils.logging.Timber
+import com.pablojuice.rayw.feature.home.presentation.navigation.ToRentDetails
 import com.pablojuice.rayw.feature.rent.domain.ProvideRentListItemsUseCase
 import com.pablojuice.rayw.feature.rent.presentation.list.list.RentAdapter
-import com.pablojuice.rayw.feature.rent.presentation.list.navigation.ToRentDetails
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
