@@ -2,9 +2,9 @@ package com.pablojuice.rayw.feature.chat.presentation.list.view
 
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
-import com.pablojuice.core.utils.logging.Timber
 import com.pablojuice.rayw.feature.chat.domain.ProvideChatsUseCase
 import com.pablojuice.rayw.feature.chat.presentation.list.list.ChatAdapter
+import com.pablojuice.rayw.feature.home.presentation.navigation.ToChatConversation
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -25,6 +25,6 @@ class ChatListViewModel @Inject constructor(
     }
 
     override fun onChatItemClicked(id: Int) {
-        Timber.e("click $id")
+        submitNavigationEvent(ToChatConversation("$id"))
     }
 }

@@ -6,6 +6,7 @@ import com.pablojuice.rayw.R
 
 data class OutComingMessageListItem(
     val senderName: Label,
+    val senderAvatar: Int,
     val text: Label,
     val dateSent: Label,
     val wasRead: Boolean

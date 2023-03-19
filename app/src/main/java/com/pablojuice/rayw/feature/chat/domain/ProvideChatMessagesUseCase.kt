@@ -8,7 +8,7 @@ import com.pablojuice.rayw.feature.chat.data.remote.MessageData
 import com.pablojuice.rayw.feature.chat.data.repository.ChatRepository
 import javax.inject.Inject
 
-class ProvideChatDetailsUseCase @Inject constructor(
+class ProvideChatMessagesUseCase @Inject constructor(
     private val repository: ChatRepository
 ) {
 
@@ -18,12 +18,14 @@ class ProvideChatDetailsUseCase @Inject constructor(
     private fun MessageData.toListItem(): ListItem =
         if (sender.id == 0) OutComingMessageListItem(
             senderName = sender.name.asLabel(),
+            senderAvatar = sender.avatar,
             text = text.asLabel(),
             dateSent = dateSent.asLabel(),
             wasRead = wasRead
 
         ) else InComingMessageListItem(
             senderName = sender.name.asLabel(),
+            senderAvatar = sender.avatar,
             text = text.asLabel(),
             dateSent = dateSent.asLabel(),
             wasRead = wasRead
