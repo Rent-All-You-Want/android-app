@@ -1,6 +1,6 @@
-package com.pablojuice.rayw.feature.rent.data
+package com.pablojuice.rayw.feature.rent.data.repository
 
-import com.pablojuice.core.domain.repository.Repository
+import com.pablojuice.core.data.repository.Repository
 import com.pablojuice.rayw.R
 import com.pablojuice.rayw.feature.rent.data.remote.RentDetailsData
 import com.pablojuice.rayw.feature.rent.data.remote.RentListData

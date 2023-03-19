@@ -1,7 +1,7 @@
 package com.pablojuice.rayw.feature.signin.domain.usecase
 
 import com.pablojuice.rayw.feature.signin.data.remote.request.AuthRequest
-import com.pablojuice.rayw.feature.signin.domain.repository.SignInRepository
+import com.pablojuice.rayw.feature.signin.data.repository.SignInRepository
 import dagger.Reusable
 import javax.inject.Inject
 

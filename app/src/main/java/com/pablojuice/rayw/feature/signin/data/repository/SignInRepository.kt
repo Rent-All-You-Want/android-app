@@ -1,9 +1,9 @@
-package com.pablojuice.rayw.feature.signin.domain.repository
+package com.pablojuice.rayw.feature.signin.data.repository
 
 import com.pablojuice.core.data.manager.UserPreference
 import com.pablojuice.core.data.manager.UserPreferences
 import com.pablojuice.core.data.remote.auth.UserManager
-import com.pablojuice.core.domain.repository.Repository
+import com.pablojuice.core.data.repository.Repository
 import com.pablojuice.rayw.feature.signin.data.remote.api.SignInApi
 import com.pablojuice.rayw.feature.signin.data.remote.request.AuthRequest
 import com.pablojuice.rayw.feature.signin.data.remote.request.LoginRequest

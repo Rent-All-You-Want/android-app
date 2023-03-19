@@ -1,4 +1,4 @@
-package com.pablojuice.core.domain.repository
+package com.pablojuice.core.data.repository
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

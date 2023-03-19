@@ -4,8 +4,8 @@ import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.core.utils.logging.Timber
 import com.pablojuice.rayw.feature.home.presentation.navigation.BackToHomeScreen
 import com.pablojuice.rayw.feature.signin.data.remote.request.LoginRequest
+import com.pablojuice.rayw.feature.signin.data.repository.SignInRepository
 import com.pablojuice.rayw.feature.signin.data.state.UserLogInState
-import com.pablojuice.rayw.feature.signin.domain.repository.SignInRepository
 import com.pablojuice.rayw.feature.signin.domain.usecase.login.ValidateLoginEmailUseCase
 import com.pablojuice.rayw.feature.signin.domain.usecase.login.ValidateLoginPasswordUseCase
 import com.pablojuice.rayw.feature.signin.presentation.login.navigation.ToLogInSuccessScreen
