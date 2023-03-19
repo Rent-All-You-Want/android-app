@@ -19,8 +19,6 @@
         android:id="@+id/image"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/shape_rectangle_with_round_corners_small"
-        android:backgroundTint="@android:color/transparent"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="w, 16:11"
         app:layout_constraintBottom_toBottomOf="parent"
