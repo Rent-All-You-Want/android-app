@@ -8,15 +8,16 @@ import com.pablojuice.core.presentation.view.list.ViewHolder
 import com.pablojuice.rayw.databinding.ItemOnboardingBinding
 import com.pablojuice.rayw.feature.signin.domain.usecase.OnBoardingListItem
 
-class OnBoardingAdapter(items: List<OnBoardingListItem>) : Adapter<OnBoardingListItem>(items) {
+class OnBoardingAdapter(items: List<OnBoardingListItem>) : Adapter(items) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = OnBoardingViewHolder(
-        ItemOnboardingBinding.inflate(parent.layoutInflater, parent, false)
-    )
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+        OnBoardingViewHolder(parent)
 }
 
-class OnBoardingViewHolder(binding: ItemOnboardingBinding) :
-    ViewHolder<OnBoardingListItem, ItemOnboardingBinding>(binding) {
+class OnBoardingViewHolder(parent: ViewGroup) :
+    ViewHolder<OnBoardingListItem, ItemOnboardingBinding>(
+        ItemOnboardingBinding.inflate(parent.layoutInflater, parent, false)
+    ) {
 
     override fun bind(item: OnBoardingListItem) {
         binding.icon.setImageResource(item.icon)
