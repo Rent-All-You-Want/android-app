@@ -3,8 +3,9 @@ package com.pablojuice.core.presentation.view.list
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 
-abstract class Adapter(
-    items: List<ListItem> = listOf()
+abstract class ListAdapter(
+    items: List<ListItem> = listOf(),
+    private val addDividerDecoration: Boolean = false
 ) : RecyclerView.Adapter<ViewHolder<ListItem, out ViewBinding>>() {
 
     private val items: MutableList<ListItem> = items.toMutableList()
@@ -36,12 +37,20 @@ abstract class Adapter(
         notifyItemRangeRemoved(0, size)
     }
 
+    override fun onAttachedToRecyclerView(recycler: RecyclerView) {
+        if (addDividerDecoration) recycler.addItemDecoration(ListItemDivider(recycler.context))
+    }
+
     override fun onBindViewHolder(holder: ViewHolder<ListItem, out ViewBinding>, position: Int) =
         holder.bind(item = items[position])
 
     override fun getItemViewType(position: Int) = items[position].layoutId
 
     override fun getItemCount() = items.size
+
+    fun getListItem(position: Int): ListItem = items[position]
+
+    fun getListItemSafe(position: Int): ListItem? = items.getOrNull(position)
 }
 
-inline fun <reified T : Adapter> RecyclerView.getAdapter(): T? = adapter as? T
+inline fun <reified T : ListAdapter> RecyclerView.getListAdapter(): T? = adapter as? T

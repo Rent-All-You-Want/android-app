@@ -1,56 +1,80 @@
 package com.pablojuice.core.presentation.view.list
 
+import android.content.Context
+import android.content.res.Resources
 import android.graphics.Canvas
-import android.graphics.Rect
 import android.graphics.drawable.Drawable
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.children
 import androidx.recyclerview.widget.RecyclerView
 import com.pablojuice.core.R
-import kotlin.math.roundToInt
+
+private const val STANDARD_DRAWABLE_ALPHA = 255 / 5
 
 class ListItemDivider(
-    private val drawableId: Int = R.drawable.ic_list_item_divider
+    context: Context,
+    private val drawableId: Int = R.drawable.ic_list_item_divider,
+    private val drawableAlpha: Int = STANDARD_DRAWABLE_ALPHA,
+    private val drawForLastItem: Boolean = false
 ) : RecyclerView.ItemDecoration() {
 
-    private var divider: Drawable? = null
-
-    private val screenBounds = Rect()
+    private var drawable: Drawable? = context.getDividerDrawable()
 
     override fun onDrawOver(canvas: Canvas, parent: RecyclerView, state: RecyclerView.State) {
-        if (divider == null) divider =
-            AppCompatResources.getDrawable(parent.context, drawableId)?.apply { alpha = 25 }
-
-        canvas.save()
-
         val left: Int
         val right: Int
 
         if (parent.clipToPadding) {
             left = parent.paddingLeft
             right = parent.width - parent.paddingRight
-            canvas.clipRect(
-                left, parent.paddingTop, right,
-                parent.height - parent.paddingBottom
-            )
         } else {
             left = 0
             right = parent.width
         }
 
-        divider?.run {
-            parent.children.iterator().forEach { child ->
-                parent.getDecoratedBoundsWithMargins(child, screenBounds)
-                val bottom = screenBounds.bottom + child.translationY.roundToInt()
-                val top = bottom - intrinsicHeight
-                setBounds(left, top, right, bottom)
-                draw(canvas)
+        drawable?.run {
+            val listAdapter: ListAdapter = parent.adapter as ListAdapter
+            parent.children.forEach { child ->
+                val position = parent.getChildAdapterPosition(child)
+
+                val item = listAdapter.getListItem(position)
+                val followingItem = listAdapter.getListItemSafe(position + 1)
+
+                if (!canDrawDivider(item, followingItem)) return@forEach
+
+                val top =
+                    child.bottom + (child.layoutParams as RecyclerView.LayoutParams).bottomMargin
+                val offset = parent.context.resources.getOffsetForItem(item)
+                canvas.drawDivider(top, left + offset, right - offset)
             }
         }
-        canvas.restore()
     }
 
-    enum class ListDividerType {
+    private fun canDrawDivider(vararg items: ListItem?) =
+        items.none { it?.run { dividerType == Type.NONE } ?: !drawForLastItem }
+
+    private fun Resources.getOffsetForItem(item: ListItem): Int = getDimension(
+        when (item.dividerType) {
+            Type.SMALL -> R.dimen.dimen_32
+            Type.MEDIUM -> R.dimen.dimen_16
+            Type.LARGE -> R.dimen.dimen_8
+            Type.FULL -> R.dimen.dimen_0
+            Type.NONE -> TODO()
+        }
+    ).toInt()
+
+    private fun Canvas.drawDivider(top: Int, left: Int, right: Int) {
+        drawable?.let { divider ->
+            val bottom = top + divider.intrinsicHeight
+            divider.setBounds(left, top, right, bottom)
+            divider.draw(this)
+        }
+    }
+
+    private fun Context.getDividerDrawable() =
+        AppCompatResources.getDrawable(this, drawableId)?.apply { alpha = drawableAlpha }
+
+    enum class Type {
         NONE,
         SMALL,
         MEDIUM,
