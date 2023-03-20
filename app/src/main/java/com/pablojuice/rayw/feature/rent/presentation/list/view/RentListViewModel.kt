@@ -6,7 +6,7 @@ import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.core.utils.logging.Timber
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToRentDetails
 import com.pablojuice.rayw.feature.rent.domain.ProvideRentListItemsUseCase
-import com.pablojuice.rayw.feature.rent.presentation.list.list.RentAdapter
+import com.pablojuice.rayw.feature.rent.presentation.list.list.RentListAdapter
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -15,7 +15,7 @@ import javax.inject.Inject
 @HiltViewModel
 class RentListViewModel @Inject constructor(
     private val provideItems: ProvideRentListItemsUseCase
-) : BasicViewModel(), PagingScrollListener.PagingListener, RentAdapter.Listener {
+) : BasicViewModel(), PagingScrollListener.PagingListener, RentListAdapter.Listener {
 
     private val _items = MutableStateFlow(emptyList<ListItem>())
     val items: StateFlow<List<ListItem>> = _items

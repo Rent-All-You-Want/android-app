@@ -4,7 +4,7 @@ import androidx.fragment.app.viewModels
 import com.pablojuice.core.presentation.view.list.StaggeredGridPagingScrollListener
 import com.pablojuice.rayw.databinding.FragmentRentListBinding
 import com.pablojuice.rayw.feature.home.presentation.view.HomeFragment
-import com.pablojuice.rayw.feature.rent.presentation.list.list.RentAdapter
+import com.pablojuice.rayw.feature.rent.presentation.list.list.RentListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -16,17 +16,17 @@ class RentListFragment :
     override val layoutClass = FragmentRentListBinding::class.java
 
     override fun setupScreen() {
-        binding.recycler.adapter = RentAdapter(viewModel)
+        binding.recycler.adapter = RentListAdapter(viewModel)
         binding.recycler.addOnScrollListener(StaggeredGridPagingScrollListener(viewModel))
         binding.recyclerContainer.setOnRefreshListener {
-            (binding.recycler.adapter as? RentAdapter)?.clearItems()
+            (binding.recycler.adapter as? RentListAdapter)?.clearItems()
             viewModel.reloadItems()
             binding.recyclerContainer.isRefreshing = false
         }
         viewModel.canLoadItems.observe { binding.recyclerContainer.isRefreshing = !it }
         viewModel.items.observe { items ->
             if (items.isEmpty()) return@observe
-            (binding.recycler.adapter as? RentAdapter)?.addItems(items)
+            (binding.recycler.adapter as? RentListAdapter)?.addItems(items)
         }
         viewModel.reloadItems()
     }

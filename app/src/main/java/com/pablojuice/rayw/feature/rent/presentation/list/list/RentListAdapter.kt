@@ -1,10 +1,10 @@
 package com.pablojuice.rayw.feature.rent.presentation.list.list
 
 import android.view.ViewGroup
-import com.pablojuice.core.presentation.view.list.Adapter
+import com.pablojuice.core.presentation.view.list.ListAdapter
 import com.pablojuice.rayw.R
 
-class RentAdapter(private val listener: Listener) : Adapter() {
+class RentListAdapter(private val listener: Listener) : ListAdapter() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
