@@ -71,16 +71,16 @@ android {
         jvmTarget = application.javaVersion.toString()
     }
 
-    lintOptions {
-        checkReleaseBuilds false
-    }
-
     kapt {
         correctErrorTypes true
     }
 
     buildFeatures {
         viewBinding true
+    }
+
+    lint {
+        checkReleaseBuilds false
     }
 }
 
