@@ -3,7 +3,7 @@
     <style name="Theme.Rayw" parent="Theme.Material3.Dark.NoActionBar">
 
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/portland_orange</item>
+        <item name="colorPrimary">@color/reddish_orange</item>
         <item name="colorPrimaryVariant">@color/hestia_red</item>
         <item name="colorOnPrimary">@color/whitest_white</item>
 
