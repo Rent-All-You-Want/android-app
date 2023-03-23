@@ -41,7 +41,7 @@ class LogInFragment : BasicFragment<FragmentLoginBinding, LogInViewModel>() {
         binding.passwordInputLayout.editText?.doOnTextChanged { text, _, _, _ ->
             viewModel.setPassword(text.toString())
         }
-        viewModel.state.observeCleanable { state ->
+        viewModel.state.observe { state ->
             binding.emailInputLayout.setErrorLabel(state.emailError)
             binding.passwordInputLayout.setErrorLabel(state.passwordError)
         }

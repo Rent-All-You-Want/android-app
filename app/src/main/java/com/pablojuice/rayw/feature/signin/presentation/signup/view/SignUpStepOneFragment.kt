@@ -43,7 +43,7 @@ class SignUpStepOneFragment : BasicFragment<FragmentSignupStepOneBinding, SignUp
         binding.acceptRulesSwitch.setOnCheckedChangeListener { _, isChecked ->
             viewModel.setAcceptRules(isChecked)
         }
-        viewModel.state.observeCleanable { state ->
+        viewModel.state.observe { state ->
             binding.emailInputLayout.setErrorLabel(state.emailError)
             binding.passwordInputLayout.setErrorLabel(state.passwordError)
             binding.acceptRulesError.setLabel(state.acceptedRulesError)

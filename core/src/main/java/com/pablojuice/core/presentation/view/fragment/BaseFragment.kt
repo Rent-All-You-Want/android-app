@@ -51,9 +51,6 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     fun submitJob(jobToClear: Job) = jobsToClear.add(jobToClear).let { jobToClear }
 
     fun <T> Flow<T>.observe(block: (T) -> Unit) =
-        lifecycleScope.launchWhenCreated { collectLatest(block) }
-
-    fun <T> Flow<T>.observeCleanable(block: (T) -> Unit) =
         submitJob(lifecycleScope.launchWhenCreated { collectLatest(block) })
 
     private fun inflate(

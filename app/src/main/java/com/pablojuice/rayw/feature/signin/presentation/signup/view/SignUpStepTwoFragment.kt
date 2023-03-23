@@ -46,7 +46,7 @@ class SignUpStepTwoFragment : BasicFragment<FragmentSignupStepTwoBinding, SignUp
         binding.nameInputLayout.editText?.doOnTextChanged { text, _, _, _ ->
             viewModel.setName(text.toString())
         }
-        viewModel.state.observeCleanable { state ->
+        viewModel.state.observe { state ->
             binding.nameInputLayout.setErrorLabel(state.nameError)
             binding.dateInputLayout.editText?.setText(state.birthDate)
             binding.dateInputLayout.setErrorLabel(state.birthDateError)

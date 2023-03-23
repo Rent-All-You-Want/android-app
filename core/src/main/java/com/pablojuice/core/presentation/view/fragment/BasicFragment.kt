@@ -33,7 +33,7 @@ abstract class BasicFragment<VB : ViewBinding, VM : BasicViewModel> : BaseFragme
     private fun setupNavigation() {
         navigateBackCallback =
             requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) { navigateBack() }
-        submitJob(viewModel.navigationEvents.observe(::navigate))
+        viewModel.navigationEvents.observe(::navigate)
     }
 
     fun setNavigationBackEnabled(isEnabled: Boolean) {
