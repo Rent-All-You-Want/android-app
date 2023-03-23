@@ -3,6 +3,7 @@ package com.pablojuice.rayw.feature.chat.domain
 import com.pablojuice.core.presentation.text.label.asLabel
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.rayw.feature.chat.data.local.InComingMessageListItem
+import com.pablojuice.rayw.feature.chat.data.local.NoMessagesListItem
 import com.pablojuice.rayw.feature.chat.data.local.OutComingMessageListItem
 import com.pablojuice.rayw.feature.chat.data.remote.MessageData
 import com.pablojuice.rayw.feature.chat.data.repository.ChatRepository
@@ -14,6 +15,7 @@ class ProvideChatMessagesUseCase @Inject constructor(
 
     suspend operator fun invoke(): List<ListItem> =
         repository.getChatMessages().messageList.map { it.toListItem() }
+            .ifEmpty { listOf(NoMessagesListItem()) }
 
     private fun MessageData.toListItem(): ListItem =
         if (sender.id == 0) OutComingMessageListItem(

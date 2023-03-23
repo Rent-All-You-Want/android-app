@@ -2,6 +2,7 @@ package com.pablojuice.rayw.feature.chat.data.local
 
 import com.pablojuice.core.presentation.text.label.Label
 import com.pablojuice.core.presentation.view.list.ListItem
+import com.pablojuice.core.presentation.view.list.ListItemDivider
 import com.pablojuice.rayw.R
 
 data class ChatListItem(
@@ -11,4 +12,6 @@ data class ChatListItem(
     val lastMessageText: Label,
     val lastMessageDate: Label,
     val lastMessageWasRead: Boolean
-) : ListItem(R.layout.item_chat_recipient)
+) : ListItem(R.layout.item_chat_recipient, ListItemDivider.Type.LARGE)
+
+class NoChatsListItem : ListItem(R.layout.item_chat_no_recipients)

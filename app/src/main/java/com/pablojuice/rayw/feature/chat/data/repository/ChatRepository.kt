@@ -37,8 +37,8 @@ class ChatRepository @Inject constructor() : Repository() {
     private fun getFakeMessages() = GetChatDetailsResponse(
         mutableListOf<MessageData>().apply {
             repeat(20) {
-                add(getMyFakeMessage("Hello, how are you?", it))
-                add(getNotMyFakeMessage("Hello, I'm fine. You?", it))
+                add(getMyFakeMessage("Hello, how are you? $it/1", it))
+                add(getNotMyFakeMessage("Hello, I'm fine. You? $it/2", it))
             }
         }
     )

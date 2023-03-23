@@ -5,6 +5,7 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/reddish_orange</item>
         <item name="colorPrimaryVariant">@color/hestia_red</item>
+        <item name="colorPrimaryAccent">@color/portland_orange</item>
         <item name="colorOnPrimary">@color/whitest_white</item>
 
         <!-- Secondary brand color. -->
@@ -68,7 +69,7 @@
         <!-- Views. TODO -->
         <item name="bottomNavigationStyle">@style/view.bottomNavigationView</item>
         <item name="bottomAppBarStyle">@style/view.bottomNavigationView</item>
-        <item name="textInputStyle">@style/view.textInput</item>
+        <item name="textInputStyle">@style/view.textField.outline</item>
         <item name="materialButtonStyle">@style/view.button</item>
         <item name="materialIconButtonStyle">@style/view.button.icon</item>
         <item name="materialIconButtonFilledStyle">@style/view.button.icon.filled</item>

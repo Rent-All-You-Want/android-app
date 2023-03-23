@@ -26,7 +26,6 @@
         android:layout_marginHorizontal="@dimen/dimen_8"
         android:background="@drawable/shape_rectangle_with_round_corners_small"
         android:backgroundTint="?attr/colorBackgroundVariant"
-        android:elevation="@dimen/elevation_small"
         android:padding="@dimen/dimen_8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/date_label"
