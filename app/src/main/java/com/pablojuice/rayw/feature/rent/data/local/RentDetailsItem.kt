@@ -4,7 +4,7 @@ import com.pablojuice.core.presentation.text.label.Label
 
 data class RentDetailsItem(
     val id: Int,
-    val icon: Int,
+    val icon: List<Int>,
     val title: Label,
     val description: Label,
     val isInWishList: Boolean,

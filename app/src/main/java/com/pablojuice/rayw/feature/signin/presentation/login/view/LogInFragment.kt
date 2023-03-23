@@ -9,6 +9,7 @@ import com.pablojuice.core.presentation.utils.setOnKeyboardVisibilityChangedList
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.fragment.hideKeyboardIfOpened
 import com.pablojuice.core.presentation.view.setVisible
+import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
 import com.pablojuice.rayw.R
 import com.pablojuice.rayw.databinding.FragmentLoginBinding
 import com.pablojuice.rayw.feature.signin.presentation.login.navigation.ToRecoveryScreen
@@ -25,7 +26,7 @@ class LogInFragment : BasicFragment<FragmentLoginBinding, LogInViewModel>() {
     override fun setupScreen() {
         setupStateListener()
         binding.logInButton.setOnClickListener { viewModel.logIn() }
-        binding.loginToolBar.setIconClickListener(::navigateBack)
+        binding.loginToolBar.setNavigationClickListener(::navigateBack)
         binding.setOnKeyboardVisibilityChangedListener { isKeyboardVisible ->
             binding.loginIcon.setVisible(!isKeyboardVisible)
             if (isKeyboardVisible) keepFocusAfterAnimation()

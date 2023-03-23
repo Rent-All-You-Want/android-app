@@ -14,6 +14,6 @@ class CreateNewRentFragment :
     override val layoutClass = FragmentRentCreateNewBinding::class.java
 
     override fun setupScreen() {
-        binding.itemToolBar.setIconClickListener(::navigateBack)
+        binding.itemToolBar.setNavigationOnClickListener { navigateBack() }
     }
 }

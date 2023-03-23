@@ -13,6 +13,42 @@
         android:padding="@dimen/dimen_16">
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TOOL BAR TEXT STYLE"
+                android:textColor="?attr/colorOnBackground"
+                android:textSize="@dimen/text_size_20"
+                android:textStyle="bold" />
+
+            <com.google.android.material.appbar.MaterialToolbar
+                style="@style/view.toolBar"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dimen_8"
+                app:title="Title"
+                app:titleCentered="false" />
+
+            <com.google.android.material.appbar.MaterialToolbar
+                style="@style/view.toolBar.navigableBack"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dimen_8"
+                app:title="Title" />
+
+            <com.google.android.material.appbar.MaterialToolbar
+                style="@style/view.toolBar.navigableBack"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dimen_8"
+                app:title="Title"
+                app:subtitle="Subtitle" />
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/text_input_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -46,7 +82,7 @@
                 app:endIconMode="password_toggle">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    style="@style/view.textInput"
+                    style="@style/view.textField.outline"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword" />
@@ -54,14 +90,15 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/view.textField"
                 android:layout_width="@dimen/dimen_256"
                 android:layout_height="wrap_content"
-                android:hint="Search"
                 app:startIconDrawable="@drawable/ic_search_medium">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:hint="Search" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

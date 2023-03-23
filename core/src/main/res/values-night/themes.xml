@@ -76,6 +76,7 @@
         <item name="checkboxStyle">@style/view.checkbox</item>
         <item name="materialSwitchStyle">@style/view.switch</item>
         <item name="materialAlertDialogTheme">@style/view.alertDialogTheme</item>
+        <item name="toolbarStyle">@style/view.toolBar</item>
         <!--        <item name="sliderStyle">@style/Widget.App.Slider</item>-->
         <!--        <item name="chipStyle">@style/Widget.App.Chip</item>-->
         <!--        <item name="snackbarStyle">@style/Widget.App.Snackbar</item>-->

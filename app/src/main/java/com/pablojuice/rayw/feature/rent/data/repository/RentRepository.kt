@@ -71,7 +71,11 @@ class RentRepository @Inject constructor(
         return when (sanitizedId) {
             0 -> RentDetailsData(
                 id = id,
-                icon = R.drawable.ic_sample_rent_game,
+                icon = listOf(
+                    R.drawable.ic_sample_rent_game,
+                    R.drawable.ic_sample_rent_game,
+                    R.drawable.ic_sample_rent_game
+                ),
                 title = "PS5 PRO SUPER 1TB",
                 description = "id = $id, sanitizedId = $sanitizedId",
                 isInWishList = false,
@@ -84,7 +88,11 @@ class RentRepository @Inject constructor(
             )
             1 -> RentDetailsData(
                 id = id,
-                icon = R.drawable.ic_sample_rent_car,
+                icon = listOf(
+                    R.drawable.ic_sample_rent_car,
+                    R.drawable.ic_sample_rent_car,
+                    R.drawable.ic_sample_rent_car
+                ),
                 title = "BMW GTX 2008",
                 description = "id = $id, sanitizedId = $sanitizedId",
                 isInWishList = false,
@@ -97,7 +105,11 @@ class RentRepository @Inject constructor(
             )
             else -> RentDetailsData(
                 id = id,
-                icon = R.drawable.ic_sample_rent_portable,
+                icon = listOf(
+                    R.drawable.ic_sample_rent_portable,
+                    R.drawable.ic_sample_rent_portable,
+                    R.drawable.ic_sample_rent_portable
+                ),
                 title = "Nintendo switch 129GB top super mega duper free lol",
                 description = "id = $id, sanitizedId = $sanitizedId",
                 isInWishList = false,

@@ -12,6 +12,7 @@ import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.fragment.hideKeyboardIfOpened
 import com.pablojuice.core.presentation.view.setClickListener
 import com.pablojuice.core.presentation.view.setVisible
+import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
 import com.pablojuice.rayw.R
 import com.pablojuice.rayw.databinding.FragmentSignupStepTwoBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -36,7 +37,7 @@ class SignUpStepTwoFragment : BasicFragment<FragmentSignupStepTwoBinding, SignUp
             binding.signupIcon.setVisible(!isKeyboardVisible)
             if (isVisible) keepFocusAfterAnimation()
         }
-        binding.signupToolBar.setIconClickListener(::navigateBack)
+        binding.signupToolBar.setNavigationClickListener(::navigateBack)
         binding.proceedButton.setClickListener(viewModel::proceedToSuccessStep)
     }
 

@@ -7,10 +7,10 @@
     android:animateLayoutChanges="true"
     tools:context=".feature.signin.presentation.signup.view.SignUpStepTwoFragment">
 
-    <com.pablojuice.core.presentation.view.toolbar.ToolBarView
+    <com.google.android.material.appbar.MaterialToolbar
+        style="@style/view.toolBar.navigableBack"
         android:id="@+id/signup_tool_bar"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +26,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signup_tool_bar"
         app:layout_constraintVertical_bias="0.0" />
-
 
     <TextView
         android:id="@+id/signup_title"

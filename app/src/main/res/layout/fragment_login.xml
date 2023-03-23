@@ -8,10 +8,10 @@
     android:animateLayoutChanges="true"
     tools:context=".feature.signin.presentation.login.view.LogInFragment">
 
-    <com.pablojuice.core.presentation.view.toolbar.ToolBarView
+    <com.google.android.material.appbar.MaterialToolbar
+        style="@style/view.toolBar.navigableBack"
         android:id="@+id/login_tool_bar"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

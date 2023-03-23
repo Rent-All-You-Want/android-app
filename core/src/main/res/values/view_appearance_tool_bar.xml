@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="view.toolBar" parent="Widget.Material3.Toolbar">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Toolbar</item>
+        <item name="titleTextAppearance">@style/text.titleLarge</item>
+        <item name="subtitleTextAppearance">@style/text.titleMedium</item>
+        <item name="android:layout_height">@dimen/dimen_52</item>
+    </style>
+
+    <style name="view.toolBar.navigableBack" parent="view.toolBar">
+        <item name="titleCentered">true</item>
+        <item name="subtitleCentered">true</item>
+        <item name="navigationIcon">@drawable/ic_arrow_back_medium</item>
+        <item name="android:background">?attr/colorBackground</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Toolbar" parent="">
+        <item name="colorSurface">?attr/colorBackground</item>
+        <item name="colorOnSurface">?attr/colorOnBackground</item>
+    </style>
+</resources>
