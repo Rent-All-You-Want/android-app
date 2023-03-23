@@ -37,15 +37,17 @@ class ListItemDivider(
             parent.children.forEach { child ->
                 val position = parent.getChildAdapterPosition(child)
 
-                val item = listAdapter.getListItem(position)
+                val item = listAdapter.getListItemSafe(position)
                 val followingItem = listAdapter.getListItemSafe(position + 1)
 
                 if (!canDrawDivider(item, followingItem)) return@forEach
 
-                val top =
-                    child.bottom + (child.layoutParams as RecyclerView.LayoutParams).bottomMargin
-                val offset = parent.context.resources.getOffsetForItem(item)
-                canvas.drawDivider(top, left + offset, right - offset)
+                item?.run {
+                    val top =
+                        child.bottom + (child.layoutParams as RecyclerView.LayoutParams).bottomMargin
+                    val offset = parent.context.resources.getOffsetForItem(this)
+                    canvas.drawDivider(top, left + offset, right - offset)
+                }
             }
         }
     }
@@ -55,9 +57,9 @@ class ListItemDivider(
 
     private fun Resources.getOffsetForItem(item: ListItem): Int = getDimension(
         when (item.dividerType) {
-            Type.SMALL -> R.dimen.dimen_32
-            Type.MEDIUM -> R.dimen.dimen_16
-            Type.LARGE -> R.dimen.dimen_8
+            Type.SMALL -> R.dimen.dimen_64
+            Type.MEDIUM -> R.dimen.dimen_32
+            Type.LARGE -> R.dimen.dimen_16
             Type.FULL -> R.dimen.dimen_0
             Type.NONE -> TODO()
         }
