@@ -10,6 +10,7 @@ import com.pablojuice.core.presentation.text.label.Label
 import com.pablojuice.core.presentation.text.label.setLabel
 import com.pablojuice.core.presentation.view.setVisible
 
+@Deprecated("Use MaterialToolBar")
 class ToolBarView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
