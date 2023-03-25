@@ -13,7 +13,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top_bar">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
@@ -32,37 +32,4 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_chat_recipient" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-    <LinearLayout
-        android:id="@+id/top_bar"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/dimen_64"
-        android:background="?attr/colorBackground"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingHorizontal="@dimen/dimen_24"
-        android:paddingVertical="@dimen/dimen_8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:hint="@string/rent_search"
-            app:startIconDrawable="@drawable/ic_search_medium">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:paddingTop="0dp"
-                android:paddingBottom="0dp"
-                android:singleLine="true" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

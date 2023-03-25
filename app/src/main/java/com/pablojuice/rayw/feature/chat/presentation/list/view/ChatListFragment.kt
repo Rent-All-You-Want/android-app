@@ -4,16 +4,18 @@ import androidx.fragment.app.viewModels
 import com.pablojuice.core.presentation.view.list.getListAdapter
 import com.pablojuice.rayw.databinding.FragmentChatListBinding
 import com.pablojuice.rayw.feature.chat.presentation.list.list.ChatListAdapter
-import com.pablojuice.rayw.feature.home.presentation.view.HomeFragment
+import com.pablojuice.rayw.feature.home.presentation.view.HomeChildFragment
+import com.pablojuice.rayw.feature.home.presentation.view.HomeListener
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ChatListFragment :
-    HomeFragment.HomeChildFragment<FragmentChatListBinding, ChatListViewModel>() {
+class ChatListFragment : HomeChildFragment<FragmentChatListBinding, ChatListViewModel>() {
 
     override val viewModel: ChatListViewModel by viewModels()
 
     override val layoutClass = FragmentChatListBinding::class.java
+
+    override val homeListener: HomeListener get() = viewModel
 
     override fun setupScreen() {
         binding.recycler.adapter = ChatListAdapter(viewModel)

@@ -49,19 +49,19 @@
     </style>
 
     <style name="text.titleLarge" parent="TextAppearance.Material3.TitleLarge">
-        <item name="android:fontFamily">@font/roboto_light</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="fontFamily">@font/roboto_medium</item>
         <item name="android:textSize">@dimen/text_size_20</item>
     </style>
 
     <style name="text.titleMedium" parent="TextAppearance.Material3.TitleMedium">
-        <item name="android:fontFamily">@font/roboto_light</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="fontFamily">@font/roboto_medium</item>
         <item name="android:textSize">@dimen/text_size_16</item>
     </style>
 
     <style name="text.titleSmall" parent="TextAppearance.Material3.TitleSmall">
-        <item name="android:fontFamily">@font/roboto_light</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="fontFamily">@font/roboto_medium</item>
         <item name="android:textSize">@dimen/text_size_14</item>
     </style>

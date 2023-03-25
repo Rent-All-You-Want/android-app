@@ -3,17 +3,19 @@ package com.pablojuice.rayw.feature.rent.presentation.list.view
 import androidx.fragment.app.viewModels
 import com.pablojuice.core.presentation.view.list.StaggeredGridPagingScrollListener
 import com.pablojuice.rayw.databinding.FragmentRentListBinding
-import com.pablojuice.rayw.feature.home.presentation.view.HomeFragment
+import com.pablojuice.rayw.feature.home.presentation.view.HomeChildFragment
+import com.pablojuice.rayw.feature.home.presentation.view.HomeListener
 import com.pablojuice.rayw.feature.rent.presentation.list.list.RentListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class RentListFragment :
-    HomeFragment.HomeChildFragment<FragmentRentListBinding, RentListViewModel>() {
+class RentListFragment : HomeChildFragment<FragmentRentListBinding, RentListViewModel>() {
 
     override val viewModel: RentListViewModel by viewModels()
 
     override val layoutClass = FragmentRentListBinding::class.java
+
+    override val homeListener: HomeListener get() = viewModel
 
     override fun setupScreen() {
         binding.recycler.adapter = RentListAdapter(viewModel)
