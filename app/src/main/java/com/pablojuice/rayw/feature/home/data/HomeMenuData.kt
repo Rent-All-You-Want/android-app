@@ -11,7 +11,7 @@ enum class HomeMenuData(
     val menu: Int? = null
 ) {
     RENT_LIST(R.id.rent_list_graph, R.string.home_menu_items.asLabel(), R.menu.menu_home_rent_list),
-    WISH_LIST(R.id.wish_graph, R.string.home_menu_wishlist.asLabel()),
+    WISH_LIST(R.id.wish_graph, R.string.home_menu_wishlist.asLabel(), R.menu.menu_home_wish_list),
     CHAT_LIST(R.id.chat_graph, R.string.home_menu_chats.asLabel(), R.menu.menu_home_chat_list),
     PREFERENCES_LIST(R.id.preferences_graph, R.string.home_menu_preferences.asLabel()),
     EMPTY()

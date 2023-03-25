@@ -1,6 +1,8 @@
 package com.pablojuice.rayw.feature.chat.presentation.list.view
 
 import androidx.fragment.app.viewModels
+import com.pablojuice.core.presentation.view.list.addOnScrollListener
+import com.pablojuice.core.presentation.view.list.firstCompletelyVisibleItemPosition
 import com.pablojuice.core.presentation.view.list.getListAdapter
 import com.pablojuice.rayw.databinding.FragmentChatListBinding
 import com.pablojuice.rayw.feature.chat.presentation.list.list.ChatListAdapter
@@ -28,6 +30,10 @@ class ChatListFragment : HomeChildFragment<FragmentChatListBinding, ChatListView
             if (items.isEmpty()) return@observe
             binding.recycler.getListAdapter<ChatListAdapter>()?.setItems(items)
             binding.recyclerContainer.isRefreshing = false
+        }
+        binding.recycler.addOnScrollListener { recyclerView, state ->
+            binding.recyclerContainer.isEnabled =
+                recyclerView.firstCompletelyVisibleItemPosition() == 0
         }
         viewModel.loadChats()
     }

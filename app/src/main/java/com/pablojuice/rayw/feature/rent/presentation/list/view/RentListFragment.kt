@@ -2,6 +2,8 @@ package com.pablojuice.rayw.feature.rent.presentation.list.view
 
 import androidx.fragment.app.viewModels
 import com.pablojuice.core.presentation.view.list.StaggeredGridPagingScrollListener
+import com.pablojuice.core.presentation.view.list.addOnScrollListener
+import com.pablojuice.core.presentation.view.list.firstCompletelyVisibleItemPosition
 import com.pablojuice.rayw.databinding.FragmentRentListBinding
 import com.pablojuice.rayw.feature.home.presentation.view.HomeChildFragment
 import com.pablojuice.rayw.feature.home.presentation.view.HomeListener
@@ -24,6 +26,10 @@ class RentListFragment : HomeChildFragment<FragmentRentListBinding, RentListView
             (binding.recycler.adapter as? RentListAdapter)?.clearItems()
             viewModel.reloadItems()
             binding.recyclerContainer.isRefreshing = false
+        }
+        binding.recycler.addOnScrollListener { recyclerView, state ->
+            binding.recyclerContainer.isEnabled =
+                recyclerView.firstCompletelyVisibleItemPosition() == 0
         }
         viewModel.canLoadItems.observe { binding.recyclerContainer.isRefreshing = !it }
         viewModel.items.observe { items ->
