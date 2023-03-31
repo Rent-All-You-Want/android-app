@@ -111,17 +111,16 @@
             android:weightSum="2">
 
             <Button
-                style="@style/view.button.medium.primary"
+                style="@style/view.button.medium.filled.primary"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
-                android:text="@string/signin_personal"
-                android:textAllCaps="false" />
+                android:text="@string/signin_personal" />
 
             <Button
-                style="@style/view.button.text.secondary"
+                style="@style/view.button.text.primary"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -134,7 +133,7 @@
 
     <Button
         android:id="@+id/proceed_button"
-        style="@style/view.button.large.primary"
+        style="@style/view.button.large.filled.primary"
         android:layout_width="0dp"
         android:layout_marginHorizontal="@dimen/dimen_32"
         android:layout_marginVertical="@dimen/dimen_16"

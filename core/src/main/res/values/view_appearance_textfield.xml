@@ -6,7 +6,7 @@
         <item name="boxBackgroundColor">?attr/colorBackgroundVariant</item>
         <item name="boxBackgroundMode">outline</item>
         <item name="android:textColorHint">?attr/colorDisabled</item>
-        <item name="hintTextColor">?attr/colorOnBackground</item>
+        <item name="hintTextColor">?attr/colorPrimary</item>
     </style>
 
     <style name="view.textField" parent="view.textField.outline">
@@ -15,7 +15,6 @@
         <item name="android:paddingTop">@dimen/dimen_4</item>
         <item name="boxStrokeWidth">@dimen/dimen_0</item>
         <item name="boxStrokeWidthFocused">@dimen/dimen_0</item>
-
     </style>
 
     <style name="view.editText" parent="Widget.Material3.TextInputEditText.OutlinedBox">

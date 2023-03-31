@@ -9,7 +9,7 @@
 
     <Button
         android:id="@+id/log_out_button"
-        style="@style/view.button.text.secondary"
+        style="@style/view.button.text.primary"
         android:layout_width="0dp"
         android:textAllCaps="true"
         android:layout_height="@dimen/dimen_56"

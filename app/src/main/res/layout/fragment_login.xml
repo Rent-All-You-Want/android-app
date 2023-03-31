@@ -110,7 +110,7 @@
 
     <Button
         android:id="@+id/log_in_button"
-        style="@style/view.button.large.primary"
+        style="@style/view.button.large.filled.primary"
         android:layout_width="0dp"
         android:layout_marginHorizontal="@dimen/dimen_32"
         android:layout_marginVertical="@dimen/dimen_4"
@@ -121,7 +121,7 @@
 
     <Button
         android:id="@+id/sign_up_button"
-        style="@style/view.button.text.secondary"
+        style="@style/view.button.text.primary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/signin_dont_have_account"
