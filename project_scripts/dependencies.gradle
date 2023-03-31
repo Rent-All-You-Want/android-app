@@ -5,6 +5,7 @@ ext {
             daggerHilt  : '2.45',
 
     ]
+
     application = [
             versionCode          : 1,
             versionName          : "0.0.1",
@@ -22,7 +23,7 @@ ext {
             apiUrl               : "API_URL",
 
             localUrl             : ":8080/api/\"",
-            stageUrl             : "\"http://stage.com\"",
-            prodUrl              : "\"http://prod.com\""
+            stageUrl             : "\"https://rayw.azurewebsites.net/\"",
+            prodUrl              : "\"https://rayw.azurewebsites.net/\""
     ]
 }
