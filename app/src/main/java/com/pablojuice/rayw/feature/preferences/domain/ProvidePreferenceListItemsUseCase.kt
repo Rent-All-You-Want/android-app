@@ -4,7 +4,7 @@ import com.pablojuice.core.R
 import com.pablojuice.core.app.config.AppConfig
 import com.pablojuice.core.data.remote.auth.UserManager
 import com.pablojuice.core.presentation.navigation.NavigationEvent
-import com.pablojuice.core.presentation.text.label.asLabel
+import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToDevOptionsScreen
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToLogOutDialog

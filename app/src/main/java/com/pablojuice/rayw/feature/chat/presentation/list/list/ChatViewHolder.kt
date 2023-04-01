@@ -1,7 +1,7 @@
 package com.pablojuice.rayw.feature.chat.presentation.list.list
 
 import android.view.ViewGroup
-import com.pablojuice.core.presentation.text.label.setLabel
+import com.pablojuice.core.presentation.view.label.setLabel
 import com.pablojuice.core.presentation.view.layoutInflater
 import com.pablojuice.core.presentation.view.list.ViewHolder
 import com.pablojuice.rayw.databinding.ItemChatNoRecipientsBinding

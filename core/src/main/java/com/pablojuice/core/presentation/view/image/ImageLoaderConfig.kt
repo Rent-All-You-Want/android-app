@@ -1,4 +1,4 @@
-package com.pablojuice.core.presentation.image
+package com.pablojuice.core.presentation.view.image
 
 import android.content.Context
 import com.bumptech.glide.GlideBuilder

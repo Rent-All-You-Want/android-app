@@ -1,7 +1,7 @@
 package com.pablojuice.rayw.feature.signin.domain.usecase
 
-import com.pablojuice.core.presentation.text.label.Label
-import com.pablojuice.core.presentation.text.label.asLabel
+import com.pablojuice.core.presentation.view.label.Label
+import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.rayw.R
 import com.pablojuice.rayw.feature.signin.data.local.OnBoarding

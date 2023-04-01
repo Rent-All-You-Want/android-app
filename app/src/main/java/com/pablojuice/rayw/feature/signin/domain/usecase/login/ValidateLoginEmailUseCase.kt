@@ -1,6 +1,6 @@
 package com.pablojuice.rayw.feature.signin.domain.usecase.login
 
-import com.pablojuice.core.presentation.text.label.asLabel
+import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.rayw.feature.signin.data.state.UserLogInState
 import javax.inject.Inject
 

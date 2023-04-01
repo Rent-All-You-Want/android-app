@@ -1,7 +1,7 @@
 package com.pablojuice.rayw.feature.home.presentation.navigation
 
-import com.pablojuice.core.presentation.text.label.asLabel
 import com.pablojuice.core.presentation.view.alert.ShowAlertDialogEvent
+import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.rayw.R
 
 class ToLogOutDialog(onLogOut: () -> Unit) : ShowAlertDialogEvent(

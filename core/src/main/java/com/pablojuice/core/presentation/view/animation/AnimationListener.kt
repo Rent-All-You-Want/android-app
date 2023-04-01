@@ -1,4 +1,4 @@
-package com.pablojuice.core.presentation.animation
+package com.pablojuice.core.presentation.view.animation
 
 import android.animation.Animator
 import android.view.ViewPropertyAnimator

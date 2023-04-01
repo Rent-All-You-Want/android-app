@@ -1,4 +1,4 @@
-package com.pablojuice.core.presentation.image
+package com.pablojuice.core.presentation.view.image
 
 abstract class Icon {
 //    private var cache: Drawable? = null

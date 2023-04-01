@@ -1,9 +1,9 @@
 package com.pablojuice.core.presentation.view
 
 import android.view.View
-import com.pablojuice.core.presentation.animation.AnimationConstants
-import com.pablojuice.core.presentation.animation.doOnAnimationEnd
-import com.pablojuice.core.presentation.animation.doOnAnimationStart
+import com.pablojuice.core.presentation.view.animation.AnimationConstants
+import com.pablojuice.core.presentation.view.animation.doOnAnimationEnd
+import com.pablojuice.core.presentation.view.animation.doOnAnimationStart
 
 fun View.setVisible(isVisible: Boolean, invisibleState: Int = View.GONE) {
     visibility = if (isVisible) View.VISIBLE else invisibleState

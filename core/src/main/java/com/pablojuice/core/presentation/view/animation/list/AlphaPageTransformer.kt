@@ -1,4 +1,4 @@
-package com.pablojuice.core.presentation.animation.list
+package com.pablojuice.core.presentation.view.animation.list
 
 import android.view.View
 import androidx.viewpager2.widget.ViewPager2

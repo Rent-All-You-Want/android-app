@@ -1,7 +1,7 @@
 package com.pablojuice.rayw.feature.home.data
 
-import com.pablojuice.core.presentation.text.label.Label
-import com.pablojuice.core.presentation.text.label.asLabel
+import com.pablojuice.core.presentation.view.label.Label
+import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.core.utils.NumberUtils
 import com.pablojuice.rayw.R
 

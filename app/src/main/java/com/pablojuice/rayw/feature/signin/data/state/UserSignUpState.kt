@@ -1,6 +1,6 @@
 package com.pablojuice.rayw.feature.signin.data.state
 
-import com.pablojuice.core.presentation.text.label.Label
+import com.pablojuice.core.presentation.view.label.Label
 import com.pablojuice.core.utils.StringUtils
 
 data class UserSignUpState(

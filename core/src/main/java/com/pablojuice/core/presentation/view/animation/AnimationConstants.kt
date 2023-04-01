@@ -1,4 +1,4 @@
-package com.pablojuice.core.presentation.animation
+package com.pablojuice.core.presentation.view.animation
 
 object AnimationConstants {
     const val EXTRA_SHORT_ANIMATION_TIME = 200L

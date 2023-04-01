@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.widget.FrameLayout
 import com.pablojuice.core.R
 import com.pablojuice.core.databinding.ViewToolBarBinding
-import com.pablojuice.core.presentation.text.label.Label
-import com.pablojuice.core.presentation.text.label.setLabel
+import com.pablojuice.core.presentation.view.label.Label
+import com.pablojuice.core.presentation.view.label.setLabel
 import com.pablojuice.core.presentation.view.setVisible
 
 @Deprecated("Use MaterialToolBar")

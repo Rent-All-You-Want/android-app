@@ -3,8 +3,8 @@ package com.pablojuice.rayw.feature.signin.presentation.onboarding.view
 import android.animation.ValueAnimator
 import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
-import com.pablojuice.core.presentation.animation.AnimationConstants.EXTRA_SHORT_ANIMATION_TIME
-import com.pablojuice.core.presentation.animation.list.AlphaPageTransformer
+import com.pablojuice.core.presentation.view.animation.AnimationConstants.EXTRA_SHORT_ANIMATION_TIME
+import com.pablojuice.core.presentation.view.animation.list.AlphaPageTransformer
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.setClickListener
 import com.pablojuice.core.presentation.view.setVisible
