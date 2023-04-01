@@ -8,7 +8,7 @@ import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
-import com.pablojuice.core.presentation.navigation.NavigationAnimation
+import com.pablojuice.core.presentation.navigation.directional.NavigationAnimation
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.setVisible
 import com.pablojuice.core.presentation.view.toolbar.OnCollapseStateChangedListener

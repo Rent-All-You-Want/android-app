@@ -1,4 +1,4 @@
-package com.pablojuice.core.presentation.navigation
+package com.pablojuice.core.presentation.navigation.directional
 
 import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions

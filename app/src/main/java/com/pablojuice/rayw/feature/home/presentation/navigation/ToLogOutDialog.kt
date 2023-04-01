@@ -1,6 +1,6 @@
 package com.pablojuice.rayw.feature.home.presentation.navigation
 
-import com.pablojuice.core.presentation.view.alert.ShowAlertDialogEvent
+import com.pablojuice.core.presentation.navigation.context.alert.ShowAlertDialogEvent
 import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.rayw.R
 

@@ -29,6 +29,7 @@
         <item name="colorOnSurface">@color/whitest_white</item>
         <item name="colorOnSurfaceOverlay">@color/whitest_white_transparent</item>
         <item name="colorControlHighlight">?attr/colorOnSurfaceOverlay</item>
+        <item name="dialogBackgroundDimAmount">0.55</item>
 
         <!-- Error colors. -->
         <item name="colorError">@color/coral_red</item>

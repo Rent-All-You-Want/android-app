@@ -1,11 +1,10 @@
-package com.pablojuice.core.presentation.view.alert
+package com.pablojuice.core.presentation.navigation.context.alert
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.pablojuice.core.presentation.navigation.ContextNavigationEvent
+import com.pablojuice.core.presentation.navigation.context.ContextNavigationEvent
 import com.pablojuice.core.presentation.view.label.Label
-import com.pablojuice.core.presentation.view.label.asLabel
 
-abstract class ShowAlertDialogEvent(
+open class ShowAlertDialogEvent(
     title: Label? = null,
     description: Label? = null,
     positive: Label? = null,
@@ -23,11 +22,4 @@ abstract class ShowAlertDialogEvent(
             }
             .show()
     }
-)
-
-class ShowOkAlertDialogEvent(onOkClicked: () -> Unit = {}) : ShowAlertDialogEvent(
-    title = "Title".asLabel(),
-    description = "Description".asLabel(),
-    positive = "OK".asLabel(),
-    positiveAction = onOkClicked
 )

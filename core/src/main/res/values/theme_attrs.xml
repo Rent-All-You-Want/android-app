@@ -8,4 +8,6 @@
     <attr format="color" name="colorDisabled" />
 
     <attr format="color" name="colorOnSurfaceOverlay" />
+
+    <attr format="float" name="dialogBackgroundDimAmount" />
 </resources>

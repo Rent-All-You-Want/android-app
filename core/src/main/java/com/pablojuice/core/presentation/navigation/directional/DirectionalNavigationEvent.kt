@@ -1,8 +1,9 @@
-package com.pablojuice.core.presentation.navigation
+package com.pablojuice.core.presentation.navigation.directional
 
 import androidx.navigation.NavController
 import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
+import com.pablojuice.core.presentation.navigation.NavigationEvent
 import com.pablojuice.core.utils.logging.Timber
 
 abstract class DirectionalNavigationEvent(

@@ -30,14 +30,12 @@ class LogInViewModel @Inject constructor(
             setPassword(password, false)
         }
         _state.value.run {
-            launch {
+            launchHandlingError {
                 if (isDataValid()) {
-                    repo.login(toLogInRequest()).onSuccess {
-                        submitNavigationEvent(ToLogInSuccessScreen())
-                    }.onFailure {
-                        Timber.e(it)
-                    }
-                }
+                    repo.login(toLogInRequest())
+                        .onSuccess { submitNavigationEvent(ToLogInSuccessScreen()) }
+                        .onFailure { Timber.e(it) }
+                } else Unit
             }
         }
     }

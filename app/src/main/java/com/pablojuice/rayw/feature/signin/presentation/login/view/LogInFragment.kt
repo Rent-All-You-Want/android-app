@@ -25,7 +25,10 @@ class LogInFragment : BasicFragment<FragmentLoginBinding, LogInViewModel>() {
 
     override fun setupScreen() {
         setupStateListener()
-        binding.logInButton.setOnClickListener { viewModel.logIn() }
+        binding.logInButton.setOnClickListener {
+            hideKeyboardIfOpened()
+            viewModel.logIn()
+        }
         binding.loginToolBar.setNavigationClickListener(::navigateBack)
         binding.setOnKeyboardVisibilityChangedListener { isKeyboardVisible ->
             binding.loginIcon.setVisible(!isKeyboardVisible)

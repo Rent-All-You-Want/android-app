@@ -30,6 +30,7 @@
         <item name="colorOnSurface">@color/thamar_black</item>
         <item name="colorOnSurfaceOverlay">@color/thamar_black_transparent</item>
         <item name="colorControlHighlight">?attr/colorOnSurfaceOverlay</item>
+        <item name="dialogBackgroundDimAmount">0.4</item>
 
         <!-- Error colors. -->
         <item name="colorError">@color/coral_red</item>

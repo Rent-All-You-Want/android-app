@@ -1,6 +1,6 @@
 package com.pablojuice.rayw.feature.preferences.data.local
 
-import com.pablojuice.core.presentation.navigation.DirectionalNavigationEvent
+import com.pablojuice.core.presentation.navigation.NavigationEvent
 import com.pablojuice.core.presentation.navigation.NavigationEvents
 import com.pablojuice.rayw.R
 
@@ -9,7 +9,7 @@ enum class Preference(
     val icon: Int? = null,
     val sectionTitle: Int? = null,
     val shouldBeVisibleForUser: (userIsLoggedIn: Boolean) -> Boolean = { true },
-    val navigationEvent: DirectionalNavigationEvent = NavigationEvents.EmptyNavigationEvent
+    val navigationEvent: NavigationEvent = NavigationEvents.EmptyNavigationEvent
 ) {
 
     LOGO,
