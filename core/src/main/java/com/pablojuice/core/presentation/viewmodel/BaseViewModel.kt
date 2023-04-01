@@ -2,9 +2,7 @@ package com.pablojuice.core.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
 abstract class BaseViewModel : ViewModel() {
@@ -19,4 +17,9 @@ abstract class BaseViewModel : ViewModel() {
 
     fun launchOnIO(block: suspend CoroutineScope.() -> Unit) =
         launch(context = Dispatchers.IO, block = block)
+
+    fun <T> launchAsync(
+        context: CoroutineContext = Dispatchers.Default,
+        block: suspend CoroutineScope.() -> T
+    ): Deferred<T> = viewModelScope.async(context = context, block = block)
 }

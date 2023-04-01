@@ -26,7 +26,7 @@
     </style>
 
     <style name="ThemeOverlay.App.TextInputLayout.OutlinedBox" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
-        <item name="colorOnSurface">?attr/colorOnPrimary</item>
+        <item name="colorOnSurface">?attr/colorOnBackgroundVariant</item>
         <item name="colorOutline">?attr/colorBackgroundVariant</item>
     </style>
 </resources>
