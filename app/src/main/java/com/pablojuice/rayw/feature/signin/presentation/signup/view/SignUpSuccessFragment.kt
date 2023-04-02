@@ -5,6 +5,7 @@ import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.setClickListener
 import com.pablojuice.rayw.R
 import com.pablojuice.rayw.databinding.FragmentSignupSuccessBinding
+import com.pablojuice.rayw.feature.signin.presentation.signup.viewmodel.SignUpViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

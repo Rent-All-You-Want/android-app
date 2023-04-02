@@ -2,7 +2,7 @@ package com.pablojuice.rayw.feature.signin.domain.usecase.signup
 
 import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.core.utils.toSimpleDateFormat
-import com.pablojuice.rayw.feature.signin.data.state.UserSignUpState
+import com.pablojuice.rayw.feature.signin.presentation.signup.viewmodel.UserSignUpState
 import java.util.*
 import javax.inject.Inject
 

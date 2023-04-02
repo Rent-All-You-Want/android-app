@@ -1,11 +1,10 @@
-package com.pablojuice.rayw.feature.signin.presentation.signup.view
+package com.pablojuice.rayw.feature.signin.presentation.signup.viewmodel
 
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.core.utils.logging.Timber
 import com.pablojuice.rayw.feature.home.presentation.navigation.BackToHomeScreen
 import com.pablojuice.rayw.feature.signin.data.remote.request.RegisterRequest
 import com.pablojuice.rayw.feature.signin.data.repository.SignInRepository
-import com.pablojuice.rayw.feature.signin.data.state.UserSignUpState
 import com.pablojuice.rayw.feature.signin.domain.usecase.signup.*
 import com.pablojuice.rayw.feature.signin.presentation.signup.navigation.ToSecondSignUpScreen
 import com.pablojuice.rayw.feature.signin.presentation.signup.navigation.ToSuccessSignUpScreen
@@ -22,7 +21,7 @@ class SignUpViewModel @Inject constructor(
     private val validateName: ValidateNameStateUseCase,
     private val validateBirthDate: ValidateBirthDateStateUseCase,
     private val validateDateString: ValidateBirthDateStringStateUseCase,
-    private val repo: SignInRepository
+    private val repository: SignInRepository
 ) : BasicViewModel() {
 
     private val _state = MutableStateFlow(UserSignUpState())
@@ -66,14 +65,13 @@ class SignUpViewModel @Inject constructor(
             setBirthDate(dateString = birthDate)
         }
         _state.value.run {
-            launch {
+            launchHandlingError {
                 if (isSecondStepDataValid()) {
-                    repo.register(toRegisterRequest()).onSuccess {
-                        submitNavigationEvent(ToSuccessSignUpScreen())
-                    }.onFailure {
-                        Timber.e(it)
-                    }
-                }
+                    repository.register(toRegisterRequest())
+                        .onSuccess {
+                            submitNavigationEvent(ToSuccessSignUpScreen())
+                        }.onFailure { Timber.e(it) }
+                } else Unit
             }
         }
     }

@@ -14,6 +14,7 @@ import com.pablojuice.core.presentation.view.setVisible
 import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
 import com.pablojuice.rayw.R
 import com.pablojuice.rayw.databinding.FragmentSignupStepOneBinding
+import com.pablojuice.rayw.feature.signin.presentation.signup.viewmodel.SignUpViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

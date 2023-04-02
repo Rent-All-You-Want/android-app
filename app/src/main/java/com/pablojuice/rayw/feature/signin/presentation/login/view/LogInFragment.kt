@@ -14,6 +14,7 @@ import com.pablojuice.rayw.R
 import com.pablojuice.rayw.databinding.FragmentLoginBinding
 import com.pablojuice.rayw.feature.signin.presentation.login.navigation.ToRecoveryScreen
 import com.pablojuice.rayw.feature.signin.presentation.login.navigation.ToSignUpScreen
+import com.pablojuice.rayw.feature.signin.presentation.login.viewmodel.LogInViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

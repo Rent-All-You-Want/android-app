@@ -1,7 +1,7 @@
 package com.pablojuice.rayw.feature.signin.domain.usecase.login
 
 import com.pablojuice.core.presentation.view.label.asLabel
-import com.pablojuice.rayw.feature.signin.data.state.UserLogInState
+import com.pablojuice.rayw.feature.signin.presentation.login.viewmodel.UserLogInState
 import javax.inject.Inject
 
 class ValidateLoginEmailUseCase @Inject constructor() {

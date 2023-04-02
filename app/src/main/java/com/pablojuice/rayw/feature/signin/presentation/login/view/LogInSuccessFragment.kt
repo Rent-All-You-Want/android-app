@@ -4,6 +4,7 @@ import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.rayw.R
 import com.pablojuice.rayw.databinding.FragmentLoginSuccessBinding
+import com.pablojuice.rayw.feature.signin.presentation.login.viewmodel.LogInViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

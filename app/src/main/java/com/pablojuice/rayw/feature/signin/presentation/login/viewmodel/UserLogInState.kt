@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.signin.data.state
+package com.pablojuice.rayw.feature.signin.presentation.login.viewmodel
 
 import com.pablojuice.core.presentation.view.label.Label
 import com.pablojuice.core.utils.StringUtils

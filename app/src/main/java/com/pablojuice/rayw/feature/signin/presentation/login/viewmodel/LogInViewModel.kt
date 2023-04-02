@@ -1,11 +1,10 @@
-package com.pablojuice.rayw.feature.signin.presentation.login.view
+package com.pablojuice.rayw.feature.signin.presentation.login.viewmodel
 
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.core.utils.logging.Timber
 import com.pablojuice.rayw.feature.home.presentation.navigation.BackToHomeScreen
 import com.pablojuice.rayw.feature.signin.data.remote.request.LoginRequest
 import com.pablojuice.rayw.feature.signin.data.repository.SignInRepository
-import com.pablojuice.rayw.feature.signin.data.state.UserLogInState
 import com.pablojuice.rayw.feature.signin.domain.usecase.login.ValidateLoginEmailUseCase
 import com.pablojuice.rayw.feature.signin.domain.usecase.login.ValidateLoginPasswordUseCase
 import com.pablojuice.rayw.feature.signin.presentation.login.navigation.ToLogInSuccessScreen
@@ -18,7 +17,7 @@ import javax.inject.Inject
 class LogInViewModel @Inject constructor(
     private val validateEmail: ValidateLoginEmailUseCase,
     private val validatePassword: ValidateLoginPasswordUseCase,
-    private val repo: SignInRepository
+    private val repository: SignInRepository
 ) : BasicViewModel() {
 
     private val _state = MutableStateFlow(UserLogInState())
@@ -32,7 +31,7 @@ class LogInViewModel @Inject constructor(
         _state.value.run {
             launchHandlingError {
                 if (isDataValid()) {
-                    repo.login(toLogInRequest())
+                    repository.login(toLogInRequest())
                         .onSuccess { submitNavigationEvent(ToLogInSuccessScreen()) }
                         .onFailure { Timber.e(it) }
                 } else Unit
