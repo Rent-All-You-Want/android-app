@@ -37,7 +37,7 @@ class RentRepository @Inject constructor(
                 RentListData(
                     id = lastId + 1,
                     icon = R.drawable.ic_sample_rent_car,
-                    title = "BMW GTX 2008",
+                    title = "BMW GTX 2008 asdhasa ass md",
                     isInWishList = false,
                     price = 999999.0,
                     priceCurrency = "UAH",
@@ -50,8 +50,8 @@ class RentRepository @Inject constructor(
             add(
                 RentListData(
                     id = lastId + 2,
-                    icon = R.drawable.ic_sample_rent_portable,
-                    title = "Nintendo switch 129GB top super mega duper free lol",
+                    icon = R.drawable.ic_sample_rent_phone,
+                    title = "IPHONE 228s 129GB top super mega duper free lol",
                     isInWishList = false,
                     price = 699.0,
                     priceCurrency = "UAH",
@@ -93,7 +93,7 @@ class RentRepository @Inject constructor(
                     R.drawable.ic_sample_rent_car,
                     R.drawable.ic_sample_rent_car
                 ),
-                title = "BMW GTX 2008",
+                title = "BMW GTX 2008 asdhasa ass md",
                 description = "id = $id, sanitizedId = $sanitizedId",
                 isInWishList = false,
                 price = 999999.0,
@@ -106,11 +106,11 @@ class RentRepository @Inject constructor(
             else -> RentDetailsData(
                 id = id,
                 icon = listOf(
-                    R.drawable.ic_sample_rent_portable,
-                    R.drawable.ic_sample_rent_portable,
-                    R.drawable.ic_sample_rent_portable
+                    R.drawable.ic_sample_rent_phone,
+                    R.drawable.ic_sample_rent_phone,
+                    R.drawable.ic_sample_rent_phone
                 ),
-                title = "Nintendo switch 129GB top super mega duper free lol",
+                title = "IPHONE 228s 129GB top super mega duper free lol",
                 description = "id = $id, sanitizedId = $sanitizedId",
                 isInWishList = false,
                 price = 699.0,

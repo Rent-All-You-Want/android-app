@@ -88,7 +88,7 @@
         android:weightSum="2">
 
         <Button
-            style="@style/view.button.medium.primary"
+            style="@style/view.button.medium.outlined.primary"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/dimen_4"
@@ -96,7 +96,7 @@
             android:text="Call \ Send Sms" />
 
         <Button
-            style="@style/view.button.medium.secondary"
+            style="@style/view.button.medium.filled.primary"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/dimen_4"

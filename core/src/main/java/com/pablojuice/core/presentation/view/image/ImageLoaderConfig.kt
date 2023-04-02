@@ -14,7 +14,7 @@ class ImageLoaderConfig : AppGlideModule() {
     override fun applyOptions(context: Context, builder: GlideBuilder) {
         builder.setDefaultRequestOptions(
             RequestOptions()
-                .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
+                .diskCacheStrategy(DiskCacheStrategy.DATA)
                 .format(DecodeFormat.DEFAULT)
                 .skipMemoryCache(false)
                 .dontAnimate()

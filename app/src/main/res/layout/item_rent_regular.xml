@@ -20,14 +20,14 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
-        app:layout_constraintDimensionRatio="w, 16:11"
+        app:layout_constraintDimensionRatio="h,14:16"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:shapeAppearance="@style/shape.small"
-        tools:src="@drawable/ic_sample_rent_game" />
+        tools:src="@drawable/ic_sample_rent_phone" />
 
     <CheckBox
         android:id="@+id/add_to_wishlist"
