@@ -5,9 +5,7 @@ import com.pablojuice.core.data.manager.UserPreferences
 import com.pablojuice.core.data.remote.auth.UserManager
 import com.pablojuice.core.data.repository.Repository
 import com.pablojuice.rayw.feature.signin.data.remote.api.SignInApi
-import com.pablojuice.rayw.feature.signin.data.remote.request.AuthRequest
-import com.pablojuice.rayw.feature.signin.data.remote.request.LoginRequest
-import com.pablojuice.rayw.feature.signin.data.remote.request.RegisterRequest
+import com.pablojuice.rayw.feature.signin.data.remote.request.*
 import dagger.Reusable
 import javax.inject.Inject
 
@@ -52,4 +50,10 @@ class SignInRepository @Inject constructor(
             launch { userManager.updateToken() }
         }
     }
+
+    suspend fun requestPasswordReset(request: RequestPasswordResetRequest) =
+        launch { api.requestPasswordReset(request) }
+
+    suspend fun confirmPasswordReset(request: ConfirmPasswordResetRequest) =
+        launch { api.confirmPasswordReset(request) }
 }

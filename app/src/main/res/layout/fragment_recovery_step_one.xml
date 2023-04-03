@@ -4,27 +4,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
     tools:context=".feature.home.presentation.view.HomeFragment">
 
-    <TextView
-        android:id="@+id/message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="recovery 1"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <com.google.android.material.appbar.MaterialToolbar
+        style="@style/view.toolBar.navigableBack"
+        android:id="@+id/signup_tool_bar"
+        android:layout_width="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/recovery_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_recovery_1"
+        app:layout_constraintBottom_toTopOf="@+id/recover_password_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signup_tool_bar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/recovery_title"
+        style="@style/text.headlineLarge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_32"
+        android:layout_marginTop="@dimen/dimen_8"
+        app:layout_goneMarginTop="0dp"
+        android:gravity="center"
+        android:text="@string/signin_forgot_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recovery_icon" />
+
+    <TextView
+        android:id="@+id/recovery_description"
+        style="@style/text.bodyLarge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/dimen_16"
+        android:gravity="center"
+        android:text="@string/signin_enter_email_for_code"
+        app:layout_constraintEnd_toEndOf="@+id/recovery_title"
+        app:layout_constraintStart_toStartOf="@+id/recovery_title"
+        app:layout_constraintTop_toBottomOf="@+id/recovery_title" />
+
+    <LinearLayout
+        android:id="@+id/recovery_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_32"
+        android:layout_marginVertical="@dimen/dimen_8"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recovery_description">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16"
+            app:startIconDrawable="@drawable/ic_alternate_email_medium"
+            android:hint="@string/signin_email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email_input_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
     <Button
-        android:id="@+id/recovery_proceed"
+        android:id="@+id/recover_password_button"
         style="@style/view.button.large.filled.primary"
         android:layout_width="0dp"
         android:layout_marginHorizontal="@dimen/dimen_32"
-        android:layout_marginVertical="@dimen/dimen_32"
-        android:text="@string/signin_proceed"
+        android:layout_marginVertical="@dimen/dimen_4"
+        android:text="@string/signin_recover_account"
+        app:layout_constraintBottom_toTopOf="@+id/i_remember_password_button"
+        app:layout_constraintEnd_toEndOf="@+id/recovery_container"
+        app:layout_constraintStart_toStartOf="@+id/recovery_container" />
+
+    <Button
+        android:id="@+id/i_remember_password_button"
+        style="@style/view.button.text.primary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/signin_i_remember_my_pass"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/recover_password_button"
+        app:layout_constraintStart_toStartOf="@+id/recover_password_button" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

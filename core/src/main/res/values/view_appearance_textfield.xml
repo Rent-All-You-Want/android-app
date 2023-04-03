@@ -6,6 +6,7 @@
         <item name="boxBackgroundColor">?attr/colorBackgroundVariant</item>
         <item name="boxBackgroundMode">outline</item>
         <item name="android:textColorHint">?attr/colorDisabled</item>
+        <item name="startIconTint">?attr/colorDisabled</item>
         <item name="hintTextColor">?attr/colorPrimary</item>
     </style>
 
@@ -27,6 +28,7 @@
 
     <style name="ThemeOverlay.App.TextInputLayout.OutlinedBox" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
         <item name="colorOnSurface">?attr/colorOnBackgroundVariant</item>
+        <item name="colorOnSurfaceVariant">?attr/colorOnBackgroundVariant</item>
         <item name="colorOutline">?attr/colorBackgroundVariant</item>
     </style>
 </resources>

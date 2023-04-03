@@ -8,8 +8,8 @@
     tools:context=".feature.signin.presentation.signup.view.SignUpStepTwoFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
-        style="@style/view.toolBar.navigableBack"
         android:id="@+id/signup_tool_bar"
+        style="@style/view.toolBar.navigableBack"
         android:layout_width="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,12 +34,12 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/dimen_32"
         android:layout_marginTop="@dimen/dimen_8"
-        app:layout_goneMarginTop="0dp"
         android:gravity="center"
         android:text="@string/signin_signup_now"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signup_icon" />
+        app:layout_constraintTop_toBottomOf="@+id/signup_icon"
+        app:layout_goneMarginTop="0dp" />
 
     <TextView
         android:id="@+id/signup_description"
@@ -69,7 +69,8 @@
             android:id="@+id/name_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/signin_name">
+            android:hint="@string/signin_name"
+            app:startIconDrawable="@drawable/ic_badge_medium">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/name_input_text"
@@ -86,7 +87,8 @@
             android:layout_marginTop="@dimen/dimen_8"
             android:hint="@string/signin_date"
             app:endIconDrawable="@drawable/ic_calendar_event_medium"
-            app:endIconMode="custom">
+            app:endIconMode="custom"
+            app:startIconDrawable="@drawable/ic_cake_medium">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/date_input_text"

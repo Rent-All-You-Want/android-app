@@ -10,6 +10,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.pablojuice.core.presentation.navigation.directional.NavigationAnimation
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
+import com.pablojuice.core.presentation.view.fragment.hideKeyboardIfOpened
 import com.pablojuice.core.presentation.view.setVisible
 import com.pablojuice.core.presentation.view.toolbar.OnCollapseStateChangedListener
 import com.pablojuice.core.presentation.view.toolbar.setOnCollapseStateChangedListener
@@ -45,6 +46,7 @@ class HomeFragment : BasicFragment<FragmentHomeBinding, HomeViewModel>() {
                 binding.homeBottomNavigation.selectedItemId -> false
                 R.id.create_new_rent -> navigate(ToCreateNewRentScreen()).let { false }
                 else -> {
+                    hideKeyboardIfOpened()
                     viewModel.setSelectedMenuItem(item.itemId)
                     controller.navigate(item.itemId, null, NavigationAnimation.Fade().options)
                     return@setOnItemSelectedListener true

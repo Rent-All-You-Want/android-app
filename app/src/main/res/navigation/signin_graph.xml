@@ -126,11 +126,11 @@
         tools:layout="@layout/fragment_recovery_success">
         <action
             android:id="@+id/to_login"
+            app:popUpTo="@id/login"
+            app:popUpToInclusive="true"
             app:destination="@id/login"
-            app:enterAnim="@anim/slide_from_right"
-            app:exitAnim="@anim/fragment_fade_out_anim"
-            app:popEnterAnim="@anim/fragment_fade_in_anim"
-            app:popExitAnim="@anim/slide_to_right" />
+            app:enterAnim="@anim/fragment_fade_in_anim"
+            app:exitAnim="@anim/slide_to_right" />
     </fragment>
 
 </navigation>
