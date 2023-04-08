@@ -8,7 +8,7 @@ import com.pablojuice.core.presentation.viewmodel.BaseViewModel
 import com.pablojuice.core.utils.NumberUtils.UNDEFINED
 import com.pablojuice.core.utils.logging.Timber
 import com.pablojuice.rayw.R
-import com.pablojuice.rayw.feature.signin.domain.usecase.AuthUserUseCase
+import com.pablojuice.rayw.feature.signin.domain.login.AuthUserUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow

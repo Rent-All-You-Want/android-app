@@ -48,7 +48,7 @@ class SignUpStepTwoFragment : BasicFragment<FragmentSignupStepTwoBinding, SignUp
         dateDialog.addOnPositiveButtonClickListener(viewModel::setBirthDate)
         binding.dateInputText.setOnClickListener { showDialog(dateDialog) }
         binding.nameInputLayout.editText?.doOnTextChanged { text, _, _, _ ->
-            viewModel.setName(text.toString())
+            viewModel.setName(text.toString().trim())
         }
         viewModel.state.observe { state ->
             binding.nameInputLayout.setErrorLabel(state.nameError)

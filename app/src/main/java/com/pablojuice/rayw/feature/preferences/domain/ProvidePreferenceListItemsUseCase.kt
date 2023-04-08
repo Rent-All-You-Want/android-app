@@ -11,7 +11,7 @@ import com.pablojuice.rayw.feature.home.presentation.navigation.ToLogOutDialog
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToLoginScreen
 import com.pablojuice.rayw.feature.preferences.data.local.Preference
 import com.pablojuice.rayw.feature.preferences.presentation.list.*
-import com.pablojuice.rayw.feature.signin.domain.usecase.LogOutUseCase
+import com.pablojuice.rayw.feature.signin.domain.login.LogOutUseCase
 import javax.inject.Inject
 
 class ProvidePreferenceListItemsUseCase @Inject constructor(

@@ -6,7 +6,7 @@ import com.pablojuice.core.presentation.view.layoutInflater
 import com.pablojuice.core.presentation.view.list.ListAdapter
 import com.pablojuice.core.presentation.view.list.ViewHolder
 import com.pablojuice.rayw.databinding.ItemOnboardingBinding
-import com.pablojuice.rayw.feature.signin.domain.usecase.OnBoardingListItem
+import com.pablojuice.rayw.feature.signin.domain.OnBoardingListItem
 
 class OnBoardingAdapter(items: List<OnBoardingListItem>) : ListAdapter(items) {
 

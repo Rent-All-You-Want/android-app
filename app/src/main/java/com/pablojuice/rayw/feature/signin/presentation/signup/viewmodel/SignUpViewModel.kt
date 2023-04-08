@@ -2,25 +2,27 @@ package com.pablojuice.rayw.feature.signin.presentation.signup.viewmodel
 
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.core.utils.logging.Timber
+import com.pablojuice.core.utils.toSimpleDateFormat
 import com.pablojuice.rayw.feature.home.presentation.navigation.BackToHomeScreen
 import com.pablojuice.rayw.feature.signin.data.remote.request.RegisterRequest
 import com.pablojuice.rayw.feature.signin.data.repository.SignInRepository
-import com.pablojuice.rayw.feature.signin.domain.usecase.signup.*
+import com.pablojuice.rayw.feature.signin.domain.validation.*
 import com.pablojuice.rayw.feature.signin.presentation.signup.navigation.ToSecondSignUpScreen
 import com.pablojuice.rayw.feature.signin.presentation.signup.navigation.ToSuccessSignUpScreen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import java.util.*
 import javax.inject.Inject
 
 @HiltViewModel
 class SignUpViewModel @Inject constructor(
-    private val validateEmail: ValidateEmailStateUseCase,
-    private val validatePassword: ValidatePasswordStateUseCase,
-    private val validateAcceptRules: ValidateAcceptRulesStateUseCase,
-    private val validateName: ValidateNameStateUseCase,
-    private val validateBirthDate: ValidateBirthDateStateUseCase,
-    private val validateDateString: ValidateBirthDateStringStateUseCase,
+    private val validateEmail: ValidateEmailUseCase,
+    private val validatePassword: ValidatePasswordUseCase,
+    private val validateAcceptRules: ValidateAcceptRulesUseCase,
+    private val validateName: ValidateNameUseCase,
+    private val validateBirthDate: ValidateBirthDateUseCase,
+    private val validateDateString: ValidateBirthDateStringUseCase,
     private val repository: SignInRepository
 ) : BasicViewModel() {
 
@@ -39,30 +41,52 @@ class SignUpViewModel @Inject constructor(
     }
 
     fun setEmail(email: String, softError: Boolean = true) {
-        _state.value = validateEmail(email, _state.value, softError)
+        _state.value = _state.value.copy(
+            email = email,
+            emailError = validateEmail(email, softError)
+        )
     }
 
     fun setPassword(password: String, softError: Boolean = true) {
-        _state.value = validatePassword(password, _state.value, softError)
+        _state.value = _state.value.copy(
+            password = password,
+            passwordError = validatePassword(password, softError)
+        )
     }
 
     fun setAcceptRules(rulesAccepted: Boolean) {
-        _state.value = validateAcceptRules(rulesAccepted, _state.value)
+        _state.value = _state.value.copy(
+            acceptedRules = rulesAccepted,
+            acceptedRulesError = validateAcceptRules(rulesAccepted)
+        )
     }
 
     fun setName(name: String, softError: Boolean = true) {
-        _state.value = validateName(name, _state.value, softError)
+        _state.value = _state.value.copy(
+            name = name,
+            nameError = validateName(name, softError)
+        )
     }
 
-    fun setBirthDate(dateMillis: Long? = null, dateString: String? = null) {
-        dateMillis?.let { _state.value = validateBirthDate(dateMillis, _state.value) }
-        dateString?.let { _state.value = validateDateString(dateString, _state.value) }
+    fun setBirthDate(dateMillis: Long) {
+        val birthDate = Date(dateMillis)
+        _state.value = _state.value.copy(
+            birthDate = birthDate.toSimpleDateFormat(),
+            birthDateError = validateBirthDate(birthDate)
+        )
+    }
+
+    private fun setBirthDayString(dateString: String) {
+        _state.value = _state.value.copy(
+            birthDate = dateString,
+            birthDateError = validateDateString(dateString)
+        )
     }
 
     fun proceedToSuccessStep() {
         _state.value.run {
             setName(name, false)
-            setBirthDate(dateString = birthDate)
+            setBirthDayString(birthDate)
         }
         _state.value.run {
             launchHandlingError {

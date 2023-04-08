@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.signin.domain.usecase
+package com.pablojuice.rayw.feature.signin.domain.login
 
 import com.pablojuice.rayw.feature.signin.data.remote.request.AuthRequest
 import com.pablojuice.rayw.feature.signin.data.repository.SignInRepository

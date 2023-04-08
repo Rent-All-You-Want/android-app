@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.signin.domain.usecase
+package com.pablojuice.rayw.feature.signin.domain.login
 
 import com.pablojuice.core.data.manager.UserPreferences
 import com.pablojuice.core.data.remote.auth.UserManager

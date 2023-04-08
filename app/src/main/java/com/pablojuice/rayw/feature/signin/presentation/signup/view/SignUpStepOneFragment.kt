@@ -37,10 +37,10 @@ class SignUpStepOneFragment : BasicFragment<FragmentSignupStepOneBinding, SignUp
 
     private fun setupStateListener() {
         binding.emailInputLayout.editText?.doOnTextChanged { text, _, _, _ ->
-            viewModel.setEmail(text.toString())
+            viewModel.setEmail(text.toString().trim())
         }
         binding.passwordInputLayout.editText?.doOnTextChanged { text, _, _, _ ->
-            viewModel.setPassword(text.toString())
+            viewModel.setPassword(text.toString().trim())
         }
         binding.acceptRulesSwitch.setOnCheckedChangeListener { _, isChecked ->
             viewModel.setAcceptRules(isChecked)

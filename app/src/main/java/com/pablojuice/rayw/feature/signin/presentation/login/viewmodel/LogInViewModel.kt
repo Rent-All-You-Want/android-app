@@ -5,8 +5,8 @@ import com.pablojuice.core.utils.logging.Timber
 import com.pablojuice.rayw.feature.home.presentation.navigation.BackToHomeScreen
 import com.pablojuice.rayw.feature.signin.data.remote.request.LoginRequest
 import com.pablojuice.rayw.feature.signin.data.repository.SignInRepository
-import com.pablojuice.rayw.feature.signin.domain.usecase.login.ValidateLoginEmailUseCase
-import com.pablojuice.rayw.feature.signin.domain.usecase.login.ValidateLoginPasswordUseCase
+import com.pablojuice.rayw.feature.signin.domain.validation.ValidateEmailUseCase
+import com.pablojuice.rayw.feature.signin.domain.validation.ValidatePasswordUseCase
 import com.pablojuice.rayw.feature.signin.presentation.login.navigation.ToLogInSuccessScreen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
@@ -15,8 +15,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LogInViewModel @Inject constructor(
-    private val validateEmail: ValidateLoginEmailUseCase,
-    private val validatePassword: ValidateLoginPasswordUseCase,
+    private val validateEmail: ValidateEmailUseCase,
+    private val validatePassword: ValidatePasswordUseCase,
     private val repository: SignInRepository
 ) : BasicViewModel() {
 
@@ -40,11 +40,17 @@ class LogInViewModel @Inject constructor(
     }
 
     fun setEmail(email: String, softError: Boolean = true) {
-        _state.value = validateEmail(email, _state.value, softError)
+        _state.value = _state.value.copy(
+            email = email,
+            emailError = validateEmail(email, softError)
+        )
     }
 
     fun setPassword(password: String, softError: Boolean = true) {
-        _state.value = validatePassword(password, _state.value, softError)
+        _state.value = _state.value.copy(
+            password = password,
+            passwordError = validatePassword(password, softError)
+        )
     }
 
     fun backToHome() = submitNavigationEvent(BackToHomeScreen())

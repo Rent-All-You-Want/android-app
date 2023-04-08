@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.signin.domain.usecase
+package com.pablojuice.rayw.feature.signin.domain
 
 import com.pablojuice.core.presentation.view.label.Label
 import com.pablojuice.core.presentation.view.label.asLabel

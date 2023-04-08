@@ -41,10 +41,10 @@ class LogInFragment : BasicFragment<FragmentLoginBinding, LogInViewModel>() {
 
     private fun setupStateListener() {
         binding.emailInputLayout.editText?.doOnTextChanged { text, _, _, _ ->
-            viewModel.setEmail(text.toString())
+            viewModel.setEmail(text.toString().trim())
         }
         binding.passwordInputLayout.editText?.doOnTextChanged { text, _, _, _ ->
-            viewModel.setPassword(text.toString())
+            viewModel.setPassword(text.toString().trim())
         }
         viewModel.state.observe { state ->
             binding.emailInputLayout.setErrorLabel(state.emailError)

@@ -14,6 +14,7 @@
     <string name="signin_date">Birth date</string>
     <string name="signin_name">Name</string>
     <string name="signin_password">Password</string>
+    <string name="signin_confirm_password">Confirm password</string>
     <string name="signin_repeat_password">Repeat password</string>
     <string name="signin_dont_remember_pass">Do not remember the password?</string>
     <string name="signin_agree_with_rules">I agree with rules</string>
@@ -44,4 +45,15 @@
     <string name="signin_no_one_can_think_of">No one can think of</string>
     <string name="signin_confirm">Confirm</string>
 
+    <string name="signin_error_email_too_short">Email is too short</string>
+    <string name="signin_error_email_is_not_valid">Email is not valid</string>
+    <string name="signin_error_password_too_short">Password is too short</string>
+    <string name="signin_error_password_contains_unexpected_symbols">Password contains unexpected symbol</string>
+    <string name="signin_error_name_too_short">Name is too short</string>
+    <string name="signin_error_name_contains_unexpected_symbols">Name contains unexpected symbol</string>
+    <string name="signin_error_rules_should_be_accepted">* Required</string>
+    <string name="signin_error_birth_date_is_not_valid">Birth Date is not valid</string>
+    <string name="signin_error_birth_date_is_empty">Birth Date is empty</string>
+    <string name="signin_error_recovery_code_is_too_short">Code is too short</string>
+    <string name="signin_error_recovery_code_is_not_valid">Code is not valid</string>
 </resources>
