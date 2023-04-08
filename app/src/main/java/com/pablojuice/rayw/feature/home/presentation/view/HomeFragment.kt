@@ -18,7 +18,6 @@ import com.pablojuice.core.presentation.view.toolbar.setTitleLabel
 import com.pablojuice.rayw.R
 import com.pablojuice.rayw.databinding.FragmentHomeBinding
 import com.pablojuice.rayw.feature.home.data.HomeMenuData
-import com.pablojuice.rayw.feature.home.presentation.navigation.ToCreateNewRentScreen
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.math.max
 
@@ -40,25 +39,18 @@ class HomeFragment : BasicFragment<FragmentHomeBinding, HomeViewModel>() {
     private fun setupNavigationListener() {
         val controller =
             binding.homeFragmentContainer.getFragment<NavHostFragment>().findNavController()
-
-        binding.homeBottomNavigation.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                binding.homeBottomNavigation.selectedItemId -> false
-                R.id.create_new_rent -> navigate(ToCreateNewRentScreen()).let { false }
-                else -> {
-                    hideKeyboardIfOpened()
-                    viewModel.setSelectedMenuItem(item.itemId)
-                    controller.navigate(item.itemId, null, NavigationAnimation.Fade().options)
-                    return@setOnItemSelectedListener true
-                }
-            }
+        viewModel.menuData.observe { item ->
+            binding.homeBottomNavigation.selectedItemId = item.id
+            controller.navigate(item.id, null, NavigationAnimation.Fade().options)
+            setToolBarItems(item)
         }
-        viewModel.menuData.observe(::setupToolBar)
-    }
-
-    private fun setupToolBar(item: HomeViewModel.HomeMenuDataWithListener) {
-        setToolBarItems(item.data)
-        setToolBarListener(item.listener)
+        viewModel.menuListener.observe(::setToolBarListener)
+        binding.homeBottomNavigation.setOnItemSelectedListener { item ->
+            if (item.itemId != binding.homeBottomNavigation.selectedItemId) {
+                hideKeyboardIfOpened()
+                viewModel.selectMenuItem(item.itemId)
+            } else false
+        }
     }
 
     private fun setToolBarItems(data: HomeMenuData) = data.run {
