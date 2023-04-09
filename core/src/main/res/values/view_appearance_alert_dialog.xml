@@ -7,9 +7,9 @@
         <item name="android:backgroundDimAmount">?attr/dialogBackgroundDimAmount</item>
         <item name="materialAlertDialogTitleTextStyle">@style/view.alertDialog.title</item>
         <item name="materialAlertDialogBodyTextStyle">@style/view.alertDialog.body</item>
-        <item name="buttonBarPositiveButtonStyle">@style/view.button.text.primary</item>
-        <item name="buttonBarNegativeButtonStyle">@style/view.button.text.primary</item>
-        <item name="buttonBarNeutralButtonStyle">@style/view.button.text.primary</item>
+        <item name="buttonBarPositiveButtonStyle">@style/view.alertDialog.button</item>
+        <item name="buttonBarNegativeButtonStyle">@style/view.alertDialog.button</item>
+        <item name="buttonBarNeutralButtonStyle">@style/view.alertDialog.button</item>
     </style>
 
     <style name="view.alertDialog" parent="MaterialAlertDialog.Material3">
@@ -25,6 +25,11 @@
     <style name="view.alertDialog.body" parent="MaterialAlertDialog.Material3.Body.Text.CenterStacked">
         <item name="android:textAppearance">@style/text.bodyLarge</item>
         <item name="android:paddingTop">@dimen/dimen_20</item>
+    </style>
+
+    <style name="view.alertDialog.button" parent="view.button.text">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.TextButton.PrimaryVariant
+        </item>
     </style>
 
 </resources>

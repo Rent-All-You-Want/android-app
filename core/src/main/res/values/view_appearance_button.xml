@@ -183,11 +183,16 @@
 
     <style name="ThemeOverlay.App.Button.Outlined.Primary" parent="">
         <item name="colorContainer">@android:color/transparent</item>
-        <item name="colorOnContainer">?attr/colorPrimaryVariant</item>
-        <item name="colorOnSurface">?attr/colorPrimaryVariant</item>
+        <item name="colorOnContainer">?attr/colorPrimary</item>
+        <item name="colorOnSurface">?attr/colorPrimary</item>
     </style>
 
     <style name="ThemeOverlay.App.Button.TextButton.Primary" parent="">
+        <item name="colorContainer">@android:color/transparent</item>
+        <item name="colorOnContainer">?attr/colorPrimary</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Button.TextButton.PrimaryVariant" parent="">
         <item name="colorContainer">@android:color/transparent</item>
         <item name="colorOnContainer">?attr/colorPrimaryVariant</item>
     </style>
