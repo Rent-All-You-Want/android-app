@@ -12,10 +12,13 @@ data class UserRecoveryState(
 
     val password: String = StringUtils.EMPTY,
     val passwordError: Label? = null,
+
+    val passwordConfirmation: String = StringUtils.EMPTY,
+    val passwordConfirmationError: Label? = null,
 ) {
     fun isEmailValid() = emailError == null
 
     fun isCodeValid() = codeError == null
 
-    fun isPasswordValid() = passwordError == null
+    fun isPasswordValid() = passwordError == null && passwordConfirmationError == null
 }

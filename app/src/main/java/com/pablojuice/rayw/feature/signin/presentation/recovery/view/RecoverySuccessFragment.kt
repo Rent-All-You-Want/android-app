@@ -11,7 +11,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class RecoverySuccessFragment : BasicFragment<FragmentRecoverySuccessBinding, RecoveryViewModel>() {
 
-    override val viewModel: RecoveryViewModel by hiltNavGraphViewModels(R.id.signin_graph)
+    override val viewModel: RecoveryViewModel by hiltNavGraphViewModels(R.id.signin_recovery_graph)
 
     override val layoutClass = FragmentRecoverySuccessBinding::class.java
 

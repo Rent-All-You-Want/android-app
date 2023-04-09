@@ -81,6 +81,23 @@
                 android:singleLine="true" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/confirm_password_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:hint="@string/signin_confirm_password"
+            app:startIconDrawable="@drawable/ic_lock_medium">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/confirm_password_input_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
     <Button

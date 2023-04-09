@@ -31,6 +31,15 @@ class SignInFieldValidator @Inject constructor() {
         } else null
     }
 
+    fun validateConfirmation(confirmation: String, original: String): ValidationError? =
+        confirmation.run {
+            if (isEmpty()) {
+                ValidationError(R.string.signin_error_confirmation_is_empty)
+            } else if (!equals(original)) {
+                ValidationError(R.string.signin_error_confirmation_do_not_match)
+            } else null
+        }
+
     fun validateAcceptedRules(accepted: Boolean?): ValidationError? =
         if (accepted == true) null else ValidationError(R.string.signin_error_rules_should_be_accepted)
 
