@@ -10,9 +10,6 @@ data class UserSignUpState(
     val password: String = StringUtils.EMPTY,
     val passwordError: Label? = null,
 
-//    val passwordRepeat: String = StringUtils.EMPTY,
-//    val passwordRepeatError: Label? = null,
-
     val name: String = StringUtils.EMPTY,
     val nameError: Label? = null,
 

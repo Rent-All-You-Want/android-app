@@ -2,8 +2,7 @@ package com.pablojuice.rayw.feature.signin.presentation.login.viewmodel
 
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.rayw.feature.home.presentation.navigation.BackToHomeScreen
-import com.pablojuice.rayw.feature.signin.data.remote.request.LoginRequest
-import com.pablojuice.rayw.feature.signin.data.repository.SignInRepository
+import com.pablojuice.rayw.feature.signin.domain.login.LogInUserUseCase
 import com.pablojuice.rayw.feature.signin.domain.validation.ValidateEmailUseCase
 import com.pablojuice.rayw.feature.signin.domain.validation.ValidatePasswordUseCase
 import com.pablojuice.rayw.feature.signin.presentation.login.navigation.ToLogInSuccessScreen
@@ -16,7 +15,7 @@ import javax.inject.Inject
 class LogInViewModel @Inject constructor(
     private val validateEmail: ValidateEmailUseCase,
     private val validatePassword: ValidatePasswordUseCase,
-    private val repository: SignInRepository
+    private val logInUser: LogInUserUseCase
 ) : BasicViewModel() {
 
     private val _state = MutableStateFlow(UserLogInState())
@@ -27,11 +26,9 @@ class LogInViewModel @Inject constructor(
             setEmail(email, false)
             setPassword(password, false)
         }
-        _state.value.run {
-            if (isDataValid()) launchHandlingError {
-                repository.login(toLogInRequest())
-                    .onSuccess { submitNavigationEvent(ToLogInSuccessScreen()) }
-            }
+        if (_state.value.isDataValid()) launchHandlingError {
+            logInUser(_state.value)
+                .onSuccess { submitNavigationEvent(ToLogInSuccessScreen()) }
         }
     }
 
@@ -50,6 +47,4 @@ class LogInViewModel @Inject constructor(
     }
 
     fun backToHome() = submitNavigationEvent(BackToHomeScreen())
-
-    private fun UserLogInState.toLogInRequest() = LoginRequest(email, password)
 }

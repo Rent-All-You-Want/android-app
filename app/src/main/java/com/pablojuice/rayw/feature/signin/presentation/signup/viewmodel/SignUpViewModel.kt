@@ -3,8 +3,7 @@ package com.pablojuice.rayw.feature.signin.presentation.signup.viewmodel
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.core.utils.toSimpleDateFormat
 import com.pablojuice.rayw.feature.home.presentation.navigation.BackToHomeScreen
-import com.pablojuice.rayw.feature.signin.data.remote.request.RegisterRequest
-import com.pablojuice.rayw.feature.signin.data.repository.SignInRepository
+import com.pablojuice.rayw.feature.signin.domain.signup.RegisterUserUseCase
 import com.pablojuice.rayw.feature.signin.domain.validation.*
 import com.pablojuice.rayw.feature.signin.presentation.signup.navigation.ToSecondSignUpScreen
 import com.pablojuice.rayw.feature.signin.presentation.signup.navigation.ToSuccessSignUpScreen
@@ -22,7 +21,7 @@ class SignUpViewModel @Inject constructor(
     private val validateName: ValidateNameUseCase,
     private val validateBirthDate: ValidateBirthDateUseCase,
     private val validateDateString: ValidateBirthDateStringUseCase,
-    private val repository: SignInRepository
+    private val registerUser: RegisterUserUseCase
 ) : BasicViewModel() {
 
     private val _state = MutableStateFlow(UserSignUpState())
@@ -87,21 +86,11 @@ class SignUpViewModel @Inject constructor(
             setName(name, false)
             setBirthDayString(birthDate)
         }
-        _state.value.run {
-            if (isSecondStepDataValid()) launchHandlingError {
-                repository.register(toRegisterRequest())
-                    .onSuccess { submitNavigationEvent(ToSuccessSignUpScreen()) }
-            }
+        if (_state.value.isSecondStepDataValid()) launchHandlingError {
+            registerUser(_state.value)
+                .onSuccess { submitNavigationEvent(ToSuccessSignUpScreen()) }
         }
     }
-
-    private fun UserSignUpState.toRegisterRequest() = RegisterRequest(
-        firstName = name,
-        secondName = name,
-        birthDate = birthDate,
-        email = email,
-        password = password
-    )
 
     fun backToHomeScreen() = submitNavigationEvent(BackToHomeScreen())
 }
