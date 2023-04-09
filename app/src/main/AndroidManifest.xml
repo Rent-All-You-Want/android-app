@@ -16,7 +16,7 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.Rayw"
-        android:usesCleartextTraffic="true"
+        android:usesCleartextTraffic="${usesLocalBackEnd}"
         tools:targetApi="33">
         <activity
             android:name=".app.main.MainActivity"

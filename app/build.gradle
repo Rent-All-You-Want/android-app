@@ -35,6 +35,8 @@ android {
 
         testInstrumentationRunner application.testRunner
 
+        manifestPlaceholders.usesLocalBackEnd = false
+
         if (localProperties().isEmpty()) {
             signingConfig signingConfigs.debug
         } else signingConfig signingConfigs.release
@@ -46,10 +48,10 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
-            manifestPlaceholders = [crashlyticsCollectionEnabled: "true"]
+            manifestPlaceholders.crashlyticsCollectionEnabled = true
         }
         debug {
-            manifestPlaceholders = [crashlyticsCollectionEnabled: "false"]
+            manifestPlaceholders.crashlyticsCollectionEnabled = false
         }
     }
 
@@ -60,6 +62,7 @@ android {
             setupLocalApiUrl()
             println "Local api url: " + application.localUrl
             buildConfigField application.apiUrlType, application.apiUrl, application.localUrl
+            manifestPlaceholders.usesLocalBackEnd = true
         }
         stage { buildConfigField application.apiUrlType, application.apiUrl, application.stageUrl }
         prod { buildConfigField application.apiUrlType, application.apiUrl, application.prodUrl }

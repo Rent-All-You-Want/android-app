@@ -12,7 +12,7 @@ class GetHomeMenuDataUseCase @Inject constructor(
         val userIsLoggedIn = userManager.isUserLoggedIn()
         return HomeMenuData.values()
             .firstOrNull { it.id == itemId }
-            ?.takeIf { it.requireLogin == userIsLoggedIn }
+            ?.takeIf { it.requireLogin == userIsLoggedIn || userIsLoggedIn }
             ?: HomeMenuData.LOGIN_REDIRECT
     }
 }

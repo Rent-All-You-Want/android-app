@@ -23,7 +23,7 @@ ext {
             apiUrl               : "API_URL",
 
             localUrl             : ":8080/api/\"",
-            stageUrl             : "\"https://rayw.azurewebsites.net/\"",
-            prodUrl              : "\"https://rayw.azurewebsites.net/\""
+            stageUrl             : "\"https://rayw.azurewebsites.net/api/\"",
+            prodUrl              : "\"https://rayw.azurewebsites.net/api/\""
     ]
 }
