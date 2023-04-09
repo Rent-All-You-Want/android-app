@@ -1,10 +1,12 @@
 plugins {
     id "com.android.application"
+    id "com.google.gms.google-services"
     id "kotlin-kapt"
     id "kotlin-parcelize"
     id "org.jetbrains.kotlin.android"
     id "androidx.navigation.safeargs.kotlin"
     id "com.google.dagger.hilt.android"
+    id "com.google.firebase.crashlytics"
 }
 
 android {
@@ -17,9 +19,6 @@ android {
             keyAlias props.getProperty("certificate.keyAlias")
             keyPassword props.getProperty("certificate.keyPassword")
             storePassword props.getProperty("certificate.storePassword")
-        }
-        debug {
-
         }
     }
 
@@ -35,7 +34,10 @@ android {
         versionName application.versionName
 
         testInstrumentationRunner application.testRunner
-        signingConfig signingConfigs.release
+
+        if (localProperties().isEmpty()) {
+            signingConfig signingConfigs.debug
+        } else signingConfig signingConfigs.release
     }
 
     buildTypes {
@@ -44,9 +46,10 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+            manifestPlaceholders = [crashlyticsCollectionEnabled: "true"]
         }
         debug {
-
+            manifestPlaceholders = [crashlyticsCollectionEnabled: "false"]
         }
     }
 

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "212490410787",
+    "project_id": "rayw-a0063",
+    "storage_bucket": "rayw-a0063.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212490410787:android:dc886b45e3c6f1b3e2ca96",
+        "android_client_info": {
+          "package_name": "com.pablojuice.rayw"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "212490410787-knptvv2rbabbcs2hgkloqaupenqg8tn6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBt7JIO61nbyjLO3gX3JzI6hRYZuVXGbTw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "212490410787-knptvv2rbabbcs2hgkloqaupenqg8tn6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
