@@ -5,6 +5,7 @@ import com.pablojuice.core.R
 import com.pablojuice.core.presentation.navigation.NavigationEvent
 import com.pablojuice.core.presentation.navigation.context.alert.ShowAlertDialogEvent
 import com.pablojuice.core.presentation.view.label.asLabel
+import com.pablojuice.core.utils.logging.Timber
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -31,6 +32,7 @@ abstract class BasicViewModel : BaseViewModel() {
 
     inner class BasicErrorHandler : ErrorHandler {
         override fun invoke(t: Throwable) {
+            Timber.e(t)
             submitNavigationEvent(
                 ShowAlertDialogEvent(
                     title = R.string.common_error.asLabel(),

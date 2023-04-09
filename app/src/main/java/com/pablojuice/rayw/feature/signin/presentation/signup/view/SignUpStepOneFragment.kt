@@ -20,7 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class SignUpStepOneFragment : BasicFragment<FragmentSignupStepOneBinding, SignUpViewModel>() {
 
-    override val viewModel: SignUpViewModel by hiltNavGraphViewModels(R.id.signin_graph)
+    override val viewModel: SignUpViewModel by hiltNavGraphViewModels(R.id.signin_signup_graph)
 
     override val layoutClass = FragmentSignupStepOneBinding::class.java
 

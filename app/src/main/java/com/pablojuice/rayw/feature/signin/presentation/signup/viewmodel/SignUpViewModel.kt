@@ -1,7 +1,6 @@
 package com.pablojuice.rayw.feature.signin.presentation.signup.viewmodel
 
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
-import com.pablojuice.core.utils.logging.Timber
 import com.pablojuice.core.utils.toSimpleDateFormat
 import com.pablojuice.rayw.feature.home.presentation.navigation.BackToHomeScreen
 import com.pablojuice.rayw.feature.signin.data.remote.request.RegisterRequest
@@ -89,13 +88,9 @@ class SignUpViewModel @Inject constructor(
             setBirthDayString(birthDate)
         }
         _state.value.run {
-            launchHandlingError {
-                if (isSecondStepDataValid()) {
-                    repository.register(toRegisterRequest())
-                        .onSuccess {
-                            submitNavigationEvent(ToSuccessSignUpScreen())
-                        }.onFailure { Timber.e(it) }
-                } else Unit
+            if (isSecondStepDataValid()) launchHandlingError {
+                repository.register(toRegisterRequest())
+                    .onSuccess { submitNavigationEvent(ToSuccessSignUpScreen()) }
             }
         }
     }

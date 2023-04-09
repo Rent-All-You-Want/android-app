@@ -1,7 +1,6 @@
 package com.pablojuice.rayw.feature.signin.presentation.login.viewmodel
 
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
-import com.pablojuice.core.utils.logging.Timber
 import com.pablojuice.rayw.feature.home.presentation.navigation.BackToHomeScreen
 import com.pablojuice.rayw.feature.signin.data.remote.request.LoginRequest
 import com.pablojuice.rayw.feature.signin.data.repository.SignInRepository
@@ -29,12 +28,9 @@ class LogInViewModel @Inject constructor(
             setPassword(password, false)
         }
         _state.value.run {
-            launchHandlingError {
-                if (isDataValid()) {
-                    repository.login(toLogInRequest())
-                        .onSuccess { submitNavigationEvent(ToLogInSuccessScreen()) }
-                        .onFailure { Timber.e(it) }
-                } else Unit
+            if (isDataValid()) launchHandlingError {
+                repository.login(toLogInRequest())
+                    .onSuccess { submitNavigationEvent(ToLogInSuccessScreen()) }
             }
         }
     }
