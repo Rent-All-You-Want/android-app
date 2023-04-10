@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.rent.presentation.list.list
+package com.pablojuice.rayw.feature.rent_list.presentation.list.list
 
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -11,7 +11,7 @@ import com.pablojuice.core.presentation.view.layout.constraintWidth
 import com.pablojuice.core.presentation.view.layoutInflater
 import com.pablojuice.core.presentation.view.list.ViewHolder
 import com.pablojuice.rayw.databinding.ItemRentRegularBinding
-import com.pablojuice.rayw.feature.rent.data.local.RentRegularItem
+import com.pablojuice.rayw.feature.rent_list.data.local.RentRegularItem
 
 private const val LANDSCAPE_IMAGE_CONSTRAINT_WIDTH_RATIO = 4
 private const val LANDSCAPE_IMAGE_CONSTRAINT_HEIGHT_RATIO = 3

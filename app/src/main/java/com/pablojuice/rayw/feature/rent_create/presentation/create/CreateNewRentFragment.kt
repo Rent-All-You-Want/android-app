@@ -1,7 +1,8 @@
-package com.pablojuice.rayw.feature.rent.presentation.create
+package com.pablojuice.rayw.feature.rent_create.presentation.create
 
-import androidx.fragment.app.viewModels
+import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
+import com.pablojuice.rayw.R
 import com.pablojuice.rayw.databinding.FragmentRentCreateNewBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -9,7 +10,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class CreateNewRentFragment :
     BasicFragment<FragmentRentCreateNewBinding, CreateNewRentViewModel>() {
 
-    override val viewModel: CreateNewRentViewModel by viewModels()
+    override val viewModel: CreateNewRentViewModel by hiltNavGraphViewModels(R.id.rent_create_graph)
 
     override val layoutClass = FragmentRentCreateNewBinding::class.java
 

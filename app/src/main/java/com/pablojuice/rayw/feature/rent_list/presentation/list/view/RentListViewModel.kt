@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.rent.presentation.list.view
+package com.pablojuice.rayw.feature.rent_list.presentation.list.view
 
 import android.view.MenuItem
 import com.pablojuice.core.presentation.view.list.ListItem
@@ -7,8 +7,8 @@ import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.core.utils.logging.Timber
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToRentDetails
 import com.pablojuice.rayw.feature.home.presentation.view.HomeListener
-import com.pablojuice.rayw.feature.rent.domain.ProvideRentListItemsUseCase
-import com.pablojuice.rayw.feature.rent.presentation.list.list.RentListAdapter
+import com.pablojuice.rayw.feature.rent_list.domain.ProvideRentListItemsUseCase
+import com.pablojuice.rayw.feature.rent_list.presentation.list.list.RentListAdapter
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow

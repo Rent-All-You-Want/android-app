@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.rent.presentation.list.list
+package com.pablojuice.rayw.feature.rent_list.presentation.list.list
 
 import android.view.ViewGroup
 import com.pablojuice.core.presentation.view.list.ListAdapter

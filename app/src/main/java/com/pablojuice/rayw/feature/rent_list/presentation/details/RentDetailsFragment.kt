@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.rent.presentation.details
+package com.pablojuice.rayw.feature.rent_list.presentation.details
 
 import androidx.fragment.app.viewModels
 import com.pablojuice.core.presentation.view.fragment.BasicFragment

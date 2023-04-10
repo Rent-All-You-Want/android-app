@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".feature.rent.presentation.create.CreateNewRentFragment">
+    tools:context=".feature.rent_create.presentation.create.CreateNewRentFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/item_tool_bar"

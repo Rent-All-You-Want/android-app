@@ -1,9 +1,9 @@
-package com.pablojuice.rayw.feature.rent.data.repository
+package com.pablojuice.rayw.feature.rent_list.data.repository
 
 import com.pablojuice.core.data.repository.Repository
 import com.pablojuice.rayw.R
-import com.pablojuice.rayw.feature.rent.data.remote.RentDetailsData
-import com.pablojuice.rayw.feature.rent.data.remote.RentListData
+import com.pablojuice.rayw.feature.rent_list.data.remote.RentDetailsData
+import com.pablojuice.rayw.feature.rent_list.data.remote.RentListData
 import dagger.Reusable
 import javax.inject.Inject
 

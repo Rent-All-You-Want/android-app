@@ -1,8 +1,8 @@
-package com.pablojuice.rayw.feature.rent.presentation.details
+package com.pablojuice.rayw.feature.rent_list.presentation.details
 
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
-import com.pablojuice.rayw.feature.rent.data.local.RentDetailsItem
-import com.pablojuice.rayw.feature.rent.domain.ProvideRentItemDetailsUseCase
+import com.pablojuice.rayw.feature.rent_list.data.local.RentDetailsItem
+import com.pablojuice.rayw.feature.rent_list.domain.ProvideRentItemDetailsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

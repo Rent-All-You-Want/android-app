@@ -6,7 +6,7 @@
     app:startDestination="@id/create_new_rent">
     <fragment
         android:id="@+id/create_new_rent"
-        android:name="com.pablojuice.rayw.feature.rent.presentation.create.CreateNewRentFragment"
+        android:name="com.pablojuice.rayw.feature.rent_create.presentation.create.CreateNewRentFragment"
         android:label="Create New Rent Screen"
         tools:layout="@layout/fragment_rent_create_new" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.rent.presentation.list.view
+package com.pablojuice.rayw.feature.rent_list.presentation.list.view
 
 import androidx.fragment.app.viewModels
 import com.pablojuice.core.presentation.view.list.StaggeredGridPagingScrollListener
@@ -7,7 +7,7 @@ import com.pablojuice.core.presentation.view.list.firstCompletelyVisibleItemPosi
 import com.pablojuice.rayw.databinding.FragmentRentListBinding
 import com.pablojuice.rayw.feature.home.presentation.view.HomeChildFragment
 import com.pablojuice.rayw.feature.home.presentation.view.HomeListener
-import com.pablojuice.rayw.feature.rent.presentation.list.list.RentListAdapter
+import com.pablojuice.rayw.feature.rent_list.presentation.list.list.RentListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -59,7 +59,7 @@
 
     <fragment
         android:id="@+id/rent_details"
-        android:name="com.pablojuice.rayw.feature.rent.presentation.details.RentDetailsFragment"
+        android:name="com.pablojuice.rayw.feature.rent_list.presentation.details.RentDetailsFragment"
         android:label="Item Details Screen"
         tools:layout="@layout/fragment_rent_details">
         <argument

@@ -1,9 +1,9 @@
-package com.pablojuice.rayw.feature.rent.domain
+package com.pablojuice.rayw.feature.rent_list.domain
 
 import com.pablojuice.core.presentation.view.label.asLabel
-import com.pablojuice.rayw.feature.rent.data.local.RentDetailsItem
-import com.pablojuice.rayw.feature.rent.data.remote.RentDetailsData
-import com.pablojuice.rayw.feature.rent.data.repository.RentRepository
+import com.pablojuice.rayw.feature.rent_list.data.local.RentDetailsItem
+import com.pablojuice.rayw.feature.rent_list.data.remote.RentDetailsData
+import com.pablojuice.rayw.feature.rent_list.data.repository.RentRepository
 import javax.inject.Inject
 
 class ProvideRentItemDetailsUseCase @Inject constructor(

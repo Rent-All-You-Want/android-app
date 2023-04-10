@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.rent.domain
+package com.pablojuice.rayw.feature.rent_list.domain
 
 import com.pablojuice.core.utils.StringUtils
 import dagger.Reusable
