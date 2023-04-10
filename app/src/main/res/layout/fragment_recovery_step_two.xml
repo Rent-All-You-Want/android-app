@@ -65,11 +65,15 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/code_input_layout"
+            style="@style/view.textField.outline"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/dimen_32"
             android:layout_marginTop="@dimen/dimen_16"
             android:hint="@string/signin_code"
+            app:counterEnabled="true"
+            app:counterMaxLength="6"
+            app:endIconMode="clear_text"
             app:startIconDrawable="@drawable/ic_password_medium">
 
             <com.google.android.material.textfield.TextInputEditText

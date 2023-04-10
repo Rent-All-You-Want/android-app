@@ -17,8 +17,8 @@ open class ShowAlertDialogEvent(
             .apply {
                 title?.let { setTitle(title.get(context)) }
                 description?.let { setMessage(description.get(context)) }
-                negative?.let { setNegativeButton(negative.get(context)) { _, _ -> positiveAction() } }
-                positive?.let { setPositiveButton(positive.get(context)) { _, _ -> negativeAction() } }
+                negative?.let { setNegativeButton(negative.get(context)) { _, _ -> negativeAction() } }
+                positive?.let { setPositiveButton(positive.get(context)) { _, _ -> positiveAction() } }
             }
             .show()
     }

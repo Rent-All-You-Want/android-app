@@ -8,8 +8,8 @@
     tools:context=".feature.home.presentation.view.HomeFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
-        style="@style/view.toolBar.navigableBack"
         android:id="@+id/signup_tool_bar"
+        style="@style/view.toolBar.navigableBack"
         android:layout_width="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,12 +34,12 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/dimen_32"
         android:layout_marginTop="@dimen/dimen_8"
-        app:layout_goneMarginTop="0dp"
         android:gravity="center"
         android:text="@string/signin_forgot_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recovery_icon" />
+        app:layout_constraintTop_toBottomOf="@+id/recovery_icon"
+        app:layout_goneMarginTop="0dp" />
 
     <TextView
         android:id="@+id/recovery_description"
@@ -67,11 +67,12 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/email_input_layout"
+            style="@style/view.textField.outline"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_16"
-            app:startIconDrawable="@drawable/ic_alternate_email_medium"
-            android:hint="@string/signin_email">
+            android:hint="@string/signin_email"
+            app:startIconDrawable="@drawable/ic_alternate_email_medium">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email_input_text"

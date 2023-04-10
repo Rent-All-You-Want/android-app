@@ -35,7 +35,7 @@ class SignInRepository @Inject constructor(
         }
     }
 
-    suspend fun register(request: RegisterRequest) = launch {
+    suspend fun register(request: RegisterUserRequest) = launch {
         api.register(request).onSuccess { response ->
             userPreferences.put(UserPreference.REFRESH_TOKEN, response.refreshToken)
             userPreferences.put(UserPreference.ACCESS_TOKEN, response.accessToken)
@@ -43,7 +43,7 @@ class SignInRepository @Inject constructor(
         }
     }
 
-    suspend fun login(request: LoginRequest) = launch {
+    suspend fun login(request: LoginUserRequest) = launch {
         api.login(request).onSuccess { response ->
             userPreferences.put(UserPreference.REFRESH_TOKEN, response.refreshToken)
             userPreferences.put(UserPreference.ACCESS_TOKEN, response.accessToken)
