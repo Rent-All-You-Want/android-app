@@ -31,6 +31,7 @@
             android:scrollbars="vertical"
             app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
             app:spanCount="2"
+            tools:layoutAnimation="@null"
             tools:listitem="@layout/item_rent_regular" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
