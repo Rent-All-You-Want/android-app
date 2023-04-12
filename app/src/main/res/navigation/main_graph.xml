@@ -44,10 +44,10 @@
 
     <action
         android:id="@+id/back_to_home"
-        app:popUpTo="@id/home"
-        app:popUpToInclusive="true"
         app:enterAnim="@anim/fragment_fade_in_anim"
-        app:exitAnim="@anim/slide_to_left" />
+        app:exitAnim="@anim/slide_to_left"
+        app:popUpTo="@id/home"
+        app:popUpToInclusive="false" />
 
     <action
         android:id="@+id/to_rent_details"
