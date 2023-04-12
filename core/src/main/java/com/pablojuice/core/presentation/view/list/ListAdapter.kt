@@ -1,32 +1,40 @@
 package com.pablojuice.core.presentation.view.list
 
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
+import com.pablojuice.core.presentation.view.animation.list.ListAnimator
+import jp.wasabeef.recyclerview.internal.ViewHelper
 
 abstract class ListAdapter(
     items: List<ListItem> = listOf(),
-    private val addDividerDecoration: Boolean = false
+    private val addDividerDecoration: Boolean = false,
+    private val itemAnimator: RecyclerView.ItemAnimator? = null, // FadeIn, ScaleIn, SlideIn, Overshoot
+    private val listAnimator: ListAnimator? = null
 ) : RecyclerView.Adapter<ViewHolder<ListItem, out ViewBinding>>() {
 
     private val items: MutableList<ListItem> = items.toMutableList()
 
-    fun addItem(item: ListItem, position: Int = items.size) {
+    private var lastAnimatedPosition: Int = -1
+
+    open fun addItem(item: ListItem, position: Int = items.size) {
         items.add(position, item)
         notifyItemInserted(position)
     }
 
-    fun removeItemAt(position: Int) {
+    open fun removeItemAt(position: Int) {
         items.removeAt(position)
         notifyItemRemoved(position)
     }
 
-    fun setItems(newItems: List<ListItem>) {
+    open fun setItems(newItems: List<ListItem>) {
+        val diffResult = DiffUtil.calculateDiff(ListAdapterDiffUtilCallback(items, newItems))
         items.clear()
         items.addAll(newItems)
-        notifyDataSetChanged()
+        diffResult.dispatchUpdatesTo(this)
     }
 
-    fun addItems(newItems: List<ListItem>, position: Int = items.size) {
+    open fun addItems(newItems: List<ListItem>, position: Int = items.size) {
         items.addAll(position, newItems)
         notifyItemRangeInserted(position, newItems.size)
     }
@@ -39,10 +47,21 @@ abstract class ListAdapter(
 
     override fun onAttachedToRecyclerView(recycler: RecyclerView) {
         if (addDividerDecoration) recycler.addItemDecoration(ListItemDivider(recycler.context))
+        itemAnimator?.let(recycler::setItemAnimator)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder<ListItem, out ViewBinding>, position: Int) =
-        holder.bind(item = items[position])
+    override fun onBindViewHolder(holder: ViewHolder<ListItem, out ViewBinding>, position: Int) {
+        holder.bind(items[position])
+        listAnimator?.run {
+            val adapterPosition = holder.adapterPosition
+            if (adapterPosition > lastAnimatedPosition) {
+                val anim = createAnimator(holder.itemView)
+                anim.interpolator = interpolator
+                anim.setDuration(duration).start()
+                lastAnimatedPosition = adapterPosition
+            } else ViewHelper.clear(holder.itemView)
+        }
+    }
 
     override fun getItemViewType(position: Int) = items[position].layoutId
 

@@ -5,26 +5,26 @@ import android.view.ViewPropertyAnimator
 
 inline fun ViewPropertyAnimator.doOnAnimationStart(
     crossinline action: (animation: Animator) -> Unit = { _ -> }
-): Animator.AnimatorListener = setAnimationListener(onAnimationStart = action)
+) = setAnimationListener(onAnimationStart = action)
 
 inline fun ViewPropertyAnimator.doOnAnimationEnd(
     crossinline action: (animation: Animator) -> Unit = { _ -> }
-): Animator.AnimatorListener = setAnimationListener(onAnimationEnd = action)
+) = setAnimationListener(onAnimationEnd = action)
 
 inline fun ViewPropertyAnimator.doOnAnimationCancel(
     crossinline action: (animation: Animator) -> Unit = { _ -> }
-): Animator.AnimatorListener = setAnimationListener(onAnimationCancel = action)
+) = setAnimationListener(onAnimationCancel = action)
 
 inline fun ViewPropertyAnimator.doOnAnimationRepeat(
     crossinline action: (animation: Animator) -> Unit = { _ -> }
-): Animator.AnimatorListener = setAnimationListener(onAnimationRepeat = action)
+) = setAnimationListener(onAnimationRepeat = action)
 
 inline fun ViewPropertyAnimator.setAnimationListener(
     crossinline onAnimationStart: (animation: Animator) -> Unit = { _ -> },
     crossinline onAnimationEnd: (animation: Animator) -> Unit = { _ -> },
     crossinline onAnimationCancel: (animation: Animator) -> Unit = { _ -> },
     crossinline onAnimationRepeat: (animation: Animator) -> Unit = { _ -> },
-): Animator.AnimatorListener {
+): ViewPropertyAnimator {
     val animationListener = object : Animator.AnimatorListener {
         override fun onAnimationStart(animation: Animator) = onAnimationStart(animation)
 
@@ -35,5 +35,5 @@ inline fun ViewPropertyAnimator.setAnimationListener(
         override fun onAnimationRepeat(animation: Animator) = onAnimationRepeat(animation)
     }
     setListener(animationListener)
-    return animationListener
+    return this
 }
