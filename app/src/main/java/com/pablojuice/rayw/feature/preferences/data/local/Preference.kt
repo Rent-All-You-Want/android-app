@@ -18,6 +18,12 @@ enum class Preference(
     PROFILE_CARD(shouldBeVisibleForUser = { it }),
     LOG_IN_PROPOSAL(shouldBeVisibleForUser = { !it }),
 
+    DEV_OPTIONS(
+        title = R.string.dev_options,
+        icon = com.pablojuice.core.R.drawable.ic_terminal_medium,
+        shouldBeVisibleForUser = { false }
+    ),
+
     MY_RENTS_IN(
         sectionTitle = R.string.preference_section_rents,
         title = R.string.preference_rent_in,

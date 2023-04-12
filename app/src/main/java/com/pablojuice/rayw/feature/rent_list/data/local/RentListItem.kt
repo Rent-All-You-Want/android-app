@@ -5,7 +5,7 @@ import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.rayw.R
 
 data class RentRegularItem(
-    val id: Int,
+    override val id: Int,
     val icon: Int,
     val title: Label,
     val isInWishList: Boolean,

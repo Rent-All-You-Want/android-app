@@ -6,8 +6,6 @@ import com.pablojuice.core.presentation.view.layoutInflater
 import com.pablojuice.core.presentation.view.list.ViewHolder
 import com.pablojuice.rayw.databinding.ItemChatNoRecipientsBinding
 import com.pablojuice.rayw.databinding.ItemChatRecipientBinding
-import com.pablojuice.rayw.feature.chat.data.local.ChatListItem
-import com.pablojuice.rayw.feature.chat.data.local.NoChatsListItem
 
 class ChatViewHolder(
     onClick: (Int) -> Unit,

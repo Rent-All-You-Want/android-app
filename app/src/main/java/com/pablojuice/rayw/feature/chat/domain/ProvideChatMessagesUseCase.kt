@@ -2,11 +2,11 @@ package com.pablojuice.rayw.feature.chat.domain
 
 import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.core.presentation.view.list.ListItem
-import com.pablojuice.rayw.feature.chat.data.local.InComingMessageListItem
-import com.pablojuice.rayw.feature.chat.data.local.NoMessagesListItem
-import com.pablojuice.rayw.feature.chat.data.local.OutComingMessageListItem
 import com.pablojuice.rayw.feature.chat.data.remote.MessageData
 import com.pablojuice.rayw.feature.chat.data.repository.ChatRepository
+import com.pablojuice.rayw.feature.chat.presentation.list.list.InComingMessageListItem
+import com.pablojuice.rayw.feature.chat.presentation.list.list.NoMessagesListItem
+import com.pablojuice.rayw.feature.chat.presentation.list.list.OutComingMessageListItem
 import javax.inject.Inject
 
 class ProvideChatMessagesUseCase @Inject constructor(

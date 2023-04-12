@@ -7,9 +7,9 @@ import com.pablojuice.core.presentation.view.list.ViewHolder
 import com.pablojuice.rayw.databinding.ItemChatMessageInBinding
 import com.pablojuice.rayw.databinding.ItemChatMessageOutBinding
 import com.pablojuice.rayw.databinding.ItemChatNoMessagesBinding
-import com.pablojuice.rayw.feature.chat.data.local.InComingMessageListItem
-import com.pablojuice.rayw.feature.chat.data.local.NoMessagesListItem
-import com.pablojuice.rayw.feature.chat.data.local.OutComingMessageListItem
+import com.pablojuice.rayw.feature.chat.presentation.list.list.InComingMessageListItem
+import com.pablojuice.rayw.feature.chat.presentation.list.list.NoMessagesListItem
+import com.pablojuice.rayw.feature.chat.presentation.list.list.OutComingMessageListItem
 
 class InComingChatMessageViewHolder(
     parent: ViewGroup

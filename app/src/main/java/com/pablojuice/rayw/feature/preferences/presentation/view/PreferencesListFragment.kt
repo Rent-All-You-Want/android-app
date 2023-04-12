@@ -15,7 +15,7 @@ class PreferencesListFragment :
     override val layoutClass = FragmentPreferencesListBinding::class.java
 
     override fun setupScreen() {
-        binding.recycler.adapter = PreferencesListAdapter()
+        binding.recycler.adapter = PreferencesListAdapter(viewModel)
         viewModel.items.observe { items ->
             if (items.isEmpty()) return@observe
             (binding.recycler.adapter as? PreferencesListAdapter)?.setItems(items)

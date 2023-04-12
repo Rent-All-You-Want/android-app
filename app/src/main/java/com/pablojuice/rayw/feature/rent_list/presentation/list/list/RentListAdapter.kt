@@ -1,10 +1,12 @@
 package com.pablojuice.rayw.feature.rent_list.presentation.list.list
 
 import android.view.ViewGroup
+import com.pablojuice.core.presentation.view.animation.list.ListAnimator
 import com.pablojuice.core.presentation.view.list.ListAdapter
 import com.pablojuice.rayw.R
 
-class RentListAdapter(private val listener: Listener) : ListAdapter() {
+class RentListAdapter(private val listener: Listener) :
+    ListAdapter(listAnimator = ListAnimator.SlideInBottomListAnimator()) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,

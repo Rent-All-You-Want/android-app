@@ -2,10 +2,10 @@ package com.pablojuice.rayw.feature.chat.domain
 
 import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.core.presentation.view.list.ListItem
-import com.pablojuice.rayw.feature.chat.data.local.ChatListItem
-import com.pablojuice.rayw.feature.chat.data.local.NoChatsListItem
 import com.pablojuice.rayw.feature.chat.data.remote.ChatData
 import com.pablojuice.rayw.feature.chat.data.repository.ChatRepository
+import com.pablojuice.rayw.feature.chat.presentation.list.list.ChatListItem
+import com.pablojuice.rayw.feature.chat.presentation.list.list.NoChatsListItem
 import javax.inject.Inject
 
 class ProvideChatsUseCase @Inject constructor(
