@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--    <style name="Widget.App.Snackbar" parent="Widget.Material3.Snackbar">-->
-    <!--        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Snackbar</item>-->
-    <!--    </style>-->
 
-    <!--    <style name="Widget.App.SnackbarButton" parent="Widget.Material3.Button.TextButton.Snackbar">-->
-    <!--        <item name="android:textColor">@color/shrine_pink_100</item>-->
-    <!--    </style>-->
+    <style name="view.snackbar" parent="Widget.Material3.Snackbar">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Snackbar</item>
+        <item name="animationMode">slide</item>
+        <item name="shapeAppearance">@style/shape.medium</item>
+    </style>
 
-    <!--    <style name="ThemeOverlay.App.Snackbar" parent="">-->
-    <!--        <item name="colorPrimaryInverse">@color/shrine_pink_100</item>-->
-    <!--        <item name="colorOnSurfaceInverse">@color/shrine_pink_100</item>-->
-    <!--    </style>-->
+    <style name="view.snackbar.button" parent="Widget.Material3.Button.TextButton.Snackbar">
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Snackbar" parent="">
+        <item name="colorPrimaryInverse">?attr/colorBackgroundVariant</item>
+        <item name="colorOnSurfaceInverse">?attr/colorOnBackgroundVariant</item>
+    </style>
 </resources>

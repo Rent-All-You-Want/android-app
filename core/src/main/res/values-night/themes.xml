@@ -80,6 +80,8 @@
         <item name="materialSwitchStyle">@style/view.switch</item>
         <item name="materialAlertDialogTheme">@style/view.alertDialogTheme</item>
         <item name="toolbarStyle">@style/view.toolBar</item>
+        <item name="snackbarStyle">@style/view.snackbar</item>
+        <item name="snackbarButtonStyle">@style/view.snackbar.button</item>
         <!--        <item name="sliderStyle">@style/Widget.App.Slider</item>-->
         <!--        <item name="chipStyle">@style/Widget.App.Chip</item>-->
         <!--        <item name="snackbarStyle">@style/Widget.App.Snackbar</item>-->

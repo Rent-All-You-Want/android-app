@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         if (navGraphId == UNDEFINED) return
 
         val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+            supportFragmentManager.findFragmentById(com.pablojuice.core.R.id.app_fragment_container) as NavHostFragment
         val inflater = navHostFragment.navController.navInflater
         val graph: NavGraph = inflater.inflate(navGraphId)
         navHostFragment.navController.setGraph(graph, intent.extras)
