@@ -1,10 +1,12 @@
 package com.pablojuice.core.presentation.view.list
 
+import androidx.annotation.CallSuper
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import com.pablojuice.core.presentation.view.animation.list.ListAnimator
 import jp.wasabeef.recyclerview.internal.ViewHelper
+import java.util.*
 
 abstract class ListAdapter(
     items: List<ListItem> = listOf(),
@@ -27,6 +29,11 @@ abstract class ListAdapter(
         notifyItemRemoved(position)
     }
 
+    open fun swipeItems(previousPosition: Int, targetPosition: Int) {
+        Collections.swap(items, previousPosition, targetPosition)
+        notifyItemMoved(previousPosition, targetPosition)
+    }
+
     open fun setItems(newItems: List<ListItem>) {
         val diffResult = DiffUtil.calculateDiff(ListAdapterDiffUtilCallback(items, newItems))
         items.clear()
@@ -45,6 +52,7 @@ abstract class ListAdapter(
         notifyItemRangeRemoved(0, size)
     }
 
+    @CallSuper
     override fun onAttachedToRecyclerView(recycler: RecyclerView) {
         if (addDividerDecoration) recycler.addItemDecoration(ListItemDivider(recycler.context))
         itemAnimator?.let(recycler::setItemAnimator)
