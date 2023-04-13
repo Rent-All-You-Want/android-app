@@ -36,8 +36,8 @@ class MainViewModel @Inject constructor(
         if (navigationGraphId.value != UNDEFINED) return
         launch {
             listOf(
-                setupApp(),
                 setupSplash(),
+                setupApp(),
                 setupNavigation()
             ).joinAll()
             _isFetchingData.value = false

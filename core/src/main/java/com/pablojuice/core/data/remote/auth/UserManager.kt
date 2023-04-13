@@ -2,6 +2,7 @@ package com.pablojuice.core.data.remote.auth
 
 import com.pablojuice.core.data.manager.UserPreference
 import com.pablojuice.core.data.manager.UserPreferences
+import com.pablojuice.core.data.remote.NetworkHelper
 import com.pablojuice.core.utils.logging.Timber
 
 private const val TOKEN_VALID_TIME = 15 * 60 * 1000
@@ -35,7 +36,7 @@ class UserManager(
     var onTokenExpire: OnTokenExpire? = null
         set(value) {
             field = value
-            updateToken()
+            if (tokenCanBeUpdated()) updateToken()
         }
 
     private fun ManagedUser?.isTokenValid() =
@@ -76,4 +77,6 @@ class UserManager(
                 expireTime = System.currentTimeMillis() + TOKEN_VALID_TIME
             )
         }
+
+    private fun tokenCanBeUpdated(): Boolean = NetworkHelper.isOnline()
 }
