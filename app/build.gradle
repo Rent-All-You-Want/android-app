@@ -11,24 +11,26 @@ plugins {
 
 android {
 
+    namespace "com.pablojuice.rayw"
+    compileSdk application.compileSdk
+
     signingConfigs {
         release {
             Properties props = localProperties()
-
-            storeFile file(props.getProperty("certificate.path"))
-            keyAlias props.getProperty("certificate.keyAlias")
-            keyPassword props.getProperty("certificate.keyPassword")
-            storePassword props.getProperty("certificate.storePassword")
+            if (props.getProperty("certificate.keyPassword") != null) {
+                storeFile file(props.getProperty("certificate.path"))
+                keyAlias props.getProperty("certificate.keyAlias")
+                keyPassword props.getProperty("certificate.keyPassword")
+                storePassword props.getProperty("certificate.storePassword")
+            }
         }
     }
 
     defaultConfig {
-        namespace "com.pablojuice.rayw"
         applicationId "com.pablojuice.rayw"
 
         minSdk application.minSdk
         targetSdk application.targetSdk
-        compileSdk application.compileSdk
 
         versionCode application.versionCode
         versionName application.versionName
@@ -36,10 +38,6 @@ android {
         testInstrumentationRunner application.testRunner
 
         manifestPlaceholders.usesLocalBackEnd = false
-
-        if (localProperties().isEmpty()) {
-            signingConfig signingConfigs.debug
-        } else signingConfig signingConfigs.release
     }
 
     buildTypes {
@@ -49,6 +47,10 @@ android {
             shrinkResources true
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             manifestPlaceholders.crashlyticsCollectionEnabled = true
+
+            if (localProperties().isEmpty()) {
+                signingConfig signingConfigs.debug
+            } else signingConfig signingConfigs.release
         }
         debug {
             manifestPlaceholders.crashlyticsCollectionEnabled = false

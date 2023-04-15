@@ -10,10 +10,10 @@ plugins {
 
 android {
     namespace "com.pablojuice.core"
+    compileSdk application.compileSdk
 
     defaultConfig {
         minSdk application.minSdk
-        compileSdk application.compileSdk
         targetSdk application.targetSdk
 
         testInstrumentationRunner application.testRunner
