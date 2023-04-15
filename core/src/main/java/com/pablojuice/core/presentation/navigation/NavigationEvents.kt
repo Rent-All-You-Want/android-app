@@ -9,4 +9,10 @@ class NavigationEvents {
             /* no-op */
         }
     }
+
+    object BackNavigationEvent : NavigationEvent {
+        override fun handle(controller: NavController) {
+            controller.popBackStack()
+        }
+    }
 }

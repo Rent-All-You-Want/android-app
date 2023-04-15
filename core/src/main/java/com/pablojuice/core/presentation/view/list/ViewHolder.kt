@@ -7,7 +7,8 @@ abstract class ViewHolder<out Item : ListItem, VB : ViewBinding>(
     val binding: VB,
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    protected var currentItem: @UnsafeVariance Item? = null
+    var currentItem: @UnsafeVariance Item? = null
+        private set
 
     open fun bind(item: @UnsafeVariance Item) {
         currentItem = item

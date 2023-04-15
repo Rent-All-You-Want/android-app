@@ -7,7 +7,7 @@ import com.pablojuice.core.R
 import com.pablojuice.core.presentation.navigation.context.ContextNavigationEvent
 import com.pablojuice.core.presentation.view.label.Label
 
-class ShowSnackBarAlertEvent(
+open class ShowSnackBarAlertEvent(
     private val messageLabel: Label,
     private val duration: Int = Snackbar.LENGTH_SHORT,
     private val viewId: Int = R.id.app_fragment_container,
