@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/dimen_2"
+    android:background="@drawable/shape_rectangle_with_round_corners_small"
+    android:backgroundTint="?attr/colorPrimary"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/dimen_8"
+    android:paddingVertical="@dimen/dimen_16"
+    tools:layout_height="96dp"
+    tools:layout_width="96dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="center"
+        android:src="@drawable/ic_attach_file_medium"
+        app:tint="?attr/colorOnPrimary" />
+
+    <TextView
+        style="@style/text.titleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rent_create_attach_image"
+        android:textColor="?attr/colorOnPrimary" />
+</LinearLayout>
