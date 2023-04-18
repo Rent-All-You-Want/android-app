@@ -1,9 +1,11 @@
 package com.pablojuice.rayw.app.main
 
+import android.content.Context
 import com.pablojuice.core.app.config.AppConfig
 import com.pablojuice.core.data.manager.UserPreference
 import com.pablojuice.core.data.manager.UserPreferences
 import com.pablojuice.core.data.remote.auth.UserManager
+import com.pablojuice.core.presentation.utils.GoogleMapUtils
 import com.pablojuice.core.presentation.viewmodel.BaseViewModel
 import com.pablojuice.core.utils.NumberUtils.UNDEFINED
 import com.pablojuice.core.utils.logging.Timber
@@ -31,13 +33,13 @@ class MainViewModel @Inject constructor(
     private val _navigationGraphId = MutableStateFlow(UNDEFINED)
     val navigationGraphId: StateFlow<Int> = _navigationGraphId
 
-
-    fun fetchData() {
+    fun fetchData(context: Context) {
         if (navigationGraphId.value != UNDEFINED) return
         launch {
             listOf(
                 setupSplash(),
                 setupApp(),
+                setupContextDependentStuff(context),
                 setupNavigation()
             ).joinAll()
             _isFetchingData.value = false
@@ -48,6 +50,10 @@ class MainViewModel @Inject constructor(
         Timber.plant(appConfig.loggerType)
         userManager.onTokenExpire =
             UserManager.OnTokenExpire { runBlocking { authUserUseCase(it) } }
+    }
+
+    private fun setupContextDependentStuff(context: Context) = launchOnMain {
+        GoogleMapUtils.setupGoogleMapsInitializer(context)
     }
 
     private fun setupSplash() = launch { delay(appConfig.splashAnimationDuration) }

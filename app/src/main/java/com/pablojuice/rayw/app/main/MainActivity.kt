@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launchWhenCreated {
             viewModel.navigationGraphId.collect(::onNavGraphChanged)
         }
-        viewModel.fetchData()
+        viewModel.fetchData(applicationContext)
     }
 
     private fun showSplashScreen() {

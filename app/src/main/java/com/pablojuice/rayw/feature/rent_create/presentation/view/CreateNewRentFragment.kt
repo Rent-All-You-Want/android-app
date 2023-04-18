@@ -4,12 +4,20 @@ import android.os.Bundle
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
+import androidx.lifecycle.lifecycleScope
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.model.LatLng
+import com.pablojuice.core.presentation.utils.GoogleMapUtils.addMapFragmentToContainer
+import com.pablojuice.core.presentation.utils.GoogleMapUtils.addScrollLockListener
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
+import com.pablojuice.core.presentation.view.setVisible
 import com.pablojuice.rayw.R
 import com.pablojuice.rayw.databinding.FragmentRentCreateNewBinding
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.picker.RentImagePickerAdapter
 import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.CreateNewRentViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 private val MEDIA_TYPE = ActivityResultContracts.PickVisualMedia.ImageOnly
 
@@ -20,6 +28,8 @@ class CreateNewRentFragment :
     override val viewModel: CreateNewRentViewModel by hiltNavGraphViewModels(R.id.rent_create_graph)
 
     override val layoutClass = FragmentRentCreateNewBinding::class.java
+
+    private var map: GoogleMap? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +43,19 @@ class CreateNewRentFragment :
             if (items.isEmpty()) return@observe
             (binding.imageRecycler.adapter as? RentImagePickerAdapter)?.setItems(items)
             if (items.size > 1) binding.imageRecycler.smoothScrollToPosition(0)
+        }
+    }
+
+    private fun showMap() {
+        lifecycleScope.launch {
+            addMapFragmentToContainer(binding.mapContainer).getMapAsync {
+                binding.mapContainer.setVisible(true)
+                map = it
+                val latLng = LatLng(37.4219999, -122.0862462)
+                val cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 10f)
+                map?.moveCamera(cameraUpdate)
+                map?.addScrollLockListener(binding.scrollContainer::requestDisallowInterceptTouchEvent)
+            }
         }
     }
 
