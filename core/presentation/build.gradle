@@ -1,0 +1,70 @@
+plugins {
+    id "com.android.library"
+    id "org.jetbrains.kotlin.android"
+    id "kotlin-kapt"
+    id "androidx.navigation.safeargs.kotlin"
+}
+
+android {
+    namespace "com.pablojuice.core"
+    compileSdk application.compileSdk
+
+    defaultConfig {
+        minSdk application.minSdk
+        targetSdk application.targetSdk
+
+        testInstrumentationRunner application.testRunner
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility application.javaVersion
+        targetCompatibility application.javaVersion
+    }
+
+    kotlinOptions {
+        jvmTarget = application.javaVersion.toString()
+    }
+
+    buildFeatures {
+        viewBinding true
+        buildConfig = true
+    }
+
+    kapt {
+        correctErrorTypes true
+    }
+}
+
+dependencies {
+
+    implementation project(":core:common")
+    // Android & UI
+    api "androidx.core:core-ktx:1.10.0"
+    api "androidx.appcompat:appcompat:1.6.1"
+    api "com.google.android.material:material:1.8.0"
+    api "androidx.constraintlayout:constraintlayout:2.1.4"
+    api "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+    api "jp.wasabeef:recyclerview-animators:4.0.2"
+
+    // Image Processing
+    api "com.github.bumptech.glide:glide:4.13.2"
+    kapt "com.github.bumptech.glide:compiler:4.13.2"
+
+    // Navigation
+    api "androidx.navigation:navigation-fragment-ktx:2.5.3"
+    api "androidx.navigation:navigation-ui-ktx:2.5.3"
+
+    // Map
+    api "com.google.android.gms:play-services-maps:18.1.0"
+
+    testImplementation project(":test:unittest")
+}

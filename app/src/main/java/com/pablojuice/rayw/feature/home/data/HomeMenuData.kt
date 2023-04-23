@@ -1,18 +1,16 @@
 package com.pablojuice.rayw.feature.home.data
 
-import com.pablojuice.core.presentation.navigation.NavigationEvent
 import com.pablojuice.core.presentation.view.label.Label
 import com.pablojuice.core.presentation.view.label.asLabel
-import com.pablojuice.core.utils.NumberUtils
 import com.pablojuice.rayw.R
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToCreateNewRentScreen
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToLoginScreen
 
 enum class HomeMenuData(
-    val id: Int = NumberUtils.UNDEFINED,
+    val id: Int = com.pablojuice.core.utils.NumberUtils.UNDEFINED,
     val title: Label? = null,
     val menu: Int? = null,
-    val redirectAction: NavigationEvent? = null,
+    val redirectAction: com.pablojuice.core.presentation.navigation.NavigationEvent? = null,
     val requireLogin: Boolean = false
 ) {
     RENT_LIST(

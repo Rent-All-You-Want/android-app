@@ -46,11 +46,10 @@ android {
 
 dependencies {
 
-    implementation project(":core")
-
+    implementation project(":core:main")
     implementation "com.google.dagger:hilt-android:$versions.daggerHilt"
     kapt "com.google.dagger:hilt-android-compiler:$versions.daggerHilt"
 
-    testImplementation project(":utils:unittest")
-    androidTestImplementation project(":utils:uitest")
+    testImplementation project(":test:unittest")
+    androidTestImplementation project(":test:uitest")
 }

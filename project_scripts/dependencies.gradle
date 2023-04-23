@@ -15,7 +15,7 @@ ext {
             compileSdk           : 33,
             targetSdk            : 33,
 
-            javaVersion          : JavaVersion.VERSION_1_8,
+            javaVersion          : JavaVersion.VERSION_17,
 
             testRunner           : "androidx.test.runner.AndroidJUnitRunner",
 

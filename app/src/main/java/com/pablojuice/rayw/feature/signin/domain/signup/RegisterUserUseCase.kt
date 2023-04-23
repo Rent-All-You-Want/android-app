@@ -1,6 +1,5 @@
 package com.pablojuice.rayw.feature.signin.domain.signup
 
-import com.pablojuice.core.utils.StringUtils
 import com.pablojuice.rayw.feature.signin.data.remote.request.RegisterUserRequest
 import com.pablojuice.rayw.feature.signin.data.repository.SignInRepository
 import com.pablojuice.rayw.feature.signin.presentation.signup.viewmodel.UserSignUpState
@@ -14,10 +13,10 @@ class RegisterUserUseCase @Inject constructor(
         repository.register(state.asRegisterRequest())
 
     private fun UserSignUpState.asRegisterRequest(): RegisterUserRequest {
-        val nameSplit = name.split(StringUtils.SPACE)
+        val nameSplit = name.split(com.pablojuice.core.utils.StringUtils.SPACE)
         val firstName = nameSplit.first()
         val lastName = if (nameSplit.size > 1) nameSplit.subList(1, nameSplit.size)
-            .joinToString(separator = StringUtils.SPACE) else StringUtils.EMPTY
+            .joinToString(separator = com.pablojuice.core.utils.StringUtils.SPACE) else com.pablojuice.core.utils.StringUtils.EMPTY
 
         return RegisterUserRequest(
             firstName = firstName,
