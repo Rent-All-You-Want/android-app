@@ -6,7 +6,7 @@
     app:startDestination="@id/dev_options">
     <fragment
         android:id="@+id/dev_options"
-        android:name="com.pablojuice.rayw.feature.dev.DevOptionsFragment"
+        android:name="com.pablojuice.feature.devoptions.DevOptionsFragment"
         tools:layout="@layout/fragment_dev_options"
         android:label="Dev Options Screen" />
 </navigation>

@@ -2,7 +2,11 @@ package com.pablojuice.rayw.feature.chat.data.repository
 
 import com.pablojuice.core.R
 import com.pablojuice.core.data.repository.Repository
-import com.pablojuice.rayw.feature.chat.data.remote.*
+import com.pablojuice.rayw.feature.chat.data.remote.ChatData
+import com.pablojuice.rayw.feature.chat.data.remote.GetChatDetailsResponse
+import com.pablojuice.rayw.feature.chat.data.remote.GetChatsResponse
+import com.pablojuice.rayw.feature.chat.data.remote.MessageData
+import com.pablojuice.rayw.feature.chat.data.remote.RecipientData
 import dagger.Reusable
 import javax.inject.Inject
 

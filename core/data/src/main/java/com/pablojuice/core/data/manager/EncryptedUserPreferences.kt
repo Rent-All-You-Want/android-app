@@ -2,7 +2,6 @@ package com.pablojuice.core.data.manager
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.os.Build
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
 import com.pablojuice.core.data.converter.StringJsonConverter
@@ -59,13 +58,11 @@ class EncryptedUserPreferences constructor(
         jsonConverter.fromJson<T>(getString(key, default)!!, type)
 
     private fun Context.createPreferences(preferencesName: String): SharedPreferences =
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            EncryptedSharedPreferences.create(
-                this,
-                preferencesName,
-                MasterKey.Builder(this).setKeyScheme(MasterKey.KeyScheme.AES256_GCM).build(),
-                EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
-                EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
-            )
-        } else getSharedPreferences(preferencesName, Context.MODE_PRIVATE)
+        EncryptedSharedPreferences.create(
+            this,
+            preferencesName,
+            MasterKey.Builder(this).setKeyScheme(MasterKey.KeyScheme.AES256_GCM).build(),
+            EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+            EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+        )
 }

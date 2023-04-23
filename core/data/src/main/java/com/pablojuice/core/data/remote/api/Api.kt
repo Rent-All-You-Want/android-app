@@ -1,5 +1,5 @@
 package com.pablojuice.core.data.remote.api
 
-import com.pablojuice.core.data.source.DataStore
+import com.pablojuice.core.data.source.DataSource
 
-interface Api : DataStore
+interface Api : DataSource

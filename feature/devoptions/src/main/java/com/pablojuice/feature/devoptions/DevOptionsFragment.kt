@@ -1,10 +1,10 @@
-package com.pablojuice.rayw.feature.dev
+package com.pablojuice.feature.devoptions
 
 import android.os.Bundle
 import android.view.View
 import com.google.android.material.textfield.TextInputLayout
 import com.pablojuice.core.presentation.view.fragment.BaseFragment
-import com.pablojuice.rayw.databinding.FragmentDevOptionsBinding
+import com.pablojuice.feature.devoptions.databinding.FragmentDevOptionsBinding
 
 class DevOptionsFragment : BaseFragment<FragmentDevOptionsBinding>() {
 

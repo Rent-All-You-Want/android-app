@@ -2,7 +2,7 @@ package com.pablojuice.rayw.feature.signin.domain.validation
 
 import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.rayw.R
-import java.util.*
+import java.util.Date
 import javax.inject.Inject
 
 private const val STANDARD_EMAIL_LENGTH = 4

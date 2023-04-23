@@ -6,7 +6,12 @@ import com.pablojuice.core.presentation.view.label.setLabel
 import com.pablojuice.core.presentation.view.layoutInflater
 import com.pablojuice.core.presentation.view.list.ViewHolder
 import com.pablojuice.core.presentation.view.setClickListener
-import com.pablojuice.rayw.databinding.*
+import com.pablojuice.rayw.databinding.ItemPreferencesEmptyProfileBinding
+import com.pablojuice.rayw.databinding.ItemPreferencesLogInBinding
+import com.pablojuice.rayw.databinding.ItemPreferencesLogOutBinding
+import com.pablojuice.rayw.databinding.ItemPreferencesProfileBinding
+import com.pablojuice.rayw.databinding.ItemPreferencesSectionBinding
+import com.pablojuice.rayw.databinding.ItemPreferencesSectionTitleBinding
 import com.pablojuice.rayw.feature.preferences.data.local.Preference
 
 class EmptyProfileViewHolder(parent: ViewGroup) :

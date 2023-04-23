@@ -8,9 +8,7 @@ abstract class ApiFactory {
 
     inline fun <reified T : Api> get(): T = get(T::class.java)
 
-    fun <T : Api> get(
-        type: Class<T>
-    ): T {
+    fun <T : Api> get(type: Class<T>): T {
         if (!map.containsKey(type)) {
             map[type] = create(type)
         }
