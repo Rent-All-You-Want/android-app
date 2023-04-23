@@ -1,29 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--    <style name="Widget.App.Button.TextButton" parent="Widget.Material3.Button.TextButton">-->
-    <!--        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.TextButton</item>-->
-    <!--        <item name="android:textAppearance">@style/TextAppearance.App.Button</item>-->
-    <!--        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>-->
-    <!--    </style>-->
 
-    <!--    <style name="Widget.App.Button.OutlinedButton" parent="Widget.Material3.Button.OutlinedButton">-->
-    <!--        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.TextButton</item>-->
-    <!--        <item name="android:textAppearance">@style/TextAppearance.App.Button</item>-->
-    <!--        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>-->
-    <!--    </style>-->
+    <!-- Icon Button -->
+    <style name="view.button.icon" parent="Widget.Material3.Button.IconButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Icon</item>
+        <item name="android:layout_height">@dimen/dimen_48</item>
+        <item name="shapeAppearance">@style/shape.extraLarge</item>
+        <item name="iconSize">@dimen/dimen_32</item>
+        <item name="android:paddingLeft">@dimen/dimen_4</item>
+        <item name="android:paddingRight">@dimen/dimen_4</item>
+        <item name="android:paddingTop">@dimen/dimen_4</item>
+        <item name="android:paddingBottom">@dimen/dimen_4</item>
+    </style>
 
-    <!--    <style name="Widget.App.Button" parent="Widget.Material3.Button">-->
-    <!--        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button</item>-->
-    <!--        <item name="android:textAppearance">@style/TextAppearance.App.Button</item>-->
-    <!--        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>-->
-    <!--    </style>-->
+    <style name="view.button.icon.filled" parent="Widget.Material3.Button.IconButton.Filled">
+        <item name="android:layout_height">@dimen/dimen_48</item>
+        <item name="shapeAppearance">@style/shape.medium</item>
+        <item name="iconSize">@dimen/dimen_32</item>
+        <item name="android:paddingLeft">@dimen/dimen_4</item>
+        <item name="android:paddingRight">@dimen/dimen_4</item>
+        <item name="android:paddingTop">@dimen/dimen_4</item>
+        <item name="android:paddingBottom">@dimen/dimen_4</item>
+    </style>
 
-    <!--    <style name="ThemeOverlay.App.Button.TextButton" parent="">-->
-    <!--        <item name="colorPrimary">@color/shrine_pink_900</item>-->
-    <!--    </style>-->
+    <style name="view.button.icon.outlined" parent="Widget.Material3.Button.IconButton.Outlined">
+        <item name="android:layout_height">@dimen/dimen_48</item>
+        <item name="shapeAppearance">@style/shape.medium</item>
+        <item name="iconSize">@dimen/dimen_32</item>
+        <item name="android:paddingLeft">@dimen/dimen_4</item>
+        <item name="android:paddingRight">@dimen/dimen_4</item>
+        <item name="android:paddingTop">@dimen/dimen_4</item>
+        <item name="android:paddingBottom">@dimen/dimen_4</item>
+        <item name="strokeColor">?attr/colorPrimary</item>
+        <item name="strokeWidth">@dimen/dimen_2</item>
+    </style>
 
-    <!--    <style name="ThemeOverlay.App.Button" parent="">-->
-    <!--        <item name="colorPrimary">@color/shrine_pink_100</item>-->
-    <!--        <item name="colorOnPrimary">@color/shrine_pink_900</item>-->
-    <!--    </style>-->
+    <style name="view.button.icon.filled.primary" parent="view.button.icon.filled">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Filled.Primary</item>
+        <item name="iconTint">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="view.button.icon.outlined.primary" parent="view.button.icon.outlined">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Outlined.Primary</item>
+        <item name="iconTint">?attr/colorPrimary</item>
+    </style>
+
+    <!-- Filled Button -->
+
+    <style name="view.button.filled" parent="Widget.Material3.Button">
+        <item name="android:textAppearance">@style/text.titleSmall</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="shapeAppearance">@style/shape.small</item>
+        <item name="elevation">@dimen/elevation_small</item>
+        <item name="android:paddingTop">@dimen/dimen_4</item>
+        <item name="android:paddingBottom">@dimen/dimen_4</item>
+    </style>
+
+    <style name="view.button.outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:textAppearance">@style/text.titleSmall</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="shapeAppearance">@style/shape.small</item>
+        <item name="elevation">@dimen/elevation_small</item>
+        <item name="android:paddingTop">@dimen/dimen_4</item>
+        <item name="android:paddingBottom">@dimen/dimen_4</item>
+        <item name="strokeColor">?attr/colorPrimary</item>
+        <item name="strokeWidth">@dimen/dimen_2</item>
+    </style>
+
+    <style name="view.button.small.filled" parent="view.button.filled">
+        <item name="android:layout_height">@dimen/dimen_40</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/dimen_2</item>
+        <item name="android:paddingRight">@dimen/dimen_2</item>
+    </style>
+
+    <style name="view.button.small.outlined" parent="view.button.outlined">
+        <item name="android:layout_height">@dimen/dimen_40</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/dimen_2</item>
+        <item name="android:paddingRight">@dimen/dimen_2</item>
+    </style>
+
+    <style name="view.button.small.filled.primary" parent="view.button.small.filled">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Filled.Primary</item>
+    </style>
+
+    <style name="view.button.small.outlined.primary" parent="view.button.small.outlined">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Outlined.Primary</item>
+    </style>
+
+    <style name="view.button.medium.filled" parent="view.button.filled">
+        <item name="android:layout_height">@dimen/dimen_48</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/dimen_8</item>
+        <item name="android:paddingRight">@dimen/dimen_8</item>
+    </style>
+
+    <style name="view.button.medium.outlined" parent="view.button.outlined">
+        <item name="android:layout_height">@dimen/dimen_48</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/dimen_8</item>
+        <item name="android:paddingRight">@dimen/dimen_8</item>
+    </style>
+
+    <style name="view.button.medium.filled.primary" parent="view.button.medium.filled">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Filled.Primary</item>
+    </style>
+
+    <style name="view.button.medium.outlined.primary" parent="view.button.medium.outlined">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Outlined.Primary</item>
+    </style>
+
+    <style name="view.button.large.filled" parent="view.button.filled">
+        <item name="android:layout_height">@dimen/dimen_56</item>
+        <item name="android:layout_width">@dimen/dimen_192</item>
+        <item name="android:paddingLeft">@dimen/dimen_8</item>
+        <item name="android:paddingRight">@dimen/dimen_8</item>
+    </style>
+
+    <style name="view.button.large.outlined" parent="view.button.outlined">
+        <item name="android:layout_height">@dimen/dimen_56</item>
+        <item name="android:layout_width">@dimen/dimen_192</item>
+        <item name="android:paddingLeft">@dimen/dimen_8</item>
+        <item name="android:paddingRight">@dimen/dimen_8</item>
+    </style>
+
+    <style name="view.button.large.filled.primary" parent="view.button.large.filled">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Filled.Primary</item>
+    </style>
+
+    <style name="view.button.large.outlined.primary" parent="view.button.large.outlined">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Outlined.Primary</item>
+    </style>
+
+    <style name="view.button.extraLarge.filled" parent="view.button.filled">
+        <item name="android:textAppearance">@style/text.titleMedium</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_height">@dimen/dimen_64</item>
+        <item name="android:layout_width">@dimen/dimen_256</item>
+        <item name="shapeAppearance">@style/shape.medium</item>
+    </style>
+
+    <style name="view.button.extraLarge.outlined" parent="view.button.outlined">
+        <item name="android:textAppearance">@style/text.titleMedium</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_height">@dimen/dimen_64</item>
+        <item name="android:layout_width">@dimen/dimen_256</item>
+        <item name="shapeAppearance">@style/shape.medium</item>
+    </style>
+
+    <style name="view.button.extraLarge.filled.primary" parent="view.button.extraLarge.filled">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Filled.Primary</item>
+    </style>
+
+    <style name="view.button.extraLarge.outlined.primary" parent="view.button.extraLarge.outlined">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.Outlined.Primary</item>
+    </style>
+
+    <!-- Text Button -->
+
+    <style name="view.button.text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textAppearance">@style/text.titleSmall</item>
+        <item name="shapeAppearance">@style/shape.small</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="view.button.text.primary" parent="view.button.text">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.TextButton.Primary</item>
+    </style>
+
+    <!-- Theme Overlay -->
+
+    <style name="ThemeOverlay.App.Button.Icon" parent="ThemeOverlay.Material3.Button.IconButton">
+        <item name="colorContainer">@android:color/transparent</item>
+        <item name="colorOnContainer">?attr/colorControlHighlight</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Button.Filled.Primary" parent="">
+        <item name="colorContainer">?attr/colorPrimary</item>
+        <item name="colorOnContainer">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Button.Outlined.Primary" parent="">
+        <item name="colorContainer">@android:color/transparent</item>
+        <item name="colorOnContainer">?attr/colorPrimary</item>
+        <item name="colorOnSurface">?attr/colorPrimary</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Button.TextButton.Primary" parent="">
+        <item name="colorContainer">@android:color/transparent</item>
+        <item name="colorOnContainer">?attr/colorPrimary</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Button.TextButton.PrimaryVariant" parent="">
+        <item name="colorContainer">@android:color/transparent</item>
+        <item name="colorOnContainer">?attr/colorPrimaryVariant</item>
+    </style>
 </resources>

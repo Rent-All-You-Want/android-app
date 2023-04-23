@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_4"
+    android:elevation="@dimen/elevation_small"
+    android:padding="@dimen/dimen_8">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/avatar_icon"
+        android:layout_width="@dimen/dimen_48"
+        android:layout_height="@dimen/dimen_48"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearance="@style/shape.extraSmall"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/name_label"
+        style="@style/text.labelLarge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_16"
+        android:layout_marginTop="@dimen/dimen_2"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintEnd_toStartOf="@+id/last_message_date_label"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/avatar_icon"
+        app:layout_constraintTop_toTopOf="@+id/avatar_icon"
+        tools:text="Admin Adminowich" />
+
+    <TextView
+        android:id="@+id/last_message_text_label"
+        style="@style/text.bodyMedium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_16"
+        android:layout_marginVertical="@dimen/dimen_4"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintEnd_toStartOf="@+id/last_message_date_label"
+        app:layout_constraintStart_toEndOf="@+id/avatar_icon"
+        app:layout_constraintTop_toBottomOf="@+id/name_label"
+        tools:text="Hello my dear friend!" />
+
+    <TextView
+        android:id="@+id/last_message_date_label"
+        style="@style/text.labelMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/name_label"
+        tools:text="12:08" />
+</androidx.constraintlayout.widget.ConstraintLayout>

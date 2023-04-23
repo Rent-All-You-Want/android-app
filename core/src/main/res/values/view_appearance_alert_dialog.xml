@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="view.alertDialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog.Centered">
+        <item name="alertDialogStyle">@style/view.alertDialog</item>
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="android:backgroundDimAmount">?attr/dialogBackgroundDimAmount</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/view.alertDialog.title</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/view.alertDialog.body</item>
+        <item name="buttonBarPositiveButtonStyle">@style/view.alertDialog.button</item>
+        <item name="buttonBarNegativeButtonStyle">@style/view.alertDialog.button</item>
+        <item name="buttonBarNeutralButtonStyle">@style/view.alertDialog.button</item>
+    </style>
+
+    <style name="view.alertDialog" parent="MaterialAlertDialog.Material3">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">gravity</item>
+    </style>
+
+    <style name="view.alertDialog.title" parent="MaterialAlertDialog.Material3.Title.Text.CenterStacked">
+        <item name="android:textAppearance">@style/text.headlineSmall</item>
+    </style>
+
+    <style name="view.alertDialog.body" parent="MaterialAlertDialog.Material3.Body.Text.CenterStacked">
+        <item name="android:textAppearance">@style/text.bodyLarge</item>
+        <item name="android:paddingTop">@dimen/dimen_20</item>
+    </style>
+
+    <style name="view.alertDialog.button" parent="view.button.text">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.TextButton.PrimaryVariant
+        </item>
+    </style>
+
+</resources>

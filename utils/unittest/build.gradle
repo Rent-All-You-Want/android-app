@@ -1,15 +1,14 @@
 plugins {
     id "com.android.library"
     id "org.jetbrains.kotlin.android"
-    id "kotlin-kapt"
 }
 
 android {
     namespace "com.pablojuice.unittest"
+    compileSdk application.compileSdk
 
     defaultConfig {
         minSdk application.minSdk
-        compileSdk application.compileSdk
         targetSdk application.targetSdk
 
         testInstrumentationRunner application.testRunner
@@ -30,10 +29,6 @@ android {
 
     kotlinOptions {
         jvmTarget = application.javaVersion.toString()
-    }
-
-    kapt {
-        correctErrorTypes true
     }
 }
 

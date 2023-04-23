@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="view.bottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomNavigationView</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="itemRippleColor">?attr/colorControlHighlight</item>
+        <item name="elevation">@dimen/dimen_2</item>
+    </style>
+
+    <style name="ThemeOverlay.App.BottomNavigationView" parent="">
+        <item name="colorOnSurfaceVariant">?attr/colorDisabled</item><!--unselected-->
+        <item name="colorSecondaryContainer">@android:color/transparent</item><!--overlay-->
+        <item name="colorOnSecondaryContainer">?attr/colorPrimary</item><!--selected icon-->
+        <item name="colorOnSurface">?attr/colorDisabled</item><!--selected text-->
+    </style>
+</resources>

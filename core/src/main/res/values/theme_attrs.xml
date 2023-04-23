@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr format="color" name="colorPrimaryAccent" />
     <attr format="color" name="colorBackground" />
     <attr format="color" name="colorBackgroundVariant" />
+    <attr format="color" name="colorOnBackgroundVariant" />
 
     <attr format="color" name="colorDisabled" />
+
+    <attr format="color" name="colorOnSurfaceOverlay" />
+
+    <attr format="float" name="dialogBackgroundDimAmount" />
 </resources>

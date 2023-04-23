@@ -6,7 +6,7 @@
     app:startDestination="@id/chat_list">
     <fragment
         android:id="@+id/chat_list"
-        android:name="com.pablojuice.rayw.feature.chat.presentation.list.ChatListFragment"
+        android:name="com.pablojuice.rayw.feature.chat.presentation.list.view.ChatListFragment"
         android:label="Chat List Screen"
         tools:layout="@layout/fragment_chat_list" />
 </navigation>

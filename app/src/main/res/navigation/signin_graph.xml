@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signin_graph"
+    app:startDestination="@id/login">
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.pablojuice.rayw.feature.signin.presentation.login.view.LogInFragment"
+        android:label="Log In Screen"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/to_signup"
+            app:destination="@id/signin_signup_graph"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/fragment_fade_out_anim"
+            app:popEnterAnim="@anim/fragment_fade_in_anim"
+            app:popExitAnim="@anim/slide_to_right" />
+        <action
+            android:id="@+id/to_recovery"
+            app:destination="@id/signin_recovery_graph"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/fragment_fade_out_anim"
+            app:popEnterAnim="@anim/fragment_fade_in_anim"
+            app:popExitAnim="@anim/slide_to_right" />
+        <action
+            android:id="@+id/to_login_success"
+            app:destination="@id/login_success"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/fragment_fade_out_anim"
+            app:popEnterAnim="@anim/fragment_fade_in_anim"
+            app:popExitAnim="@anim/slide_to_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/login_success"
+        android:name="com.pablojuice.rayw.feature.signin.presentation.login.view.LogInSuccessFragment"
+        android:label="Login Success Screen"
+        tools:layout="@layout/fragment_login_success" />
+
+    <include app:graph="@navigation/signin_signup_graph" />
+
+    <include app:graph="@navigation/signin_recovery_graph" />
+
+    <action
+        android:id="@+id/back_to_login"
+        app:enterAnim="@anim/fragment_fade_in_anim"
+        app:exitAnim="@anim/slide_to_right"
+        app:popUpTo="@id/login"
+        app:popUpToInclusive="false" />
+
+</navigation>

@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--    <style name="Widget.App.TextInputLayout" parent="Widget.Material3.TextInputLayout.*">-->
-    <!--        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>-->
-    <!--        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>-->
-    <!--        <item name="hintTextColor">?attr/colorOnSurface</item>-->
-    <!--    </style>-->
 
-    <!--    <style name="ThemeOverlay.App.TextInputLayout" parent="">-->
-    <!--        <item name="colorPrimary">@color/shrine_pink_100</item>-->
-    <!--        <item name="colorOnSurface">@color/shrine_pink_900</item>-->
-    <!--        <item name="colorError">@color/shrine_red</item>-->
-    <!--        <item name="textAppearanceTitleMedium">@style/TextAppearance.App.TitleMedium</item>-->
-    <!--        <item name="textAppearanceBodySmall">@style/TextAppearance.App.BodySmall</item>-->
-    <!--        <item name="editTextStyle">@style/Widget.Material3.TextInputEditText.*</item>-->
-    <!--    </style>-->
+    <style name="view.textField.outline" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout.OutlinedBox</item>
+        <item name="boxBackgroundColor">?attr/colorBackgroundVariant</item>
+        <item name="boxBackgroundMode">outline</item>
+        <item name="android:textColorHint">?attr/colorDisabled</item>
+        <item name="startIconTint">?attr/colorDisabled</item>
+        <item name="hintTextColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="view.textField" parent="view.textField.outline">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
+        <item name="hintEnabled">false</item>
+        <item name="android:paddingTop">@dimen/dimen_4</item>
+        <item name="boxStrokeWidth">@dimen/dimen_0</item>
+        <item name="boxStrokeWidthFocused">@dimen/dimen_0</item>
+    </style>
+
+    <style name="view.editText" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="hintEnabled">true</item>
+    </style>
+
+    <style name="ThemeOverlay.App.TextInputLayout" parent="ThemeOverlay.App.TextInputLayout.OutlinedBox">
+        <item name="editTextStyle">@style/view.editText</item>
+    </style>
+
+    <style name="ThemeOverlay.App.TextInputLayout.OutlinedBox" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
+        <item name="colorOnSurface">?attr/colorOnBackgroundVariant</item>
+        <item name="colorOnSurfaceVariant">?attr/colorOnBackgroundVariant</item>
+        <item name="colorOutline">?attr/colorBackgroundVariant</item>
+    </style>
 </resources>

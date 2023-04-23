@@ -8,6 +8,6 @@ class DebugAppConfig(
 ) : AppConfig(
     debuggingEnabled = true,
     networkConfig = networkConfig,
-    splashAnimationDuration = 500,
+    splashAnimationDuration = 0,
     loggerType = Timber.DebugTree()
 )

@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="HardcodedText">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_16">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TOOL BAR TEXT STYLE"
+                android:textColor="?attr/colorOnBackground"
+                android:textSize="@dimen/text_size_20"
+                android:textStyle="bold" />
+
+            <com.google.android.material.appbar.MaterialToolbar
+                style="@style/view.toolBar"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dimen_8"
+                app:title="Title"
+                app:titleCentered="false" />
+
+            <com.google.android.material.appbar.MaterialToolbar
+                style="@style/view.toolBar.navigableBack"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dimen_8"
+                app:title="Title" />
+
+            <com.google.android.material.appbar.MaterialToolbar
+                style="@style/view.toolBar.navigableBack"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dimen_8"
+                app:title="Title"
+                app:subtitle="Subtitle" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/text_input_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EDIT TEXT STYLE"
+                android:textColor="?attr/colorOnBackground"
+                android:textSize="@dimen/text_size_20"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="@dimen/dimen_256"
+                android:layout_height="wrap_content"
+                android:hint="Login">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="@dimen/dimen_256"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/view.textField.outline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/view.textField"
+                android:layout_width="@dimen/dimen_256"
+                android:layout_height="wrap_content"
+                app:startIconDrawable="@drawable/ic_search_medium">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Search" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="@dimen/dimen_256"
+                android:layout_height="wrap_content"
+                android:hint="Helper"
+                app:counterEnabled="true"
+                app:counterMaxLength="20"
+                app:helperText="Helperr"
+                app:helperTextEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="@dimen/dimen_256"
+                android:layout_height="wrap_content"
+                android:hint="Error"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="@dimen/dimen_256"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:hint="Disabled">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/switch_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/dimen_16"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="SWITCH STYLE"
+                android:textColor="?attr/colorOnBackground"
+                android:textSize="@dimen/text_size_20"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dimen_8" />
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dimen_8" />
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dimen_8" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/button_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="BUTTON STYLE"
+                android:textColor="?attr/colorOnBackground"
+                android:textSize="@dimen/text_size_20"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimen_8"
+                android:text="(view.button.icon)"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="@dimen/text_size_16"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <Button
+                    style="@style/view.button.icon"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    app:icon="@drawable/ic_settings_medium" />
+
+                <Button
+                    style="@style/view.button.icon.filled.primary"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    app:icon="@drawable/ic_settings_medium" />
+
+                <Button
+                    style="@style/view.button.icon.outlined.primary"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    app:icon="@drawable/ic_settings_medium" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimen_8"
+                android:text="(view.button)"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="@dimen/text_size_16"
+                android:textStyle="bold" />
+
+            <Button
+                style="@style/view.button.filled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Button Filled" />
+
+            <Button
+                style="@style/view.button.outlined"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Button Outlined" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:gravity="center">
+
+                <Button
+                    style="@style/view.button.small.filled.primary"
+                    android:layout_gravity="center"
+                    android:text="Button" />
+
+                <Button
+                    style="@style/view.button.small.outlined.primary"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen_8"
+                    android:text="Button" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:gravity="center">
+
+                <Button
+                    style="@style/view.button.medium.filled.primary"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen_8"
+                    android:text="Button" />
+
+                <Button
+                    style="@style/view.button.medium.outlined.primary"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen_8"
+                    android:text="Button" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    style="@style/view.button.large.filled.primary"
+                    android:layout_gravity="center"
+                    android:text="Button" />
+
+                <Button
+                    style="@style/view.button.large.outlined.primary"
+                    android:layout_gravity="center"
+                    android:text="Button" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    style="@style/view.button.extraLarge.filled.primary"
+                    android:text="Button" />
+
+                <Button
+                    style="@style/view.button.extraLarge.outlined.primary"
+                    android:layout_gravity="center"
+                    android:text="Button" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimen_8"
+                android:text="(view.button.text)"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="@dimen/text_size_16"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <Button
+                    style="@style/view.button.text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Button" />
+
+                <Button
+                    style="@style/view.button.text.primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen_8"
+                    android:text="Button" />
+
+                <Button
+                    style="@style/view.button.text.primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen_8"
+                    android:text="Button" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/text_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/dimen_8"
+                android:text="TEXT STYLE"
+                android:textColor="?attr/colorOnBackground"
+                android:textSize="@dimen/text_size_20"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimen_8"
+                android:text="textAppearanceDisplay (text.display)"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="@dimen/text_size_16"
+                android:textStyle="bold" />
+
+            <TextView
+                style="?attr/textAppearanceDisplayLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sample text 123455667890" />
+
+            <TextView
+                style="?attr/textAppearanceDisplayMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sample text 123455667890" />
+
+            <TextView
+                style="?attr/textAppearanceDisplaySmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sample text 123455667890" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimen_8"
+                android:text="textAppearanceHeadline (text.headline)"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="@dimen/text_size_16"
+                android:textStyle="bold" />
+
+            <TextView
+                style="?attr/textAppearanceHeadlineLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sample text 123455667890" />
+
+            <TextView
+                style="?attr/textAppearanceHeadlineMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sample text 123455667890" />
+
+            <TextView
+                style="?attr/textAppearanceHeadlineSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sample text 123455667890" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimen_8"
+                android:text="textAppearanceTitle (text.title)"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="@dimen/text_size_16"
+                android:textStyle="bold" />
+
+            <TextView
+                style="?attr/textAppearanceTitleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sample text 123455667890" />
+
+            <TextView
+                style="?attr/textAppearanceTitleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sample text 123455667890" />
+
+            <TextView
+                style="?attr/textAppearanceTitleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sample text 123455667890" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimen_8"
+                android:text="textAppearanceBody (text.body)"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="@dimen/text_size_16"
+                android:textStyle="bold" />
+
+            <TextView
+                style="?attr/textAppearanceBodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sample text 123455667890" />
+
+            <TextView
+                style="?attr/textAppearanceBodyMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sample text 123455667890" />
+
+            <TextView
+                style="?attr/textAppearanceBodySmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sample text 123455667890" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimen_8"
+                android:text="textAppearanceLabel (text.label)"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="@dimen/text_size_16"
+                android:textStyle="bold" />
+
+            <TextView
+                style="?attr/textAppearanceLabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sample text 123455667890" />
+
+            <TextView
+                style="?attr/textAppearanceLabelMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sample text 123455667890" />
+
+            <TextView
+                style="?attr/textAppearanceLabelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sample text 123455667890" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -6,7 +6,7 @@ import com.pablojuice.core.app.config.ReleaseAppConfig
 import com.pablojuice.core.data.remote.api.http.config.DebugNetworkConfig
 import com.pablojuice.core.data.remote.api.http.config.NetworkConfig
 import com.pablojuice.core.data.remote.api.http.config.ReleaseNetworkConfig
-import com.pablojuice.core.data.remote.auth.TokenManager
+import com.pablojuice.core.data.remote.auth.UserManager
 import com.pablojuice.rayw.BuildConfig
 import dagger.Module
 import dagger.Provides
@@ -27,9 +27,9 @@ object AppModule {
 
     @Provides
     @Reusable
-    fun provideNetworkConfig(tokenManager: TokenManager): NetworkConfig {
+    fun provideNetworkConfig(userManager: UserManager): NetworkConfig {
         val apiUrl = BuildConfig.API_URL
-        val interceptor = tokenManager.tokenRequestInterceptor
+        val interceptor = userManager.tokenRequestInterceptor
         return if (BuildConfig.DEBUG)
             DebugNetworkConfig(apiUrl, interceptor) else ReleaseNetworkConfig(apiUrl, interceptor)
     }

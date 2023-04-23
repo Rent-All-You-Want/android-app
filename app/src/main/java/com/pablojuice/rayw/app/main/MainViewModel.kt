@@ -3,12 +3,12 @@ package com.pablojuice.rayw.app.main
 import com.pablojuice.core.app.config.AppConfig
 import com.pablojuice.core.data.manager.UserPreference
 import com.pablojuice.core.data.manager.UserPreferences
-import com.pablojuice.core.data.remote.auth.TokenManager
-import com.pablojuice.core.presentation.base.screen.BaseViewModel
+import com.pablojuice.core.data.remote.auth.UserManager
+import com.pablojuice.core.presentation.viewmodel.BaseViewModel
 import com.pablojuice.core.utils.NumberUtils.UNDEFINED
 import com.pablojuice.core.utils.logging.Timber
 import com.pablojuice.rayw.R
-import com.pablojuice.rayw.feature.signin.domain.usecase.RefreshTokenUseCase
+import com.pablojuice.rayw.feature.signin.domain.login.AuthUserUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -21,8 +21,8 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     private val appConfig: AppConfig,
     private val userPreferences: UserPreferences,
-    private val tokenManager: TokenManager,
-    private val useCase: RefreshTokenUseCase
+    private val authUserUseCase: AuthUserUseCase,
+    private val userManager: UserManager
 ) : BaseViewModel() {
 
     private val _isFetchingData = MutableStateFlow(true)
@@ -33,10 +33,11 @@ class MainViewModel @Inject constructor(
 
 
     fun fetchData() {
+        if (navigationGraphId.value != UNDEFINED) return
         launch {
             listOf(
-                setupApp(),
                 setupSplash(),
+                setupApp(),
                 setupNavigation()
             ).joinAll()
             _isFetchingData.value = false
@@ -45,7 +46,8 @@ class MainViewModel @Inject constructor(
 
     private fun setupApp() = launch {
         Timber.plant(appConfig.loggerType)
-        tokenManager.onTokenExpire = TokenManager.OnTokenExpire { runBlocking { useCase() } }
+        userManager.onTokenExpire =
+            UserManager.OnTokenExpire { runBlocking { authUserUseCase(it) } }
     }
 
     private fun setupSplash() = launch { delay(appConfig.splashAnimationDuration) }

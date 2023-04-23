@@ -1,9 +1,7 @@
 package com.pablojuice.core.presentation.navigation
 
-import androidx.navigation.NavDirections
-import androidx.navigation.NavOptions
+import androidx.navigation.NavController
 
-abstract class NavigationEvent(
-    val destination: NavDirections?,
-    val options: NavOptions? = null
-)
+fun interface NavigationEvent {
+    fun handle(controller: NavController)
+}

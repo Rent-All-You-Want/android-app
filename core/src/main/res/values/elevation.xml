@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="elevation_extra_small">@dimen/dimen_1</dimen>
+    <dimen name="elevation_small">@dimen/dimen_2</dimen>
+    <dimen name="elevation_medium">@dimen/dimen_4</dimen>
+    <dimen name="elevation_large">@dimen/dimen_8</dimen>
+    <dimen name="elevation_extra_large">@dimen/dimen_16</dimen>
+</resources>

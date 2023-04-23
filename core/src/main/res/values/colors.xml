@@ -13,14 +13,18 @@
     <color name="coral_red">#ff3333</color>
 
     <!--lighter-->
-    <color name="warm_pink">#ff4d76</color>
-    <color name="portland_orange">#ff5233</color>
+    <color name="portland_orange">#ffbf0e</color>
+    <color name="warm_pink">#ff512f</color>
 
     <!--main-->
-    <color name="radical_red">#FF416C</color>
-    <color name="reddish_orange">#FF4B2B</color>
+    <color name="reddish_orange">#fe8d08</color>
+    <color name="radical_red">#f14426</color>
 
     <!--darker-->
-    <color name="cool_red">#ff003c</color>
-    <color name="hestia_red">#e62200</color>
+    <color name="hestia_red">#fe6d09</color>
+    <color name="cool_red">#c92f18</color>
+
+    <!--transparent-->
+    <color name="whitest_white_transparent">#1Af7f7f7</color>
+    <color name="thamar_black_transparent">#1A1A1919</color>
 </resources>

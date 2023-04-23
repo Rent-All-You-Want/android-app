@@ -1,0 +1,89 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.Rayw" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/reddish_orange</item>
+        <item name="colorPrimaryVariant">@color/hestia_red</item>
+        <item name="colorPrimaryAccent">@color/portland_orange</item>
+        <item name="colorOnPrimary">@color/whitest_white</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/warm_pink</item>
+        <item name="colorSecondaryVariant">@color/cool_red</item>
+        <item name="colorOnSecondary">@color/whitest_white</item>
+
+        <!-- Cards, sheets, and menus colors. -->
+        <item name="colorBackground">@color/whitest_white</item>
+        <item name="colorBackgroundVariant">@color/diamonds_in_the_sky</item>
+        <item name="colorOnBackground">@color/thamar_black</item>
+        <item name="colorOnBackgroundVariant">@color/dark_charcoal</item>
+        <item name="android:colorBackground">?attr/colorBackground</item>
+
+        <!-- Status & navigation bar color. -->
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">?attr/colorBackground</item>
+        <item name="android:navigationBarColor">?attr/colorBackground</item>
+
+        <!-- Cards, sheets, and menus colors. -->
+        <item name="colorSurface">@color/diamonds_in_the_sky</item>
+        <item name="colorOnSurface">@color/thamar_black</item>
+        <item name="colorOnSurfaceOverlay">@color/thamar_black_transparent</item>
+        <item name="colorControlHighlight">?attr/colorOnSurfaceOverlay</item>
+        <item name="dialogBackgroundDimAmount">0.4</item>
+
+        <!-- Error colors. -->
+        <item name="colorError">@color/coral_red</item>
+        <item name="colorOnError">@color/thamar_black</item>
+
+        <!-- Disabled colors. -->
+        <item name="colorDisabled">@color/platinum_granite</item>
+
+        <!-- Shapes. -->
+        <item name="shapeAppearanceCornerExtraSmall">@style/shape.extraSmall</item>
+        <item name="shapeAppearanceCornerSmall">@style/shape.small</item>
+        <item name="shapeAppearanceCornerMedium">@style/shape.medium</item>
+        <item name="shapeAppearanceCornerLarge">@style/shape.large</item>
+        <item name="shapeAppearanceCornerExtraLarge">@style/shape.extraLarge</item>
+
+        <!-- Text. -->
+        <item name="textAppearanceDisplayLarge">@style/text.displayLarge</item>
+        <item name="textAppearanceDisplayMedium">@style/text.displayMedium</item>
+        <item name="textAppearanceDisplaySmall">@style/text.displaySmall</item>
+
+        <item name="textAppearanceHeadlineLarge">@style/text.headlineLarge</item>
+        <item name="textAppearanceHeadlineMedium">@style/text.headlineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/text.headlineSmall</item>
+
+        <item name="textAppearanceTitleLarge">@style/text.titleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/text.titleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/text.titleSmall</item>
+
+        <item name="textAppearanceBodyLarge">@style/text.bodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/text.bodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/text.bodySmall</item>
+
+        <item name="textAppearanceLabelLarge">@style/text.labelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/text.labelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/text.labelSmall</item>
+
+        <!-- Views. TODO -->
+        <item name="bottomNavigationStyle">@style/view.bottomNavigationView</item>
+        <item name="bottomAppBarStyle">@style/view.bottomNavigationView</item>
+        <item name="textInputStyle">@style/view.textField.outline</item>
+        <item name="materialButtonStyle">@style/view.button.filled</item>
+        <item name="materialButtonOutlinedStyle">@style/view.button.outlined</item>
+        <item name="materialIconButtonStyle">@style/view.button.icon</item>
+        <item name="materialIconButtonFilledStyle">@style/view.button.icon.filled</item>
+        <item name="materialIconButtonOutlinedStyle">@style/view.button.icon.outlined</item>
+        <item name="materialCardViewStyle">@style/view.card</item>
+        <item name="checkboxStyle">@style/view.checkbox</item>
+        <item name="materialSwitchStyle">@style/view.switch</item>
+        <item name="materialAlertDialogTheme">@style/view.alertDialogTheme</item>
+        <item name="toolbarStyle">@style/view.toolBar</item>
+        <item name="snackbarStyle">@style/view.snackbar</item>
+        <item name="snackbarButtonStyle">@style/view.snackbar.button</item>
+        <!--        <item name="sliderStyle">@style/Widget.App.Slider</item>-->
+        <!--        <item name="chipStyle">@style/Widget.App.Chip</item>-->
+    </style>
+</resources>

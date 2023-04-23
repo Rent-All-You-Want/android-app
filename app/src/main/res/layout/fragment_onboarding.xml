@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true">
@@ -40,7 +41,7 @@
         android:layout_marginBottom="@dimen/dimen_48"
         android:scaleType="fitXY"
         android:src="@drawable/ic_chevron_right_medium"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="?attr/colorOnBackground"
@@ -48,18 +49,29 @@
 
     <Button
         android:id="@+id/rent_out"
+        style="@style/view.button.large.filled.primary"
         android:layout_width="0dp"
-        android:layout_height="@dimen/dimen_64"
-        android:layout_margin="@dimen/dimen_40"
-        android:fontFamily="@font/roboto_bold"
-        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/dimen_44"
+        android:layout_marginHorizontal="@dimen/dimen_64"
         android:text="@string/rent_out"
-        android:textAllCaps="true"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintWidth_percent="0.5"
-        app:shapeAppearanceOverlay="@style/shape.large"
+        app:layout_constraintWidth_percent="0.6"
         tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dimen_4"
+        android:background="?attr/colorBackground"
+        android:progressTint="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@color/dark_charcoal"
+        tools:progress="50"
+        tools:progressTint="@color/reddish_orange" />
 </androidx.constraintlayout.widget.ConstraintLayout>

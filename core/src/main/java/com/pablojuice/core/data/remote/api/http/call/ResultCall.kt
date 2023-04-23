@@ -61,8 +61,10 @@ class ResultCall<T>(
 
     override fun timeout(): Timeout = delegate.timeout()
 
-    private fun <T> Response<T>.errorMessage() =
-        errorBody()?.string()?.let { JSONObject(it).get("description").toString() }
+    private fun <T> Response<T>.errorMessage(): String =
+        errorBody()?.string()
+            ?.let { if (it.isNotEmpty()) JSONObject(it).get("description").toString() else null }
+            ?: "Code ${code()}: ${message()}"
 
     private fun Throwable.toMessage() = when (this) {
         is IOException -> "No internet connection"

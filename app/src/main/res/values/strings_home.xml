@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="menu_item_item_list">Home</string>
-    <string name="menu_item_wish_list">Wishlist</string>
-    <string name="menu_item_new_item">Add new</string>
-    <string name="menu_item_chat_list">Chats</string>
-    <string name="menu_item_preferences_list">Profile</string>
+    <string name="home_menu_items">Home</string>
+    <string name="home_menu_wishlist">Wishlist</string>
+    <string name="home_menu_new_item">Add new</string>
+    <string name="home_menu_chats">Chats</string>
+    <string name="home_menu_preferences">Profile</string>
 </resources>

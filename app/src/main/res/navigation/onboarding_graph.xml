@@ -15,7 +15,7 @@
             android:id="@+id/to_main_graph_flow"
             app:popUpTo="@navigation/main_graph"
             app:popUpToInclusive="true"
-            app:enterAnim="@anim/slide_in_right"
+            app:enterAnim="@anim/slide_from_right"
             app:exitAnim="@anim/fragment_fade_out_anim"
             app:destination="@id/main_graph" />
     </fragment>
