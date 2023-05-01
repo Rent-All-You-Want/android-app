@@ -27,14 +27,14 @@ enum class Preference(
         shouldBeVisibleForUser = { false }
     ),
 
-    MY_RENTS_IN(
+    MY_BORROWING(
         sectionTitle = R.string.preference_section_rents,
-        title = R.string.preference_rent_in,
+        title = R.string.preference_rent_borrowing,
         icon = CoreR.drawable.ic_android_medium,
         shouldBeVisibleForUser = { it }
     ),
-    MY_RENTS_OUT(
-        title = R.string.preference_rent_out,
+    MY_LENDING(
+        title = R.string.preference_rent_lending,
         icon = CoreR.drawable.ic_android_medium,
         shouldBeVisibleForUser = { it }
     ),

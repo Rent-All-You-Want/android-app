@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.preferences.presentation.list
+package com.pablojuice.rayw.feature.preferences.presentation.list.list
 
 import com.pablojuice.core.presentation.view.label.Label
 import com.pablojuice.core.presentation.view.list.ListItem

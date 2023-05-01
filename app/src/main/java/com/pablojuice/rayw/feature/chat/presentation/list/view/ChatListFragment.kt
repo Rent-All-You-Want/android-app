@@ -31,7 +31,7 @@ class ChatListFragment : HomeChildFragment<FragmentChatListBinding, ChatListView
             binding.recycler.getListAdapter<ChatListAdapter>()?.setItems(items)
             binding.recyclerContainer.isRefreshing = false
         }
-        binding.recycler.addOnScrollListener { recyclerView, state ->
+        binding.recycler.addOnScrollListener { recyclerView, _ ->
             binding.recyclerContainer.isEnabled =
                 recyclerView.firstCompletelyVisibleItemPosition() == 0
         }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="preference_section_rents">Rents</string>
-    <string name="preference_rent_in">Rent in</string>
-    <string name="preference_rent_out">Rent out</string>
+    <string name="preference_rent_borrowing">Borrowing</string>
+    <string name="preference_rent_lending">Lending</string>
     <string name="preference_pending_rents">Pending rets</string>
     <string name="preference_rent_requests">Rent requests</string>
     <string name="preference_statistics">Statistics</string>

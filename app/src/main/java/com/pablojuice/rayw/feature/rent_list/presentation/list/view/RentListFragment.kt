@@ -27,7 +27,7 @@ class RentListFragment : HomeChildFragment<FragmentRentListBinding, RentListView
             viewModel.reloadItems()
             binding.recyclerContainer.isRefreshing = false
         }
-        binding.recycler.addOnScrollListener { recyclerView, state ->
+        binding.recycler.addOnScrollListener { recyclerView, _ ->
             binding.recyclerContainer.isEnabled =
                 recyclerView.firstCompletelyVisibleItemPosition() == 0
         }
