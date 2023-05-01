@@ -85,6 +85,7 @@ android {
 
     buildFeatures {
         viewBinding true
+        buildConfig = true
     }
 
     lint {
@@ -94,15 +95,23 @@ android {
 
 dependencies {
 
-    implementation project(":core")
+    implementation project(":core:main")
 
-    implementation project(":feature:test")
+    implementation project(":feature:chat")
+    implementation project(":feature:devoptions")
+    implementation project(":feature:home")
+    implementation project(":feature:preferences")
+    implementation project(":feature:profile")
+    implementation project(":feature:rent_create")
+    implementation project(":feature:rent_list")
+    implementation project(":feature:signin")
+    implementation project(":feature:wishlist")
 
     implementation "androidx.core:core-splashscreen:$versions.splashscreen"
 
     implementation "com.google.dagger:hilt-android:$versions.daggerHilt"
     kapt "com.google.dagger:hilt-android-compiler:$versions.daggerHilt"
 
-    testImplementation project(":utils:unittest")
-    androidTestImplementation project(":utils:uitest")
+    testImplementation project(":test:unittest")
+    androidTestImplementation project(":test:uitest")
 }

@@ -1,0 +1,55 @@
+plugins {
+    id "com.android.library"
+    id "org.jetbrains.kotlin.android"
+    id "com.google.devtools.ksp"
+}
+
+android {
+    namespace "com.pablojuice.core"
+    compileSdk application.compileSdk
+
+    defaultConfig {
+        minSdk application.minSdk
+        targetSdk application.targetSdk
+
+        testInstrumentationRunner application.testRunner
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility application.javaVersion
+        targetCompatibility application.javaVersion
+    }
+
+    buildFeatures {
+        resValues = false
+    }
+
+    kotlinOptions {
+        jvmTarget = application.javaVersion.toString()
+    }
+}
+
+dependencies {
+
+    implementation project(":core:common")
+    // Database
+    implementation "androidx.security:security-crypto-ktx:1.1.0-alpha06"
+    implementation "androidx.room:room-runtime:2.5.1"
+    ksp "androidx.room:room-compiler:2.5.1"
+
+    // Network
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.3"
+    implementation "com.localebro:okhttpprofiler:1.0.8"
+    api "com.squareup.retrofit2:retrofit:2.9.0"
+    api "com.squareup.retrofit2:converter-moshi:2.9.0"
+
+    testImplementation project(":test:unittest")
+}

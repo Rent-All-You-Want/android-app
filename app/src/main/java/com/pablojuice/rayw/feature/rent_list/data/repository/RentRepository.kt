@@ -37,7 +37,7 @@ class RentRepository @Inject constructor(
                 RentListData(
                     id = lastId + 1,
                     icon = R.drawable.ic_sample_rent_car,
-                    title = "BMW GTX 2008 asdhasa ass md",
+                    title = "BMW GTX 2008 asd has a ass mda",
                     isInWishList = false,
                     price = 999999.0,
                     priceCurrency = "UAH",
@@ -51,7 +51,7 @@ class RentRepository @Inject constructor(
                 RentListData(
                     id = lastId + 2,
                     icon = R.drawable.ic_sample_rent_phone,
-                    title = "IPHONE 228s 129GB top super mega duper free lol",
+                    title = "IPHONE 228s 129GB top super mega duper free lol 1 2 3 4 5",
                     isInWishList = false,
                     price = 699.0,
                     priceCurrency = "UAH",
@@ -110,7 +110,7 @@ class RentRepository @Inject constructor(
                     R.drawable.ic_sample_rent_phone,
                     R.drawable.ic_sample_rent_phone
                 ),
-                title = "IPHONE 228s 129GB top super mega duper free lol",
+                title = "IPHONE 228s 129GB top super mega duper free lol 1 2 3 4 5",
                 description = "id = $id, sanitizedId = $sanitizedId",
                 isInWishList = false,
                 price = 699.0,

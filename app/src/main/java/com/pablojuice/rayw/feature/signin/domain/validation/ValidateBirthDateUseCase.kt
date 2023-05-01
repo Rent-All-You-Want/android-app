@@ -1,7 +1,7 @@
 package com.pablojuice.rayw.feature.signin.domain.validation
 
 import com.pablojuice.core.presentation.view.label.Label
-import java.util.*
+import java.util.Date
 import javax.inject.Inject
 
 class ValidateBirthDateUseCase @Inject constructor(

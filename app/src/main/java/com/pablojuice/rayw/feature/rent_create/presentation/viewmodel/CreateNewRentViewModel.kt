@@ -2,7 +2,6 @@ package com.pablojuice.rayw.feature.rent_create.presentation.viewmodel
 
 import android.net.Uri
 import androidx.navigation.fragment.FragmentNavigatorExtras
-import com.pablojuice.core.presentation.navigation.NavigationEvents
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.rayw.feature.rent_create.domain.ConvertUrisToImageListUseCase
@@ -16,7 +15,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import java.util.*
+import java.util.Collections
 import javax.inject.Inject
 
 private const val MAX_MEDIA = 8
@@ -60,7 +59,7 @@ class CreateNewRentViewModel @Inject constructor(
             currentItemList.remove(it)
             currentItemList.updateImageAttachItem()
             currentItemList.updateMainItem()
-            if (currentItemList.size <= 1) submitNavigationEvent(NavigationEvents.BackNavigationEvent)
+            if (currentItemList.size <= 1) submitNavigationEvent(com.pablojuice.core.presentation.navigation.NavigationEvents.BackNavigationEvent)
             _imageList.value = currentItemList
         }
     }

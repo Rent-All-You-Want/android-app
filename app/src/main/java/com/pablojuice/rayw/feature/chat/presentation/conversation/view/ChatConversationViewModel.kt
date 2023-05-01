@@ -2,7 +2,6 @@ package com.pablojuice.rayw.feature.chat.presentation.conversation.view
 
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
-import com.pablojuice.core.utils.StringUtils
 import com.pablojuice.rayw.feature.chat.domain.ProvideChatMessagesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -17,7 +16,7 @@ class ChatConversationViewModel @Inject constructor(
     private val _items = MutableStateFlow(emptyList<ListItem>())
     val items: StateFlow<List<ListItem>> = _items
 
-    private val _conversationDetails = MutableStateFlow(StringUtils.EMPTY)
+    private val _conversationDetails = MutableStateFlow(com.pablojuice.core.utils.StringUtils.EMPTY)
     val conversationDetails: StateFlow<String> = _conversationDetails
 
 

@@ -11,13 +11,26 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url 'https://jitpack.io' }
+        maven { url "https://jitpack.io" }
     }
 }
 
 rootProject.name = "rayw"
+
 include ":app"
-include ":core"
-include ":feature:test"
-include ":utils:unittest"
-include ":utils:uitest"
+include ":core:common"
+include ":core:presentation"
+include ":core:data"
+include ":core:main"
+include ":feature:chat"
+include ":feature:devoptions"
+include ":feature:home"
+include ":feature:preferences"
+include ":feature:profile"
+include ":feature:rent_create"
+include ":feature:rent_list"
+include ":feature:signin"
+include ":feature:wishlist"
+include ":test:unittest"
+include ":test:uitest"
+

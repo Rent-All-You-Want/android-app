@@ -2,7 +2,7 @@ package com.pablojuice.rayw.feature.signin.presentation.onboarding.list
 
 import android.view.ViewGroup
 import com.pablojuice.core.presentation.view.label.setLabel
-import com.pablojuice.core.presentation.view.layoutInflater
+import com.pablojuice.core.presentation.view.layout.layoutInflater
 import com.pablojuice.core.presentation.view.list.ListAdapter
 import com.pablojuice.core.presentation.view.list.ViewHolder
 import com.pablojuice.rayw.databinding.ItemOnboardingBinding

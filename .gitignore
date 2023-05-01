@@ -42,3 +42,5 @@ local.properties
 /.idea/
 /utils/uitest/build/
 /utils/unittest/build/
+/core/main/build/
+/test/

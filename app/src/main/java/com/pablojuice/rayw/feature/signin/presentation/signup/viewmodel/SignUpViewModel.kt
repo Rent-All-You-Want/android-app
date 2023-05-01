@@ -4,13 +4,18 @@ import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.core.utils.toSimpleDateFormat
 import com.pablojuice.rayw.feature.home.presentation.navigation.BackToHomeScreen
 import com.pablojuice.rayw.feature.signin.domain.signup.RegisterUserUseCase
-import com.pablojuice.rayw.feature.signin.domain.validation.*
+import com.pablojuice.rayw.feature.signin.domain.validation.ValidateAcceptRulesUseCase
+import com.pablojuice.rayw.feature.signin.domain.validation.ValidateBirthDateStringUseCase
+import com.pablojuice.rayw.feature.signin.domain.validation.ValidateBirthDateUseCase
+import com.pablojuice.rayw.feature.signin.domain.validation.ValidateEmailUseCase
+import com.pablojuice.rayw.feature.signin.domain.validation.ValidateNameUseCase
+import com.pablojuice.rayw.feature.signin.domain.validation.ValidatePasswordUseCase
 import com.pablojuice.rayw.feature.signin.presentation.signup.navigation.ToSecondSignUpScreen
 import com.pablojuice.rayw.feature.signin.presentation.signup.navigation.ToSuccessSignUpScreen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
-import java.util.*
+import java.util.Date
 import javax.inject.Inject
 
 @HiltViewModel
