@@ -8,16 +8,27 @@ abstract class Label {
 
     private var cache: String? = null
 
-    fun get(context: Context) = cache ?: build(context).also { cache = it }
+    open fun get(context: Context) = cache ?: build(context).also { cache = it }
 
     protected abstract fun build(context: Context): String
 
+    open fun same(other: Label?): Boolean = cache != null && cache == other?.cache
+
     class ResourceLabel(private val resId: Int) : Label() {
+
+        override fun get(context: Context) = build(context)
+
         override fun build(context: Context) = context.getString(resId)
+
+        override fun same(other: Label?) =
+            (other as? ResourceLabel)?.resId == resId || super.same(other)
     }
 
     class StringLabel(private val string: String) : Label() {
         override fun build(context: Context) = string
+
+        override fun same(other: Label?) =
+            (other as? StringLabel)?.string == string || super.same(other)
     }
 }
 

@@ -22,7 +22,7 @@ class RentRepository @Inject constructor(
             add(
                 RentListData(
                     id = lastId + 0,
-                    icon = R.drawable.ic_sample_rent_game,
+                    icon = R.drawable.ic_mock_rent_game,
                     title = "PS5 PRO SUPER 1TB",
                     isInWishList = false,
                     price = 1000.0,
@@ -36,7 +36,7 @@ class RentRepository @Inject constructor(
             add(
                 RentListData(
                     id = lastId + 1,
-                    icon = R.drawable.ic_sample_rent_car,
+                    icon = R.drawable.ic_mock_rent_car,
                     title = "BMW GTX 2008 asd has a ass mda",
                     isInWishList = false,
                     price = 999999.0,
@@ -50,7 +50,7 @@ class RentRepository @Inject constructor(
             add(
                 RentListData(
                     id = lastId + 2,
-                    icon = R.drawable.ic_sample_rent_phone,
+                    icon = R.drawable.ic_mock_rent_phone,
                     title = "IPHONE 228s 129GB top super mega duper free lol 1 2 3 4 5",
                     isInWishList = false,
                     price = 699.0,
@@ -72,9 +72,9 @@ class RentRepository @Inject constructor(
             0 -> RentDetailsData(
                 id = id,
                 icon = listOf(
-                    R.drawable.ic_sample_rent_game,
-                    R.drawable.ic_sample_rent_game,
-                    R.drawable.ic_sample_rent_game
+                    R.drawable.ic_mock_rent_game,
+                    R.drawable.ic_mock_rent_game,
+                    R.drawable.ic_mock_rent_game
                 ),
                 title = "PS5 PRO SUPER 1TB",
                 description = "id = $id, sanitizedId = $sanitizedId",
@@ -89,9 +89,9 @@ class RentRepository @Inject constructor(
             1 -> RentDetailsData(
                 id = id,
                 icon = listOf(
-                    R.drawable.ic_sample_rent_car,
-                    R.drawable.ic_sample_rent_car,
-                    R.drawable.ic_sample_rent_car
+                    R.drawable.ic_mock_rent_car,
+                    R.drawable.ic_mock_rent_car,
+                    R.drawable.ic_mock_rent_car
                 ),
                 title = "BMW GTX 2008 asdhasa ass md",
                 description = "id = $id, sanitizedId = $sanitizedId",
@@ -106,9 +106,9 @@ class RentRepository @Inject constructor(
             else -> RentDetailsData(
                 id = id,
                 icon = listOf(
-                    R.drawable.ic_sample_rent_phone,
-                    R.drawable.ic_sample_rent_phone,
-                    R.drawable.ic_sample_rent_phone
+                    R.drawable.ic_mock_rent_phone,
+                    R.drawable.ic_mock_rent_phone,
+                    R.drawable.ic_mock_rent_phone
                 ),
                 title = "IPHONE 228s 129GB top super mega duper free lol 1 2 3 4 5",
                 description = "id = $id, sanitizedId = $sanitizedId",

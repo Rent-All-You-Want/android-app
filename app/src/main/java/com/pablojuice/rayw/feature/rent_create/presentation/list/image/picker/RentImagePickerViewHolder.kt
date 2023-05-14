@@ -12,6 +12,7 @@ import com.pablojuice.rayw.databinding.ItemRentImagePickerAttachBinding
 import com.pablojuice.rayw.databinding.ItemRentImagePickerImageBinding
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.RentImagePickerAttachItem
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.RentImagePreviewItem
+import com.pablojuice.core.presentation.R as CoreR
 
 class RentImagePickerAttachViewHolder(onClick: () -> Unit, parent: ViewGroup) :
     ViewHolder<RentImagePickerAttachItem, ItemRentImagePickerAttachBinding>(
@@ -45,7 +46,7 @@ class RentImagePickerImageViewHolder(
         binding.image.transitionName = item.imageUri.toString()
         binding.image.setImageURI(item.imageUri)
         val strokeWidth =
-            if (item.isMainImage) binding.root.resources.getDimension(com.pablojuice.core.R.dimen.dimen_2) else 0f
+            if (item.isMainImage) binding.root.resources.getDimension(CoreR.dimen.dimen_2) else 0f
         binding.image.strokeWidth = strokeWidth
         binding.container.setOnClickListener { onClick(this) }
     }

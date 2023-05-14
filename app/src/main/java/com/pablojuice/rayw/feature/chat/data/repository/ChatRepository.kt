@@ -1,7 +1,7 @@
 package com.pablojuice.rayw.feature.chat.data.repository
 
-import com.pablojuice.core.R
 import com.pablojuice.core.data.repository.Repository
+import com.pablojuice.rayw.R
 import com.pablojuice.rayw.feature.chat.data.remote.ChatData
 import com.pablojuice.rayw.feature.chat.data.remote.GetChatDetailsResponse
 import com.pablojuice.rayw.feature.chat.data.remote.GetChatsResponse
@@ -33,7 +33,7 @@ class ChatRepository @Inject constructor() : Repository() {
         recipient = RecipientData(
             id = id,
             name = recipient,
-            avatar = R.drawable.ic_account_circle_filled_medium
+            avatar = R.drawable.ic_mock_avatar_woman
         ),
         lastMessage = getNotMyFakeMessage("Hello, my name is $recipient")
     )
@@ -48,16 +48,16 @@ class ChatRepository @Inject constructor() : Repository() {
     )
 
     private fun getMyFakeMessage(text: String, number: Int = 0) = MessageData(
-        sender = RecipientData(0, "Me", R.drawable.ic_account_circle_filled_medium),
-        recipient = RecipientData(1, "Seller", R.drawable.ic_account_circle_filled_medium),
+        sender = RecipientData(0, "Me", R.drawable.ic_mock_avatar_man),
+        recipient = RecipientData(1, "Seller", R.drawable.ic_mock_avatar_woman),
         text = text,
         dateSent = "12:${if (number < 10) "0$number" else number}",
         wasRead = true
     )
 
     private fun getNotMyFakeMessage(text: String, number: Int = 0) = MessageData(
-        sender = RecipientData(1, "Seller", R.drawable.ic_account_circle_filled_medium),
-        recipient = RecipientData(0, "Me", R.drawable.ic_account_circle_filled_medium),
+        sender = RecipientData(1, "Seller", R.drawable.ic_mock_avatar_woman),
+        recipient = RecipientData(0, "Me", R.drawable.ic_mock_avatar_man),
         text = text,
         dateSent = "12:${if (number < 10) "0$number" else number}",
         wasRead = true

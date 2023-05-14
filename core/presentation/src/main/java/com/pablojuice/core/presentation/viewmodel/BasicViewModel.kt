@@ -1,7 +1,7 @@
 package com.pablojuice.core.presentation.viewmodel
 
 import androidx.lifecycle.viewModelScope
-import com.pablojuice.core.R
+import com.pablojuice.core.presentation.R
 import com.pablojuice.core.presentation.navigation.NavigationEvent
 import com.pablojuice.core.presentation.navigation.context.alert.ShowAlertDialogEvent
 import com.pablojuice.core.presentation.view.label.asLabel

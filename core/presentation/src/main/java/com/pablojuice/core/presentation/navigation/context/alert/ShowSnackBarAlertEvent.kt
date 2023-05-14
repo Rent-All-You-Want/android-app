@@ -3,7 +3,7 @@ package com.pablojuice.core.presentation.navigation.context.alert
 import android.app.Activity
 import android.view.View
 import com.google.android.material.snackbar.Snackbar
-import com.pablojuice.core.R
+import com.pablojuice.core.presentation.R
 import com.pablojuice.core.presentation.navigation.context.ContextNavigationEvent
 import com.pablojuice.core.presentation.view.label.Label
 

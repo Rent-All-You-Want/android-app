@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--    <style name="Widget.App.Chip" parent="Widget.Material3.Chip.Input">-->
-    <!--        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Chip</item>-->
-    <!--        <item name="android:textAppearance">@style/TextAppearance.App.BodyMedium</item>-->
-    <!--        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>-->
-    <!--        ...-->
-    <!--    </style>-->
 
-    <!--    <style name="ThemeOverlay.App.Chip" parent="">-->
-    <!--        <item name="colorOnSurface">@color/shrine_pink_900</item>-->
-    <!--    </style>-->
+    <style name="view.chip" parent="Widget.Material3.Chip.Assist">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Chip</item>
+        <item name="android:textAppearance">@style/text.bodyMedium</item>
+        <item name="shapeAppearance">@style/shape.small</item>
+    </style>
+
+    <style name="view.chip.filter" parent="Widget.Material3.Chip.Filter">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Chip</item>
+        <item name="android:textAppearance">@style/text.bodyMedium</item>
+        <item name="shapeAppearance">@style/shape.small</item>
+        <!--        <item name="checkedIconTint">@android:color/holo_green_dark</item>-->
+    </style>
+
+    <style name="ThemeOverlay.App.Chip" parent="">
+        <!--        <item name="colorOnSurface">@android:color/holo_green_dark</item>-->
+        <item name="colorOnSurfaceVariant">@android:color/holo_blue_bright</item>
+        <item name="colorOnSecondaryContainer">@android:color/holo_red_dark</item>
+        <item name="colorOutline">@android:color/holo_orange_dark</item>
+        <item name="colorSurface">@android:color/holo_purple</item>
+        <item name="colorSecondaryContainer">@android:color/holo_orange_light</item>
+    </style>
 </resources>

@@ -20,6 +20,7 @@ import com.pablojuice.rayw.databinding.FragmentHomeBinding
 import com.pablojuice.rayw.feature.home.data.HomeMenuData
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.math.max
+import com.pablojuice.core.presentation.R as CoreR
 
 private const val MENU_APPEAR_OFFSET = 0.5f
 private const val CONTENT_APPEAR_OFFSET = 0.6f
@@ -86,7 +87,7 @@ class HomeFragment : BasicFragment<FragmentHomeBinding, HomeViewModel>() {
         } else {
             binding.homeToolBarContentLayout.setVisible(false)
             binding.homeToolBarCollapsingLayout.updateLayoutParams<ViewGroup.LayoutParams> {
-                height = resources.getDimensionPixelSize(com.pablojuice.core.R.dimen.dimen_96)
+                height = resources.getDimensionPixelSize(CoreR.dimen.dimen_96)
             }
         }
     }

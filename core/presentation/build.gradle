@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace "com.pablojuice.core"
+    namespace "com.pablojuice.core.presentation"
     compileSdk application.compileSdk
 
     defaultConfig {

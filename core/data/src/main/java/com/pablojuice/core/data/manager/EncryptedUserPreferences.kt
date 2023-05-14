@@ -21,15 +21,17 @@ class EncryptedUserPreferences constructor(
 
     private val preferences: SharedPreferences = context.createPreferences(PREFERENCES_KEY)
 
-    override fun <T> put(key: UserPreference, value: T) = preferences.edit().run {
-        val keyName = key.encryptedName
-        when (value) {
-            is Int -> putInt(keyName, value)
-            is Boolean -> putBoolean(keyName, value)
-            is String -> putString(keyName, value)
-            else -> putJsonObject(keyName, value, key.details.type)
+    override fun <T> put(key: UserPreference, value: T) {
+        preferences.edit().run {
+            val keyName = key.encryptedName
+            when (value) {
+                is Int -> putInt(keyName, value)
+                is Boolean -> putBoolean(keyName, value)
+                is String -> putString(keyName, value)
+                else -> putJsonObject(keyName, value, key.details.type)
+            }
+            apply()
         }
-        apply()
     }
 
     @Suppress("UNCHECKED_CAST")

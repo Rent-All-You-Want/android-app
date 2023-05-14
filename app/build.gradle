@@ -37,6 +37,8 @@ android {
 
         testInstrumentationRunner application.testRunner
 
+        resourceConfigurations += ["en", "uk"]
+
         manifestPlaceholders.usesLocalBackEnd = false
     }
 

@@ -10,7 +10,7 @@ import androidx.navigation.fragment.NavHostFragment
 import com.pablojuice.core.utils.NumberUtils.UNDEFINED
 import com.pablojuice.rayw.R
 import dagger.hilt.android.AndroidEntryPoint
-import com.pablojuice.core.R as CoreR
+import com.pablojuice.core.presentation.R as CoreR
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

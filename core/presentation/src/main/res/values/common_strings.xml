@@ -2,4 +2,12 @@
 <resources>
     <string name="common_ok">OK</string>
     <string name="common_error">Error</string>
+
+    <string name="common_theme_default">As system</string>
+    <string name="common_theme_light">Light</string>
+    <string name="common_theme_dark">Dark</string>
+
+    <string name="common_language_default">As system</string>
+    <string name="common_language_english">English</string>
+    <string name="common_language_ukrainian">Ukrainian</string>
 </resources>

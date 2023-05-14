@@ -50,6 +50,20 @@
         app:popUpToInclusive="false" />
 
     <action
+        android:id="@+id/to_unimplemented"
+        app:destination="@id/unimplemented"
+        app:enterAnim="@anim/slide_from_right"
+        app:exitAnim="@anim/fragment_fade_out_anim"
+        app:popEnterAnim="@anim/fragment_fade_in_anim"
+        app:popExitAnim="@anim/slide_to_right" />
+
+    <fragment
+        android:id="@+id/unimplemented"
+        android:name="com.pablojuice.rayw.feature.preferences.presentation.details.UnimplementedFeatureFragment"
+        android:label="Unimplemented Screen"
+        tools:layout="@layout/fragment_unimplemented" />
+
+    <action
         android:id="@+id/to_rent_details"
         app:destination="@id/rent_details"
         app:enterAnim="@anim/slide_from_right"
@@ -85,10 +99,38 @@
             app:argType="string" />
     </fragment>
 
-    <include app:graph="@navigation/dev_graph" />
-
     <include app:graph="@navigation/rent_create_graph" />
 
     <include app:graph="@navigation/signin_graph" />
+
+    <include app:graph="@navigation/dev_graph" />
+
+    <action
+        android:id="@+id/to_app_preference_settings"
+        app:destination="@id/app_preference_settings"
+        app:enterAnim="@anim/slide_from_right"
+        app:exitAnim="@anim/fragment_fade_out_anim"
+        app:popEnterAnim="@anim/fragment_fade_in_anim"
+        app:popExitAnim="@anim/slide_to_right" />
+
+    <fragment
+        android:id="@+id/app_preference_settings"
+        android:name="com.pablojuice.rayw.feature.preferences.presentation.details.PreferencesAppSettingsFragment"
+        android:label="App Settings Screen"
+        tools:layout="@layout/fragment_preferences_app_settings" />
+
+    <action
+        android:id="@+id/to_about_app"
+        app:destination="@id/about_app"
+        app:enterAnim="@anim/slide_from_right"
+        app:exitAnim="@anim/fragment_fade_out_anim"
+        app:popEnterAnim="@anim/fragment_fade_in_anim"
+        app:popExitAnim="@anim/slide_to_right" />
+
+    <fragment
+        android:id="@+id/about_app"
+        android:name="com.pablojuice.rayw.feature.preferences.presentation.details.PreferencesAboutAppFragment"
+        android:label="About App Screen"
+        tools:layout="@layout/fragment_preferences_about_app" />
 
 </navigation>

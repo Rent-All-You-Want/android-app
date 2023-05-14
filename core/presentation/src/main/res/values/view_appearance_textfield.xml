@@ -22,6 +22,16 @@
         <item name="hintEnabled">true</item>
     </style>
 
+    <style name="view.textField.dropdown" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout.OutlinedBox</item>
+        <item name="boxBackgroundColor">?attr/colorBackgroundVariant</item>
+        <item name="boxBackgroundMode">outline</item>
+        <item name="android:textColorHint">?attr/colorDisabled</item>
+        <item name="startIconTint">?attr/colorDisabled</item>
+        <item name="hintTextColor">?attr/colorPrimary</item>
+        <item name="endIconTint">?attr/colorDisabled</item>
+    </style>
+
     <style name="ThemeOverlay.App.TextInputLayout" parent="ThemeOverlay.App.TextInputLayout.OutlinedBox">
         <item name="editTextStyle">@style/view.editText</item>
     </style>

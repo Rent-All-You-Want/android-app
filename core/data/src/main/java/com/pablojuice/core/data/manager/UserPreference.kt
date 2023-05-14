@@ -1,5 +1,8 @@
 package com.pablojuice.core.data.manager
 
+import com.pablojuice.core.utils.NumberUtils
+import com.pablojuice.core.utils.StringUtils
+
 enum class UserPreference(
     val details: PreferenceDetails<*>
 ) {
@@ -8,6 +11,9 @@ enum class UserPreference(
 
     ACCESS_TOKEN(PreferenceDetails(String::class.java)),
     REFRESH_TOKEN(PreferenceDetails(String::class.java)),
+
+    APP_LANGUAGE(PreferenceDetails(String::class.java, StringUtils.EMPTY)),
+    APP_THEME(PreferenceDetails(Int::class.java, NumberUtils.UNDEFINED)),
 
     ON_BOARDING_VIEWED(PreferenceDetails(Boolean::class.java, false));
 

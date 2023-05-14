@@ -5,7 +5,7 @@ import com.pablojuice.core.presentation.view.label.Label
 import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.rayw.R
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToCreateNewRentScreen
-import com.pablojuice.rayw.feature.home.presentation.navigation.ToLoginScreen
+import com.pablojuice.rayw.feature.preferences.presentation.navigation.ToLoginScreen
 
 enum class HomeMenuData(
     val id: Int = com.pablojuice.core.utils.NumberUtils.UNDEFINED,

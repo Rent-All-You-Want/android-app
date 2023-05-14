@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:shapeAppearance="@style/shape.small"
-        tools:src="@drawable/ic_sample_rent_phone" />
+        tools:src="@drawable/ic_mock_rent_phone" />
 
     <CheckBox
         android:id="@+id/add_to_wishlist"

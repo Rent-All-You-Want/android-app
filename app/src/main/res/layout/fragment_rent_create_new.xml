@@ -33,6 +33,7 @@
                 android:orientation="horizontal"
                 android:paddingStart="@dimen/dimen_32"
                 android:paddingEnd="@dimen/dimen_32"
+                tools:layout_height="0dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_attach_file_medium"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -155,6 +156,40 @@
                     android:layout_marginTop="@dimen/dimen_8"
                     android:text="Pricing" />
 
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="false"
+                    app:selectionRequired="true"
+                    android:layout_marginTop="@dimen/dimen_8">
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/view.chip.filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="first" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/view.chip.filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="second" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/view.chip.filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="third" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/view.chip.filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="fourth" />
+                </com.google.android.material.chip.ChipGroup>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -252,8 +287,7 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-
-                <androidx.fragment.app.FragmentContainerView
+                <FrameLayout
                     android:id="@+id/map_container"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_256"

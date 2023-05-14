@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.children
 import androidx.recyclerview.widget.RecyclerView
-import com.pablojuice.core.R
+import com.pablojuice.core.presentation.R
 
 private const val STANDARD_DRAWABLE_ALPHA = 255 / 5
 
