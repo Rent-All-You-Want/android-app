@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupScreen() {
+        viewModel.setupAppStyle()
         lifecycleScope.launchWhenCreated {
             viewModel.navigationGraphId.collect(::onNavGraphChanged)
         }

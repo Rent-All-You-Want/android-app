@@ -1,7 +1,11 @@
 package com.pablojuice.rayw.app.main
 
 import android.content.Context
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.LocaleListCompat
 import com.pablojuice.core.app.config.AppConfig
+import com.pablojuice.core.app.settings.language.AppLanguage
+import com.pablojuice.core.app.settings.theme.AppTheme
 import com.pablojuice.core.data.manager.UserPreference
 import com.pablojuice.core.data.manager.UserPreferences
 import com.pablojuice.core.data.remote.auth.UserManager
@@ -46,6 +50,15 @@ class MainViewModel @Inject constructor(
         }
     }
 
+    fun setupAppStyle() {
+        val theme = AppTheme.fromCode(userPreferences.getUnsafe(UserPreference.APP_THEME))
+        AppCompatDelegate.setDefaultNightMode(theme.code)
+
+        val language = AppLanguage.fromCode(userPreferences.getUnsafe(UserPreference.APP_LANGUAGE))
+        val appLocale = LocaleListCompat.forLanguageTags(language.code)
+        AppCompatDelegate.setApplicationLocales(appLocale)
+    }
+
     private fun setupApp() = launch {
         Timber.plant(appConfig.loggerType)
         userManager.onTokenExpire =
@@ -64,5 +77,4 @@ class MainViewModel @Inject constructor(
         _navigationGraphId.value =
             if (onBoardingWasViewed) R.navigation.main_graph else R.navigation.onboarding_graph
     }
-
 }

@@ -5,9 +5,11 @@ import com.pablojuice.core.app.settings.language.AppLanguage
 import com.pablojuice.core.app.settings.theme.AppTheme
 import com.pablojuice.core.data.manager.UserPreference
 import com.pablojuice.core.data.manager.UserPreferences
+import com.pablojuice.core.presentation.navigation.context.alert.ShowSnackBarAlertEvent
 import com.pablojuice.core.presentation.view.label.Label
+import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
-import com.pablojuice.core.utils.logging.Timber
+import com.pablojuice.rayw.R
 import com.pablojuice.rayw.feature.preferences.domain.ChangeAppLanguage
 import com.pablojuice.rayw.feature.preferences.domain.ChangeAppTheme
 import com.pablojuice.rayw.feature.preferences.domain.ProvideAvailableLanguages
@@ -39,16 +41,16 @@ class PreferencesViewModel @Inject constructor(
 
     fun setAppLanguage(languageNumber: Int) {
         val lang = AppLanguage.values()[languageNumber]
-        Timber.e("setapplang ${lang.code}")
         changeLanguage(lang)
         _appLanguage.value = getAppLanguage()
+        submitNavigationEvent(ShowSnackBarAlertEvent(R.string.preference_app_language_changed.asLabel()))
     }
 
     fun setAppTheme(themeNumber: Int) {
         val theme = AppTheme.values()[themeNumber]
-        Timber.e("setapptheme ${theme.code}")
         changeTheme(theme)
         _appTheme.value = getAppTheme()
+        submitNavigationEvent(ShowSnackBarAlertEvent(R.string.preference_app_theme_changed.asLabel()))
     }
 
     fun getBuildTitle(): String = appConfig.info.appName
