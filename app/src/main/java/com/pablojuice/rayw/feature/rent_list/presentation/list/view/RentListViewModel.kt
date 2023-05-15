@@ -8,7 +8,6 @@ import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.view.list.PagingScrollListener
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
-import com.pablojuice.core.utils.logging.Timber
 import com.pablojuice.rayw.R
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToRentDetails
 import com.pablojuice.rayw.feature.home.presentation.view.HomeListener
@@ -58,8 +57,8 @@ class RentListViewModel @Inject constructor(
 
     override fun onIsInWishListChanged(id: Int, isInWishList: Boolean) {
         val wishlist =
-            userPreferences.getUnsafe<List<Int>>(UserPreference.USER_WISHLIST).toMutableList()
-        wishlist.add(id)
+            userPreferences.getUnsafe<Set<Int>>(UserPreference.USER_WISHLIST).toMutableSet()
+        if (isInWishList) wishlist.add(id) else wishlist.removeAll { it == id }
         userPreferences.put(UserPreference.USER_WISHLIST, wishlist)
         val message =
             if (isInWishList) R.string.rent_item_added_to_wishlist else R.string.rent_item_removed_from_wishlist
@@ -76,7 +75,7 @@ class RentListViewModel @Inject constructor(
     override fun loadMoreItems() = loadItems()
 
     override fun onMenuItemClick(item: MenuItem?): Boolean {
-        Timber.e("item clicked ${item?.title}")
+        submitNavigationEvent(ShowSnackBarAlertEvent(CoreR.string.common_unimplemented.asLabel()))
         return false
     }
 }

@@ -8,7 +8,7 @@ enum class UserPreference(
 ) {
     USER_NAME(PreferenceDetails(String::class.java)),
     USER_AVATAR(PreferenceDetails(String::class.java)),
-    USER_WISHLIST(PreferenceDetails(List::class.java, defaultJsonString = StringUtils.EMPTY_LIST)),
+    USER_WISHLIST(PreferenceDetails(Set::class.java, defaultJsonString = StringUtils.EMPTY_LIST)),
 
     ACCESS_TOKEN(PreferenceDetails(String::class.java)),
     REFRESH_TOKEN(PreferenceDetails(String::class.java)),

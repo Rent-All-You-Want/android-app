@@ -1,10 +1,9 @@
-package com.pablojuice.rayw.feature.rent_list.data.remote
+package com.pablojuice.rayw.feature.wish.data.remote
 
-data class RentDetailsData(
+data class WishData(
     val id: Int,
-    val icon: List<Int>,
+    val icon: Int,
     val title: String,
-    val description: String,
     val isInWishList: Boolean,
     val price: Double,
     val priceCurrency: String,

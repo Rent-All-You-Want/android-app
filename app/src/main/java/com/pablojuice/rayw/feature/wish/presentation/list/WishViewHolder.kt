@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.rent_list.presentation.list.list
+package com.pablojuice.rayw.feature.wish.presentation.list
 
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -10,35 +10,33 @@ import com.pablojuice.core.presentation.view.layout.constraintHeight
 import com.pablojuice.core.presentation.view.layout.constraintWidth
 import com.pablojuice.core.presentation.view.layout.layoutInflater
 import com.pablojuice.core.presentation.view.list.ViewHolder
-import com.pablojuice.rayw.databinding.ItemRentRegularBinding
-import com.pablojuice.rayw.feature.rent_list.data.local.RentRegularItem
+import com.pablojuice.rayw.databinding.ItemWishNoWishesBinding
+import com.pablojuice.rayw.databinding.ItemWishRegularBinding
+import com.pablojuice.rayw.feature.rent_list.presentation.list.list.LANDSCAPE_IMAGE_CONSTRAINT_HEIGHT_RATIO
+import com.pablojuice.rayw.feature.rent_list.presentation.list.list.LANDSCAPE_IMAGE_CONSTRAINT_WIDTH_RATIO
+import com.pablojuice.rayw.feature.rent_list.presentation.list.list.PORTRAIT_IMAGE_CONSTRAINT_HEIGHT_RATIO
+import com.pablojuice.rayw.feature.rent_list.presentation.list.list.PORTRAIT_IMAGE_CONSTRAINT_WIDTH_RATIO
+import com.pablojuice.rayw.feature.wish.data.local.NoWishesListItem
+import com.pablojuice.rayw.feature.wish.data.local.WishListRegularItem
 
-internal const val LANDSCAPE_IMAGE_CONSTRAINT_WIDTH_RATIO = 4
-internal const val LANDSCAPE_IMAGE_CONSTRAINT_HEIGHT_RATIO = 3
-internal const val PORTRAIT_IMAGE_CONSTRAINT_WIDTH_RATIO = 9
-internal const val PORTRAIT_IMAGE_CONSTRAINT_HEIGHT_RATIO = 10
-
-class RentViewHolder(
+class WishViewHolder(
     onClick: (Int) -> Unit,
     onIsInWishListChanged: (Int, Boolean) -> Unit,
     parent: ViewGroup
-) : ViewHolder<RentRegularItem, ItemRentRegularBinding>(
-    ItemRentRegularBinding.inflate(parent.layoutInflater, parent, false)
+) : ViewHolder<WishListRegularItem, ItemWishRegularBinding>(
+    ItemWishRegularBinding.inflate(parent.layoutInflater, parent, false)
 ) {
 
     init {
         binding.container.setOnClickListener { currentItem?.run { onClick(id) } }
         binding.addToWishlist.setOnCheckedChangeListener { _, isChecked ->
             currentItem?.run {
-                if (isInWishList != isChecked) {
-                    isInWishList = isChecked
-                    onIsInWishListChanged(id, isChecked)
-                }
+                if (!isChecked) onIsInWishListChanged(id, isChecked)
             }
         }
     }
 
-    override fun bind(item: RentRegularItem) {
+    override fun bind(item: WishListRegularItem) {
         super.bind(item)
         currentItem?.run {
             GlideApp.with(binding.root).asBitmap()
@@ -54,7 +52,7 @@ class RentViewHolder(
                         )
                     }
                 }
-            binding.addToWishlist.isChecked = isInWishList
+            binding.addToWishlist.isChecked = true
             binding.title.setLabel(title)
             binding.price.setLabel(price)
             binding.currency.setLabel(priceCurrency)
@@ -65,3 +63,9 @@ class RentViewHolder(
         }
     }
 }
+
+class NoWishesViewHolder(
+    parent: ViewGroup
+) : ViewHolder<NoWishesListItem, ItemWishNoWishesBinding>(
+    ItemWishNoWishesBinding.inflate(parent.layoutInflater, parent, false)
+)
