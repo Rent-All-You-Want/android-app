@@ -11,7 +11,7 @@
         style="@style/text.labelSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimen_4"
+        android:layout_marginStart="@dimen/dimen_32"
         app:layout_constraintBottom_toBottomOf="@+id/message_label"
         app:layout_constraintEnd_toStartOf="@+id/message_label"
         app:layout_constraintHorizontal_bias="1.0"
@@ -36,9 +36,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/date_label"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_max="wrap"
-        app:layout_constraintWidth_percent="0.7"
-        tools:text="Hello, how are you?" />
+        app:layout_constraintWidth_default="wrap"
+        tools:text="Hello, how are you? sdf s d fs d f sd f s d f sd f sd" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/avatar_icon"

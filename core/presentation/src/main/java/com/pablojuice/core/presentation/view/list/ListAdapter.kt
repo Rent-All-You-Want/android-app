@@ -15,7 +15,7 @@ abstract class ListAdapter(
     private val listAnimator: ListAnimator? = null
 ) : RecyclerView.Adapter<ViewHolder<ListItem, out ViewBinding>>() {
 
-    private val items: MutableList<ListItem> = items.toMutableList()
+    protected val items: MutableList<ListItem> = items.toMutableList()
 
     private var lastAnimatedPosition: Int = -1
 

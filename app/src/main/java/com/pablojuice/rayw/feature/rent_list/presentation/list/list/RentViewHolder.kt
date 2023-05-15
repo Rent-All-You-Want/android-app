@@ -10,6 +10,7 @@ import com.pablojuice.core.presentation.view.layout.constraintHeight
 import com.pablojuice.core.presentation.view.layout.constraintWidth
 import com.pablojuice.core.presentation.view.layout.layoutInflater
 import com.pablojuice.core.presentation.view.list.ViewHolder
+import com.pablojuice.core.utils.logging.Timber
 import com.pablojuice.rayw.databinding.ItemRentRegularBinding
 import com.pablojuice.rayw.feature.rent_list.data.local.RentRegularItem
 
@@ -29,7 +30,12 @@ class RentViewHolder(
     init {
         binding.container.setOnClickListener { currentItem?.run { onClick(id) } }
         binding.addToWishlist.setOnCheckedChangeListener { _, isChecked ->
-            currentItem?.run { onIsInWishListChanged(id, isChecked) }
+            currentItem?.run {
+                if (isInWishList != isChecked) {
+                    isInWishList = isChecked
+                    onIsInWishListChanged(id, isChecked)
+                }
+            }
         }
     }
 
@@ -49,11 +55,12 @@ class RentViewHolder(
                         )
                     }
                 }
+            Timber.e("$id $isInWishList")
             binding.addToWishlist.isChecked = isInWishList
             binding.title.setLabel(title)
             binding.price.setLabel(price)
             binding.currency.setLabel(priceCurrency)
-            binding.priceDescription.setLabel(priceDescription)
+            binding.timing.setLabel(priceDescription)
             binding.ratingLabel.setLabel(rating)
             binding.location.setLabel(location)
             binding.time.setLabel(timeAdded)

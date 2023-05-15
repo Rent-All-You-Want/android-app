@@ -2,6 +2,7 @@
 <resources>
     <string name="common_ok">OK</string>
     <string name="common_error">Error</string>
+    <string name="common_slash">/</string>
 
     <string name="common_theme_default">As system</string>
     <string name="common_theme_light">Light</string>

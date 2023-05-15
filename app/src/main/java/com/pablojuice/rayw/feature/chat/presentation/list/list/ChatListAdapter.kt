@@ -1,10 +1,14 @@
 package com.pablojuice.rayw.feature.chat.presentation.list.list
 
 import android.view.ViewGroup
+import com.pablojuice.core.presentation.view.animation.list.ListAnimator
 import com.pablojuice.core.presentation.view.list.ListAdapter
 import com.pablojuice.rayw.R
 
-class ChatListAdapter(private val listener: Listener) : ListAdapter(addDividerDecoration = true) {
+class ChatListAdapter(private val listener: Listener) : ListAdapter(
+    addDividerDecoration = true,
+    listAnimator = ListAnimator.SlideInBottomListAnimator()
+) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,

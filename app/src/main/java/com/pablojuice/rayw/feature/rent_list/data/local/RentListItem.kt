@@ -8,7 +8,7 @@ data class RentRegularItem(
     override val id: Int,
     val icon: Int,
     val title: Label,
-    val isInWishList: Boolean,
+    var isInWishList: Boolean,
     val price: Label,
     val priceCurrency: Label,
     val priceDescription: Label,

@@ -5,6 +5,7 @@ import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.core.presentation.view.list.getListAdapter
 import com.pablojuice.core.presentation.view.toolbar.setTitleLabel
+import com.pablojuice.core.utils.StringUtils
 import com.pablojuice.rayw.databinding.FragmentChatConversationBinding
 import com.pablojuice.rayw.feature.chat.presentation.conversation.list.ChatListMessageAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -22,7 +23,10 @@ class ChatConversationFragment :
         binding.recycler.adapter = ChatListMessageAdapter()
         viewModel.items.observe { items ->
             if (items.isEmpty()) return@observe
-            binding.recycler.getListAdapter<ChatListMessageAdapter>()?.addItems(items)
+            binding.recycler.getListAdapter<ChatListMessageAdapter>()?.run {
+                addItems(items)
+                binding.recycler.smoothScrollToPosition(itemCount - 1)
+            }
             binding.recyclerContainer.isRefreshing = false
         }
         viewModel.conversationDetails.observe { details ->
@@ -35,6 +39,11 @@ class ChatConversationFragment :
             binding.recyclerContainer.isRefreshing = true
             binding.recycler.getListAdapter<ChatListMessageAdapter>()?.clearItems()
             viewModel.loadMessages()
+        }
+        binding.messageField.setEndIconOnClickListener {
+            val text = binding.messageField.editText?.text?.trim().toString()
+            if (text.isNotEmpty()) viewModel.sendMessage(text)
+            binding.messageField.editText?.setText(StringUtils.EMPTY)
         }
     }
 }

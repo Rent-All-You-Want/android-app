@@ -1,10 +1,15 @@
 package com.pablojuice.rayw.feature.rent_list.presentation.list.view
 
 import android.view.MenuItem
+import com.pablojuice.core.data.manager.UserPreference
+import com.pablojuice.core.data.manager.UserPreferences
+import com.pablojuice.core.presentation.navigation.context.alert.ShowSnackBarAlertEvent
+import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.view.list.PagingScrollListener
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.core.utils.logging.Timber
+import com.pablojuice.rayw.R
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToRentDetails
 import com.pablojuice.rayw.feature.home.presentation.view.HomeListener
 import com.pablojuice.rayw.feature.rent_list.domain.ProvideRentListItemsUseCase
@@ -14,10 +19,12 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import javax.inject.Inject
+import com.pablojuice.core.presentation.R as CoreR
 
 @HiltViewModel
 class RentListViewModel @Inject constructor(
-    private val provideItems: ProvideRentListItemsUseCase
+    private val provideItems: ProvideRentListItemsUseCase,
+    private val userPreferences: UserPreferences
 ) : BasicViewModel(), PagingScrollListener.PagingListener, RentListAdapter.Listener,
     HomeListener.MenuItemClickListener, HomeListener.SearchClickListener {
 
@@ -25,7 +32,6 @@ class RentListViewModel @Inject constructor(
     val items: Flow<List<ListItem>> = _items
 
     private val _itemsPage = MutableStateFlow(0)
-    val itemsPage: Flow<Int> = _itemsPage
 
     private val _canLoadItems = MutableStateFlow(true)
     val canLoadItems: Flow<Boolean> = _canLoadItems
@@ -35,7 +41,7 @@ class RentListViewModel @Inject constructor(
             _canLoadItems.value = false
             _items.emit(provideItems(_itemsPage.value))
             _itemsPage.value = _itemsPage.value + 1
-            _canLoadItems.value = true
+            _canLoadItems.value = _itemsPage.value < 10
         }
     }
 
@@ -51,7 +57,18 @@ class RentListViewModel @Inject constructor(
     }
 
     override fun onIsInWishListChanged(id: Int, isInWishList: Boolean) {
-        Timber.e("onIsInWishListChanged $id $isInWishList")
+        val wishlist =
+            userPreferences.getUnsafe<List<Int>>(UserPreference.USER_WISHLIST).toMutableList()
+        wishlist.add(id)
+        userPreferences.put(UserPreference.USER_WISHLIST, wishlist)
+        val message =
+            if (isInWishList) R.string.rent_item_added_to_wishlist else R.string.rent_item_removed_from_wishlist
+        submitNavigationEvent(
+            ShowSnackBarAlertEvent(
+                messageLabel = message.asLabel(),
+                marginBottom = CoreR.dimen.dimen_80
+            )
+        )
     }
 
     override fun canLoadMore() = _canLoadItems.value

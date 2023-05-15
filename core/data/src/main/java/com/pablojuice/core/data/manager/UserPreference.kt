@@ -8,6 +8,7 @@ enum class UserPreference(
 ) {
     USER_NAME(PreferenceDetails(String::class.java)),
     USER_AVATAR(PreferenceDetails(String::class.java)),
+    USER_WISHLIST(PreferenceDetails(List::class.java, defaultJsonString = StringUtils.EMPTY_LIST)),
 
     ACCESS_TOKEN(PreferenceDetails(String::class.java)),
     REFRESH_TOKEN(PreferenceDetails(String::class.java)),
@@ -20,6 +21,10 @@ enum class UserPreference(
     //TODO
     val encryptedName: String = name.lowercase().filterNot { it == '_' }.reversed()
 
-    class PreferenceDetails<T>(val type: Class<T>, val default: T? = null)
+    class PreferenceDetails<T>(
+        val type: Class<T>,
+        val default: T? = null,
+        val defaultJsonString: String = StringUtils.EMPTY_JSON
+    )
 }
 

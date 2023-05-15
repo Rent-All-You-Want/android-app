@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:shapeAppearance="@style/shape.small"
-        tools:src="@drawable/ic_mock_rent_phone" />
+        tools:src="@drawable/ic_mock_cam" />
 
     <CheckBox
         android:id="@+id/add_to_wishlist"
@@ -82,13 +82,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/dimen_8"
-        android:layout_marginTop="@dimen/dimen_4"
+        android:layout_marginTop="@dimen/dimen_8"
         android:ellipsize="end"
         android:maxLines="2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/price_description"
-        tools:text="Nintendo Switch very good very nice lol asdjknasd" />
+        tools:text="Nintendo Switch very good very nice lol asdjknasd"
+        app:layout_constraintTop_toBottomOf="@+id/price" />
 
     <TextView
         android:id="@+id/price"
@@ -96,14 +96,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_8"
-        android:layout_marginEnd="@dimen/dimen_4"
         android:maxLines="1"
         app:layout_constraintEnd_toStartOf="@id/currency"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="@id/title"
         app:layout_constraintTop_toBottomOf="@+id/image"
-        tools:text="999 999 999" />
+        tools:text="999 999" />
 
     <TextView
         android:id="@+id/currency"
@@ -111,23 +110,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:maxLines="1"
+        android:layout_marginStart="@dimen/dimen_4"
         app:layout_constraintBottom_toBottomOf="@+id/price"
-        app:layout_constraintEnd_toStartOf="@+id/add_to_wishlist"
+        app:layout_constraintEnd_toStartOf="@+id/pricing_divider"
         app:layout_constraintStart_toEndOf="@+id/price"
         app:layout_constraintTop_toTopOf="@+id/price"
         tools:text="UAH" />
 
     <TextView
-        android:id="@+id/price_description"
-        style="@style/text.labelSmall"
+        android:id="@+id/pricing_divider"
+        style="@style/text.bodyMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:maxLines="1"
-        app:layout_constraintEnd_toEndOf="@+id/currency"
-        app:layout_constraintStart_toStartOf="@+id/price"
-        app:layout_constraintTop_toBottomOf="@+id/price"
-        tools:text="Paid monthly" />
+        android:text="@string/common_slash"
+        app:layout_constraintBottom_toBottomOf="@+id/price"
+        app:layout_constraintEnd_toStartOf="@+id/timing"
+        app:layout_constraintStart_toEndOf="@+id/currency"
+        app:layout_constraintTop_toTopOf="@+id/price" />
 
+    <TextView
+        android:id="@+id/timing"
+        style="@style/text.labelMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:layout_marginEnd="@dimen/dimen_4"
+        app:layout_constraintStart_toEndOf="@+id/pricing_divider"
+        app:layout_constraintBottom_toBottomOf="@+id/currency"
+        app:layout_constraintEnd_toStartOf="@+id/add_to_wishlist"
+        tools:text="Month" />
 
     <TextView
         android:id="@+id/location"

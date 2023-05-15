@@ -5,6 +5,7 @@
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.Snackbar</item>
         <item name="animationMode">slide</item>
         <item name="shapeAppearance">@style/shape.medium</item>
+        <item name="android:layout_margin">@dimen/dimen_32</item>
     </style>
 
     <style name="view.snackbar.button" parent="Widget.Material3.Button.TextButton.Snackbar">
