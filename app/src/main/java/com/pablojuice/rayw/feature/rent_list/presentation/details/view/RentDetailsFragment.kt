@@ -1,10 +1,12 @@
-package com.pablojuice.rayw.feature.rent_list.presentation.details
+package com.pablojuice.rayw.feature.rent_list.presentation.details.view
 
 import androidx.fragment.app.viewModels
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
-import com.pablojuice.core.presentation.view.toolbar.setTitleLabel
 import com.pablojuice.rayw.databinding.FragmentRentDetailsBinding
+import com.pablojuice.rayw.feature.rent_list.data.local.RentDetailsItem
+import com.pablojuice.rayw.feature.rent_list.presentation.details.list.RentDetailsImage
+import com.pablojuice.rayw.feature.rent_list.presentation.details.list.RentDetailsImageAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -16,11 +18,16 @@ class RentDetailsFragment : BasicFragment<FragmentRentDetailsBinding, RentDetail
 
     override fun setupScreen() {
         binding.itemToolBar.setNavigationClickListener(::navigateBack)
-        viewModel.itemDetails.observe { details ->
-            details?.run { binding.itemToolBar.setTitleLabel(title) }
-        }
+        viewModel.itemDetails.observe(::setItemDetails)
         arguments?.let { args ->
             viewModel.fetchDetailsForItem(RentDetailsFragmentArgs.fromBundle(args).rentId)
+        }
+    }
+
+    private fun setItemDetails(item: RentDetailsItem?) {
+        item?.run {
+            binding.imagePager.adapter = RentDetailsImageAdapter(icon.map { RentDetailsImage(it) })
+
         }
     }
 }

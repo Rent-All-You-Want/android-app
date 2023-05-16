@@ -2,6 +2,7 @@ package com.pablojuice.rayw.feature.rent_create.presentation.viewmodel
 
 import android.net.Uri
 import androidx.navigation.fragment.FragmentNavigatorExtras
+import com.pablojuice.core.presentation.navigation.NavigationEvents
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.rayw.feature.rent_create.domain.ConvertUrisToImageListUseCase
@@ -59,7 +60,7 @@ class CreateNewRentViewModel @Inject constructor(
             currentItemList.remove(it)
             currentItemList.updateImageAttachItem()
             currentItemList.updateMainItem()
-            if (currentItemList.size <= 1) submitNavigationEvent(com.pablojuice.core.presentation.navigation.NavigationEvents.BackNavigationEvent)
+            if (currentItemList.size <= 1) submitNavigationEvent(NavigationEvents.BackNavigationEvent)
             _imageList.value = currentItemList
         }
     }

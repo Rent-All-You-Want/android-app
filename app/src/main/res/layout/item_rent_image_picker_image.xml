@@ -26,5 +26,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearance="@style/shape.small"
         app:strokeColor="?attr/colorPrimary"
-        tools:src="@drawable/ic_mock_rent_game" />
+        tools:src="@drawable/ic_mock_ps_1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

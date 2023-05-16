@@ -1,8 +1,11 @@
 package com.pablojuice.rayw.feature.rent_create.presentation.view
 
 import android.os.Bundle
+import android.view.Gravity
+import android.view.ViewGroup
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.view.updateLayoutParams
 import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -12,6 +15,7 @@ import com.pablojuice.core.presentation.utils.GoogleMapUtils.addMapFragmentToCon
 import com.pablojuice.core.presentation.utils.GoogleMapUtils.addScrollLockListener
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.setVisible
+import com.pablojuice.core.utils.logging.Timber
 import com.pablojuice.rayw.R
 import com.pablojuice.rayw.databinding.FragmentRentCreateNewBinding
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.picker.RentImagePickerAdapter
@@ -37,12 +41,54 @@ class CreateNewRentFragment :
     }
 
     override fun setupScreen() {
-        binding.imageRecycler.adapter = RentImagePickerAdapter(viewModel)
         binding.itemToolBar.setNavigationOnClickListener { navigateBack() }
+        setupImageLoader()
+        setupMainFields()
+        setupPriceFields()
+        setupPledgeFields()
+        setupDeliveryFields()
+    }
+
+    private fun setupImageLoader() {
+        binding.imageRecycler.adapter = RentImagePickerAdapter(viewModel)
         viewModel.imageList.observe { items ->
             if (items.isEmpty()) return@observe
             (binding.imageRecycler.adapter as? RentImagePickerAdapter)?.setItems(items)
             if (items.size > 1) binding.imageRecycler.smoothScrollToPosition(0)
+        }
+    }
+
+    private fun setupMainFields() {
+
+    }
+
+    private fun setupPriceFields() {
+        binding.priceChips.setOnCheckedStateChangeListener { group, checkedIds ->
+            Timber.e(checkedIds.joinToString())
+        }
+        binding.priceForHourField.suffixTextView.apply {
+            updateLayoutParams { height = ViewGroup.LayoutParams.MATCH_PARENT }
+            gravity = Gravity.CENTER
+        }
+        binding.priceForDayField.suffixTextView.apply {
+            updateLayoutParams { height = ViewGroup.LayoutParams.MATCH_PARENT }
+            gravity = Gravity.CENTER
+        }
+        binding.priceForMonthField.suffixTextView.apply {
+            updateLayoutParams { height = ViewGroup.LayoutParams.MATCH_PARENT }
+            gravity = Gravity.CENTER
+        }
+    }
+
+    private fun setupPledgeFields() {
+
+    }
+
+    private fun setupDeliveryFields() {
+        binding.deliveryChips.setOnCheckedStateChangeListener { _, checkedIds ->
+            checkedIds.forEach { id ->
+
+            }
         }
     }
 

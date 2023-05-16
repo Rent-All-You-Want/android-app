@@ -11,15 +11,14 @@
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.Chip</item>
         <item name="android:textAppearance">@style/text.bodyMedium</item>
         <item name="shapeAppearance">@style/shape.small</item>
-        <!--        <item name="checkedIconTint">@android:color/holo_green_dark</item>-->
+        <item name="elevation">@dimen/elevation_small</item>
     </style>
 
     <style name="ThemeOverlay.App.Chip" parent="">
-        <!--        <item name="colorOnSurface">@android:color/holo_green_dark</item>-->
-        <item name="colorOnSurfaceVariant">@android:color/holo_blue_bright</item>
-        <item name="colorOnSecondaryContainer">@android:color/holo_red_dark</item>
-        <item name="colorOutline">@android:color/holo_orange_dark</item>
-        <item name="colorSurface">@android:color/holo_purple</item>
-        <item name="colorSecondaryContainer">@android:color/holo_orange_light</item>
+        <item name="colorOnSurfaceVariant">?attr/colorPrimary</item>
+        <item name="colorSurface">?attr/colorBackground</item>
+        <item name="colorOutline">?attr/colorPrimary</item>
+        <item name="colorSecondaryContainer">?attr/colorPrimary</item>
+        <item name="colorOnSecondaryContainer">?attr/colorOnPrimary</item>
     </style>
 </resources>

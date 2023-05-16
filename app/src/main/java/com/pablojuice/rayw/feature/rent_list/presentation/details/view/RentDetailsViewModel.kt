@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.rent_list.presentation.details
+package com.pablojuice.rayw.feature.rent_list.presentation.details.view
 
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.rayw.feature.rent_list.data.local.RentDetailsItem

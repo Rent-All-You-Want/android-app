@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".feature.rent_list.presentation.details.RentDetailsFragment">
+    tools:context=".feature.rent_list.presentation.details.view.RentDetailsFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
         style="@style/view.toolBar.navigableBack"
         android:id="@+id/item_tool_bar"
+        app:menu="@menu/menu_rent_details"
         android:layout_width="match_parent" />
 
     <androidx.core.widget.NestedScrollView
@@ -40,22 +41,51 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                tools:text="Yesterday 12:28" />
+
+            <TextView
+                style="@style/text.titleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 tools:text="Rent title" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="999 999 UAH" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="/" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    tools:text="4.5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="999 999" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="/" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Daily" />
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="Paid daily" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:text="Description" />
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod, erat sed sodales finibus, lectus erat sollicitudin massa, sed venenatis sem quam vel arcu. Pellentesque sed semper risus. Vestibulum pretium tincidunt libero, a condimentum ante rhoncus at. Mauris sagittis orci nibh, eu condimentum odio condimentum a. Ut bibendum porta lacinia. Quisque egestas dictum justo ut elementum. Vivamus in nisl ut metus dictum placerat a dapibus erat. Integer eu pretium sem." />
 
             <TextView
                 android:layout_width="match_parent"
@@ -72,10 +102,6 @@
                 android:layout_height="wrap_content"
                 tools:text="Seller" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:text="Recomendations" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
