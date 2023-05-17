@@ -23,7 +23,7 @@
     <string name="signin_business">Business</string>
     <string name="signin_login_now">Login now</string>
     <string name="signin_signup_now">Sign up now</string>
-    <string name="signin_to_continue_renting">To continue renting out</string>>
+    <string name="signin_to_continue_renting">To continue renting out</string>
     <string name="signin_start_renting">To start renting out</string>
     <string name="signin_success">Success!</string>
     <string name="signin_log_in_success">You\'ve been logged in successfully</string>

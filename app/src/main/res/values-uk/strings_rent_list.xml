@@ -1,0 +1,7 @@
+<resources>
+    <string name="rent_search">Пошук</string>
+    <string name="rent_item_added_to_wishlist">Товар додано до списку бажань</string>
+    <string name="rent_item_removed_from_wishlist">Товар видалено зі списку бажань</string>
+    <string name="rent_details_call_sms">Подзвонити \ Відправити смс</string>
+    <string name="rent_details_rent_request">Орендувати</string>
+</resources>

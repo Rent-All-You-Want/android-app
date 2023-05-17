@@ -3,7 +3,7 @@
     <string name="preference_section_rents">Rents</string>
     <string name="preference_rent_borrowing">Borrowing</string>
     <string name="preference_rent_lending">Lending</string>
-    <string name="preference_pending_rents">Pending rets</string>
+    <string name="preference_pending_rents">Pending rents</string>
     <string name="preference_rent_requests">Rent requests</string>
     <string name="preference_statistics">Statistics</string>
     <string name="preference_section_settings">Settings</string>
