@@ -8,11 +8,12 @@
     android:paddingTop="@dimen/dimen_4"
     android:paddingBottom="@dimen/dimen_16">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/user_icon"
         android:layout_width="@dimen/dimen_96"
         android:layout_height="@dimen/dimen_96"
         android:scaleType="fitXY"
+        app:shapeAppearance="@style/shape.small"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

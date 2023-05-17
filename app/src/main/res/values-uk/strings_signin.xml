@@ -20,8 +20,8 @@
     <string name="signin_account_type">Виберіть тип облікового запису:</string>
     <string name="signin_personal">Особистий</string>
     <string name="signin_business">Бізнес</string>
-    <string name="signin_login_now">Увійти</string>
-    <string name="signin_signup_now">Зареєструватися</string>
+    <string name="signin_login_now">Увійдіть</string>
+    <string name="signin_signup_now">Зареєструйтесь</string>
     <string name="signin_to_continue_renting">Для продовження здачі в оренду</string>>
     <string name="signin_start_renting">Щоб почати здавати в оренду</string>
     <string name="signin_success">Успіх!</string>

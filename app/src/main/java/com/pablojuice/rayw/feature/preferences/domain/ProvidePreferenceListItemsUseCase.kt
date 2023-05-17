@@ -2,7 +2,6 @@ package com.pablojuice.rayw.feature.preferences.domain
 
 import com.pablojuice.core.app.config.AppConfig
 import com.pablojuice.core.data.remote.auth.UserManager
-import com.pablojuice.core.presentation.R
 import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.rayw.feature.preferences.data.local.Preference
@@ -44,8 +43,8 @@ class ProvidePreferenceListItemsUseCase @Inject constructor(
         userManager.managedUser?.name?.let { userName ->
             add(
                 PreferenceProfileItem(
-                    "Hi, $userName!".asLabel(),
-                    R.drawable.ic_account_circle_filled_medium
+                    "$userName".asLabel(),
+                    com.pablojuice.rayw.R.drawable.ic_mock_avatar_man
                 )
             )
         }

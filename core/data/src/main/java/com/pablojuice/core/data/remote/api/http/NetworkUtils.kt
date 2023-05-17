@@ -6,6 +6,7 @@ import com.pablojuice.core.data.remote.NetworkHelper.isNetworkAvailable
 import com.pablojuice.core.data.remote.api.http.call.ResultCallAdapterFactory
 import com.pablojuice.core.data.remote.api.http.config.NetworkConfig
 import com.pablojuice.core.data.remote.converter.EnumConverterFactory
+import com.squareup.moshi.Moshi
 import okhttp3.Cache
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -26,12 +27,12 @@ object NetworkUtils {
     private const val CACHE_FOLDER_NAME = "cachedResponses"
     private const val CACHE_CONTROL = "Cache-Control"
 
-    fun Context.createRetrofit(networkConfig: NetworkConfig): Retrofit =
+    fun Context.createRetrofit(networkConfig: NetworkConfig, moshi: Moshi): Retrofit =
         Retrofit.Builder()
             .baseUrl(networkConfig.baseApiUrl)
             .addConverterFactory(EnumConverterFactory())
             .callbackExecutor(Executors.newSingleThreadExecutor())
-            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
             .addCallAdapterFactory(ResultCallAdapterFactory())
             .client(createOkHttpClient(networkConfig))
             .build()
