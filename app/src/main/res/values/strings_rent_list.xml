@@ -3,4 +3,6 @@
     <string name="rent_search">Search</string>
     <string name="rent_item_added_to_wishlist">Item added to wishlist</string>
     <string name="rent_item_removed_from_wishlist">Item removed from wishlist</string>
+    <string name="rent_details_call_sms">Call \ Send Sms</string>
+    <string name="rent_details_rent_request">Request Rent</string>
 </resources>
