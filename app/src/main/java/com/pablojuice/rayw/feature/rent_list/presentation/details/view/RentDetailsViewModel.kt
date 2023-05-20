@@ -1,6 +1,9 @@
 package com.pablojuice.rayw.feature.rent_list.presentation.details.view
 
+import com.pablojuice.core.data.remote.auth.UserManager
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
+import com.pablojuice.rayw.feature.home.presentation.navigation.ToChatConversation
+import com.pablojuice.rayw.feature.preferences.presentation.navigation.ToLoginScreen
 import com.pablojuice.rayw.feature.rent_list.data.local.RentDetailsItem
 import com.pablojuice.rayw.feature.rent_list.domain.ProvideRentItemDetailsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -10,7 +13,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class RentDetailsViewModel @Inject constructor(
-    private val provideRentItemDetailsUseCase: ProvideRentItemDetailsUseCase
+    private val provideRentItemDetailsUseCase: ProvideRentItemDetailsUseCase,
+    private val userManager: UserManager
 ) : BasicViewModel() {
 
     private val _itemDetails = MutableStateFlow<RentDetailsItem?>(null)
@@ -20,5 +24,11 @@ class RentDetailsViewModel @Inject constructor(
         launch {
             _itemDetails.value = provideRentItemDetailsUseCase(itemId.toInt())
         }
+    }
+
+    fun requestRent() {
+        val destination =
+            if (userManager.isUserLoggedIn()) ToChatConversation(_itemDetails.value?.id.toString()) else ToLoginScreen()
+        submitNavigationEvent(destination)
     }
 }

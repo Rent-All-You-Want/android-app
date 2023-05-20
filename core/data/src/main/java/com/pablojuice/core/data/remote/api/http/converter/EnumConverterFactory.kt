@@ -1,4 +1,4 @@
-package com.pablojuice.core.data.remote.converter
+package com.pablojuice.core.data.remote.api.http.converter
 
 import com.pablojuice.core.utils.StringUtils
 import com.squareup.moshi.Json

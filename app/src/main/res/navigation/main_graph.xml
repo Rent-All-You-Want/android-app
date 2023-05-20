@@ -22,16 +22,6 @@
             app:popUpToInclusive="true" />
 
         <action
-            android:id="@+id/to_signin_graph"
-            app:destination="@id/signin_graph"
-            app:enterAnim="@anim/slide_from_down"
-            app:exitAnim="@anim/fragment_fade_out_anim"
-            app:popEnterAnim="@anim/fragment_fade_in_anim"
-            app:popExitAnim="@anim/slide_to_down"
-            app:popUpTo="@navigation/main_graph"
-            app:popUpToInclusive="true" />
-
-        <action
             android:id="@+id/to_dev_graph"
             app:destination="@id/dev_graph"
             app:enterAnim="@anim/slide_from_right"
@@ -68,6 +58,7 @@
         app:destination="@id/rent_details"
         app:enterAnim="@anim/slide_from_right"
         app:exitAnim="@anim/fragment_fade_out_anim"
+        app:popUpTo="@navigation/main_graph"
         app:popEnterAnim="@anim/fragment_fade_in_anim"
         app:popExitAnim="@anim/slide_to_right" />
 
@@ -86,6 +77,7 @@
         app:destination="@id/chat_conversation"
         app:enterAnim="@anim/slide_from_right"
         app:exitAnim="@anim/fragment_fade_out_anim"
+        app:popUpTo="@id/home"
         app:popEnterAnim="@anim/fragment_fade_in_anim"
         app:popExitAnim="@anim/slide_to_right" />
 
@@ -100,6 +92,16 @@
     </fragment>
 
     <include app:graph="@navigation/rent_create_graph" />
+
+    <action
+        android:id="@+id/to_signin_graph"
+        app:destination="@id/signin_graph"
+        app:enterAnim="@anim/slide_from_down"
+        app:exitAnim="@anim/fragment_fade_out_anim"
+        app:popEnterAnim="@anim/fragment_fade_in_anim"
+        app:popExitAnim="@anim/slide_to_down"
+        app:popUpTo="@id/home"
+        app:popUpToInclusive="false" />
 
     <include app:graph="@navigation/signin_graph" />
 

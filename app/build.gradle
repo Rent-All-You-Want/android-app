@@ -32,7 +32,7 @@ android {
         minSdk application.minSdk
         targetSdk application.targetSdk
 
-        versionCode application.versionCode
+        versionCode commitsCount()
         versionName application.versionName
 
         testInstrumentationRunner application.testRunner
@@ -44,7 +44,7 @@ android {
 
     buildTypes {
         release {
-            //debuggable true
+            debuggable true
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"

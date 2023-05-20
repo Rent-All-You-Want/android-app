@@ -169,18 +169,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingHorizontal="@dimen/dimen_4"
+        android:paddingHorizontal="@dimen/dimen_16"
         android:paddingBottom="@dimen/dimen_4"
-        android:weightSum="2">
-
-        <Button
-            android:id="@+id/call_sms_button"
-            style="@style/view.button.medium.outlined.primary"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/dimen_4"
-            android:layout_weight="1"
-            android:text="@string/rent_details_call_sms" />
+        android:weightSum="1">
 
         <Button
             android:id="@+id/chat_button"

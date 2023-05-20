@@ -33,5 +33,5 @@ object CoreDataModule {
 
     @Provides
     @Reusable
-    fun provideMoshi(): Moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
+    fun provideMoshi(): Moshi = Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
 }

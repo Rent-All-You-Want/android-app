@@ -187,7 +187,7 @@
                             style="@style/view.chip.filter"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/rent_create_hour" />
+                            android:text="@string/rent_create_day" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/view.chip.filter"
