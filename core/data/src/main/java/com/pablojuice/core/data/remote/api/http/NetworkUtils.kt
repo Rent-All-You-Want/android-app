@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit
 
 object NetworkUtils {
 
-    private const val TIME_OUT_CONNECTION = 10L
+    private const val TIME_OUT_CONNECTION = 15L
     private const val STANDARD_HTTP_CACHE_SIZE = 10 * 1024 * 1024L
     private const val STANDARD_MAX_STALE = 60 * 60 * 24 * 28L
     private const val STANDARD_MAX_AGE = 10L

@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace "com.pablojuice.feature.wishlist"
+    namespace "com.pablojuice.rayw.feature.wishlist"
 
     compileSdk application.compileSdk
 

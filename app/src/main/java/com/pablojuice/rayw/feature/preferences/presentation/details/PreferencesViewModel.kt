@@ -9,7 +9,7 @@ import com.pablojuice.core.presentation.navigation.context.alert.ShowSnackBarAle
 import com.pablojuice.core.presentation.view.label.Label
 import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
-import com.pablojuice.rayw.R
+import com.pablojuice.rayw.feature.preferences.R
 import com.pablojuice.rayw.feature.preferences.domain.ChangeAppLanguage
 import com.pablojuice.rayw.feature.preferences.domain.ChangeAppTheme
 import com.pablojuice.rayw.feature.preferences.domain.ProvideAvailableLanguages

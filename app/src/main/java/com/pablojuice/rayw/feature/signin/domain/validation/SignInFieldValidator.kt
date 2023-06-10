@@ -1,7 +1,7 @@
 package com.pablojuice.rayw.feature.signin.domain.validation
 
 import com.pablojuice.core.presentation.view.label.asLabel
-import com.pablojuice.rayw.R
+import com.pablojuice.rayw.feature.signin.R
 import java.util.Date
 import javax.inject.Inject
 

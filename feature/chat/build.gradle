@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace "com.pablojuice.feature.chat"
+    namespace "com.pablojuice.rayw.feature.chat"
 
     compileSdk application.compileSdk
 

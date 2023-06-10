@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace "com.pablojuice.feature.rent_create"
+    namespace "com.pablojuice.rayw.feature.rent_create"
 
     compileSdk application.compileSdk
 

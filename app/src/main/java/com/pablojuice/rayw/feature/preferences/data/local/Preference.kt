@@ -2,12 +2,13 @@ package com.pablojuice.rayw.feature.preferences.data.local
 
 import com.pablojuice.core.presentation.navigation.NavigationEvent
 import com.pablojuice.core.presentation.navigation.NavigationEvents
-import com.pablojuice.rayw.R
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToUnimplementedScreen
+import com.pablojuice.rayw.feature.preferences.R
 import com.pablojuice.rayw.feature.preferences.presentation.navigation.ToAboutAppScreen
 import com.pablojuice.rayw.feature.preferences.presentation.navigation.ToAppSettingsScreen
 import com.pablojuice.rayw.feature.preferences.presentation.navigation.ToDevOptionsScreen
 import com.pablojuice.core.presentation.R as CoreR
+import com.pablojuice.rayw.feature.devoptions.R as DevR
 
 enum class Preference(
     val title: Int? = null,
@@ -24,7 +25,7 @@ enum class Preference(
     LOG_IN_PROPOSAL(shouldBeVisibleForUser = { !it }),
 
     DEV_OPTIONS(
-        title = R.string.dev_options,
+        title = DevR.string.dev_options,
         icon = CoreR.drawable.ic_terminal_medium,
         navigationEvent = ToDevOptionsScreen(),
         shouldBeVisibleForUser = { false }

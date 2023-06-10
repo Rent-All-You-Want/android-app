@@ -48,9 +48,9 @@ dependencies {
     implementation project(":core:common")
 
     // Android & UI
-    api "androidx.core:core-ktx:1.10.0"
+    api "androidx.core:core-ktx:1.10.1"
     api "androidx.appcompat:appcompat:1.6.1"
-    api "com.google.android.material:material:1.8.0"
+    api "com.google.android.material:material:1.9.0"
     api "androidx.constraintlayout:constraintlayout:2.1.4"
     api "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
     api "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"

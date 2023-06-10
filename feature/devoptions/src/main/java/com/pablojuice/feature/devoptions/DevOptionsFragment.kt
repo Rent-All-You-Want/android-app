@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import com.google.android.material.textfield.TextInputLayout
 import com.pablojuice.core.presentation.view.fragment.BaseFragment
-import com.pablojuice.feature.devoptions.databinding.FragmentDevOptionsBinding
+import com.pablojuice.rayw.feature.devoptions.databinding.FragmentDevOptionsBinding
 
 class DevOptionsFragment : BaseFragment<FragmentDevOptionsBinding>() {
 

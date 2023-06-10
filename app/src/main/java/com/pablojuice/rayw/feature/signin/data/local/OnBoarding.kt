@@ -1,6 +1,6 @@
 package com.pablojuice.rayw.feature.signin.data.local
 
-import com.pablojuice.rayw.R
+import com.pablojuice.rayw.feature.signin.R
 
 enum class OnBoarding(val icon: Int, val title: Int, val description: Int) {
 

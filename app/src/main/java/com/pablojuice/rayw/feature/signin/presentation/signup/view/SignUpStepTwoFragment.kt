@@ -16,6 +16,7 @@ import com.pablojuice.rayw.R
 import com.pablojuice.rayw.databinding.FragmentSignupStepTwoBinding
 import com.pablojuice.rayw.feature.signin.presentation.signup.viewmodel.SignUpViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import com.pablojuice.rayw.feature.signin.R as SignInR
 
 @AndroidEntryPoint
 class SignUpStepTwoFragment : BasicFragment<FragmentSignupStepTwoBinding, SignUpViewModel>() {
@@ -26,7 +27,7 @@ class SignUpStepTwoFragment : BasicFragment<FragmentSignupStepTwoBinding, SignUp
 
     private val dateDialog by lazy {
         MaterialDatePicker.Builder.datePicker()
-            .setTitleText(getString(R.string.signin_birth_date))
+            .setTitleText(getString(SignInR.string.signin_birth_date))
             .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
             .build()
     }

@@ -8,9 +8,9 @@ import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.view.list.PagingScrollListener
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
-import com.pablojuice.rayw.R
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToRentDetails
 import com.pablojuice.rayw.feature.home.presentation.view.HomeListener
+import com.pablojuice.rayw.feature.rent_list.R
 import com.pablojuice.rayw.feature.rent_list.domain.ProvideRentListItemsUseCase
 import com.pablojuice.rayw.feature.rent_list.presentation.list.list.RentListAdapter
 import dagger.hilt.android.lifecycle.HiltViewModel
