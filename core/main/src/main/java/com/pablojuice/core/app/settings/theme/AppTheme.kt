@@ -2,8 +2,8 @@ package com.pablojuice.core.app.settings.theme
 
 import androidx.appcompat.app.AppCompatDelegate
 import com.pablojuice.core.presentation.R
-import com.pablojuice.core.presentation.view.label.Label
-import com.pablojuice.core.presentation.view.label.asLabel
+import com.pablojuice.core.presentation.view.text.Label
+import com.pablojuice.core.presentation.view.text.asLabel
 
 enum class AppTheme(val code: Int, val displayName: Label) {
 

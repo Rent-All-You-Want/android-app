@@ -1,6 +1,6 @@
 package com.pablojuice.rayw.feature.rent_list.domain
 
-import com.pablojuice.core.presentation.view.label.asLabel
+import com.pablojuice.core.presentation.view.text.asLabel
 import com.pablojuice.rayw.feature.rent_list.data.local.RentDetailsItem
 import com.pablojuice.rayw.feature.rent_list.data.remote.RentDetailsData
 import com.pablojuice.rayw.feature.rent_list.data.repository.RentRepository

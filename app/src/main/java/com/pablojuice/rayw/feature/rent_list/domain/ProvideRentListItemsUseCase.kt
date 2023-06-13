@@ -1,7 +1,7 @@
 package com.pablojuice.rayw.feature.rent_list.domain
 
-import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.core.presentation.view.list.ListItem
+import com.pablojuice.core.presentation.view.text.asLabel
 import com.pablojuice.rayw.feature.rent_list.data.local.RentRegularItem
 import com.pablojuice.rayw.feature.rent_list.data.remote.RentListData
 import com.pablojuice.rayw.feature.rent_list.data.repository.RentRepository

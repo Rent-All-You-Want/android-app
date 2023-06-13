@@ -5,11 +5,11 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.updateLayoutParams
 import com.pablojuice.core.presentation.view.image.GlideApp
 import com.pablojuice.core.presentation.view.image.intoWithSizeListener
-import com.pablojuice.core.presentation.view.label.setLabel
 import com.pablojuice.core.presentation.view.layout.constraintHeight
 import com.pablojuice.core.presentation.view.layout.constraintWidth
 import com.pablojuice.core.presentation.view.layout.layoutInflater
 import com.pablojuice.core.presentation.view.list.ViewHolder
+import com.pablojuice.core.presentation.view.text.setLabel
 import com.pablojuice.rayw.databinding.ItemRentRegularBinding
 import com.pablojuice.rayw.feature.rent_list.data.local.RentRegularItem
 

@@ -1,4 +1,4 @@
-package com.pablojuice.core.presentation.view.label
+package com.pablojuice.core.presentation.view.text
 
 import android.content.Context
 import android.widget.TextView

@@ -1,7 +1,7 @@
 package com.pablojuice.rayw.feature.chat.presentation.list.list
 
-import com.pablojuice.core.presentation.view.label.Label
 import com.pablojuice.core.presentation.view.list.ListItem
+import com.pablojuice.core.presentation.view.text.Label
 import com.pablojuice.rayw.R
 
 data class InComingMessageListItem(

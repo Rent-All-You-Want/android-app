@@ -2,7 +2,7 @@ package com.pablojuice.core.presentation.navigation.context.alert
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.pablojuice.core.presentation.navigation.context.ContextNavigationEvent
-import com.pablojuice.core.presentation.view.label.Label
+import com.pablojuice.core.presentation.view.text.Label
 
 open class ShowAlertDialogEvent(
     title: Label? = null,

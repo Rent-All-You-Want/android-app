@@ -1,11 +1,11 @@
 package com.pablojuice.rayw.feature.preferences.presentation.list.list
 
 import android.view.ViewGroup
-import com.pablojuice.core.presentation.view.label.asLabel
-import com.pablojuice.core.presentation.view.label.setLabel
 import com.pablojuice.core.presentation.view.layout.layoutInflater
 import com.pablojuice.core.presentation.view.list.ViewHolder
 import com.pablojuice.core.presentation.view.setClickListener
+import com.pablojuice.core.presentation.view.text.asLabel
+import com.pablojuice.core.presentation.view.text.setLabel
 import com.pablojuice.rayw.databinding.ItemPreferencesEmptyProfileBinding
 import com.pablojuice.rayw.databinding.ItemPreferencesLogInBinding
 import com.pablojuice.rayw.databinding.ItemPreferencesLogOutBinding

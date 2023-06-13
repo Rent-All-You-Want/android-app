@@ -8,7 +8,7 @@ import androidx.core.view.updateMargins
 import com.google.android.material.snackbar.Snackbar
 import com.pablojuice.core.presentation.R
 import com.pablojuice.core.presentation.navigation.context.ContextNavigationEvent
-import com.pablojuice.core.presentation.view.label.Label
+import com.pablojuice.core.presentation.view.text.Label
 
 open class ShowSnackBarAlertEvent(
     private val messageLabel: Label,

@@ -1,8 +1,8 @@
 package com.pablojuice.rayw.feature.signin.domain
 
-import com.pablojuice.core.presentation.view.label.Label
-import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.core.presentation.view.list.ListItem
+import com.pablojuice.core.presentation.view.text.Label
+import com.pablojuice.core.presentation.view.text.asLabel
 import com.pablojuice.rayw.R
 import com.pablojuice.rayw.feature.signin.data.local.OnBoarding
 import javax.inject.Inject

@@ -4,9 +4,9 @@ import android.view.MenuItem
 import com.pablojuice.core.data.manager.UserPreference
 import com.pablojuice.core.data.manager.UserPreferences
 import com.pablojuice.core.presentation.navigation.context.alert.ShowSnackBarAlertEvent
-import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.view.list.PagingScrollListener
+import com.pablojuice.core.presentation.view.text.asLabel
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToRentDetails
 import com.pablojuice.rayw.feature.home.presentation.view.HomeListener

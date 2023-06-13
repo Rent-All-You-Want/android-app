@@ -1,6 +1,6 @@
 package com.pablojuice.rayw.feature.signin.domain.validation
 
-import com.pablojuice.core.presentation.view.label.Label
+import com.pablojuice.core.presentation.view.text.Label
 import javax.inject.Inject
 
 class ValidateRecoveryCodeUseCase @Inject constructor(

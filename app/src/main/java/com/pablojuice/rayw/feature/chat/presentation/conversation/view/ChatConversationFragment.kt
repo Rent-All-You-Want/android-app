@@ -2,8 +2,8 @@ package com.pablojuice.rayw.feature.chat.presentation.conversation.view
 
 import androidx.fragment.app.viewModels
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
-import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.core.presentation.view.list.getListAdapter
+import com.pablojuice.core.presentation.view.text.asLabel
 import com.pablojuice.core.presentation.view.toolbar.setTitleLabel
 import com.pablojuice.core.utils.StringUtils
 import com.pablojuice.rayw.databinding.FragmentChatConversationBinding

@@ -4,9 +4,9 @@ import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.pablojuice.core.presentation.view.animation.list.AlphaPageTransformer
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
-import com.pablojuice.core.presentation.view.label.setLabel
 import com.pablojuice.core.presentation.view.setClickListener
 import com.pablojuice.core.presentation.view.setVisible
+import com.pablojuice.core.presentation.view.text.setLabel
 import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
 import com.pablojuice.rayw.databinding.FragmentRentDetailsBinding
 import com.pablojuice.rayw.feature.rent_list.data.local.RentDetailsItem

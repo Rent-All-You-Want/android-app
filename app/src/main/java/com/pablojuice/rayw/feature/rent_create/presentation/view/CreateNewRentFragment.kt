@@ -1,11 +1,8 @@
 package com.pablojuice.rayw.feature.rent_create.presentation.view
 
 import android.os.Bundle
-import android.view.Gravity
-import android.view.ViewGroup
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.view.updateLayoutParams
 import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -15,6 +12,7 @@ import com.pablojuice.core.presentation.utils.GoogleMapUtils.addMapFragmentToCon
 import com.pablojuice.core.presentation.utils.GoogleMapUtils.addScrollLockListener
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.setVisible
+import com.pablojuice.core.presentation.view.text.centerSuffixTextView
 import com.pablojuice.core.utils.logging.Timber
 import com.pablojuice.rayw.R
 import com.pablojuice.rayw.databinding.FragmentRentCreateNewBinding
@@ -66,18 +64,9 @@ class CreateNewRentFragment :
         binding.priceChips.setOnCheckedStateChangeListener { group, checkedIds ->
             Timber.e(checkedIds.joinToString())
         }
-        binding.priceForHourField.suffixTextView.apply {
-            updateLayoutParams { height = ViewGroup.LayoutParams.MATCH_PARENT }
-            gravity = Gravity.CENTER
-        }
-        binding.priceForDayField.suffixTextView.apply {
-            updateLayoutParams { height = ViewGroup.LayoutParams.MATCH_PARENT }
-            gravity = Gravity.CENTER
-        }
-        binding.priceForMonthField.suffixTextView.apply {
-            updateLayoutParams { height = ViewGroup.LayoutParams.MATCH_PARENT }
-            gravity = Gravity.CENTER
-        }
+        binding.priceForHourField.centerSuffixTextView()
+        binding.priceForDayField.centerSuffixTextView()
+        binding.priceForMonthField.centerSuffixTextView()
     }
 
     private fun setupPledgeFields() {

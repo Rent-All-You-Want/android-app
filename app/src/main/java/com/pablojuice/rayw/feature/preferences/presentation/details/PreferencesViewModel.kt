@@ -6,8 +6,8 @@ import com.pablojuice.core.app.settings.theme.AppTheme
 import com.pablojuice.core.data.manager.UserPreference
 import com.pablojuice.core.data.manager.UserPreferences
 import com.pablojuice.core.presentation.navigation.context.alert.ShowSnackBarAlertEvent
-import com.pablojuice.core.presentation.view.label.Label
-import com.pablojuice.core.presentation.view.label.asLabel
+import com.pablojuice.core.presentation.view.text.Label
+import com.pablojuice.core.presentation.view.text.asLabel
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.rayw.feature.preferences.R
 import com.pablojuice.rayw.feature.preferences.domain.ChangeAppLanguage

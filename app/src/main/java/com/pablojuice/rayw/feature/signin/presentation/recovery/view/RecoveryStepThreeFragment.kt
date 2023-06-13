@@ -7,8 +7,8 @@ import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import com.pablojuice.core.presentation.utils.setOnKeyboardVisibilityChangedListener
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.fragment.hideKeyboardIfOpened
-import com.pablojuice.core.presentation.view.label.setErrorLabel
 import com.pablojuice.core.presentation.view.setVisible
+import com.pablojuice.core.presentation.view.text.setErrorLabel
 import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
 import com.pablojuice.rayw.R
 import com.pablojuice.rayw.databinding.FragmentRecoveryStepThreeBinding

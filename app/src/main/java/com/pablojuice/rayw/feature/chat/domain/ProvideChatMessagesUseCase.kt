@@ -1,7 +1,7 @@
 package com.pablojuice.rayw.feature.chat.domain
 
-import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.core.presentation.view.list.ListItem
+import com.pablojuice.core.presentation.view.text.asLabel
 import com.pablojuice.rayw.feature.chat.data.remote.MessageData
 import com.pablojuice.rayw.feature.chat.data.repository.ChatRepository
 import com.pablojuice.rayw.feature.chat.presentation.list.list.InComingMessageListItem

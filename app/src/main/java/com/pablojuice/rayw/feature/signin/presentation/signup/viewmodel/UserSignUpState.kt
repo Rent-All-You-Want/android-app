@@ -1,6 +1,6 @@
 package com.pablojuice.rayw.feature.signin.presentation.signup.viewmodel
 
-import com.pablojuice.core.presentation.view.label.Label
+import com.pablojuice.core.presentation.view.text.Label
 
 data class UserSignUpState(
     val email: String = com.pablojuice.core.utils.StringUtils.EMPTY,

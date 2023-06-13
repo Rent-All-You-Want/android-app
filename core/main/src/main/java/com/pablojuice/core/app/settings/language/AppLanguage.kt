@@ -1,8 +1,8 @@
 package com.pablojuice.core.app.settings.language
 
 import com.pablojuice.core.presentation.R
-import com.pablojuice.core.presentation.view.label.Label
-import com.pablojuice.core.presentation.view.label.asLabel
+import com.pablojuice.core.presentation.view.text.Label
+import com.pablojuice.core.presentation.view.text.asLabel
 import com.pablojuice.core.utils.StringUtils
 
 enum class AppLanguage(val code: String, val displayName: Label) {

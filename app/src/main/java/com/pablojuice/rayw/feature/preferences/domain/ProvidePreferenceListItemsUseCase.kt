@@ -2,8 +2,8 @@ package com.pablojuice.rayw.feature.preferences.domain
 
 import com.pablojuice.core.app.config.AppConfig
 import com.pablojuice.core.data.remote.auth.UserManager
-import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.core.presentation.view.list.ListItem
+import com.pablojuice.core.presentation.view.text.asLabel
 import com.pablojuice.rayw.feature.preferences.data.local.Preference
 import com.pablojuice.rayw.feature.preferences.presentation.list.list.PreferenceEmptyProfileItem
 import com.pablojuice.rayw.feature.preferences.presentation.list.list.PreferenceItem

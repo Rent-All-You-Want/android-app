@@ -1,7 +1,7 @@
 package com.pablojuice.rayw.feature.chat.presentation.conversation.view
 
-import com.pablojuice.core.presentation.view.label.asLabel
 import com.pablojuice.core.presentation.view.list.ListItem
+import com.pablojuice.core.presentation.view.text.asLabel
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.core.utils.StringUtils
 import com.pablojuice.rayw.R

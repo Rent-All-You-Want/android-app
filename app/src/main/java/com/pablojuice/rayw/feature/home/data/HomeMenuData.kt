@@ -1,8 +1,8 @@
 package com.pablojuice.rayw.feature.home.data
 
 import com.pablojuice.core.presentation.navigation.NavigationEvent
-import com.pablojuice.core.presentation.view.label.Label
-import com.pablojuice.core.presentation.view.label.asLabel
+import com.pablojuice.core.presentation.view.text.Label
+import com.pablojuice.core.presentation.view.text.asLabel
 import com.pablojuice.rayw.feature.home.R
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToCreateNewRentScreen
 import com.pablojuice.rayw.feature.preferences.presentation.navigation.ToLoginScreen
