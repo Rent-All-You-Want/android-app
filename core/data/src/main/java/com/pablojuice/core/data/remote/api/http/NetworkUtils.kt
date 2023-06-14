@@ -19,10 +19,10 @@ import java.util.concurrent.TimeUnit
 
 object NetworkUtils {
 
-    private const val TIME_OUT_CONNECTION = 15L
-    private const val STANDARD_HTTP_CACHE_SIZE = 10 * 1024 * 1024L
-    private const val STANDARD_MAX_STALE = 60 * 60 * 24 * 28L
-    private const val STANDARD_MAX_AGE = 10L
+    internal const val TIME_OUT_CONNECTION = 15L * 1000
+    internal const val STANDARD_HTTP_CACHE_SIZE = 10 * 1024 * 1024L
+    internal const val STANDARD_MAX_STALE = 60 * 60 * 24 * 28L
+    internal const val STANDARD_MAX_AGE = 10L
 
     private const val CACHE_FOLDER_NAME = "cachedResponses"
     private const val CACHE_CONTROL = "Cache-Control"
@@ -42,9 +42,9 @@ object NetworkUtils {
     ): OkHttpClient {
         networkConfig.run {
             val builder = OkHttpClient.Builder()
-                .connectTimeout(TIME_OUT_CONNECTION, TimeUnit.SECONDS)
-                .readTimeout(TIME_OUT_CONNECTION, TimeUnit.SECONDS)
-                .writeTimeout(TIME_OUT_CONNECTION, TimeUnit.SECONDS)
+                .connectTimeout(TIME_OUT_CONNECTION, TimeUnit.MILLISECONDS)
+                .readTimeout(TIME_OUT_CONNECTION, TimeUnit.MILLISECONDS)
+                .writeTimeout(TIME_OUT_CONNECTION, TimeUnit.MILLISECONDS)
             if (withCache) addCacheManager(builder)
             if (addProfilerInterceptor) builder.addInterceptor(OkHttpProfilerInterceptor())
             if (addBodyLoggingInterceptor) builder.addInterceptor(createHttpLoggingInterceptor())
