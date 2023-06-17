@@ -8,7 +8,7 @@
     <string name="preference_section_settings">Налаштування</string>
     <string name="preference_profile_settings">Налаштування профілю</string>
     <string name="preference_profile_balance">Баланс 0.00 ГРН</string>
-    <string name="preference_profile_rents">0 Активних оренд</string>
+    <string name="preference_profile_rents">0 Оренд</string>
     <string name="preference_app_settings">Налаштування додатку</string>
     <string name="preference_help">Поміч</string>
     <string name="preference_section_legal">Правове</string>
