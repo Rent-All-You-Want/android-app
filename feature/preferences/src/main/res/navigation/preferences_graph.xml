@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/preferences_graph"
+    app:startDestination="@id/preferences_list">
+
+    <fragment
+        android:id="@+id/preferences_list"
+        android:name="com.pablojuice.rayw.feature.preferences.presentation.list.view.PreferencesListFragment"
+        android:label="Preferences List Screen"
+        tools:layout="@layout/fragment_preferences_list" />
+</navigation>

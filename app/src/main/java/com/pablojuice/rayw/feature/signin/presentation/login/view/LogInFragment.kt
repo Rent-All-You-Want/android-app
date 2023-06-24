@@ -10,17 +10,17 @@ import com.pablojuice.core.presentation.view.fragment.hideKeyboardIfOpened
 import com.pablojuice.core.presentation.view.setVisible
 import com.pablojuice.core.presentation.view.text.setErrorLabel
 import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
-import com.pablojuice.rayw.R
-import com.pablojuice.rayw.databinding.FragmentLoginBinding
+import com.pablojuice.rayw.feature.signin.databinding.FragmentLoginBinding
 import com.pablojuice.rayw.feature.signin.presentation.login.navigation.ToRecoveryScreen
 import com.pablojuice.rayw.feature.signin.presentation.login.navigation.ToSignUpScreen
 import com.pablojuice.rayw.feature.signin.presentation.login.viewmodel.LogInViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import com.pablojuice.core.presentation.R as CoreR
 
 @AndroidEntryPoint
 class LogInFragment : BasicFragment<FragmentLoginBinding, LogInViewModel>() {
 
-    override val viewModel: LogInViewModel by hiltNavGraphViewModels(R.id.signin_graph)
+    override val viewModel: LogInViewModel by hiltNavGraphViewModels(CoreR.id.signin_graph)
 
     override val layoutClass = FragmentLoginBinding::class.java
 

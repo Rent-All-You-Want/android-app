@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/wish_graph"
+    app:startDestination="@id/wish_list">
+
+    <fragment
+        android:id="@+id/wish_list"
+        android:name="com.pablojuice.rayw.feature.wish.presentation.view.WishListFragment"
+        android:label="Wish List Screen"
+        tools:layout="@layout/fragment_wish_list" />
+</navigation>

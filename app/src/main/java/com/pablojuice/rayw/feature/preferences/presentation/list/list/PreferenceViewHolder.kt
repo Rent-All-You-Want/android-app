@@ -6,13 +6,13 @@ import com.pablojuice.core.presentation.view.list.ViewHolder
 import com.pablojuice.core.presentation.view.setClickListener
 import com.pablojuice.core.presentation.view.text.asLabel
 import com.pablojuice.core.presentation.view.text.setLabel
-import com.pablojuice.rayw.databinding.ItemPreferencesEmptyProfileBinding
-import com.pablojuice.rayw.databinding.ItemPreferencesLogInBinding
-import com.pablojuice.rayw.databinding.ItemPreferencesLogOutBinding
-import com.pablojuice.rayw.databinding.ItemPreferencesProfileBinding
-import com.pablojuice.rayw.databinding.ItemPreferencesSectionBinding
-import com.pablojuice.rayw.databinding.ItemPreferencesSectionTitleBinding
 import com.pablojuice.rayw.feature.preferences.data.local.Preference
+import com.pablojuice.rayw.feature.preferences.databinding.ItemPreferencesEmptyProfileBinding
+import com.pablojuice.rayw.feature.preferences.databinding.ItemPreferencesLogInBinding
+import com.pablojuice.rayw.feature.preferences.databinding.ItemPreferencesLogOutBinding
+import com.pablojuice.rayw.feature.preferences.databinding.ItemPreferencesProfileBinding
+import com.pablojuice.rayw.feature.preferences.databinding.ItemPreferencesSectionBinding
+import com.pablojuice.rayw.feature.preferences.databinding.ItemPreferencesSectionTitleBinding
 
 class EmptyProfileViewHolder(parent: ViewGroup) :
     ViewHolder<PreferenceEmptyProfileItem, ItemPreferencesEmptyProfileBinding>(

@@ -61,8 +61,8 @@ dependencies {
     kapt "com.github.bumptech.glide:compiler:4.13.2"
 
     // Navigation
-    api "androidx.navigation:navigation-fragment-ktx:2.5.3"
-    api "androidx.navigation:navigation-ui-ktx:2.5.3"
+    api "androidx.navigation:navigation-fragment-ktx:2.6.0"
+    api "androidx.navigation:navigation-ui-ktx:2.6.0"
 
     // Map
     api "com.google.android.gms:play-services-maps:18.1.0"

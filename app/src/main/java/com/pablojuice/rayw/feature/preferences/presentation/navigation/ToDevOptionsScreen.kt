@@ -1,6 +1,6 @@
 package com.pablojuice.rayw.feature.preferences.presentation.navigation
 
+import com.pablojuice.core.presentation.MainGraphDirections
 import com.pablojuice.core.presentation.navigation.directional.DirectionalNavigationEvent
-import com.pablojuice.rayw.feature.home.presentation.view.HomeFragmentDirections
 
-class ToDevOptionsScreen : DirectionalNavigationEvent(HomeFragmentDirections.toDevGraph())
+class ToDevOptionsScreen : DirectionalNavigationEvent(MainGraphDirections.toDevGraph())

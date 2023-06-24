@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.pablojuice.core.presentation.view.list.ItemDragAndDropHelper
 import com.pablojuice.core.presentation.view.list.ItemDragAndDropHelper.DragDirection.HORIZONTAL
 import com.pablojuice.core.presentation.view.list.ListAdapter
-import com.pablojuice.rayw.R
+import com.pablojuice.rayw.feature.rent_create.R
 import jp.wasabeef.recyclerview.animators.FadeInAnimator
 
 class RentImagePickerAdapter(private val listener: Listener) :

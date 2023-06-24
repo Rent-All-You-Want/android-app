@@ -8,7 +8,7 @@ import com.pablojuice.core.presentation.view.animation.list.AlphaPageTransformer
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.setClickListener
 import com.pablojuice.core.presentation.view.setVisible
-import com.pablojuice.rayw.databinding.FragmentOnboardingBinding
+import com.pablojuice.rayw.feature.signin.databinding.FragmentOnboardingBinding
 import com.pablojuice.rayw.feature.signin.presentation.onboarding.list.OnBoardingAdapter
 import dagger.hilt.android.AndroidEntryPoint
 

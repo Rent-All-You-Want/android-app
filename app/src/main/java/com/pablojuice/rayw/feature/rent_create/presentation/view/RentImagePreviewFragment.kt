@@ -9,18 +9,18 @@ import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.list.ListAdapter
 import com.pablojuice.core.presentation.view.setClickListener
 import com.pablojuice.core.presentation.view.setVisible
-import com.pablojuice.rayw.R
-import com.pablojuice.rayw.databinding.FragmentRentImagePreviewBinding
+import com.pablojuice.rayw.feature.rent_create.databinding.FragmentRentImagePreviewBinding
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.RentImagePreviewItem
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.preview.RentImagePreviewAdapter
 import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.CreateNewRentViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import com.pablojuice.core.presentation.R as CoreR
 
 @AndroidEntryPoint
 class RentImagePreviewFragment :
     BasicFragment<FragmentRentImagePreviewBinding, CreateNewRentViewModel>() {
 
-    override val viewModel: CreateNewRentViewModel by hiltNavGraphViewModels(R.id.rent_create_graph)
+    override val viewModel: CreateNewRentViewModel by hiltNavGraphViewModels(CoreR.id.rent_create_graph)
 
     override val layoutClass = FragmentRentImagePreviewBinding::class.java
 

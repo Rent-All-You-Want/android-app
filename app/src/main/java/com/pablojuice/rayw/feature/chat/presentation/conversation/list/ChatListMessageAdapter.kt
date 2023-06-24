@@ -4,7 +4,7 @@ import android.view.ViewGroup
 import com.pablojuice.core.presentation.view.animation.list.ListAnimator
 import com.pablojuice.core.presentation.view.list.ListAdapter
 import com.pablojuice.core.presentation.view.list.ListItem
-import com.pablojuice.rayw.R
+import com.pablojuice.rayw.feature.chat.R
 import com.pablojuice.rayw.feature.chat.presentation.list.list.OutComingMessageListItem
 
 class ChatListMessageAdapter :

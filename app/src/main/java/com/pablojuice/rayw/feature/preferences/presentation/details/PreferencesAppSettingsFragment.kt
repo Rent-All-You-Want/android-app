@@ -6,7 +6,7 @@ import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.text.Label
 import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
-import com.pablojuice.rayw.databinding.FragmentPreferencesAppSettingsBinding
+import com.pablojuice.rayw.feature.preferences.databinding.FragmentPreferencesAppSettingsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -10,16 +10,16 @@ import com.pablojuice.core.presentation.view.fragment.hideKeyboardIfOpened
 import com.pablojuice.core.presentation.view.setVisible
 import com.pablojuice.core.presentation.view.text.setErrorLabel
 import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
-import com.pablojuice.rayw.R
-import com.pablojuice.rayw.databinding.FragmentRecoveryStepThreeBinding
+import com.pablojuice.rayw.feature.signin.databinding.FragmentRecoveryStepThreeBinding
 import com.pablojuice.rayw.feature.signin.presentation.recovery.viewmodel.RecoveryViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import com.pablojuice.core.presentation.R as CoreR
 
 @AndroidEntryPoint
 class RecoveryStepThreeFragment :
     BasicFragment<FragmentRecoveryStepThreeBinding, RecoveryViewModel>() {
 
-    override val viewModel: RecoveryViewModel by hiltNavGraphViewModels(R.id.signin_recovery_graph)
+    override val viewModel: RecoveryViewModel by hiltNavGraphViewModels(CoreR.id.signin_recovery_graph)
 
     override val layoutClass = FragmentRecoveryStepThreeBinding::class.java
 

@@ -12,16 +12,16 @@ import com.pablojuice.core.presentation.view.fragment.hideKeyboardIfOpened
 import com.pablojuice.core.presentation.view.setVisible
 import com.pablojuice.core.presentation.view.text.setErrorLabel
 import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
-import com.pablojuice.rayw.R
-import com.pablojuice.rayw.databinding.FragmentSignupStepTwoBinding
+import com.pablojuice.rayw.feature.signin.databinding.FragmentSignupStepTwoBinding
 import com.pablojuice.rayw.feature.signin.presentation.signup.viewmodel.SignUpViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import com.pablojuice.core.presentation.R as CoreR
 import com.pablojuice.rayw.feature.signin.R as SignInR
 
 @AndroidEntryPoint
 class SignUpStepTwoFragment : BasicFragment<FragmentSignupStepTwoBinding, SignUpViewModel>() {
 
-    override val viewModel: SignUpViewModel by hiltNavGraphViewModels(R.id.signin_signup_graph)
+    override val viewModel: SignUpViewModel by hiltNavGraphViewModels(CoreR.id.signin_signup_graph)
 
     override val layoutClass = FragmentSignupStepTwoBinding::class.java
 

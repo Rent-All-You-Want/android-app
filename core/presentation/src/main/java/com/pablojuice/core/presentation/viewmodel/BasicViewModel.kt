@@ -10,7 +10,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 
-abstract class BasicViewModel : BaseViewModel() {
+open class BasicViewModel : BaseViewModel() {
 
     private val errorHandler: ErrorHandler = BasicErrorHandler()
 

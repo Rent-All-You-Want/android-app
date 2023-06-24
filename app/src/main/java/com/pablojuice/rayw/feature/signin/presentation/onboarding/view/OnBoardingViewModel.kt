@@ -3,7 +3,7 @@ package com.pablojuice.rayw.feature.signin.presentation.onboarding.view
 import com.pablojuice.core.data.manager.UserPreference
 import com.pablojuice.core.data.manager.UserPreferences
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
-import com.pablojuice.rayw.feature.signin.domain.ProvideOnBoardingItemsUseCase
+import com.pablojuice.rayw.feature.signin.domain.onboarding.ProvideOnBoardingItemsUseCase
 import com.pablojuice.rayw.feature.signin.presentation.onboarding.navigation.ToHomeScreen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

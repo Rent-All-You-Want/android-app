@@ -4,7 +4,7 @@ import androidx.fragment.app.viewModels
 import com.pablojuice.core.presentation.view.list.addOnScrollListener
 import com.pablojuice.core.presentation.view.list.firstCompletelyVisibleItemPosition
 import com.pablojuice.core.presentation.view.list.getListAdapter
-import com.pablojuice.rayw.databinding.FragmentChatListBinding
+import com.pablojuice.rayw.feature.chat.databinding.FragmentChatListBinding
 import com.pablojuice.rayw.feature.chat.presentation.list.list.ChatListAdapter
 import com.pablojuice.rayw.feature.home.presentation.view.HomeChildFragment
 import com.pablojuice.rayw.feature.home.presentation.view.HomeListener

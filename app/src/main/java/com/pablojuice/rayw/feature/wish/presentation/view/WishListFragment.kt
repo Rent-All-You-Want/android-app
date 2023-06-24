@@ -4,11 +4,11 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.pablojuice.core.presentation.view.list.addOnScrollListener
 import com.pablojuice.core.presentation.view.list.firstCompletelyVisibleItemPosition
-import com.pablojuice.rayw.databinding.FragmentWishListBinding
 import com.pablojuice.rayw.feature.home.presentation.view.HomeChildFragment
 import com.pablojuice.rayw.feature.home.presentation.view.HomeListener
 import com.pablojuice.rayw.feature.wish.data.local.NoWishesListItem
 import com.pablojuice.rayw.feature.wish.presentation.list.WishListAdapter
+import com.pablojuice.rayw.feature.wishlist.databinding.FragmentWishListBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

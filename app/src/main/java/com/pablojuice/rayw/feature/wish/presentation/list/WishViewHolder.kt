@@ -10,14 +10,14 @@ import com.pablojuice.core.presentation.view.layout.constraintWidth
 import com.pablojuice.core.presentation.view.layout.layoutInflater
 import com.pablojuice.core.presentation.view.list.ViewHolder
 import com.pablojuice.core.presentation.view.text.setLabel
-import com.pablojuice.rayw.databinding.ItemWishNoWishesBinding
-import com.pablojuice.rayw.databinding.ItemWishRegularBinding
 import com.pablojuice.rayw.feature.rent_list.presentation.list.list.LANDSCAPE_IMAGE_CONSTRAINT_HEIGHT_RATIO
 import com.pablojuice.rayw.feature.rent_list.presentation.list.list.LANDSCAPE_IMAGE_CONSTRAINT_WIDTH_RATIO
 import com.pablojuice.rayw.feature.rent_list.presentation.list.list.PORTRAIT_IMAGE_CONSTRAINT_HEIGHT_RATIO
 import com.pablojuice.rayw.feature.rent_list.presentation.list.list.PORTRAIT_IMAGE_CONSTRAINT_WIDTH_RATIO
 import com.pablojuice.rayw.feature.wish.data.local.NoWishesListItem
 import com.pablojuice.rayw.feature.wish.data.local.WishListRegularItem
+import com.pablojuice.rayw.feature.wishlist.databinding.ItemWishNoWishesBinding
+import com.pablojuice.rayw.feature.wishlist.databinding.ItemWishRegularBinding
 
 class WishViewHolder(
     onClick: (Int) -> Unit,

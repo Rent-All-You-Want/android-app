@@ -4,8 +4,8 @@ import android.view.ViewGroup
 import com.pablojuice.core.presentation.view.layout.layoutInflater
 import com.pablojuice.core.presentation.view.list.ViewHolder
 import com.pablojuice.core.presentation.view.text.setLabel
-import com.pablojuice.rayw.databinding.ItemChatNoRecipientsBinding
-import com.pablojuice.rayw.databinding.ItemChatRecipientBinding
+import com.pablojuice.rayw.feature.chat.databinding.ItemChatNoRecipientsBinding
+import com.pablojuice.rayw.feature.chat.databinding.ItemChatRecipientBinding
 
 class ChatViewHolder(
     onClick: (Int) -> Unit,

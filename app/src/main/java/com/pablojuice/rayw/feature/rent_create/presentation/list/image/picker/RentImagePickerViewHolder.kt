@@ -8,8 +8,8 @@ import com.pablojuice.core.presentation.view.layout.layoutInflater
 import com.pablojuice.core.presentation.view.list.ItemDragAndDropHelper
 import com.pablojuice.core.presentation.view.list.ViewHolder
 import com.pablojuice.core.presentation.view.setClickListener
-import com.pablojuice.rayw.databinding.ItemRentImagePickerAttachBinding
-import com.pablojuice.rayw.databinding.ItemRentImagePickerImageBinding
+import com.pablojuice.rayw.feature.rent_create.databinding.ItemRentImagePickerAttachBinding
+import com.pablojuice.rayw.feature.rent_create.databinding.ItemRentImagePickerImageBinding
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.RentImagePickerAttachItem
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.RentImagePreviewItem
 import com.pablojuice.core.presentation.R as CoreR

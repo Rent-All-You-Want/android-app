@@ -4,9 +4,9 @@ import android.view.ViewGroup
 import com.pablojuice.core.presentation.view.layout.layoutInflater
 import com.pablojuice.core.presentation.view.list.ViewHolder
 import com.pablojuice.core.presentation.view.text.setLabel
-import com.pablojuice.rayw.databinding.ItemChatMessageInBinding
-import com.pablojuice.rayw.databinding.ItemChatMessageOutBinding
-import com.pablojuice.rayw.databinding.ItemChatNoMessagesBinding
+import com.pablojuice.rayw.feature.chat.databinding.ItemChatMessageInBinding
+import com.pablojuice.rayw.feature.chat.databinding.ItemChatMessageOutBinding
+import com.pablojuice.rayw.feature.chat.databinding.ItemChatNoMessagesBinding
 import com.pablojuice.rayw.feature.chat.presentation.list.list.InComingMessageListItem
 import com.pablojuice.rayw.feature.chat.presentation.list.list.NoMessagesListItem
 import com.pablojuice.rayw.feature.chat.presentation.list.list.OutComingMessageListItem

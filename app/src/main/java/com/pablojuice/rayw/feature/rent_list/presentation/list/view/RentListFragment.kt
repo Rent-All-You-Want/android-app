@@ -4,9 +4,9 @@ import androidx.fragment.app.viewModels
 import com.pablojuice.core.presentation.view.list.StaggeredGridPagingScrollListener
 import com.pablojuice.core.presentation.view.list.addOnScrollListener
 import com.pablojuice.core.presentation.view.list.firstCompletelyVisibleItemPosition
-import com.pablojuice.rayw.databinding.FragmentRentListBinding
 import com.pablojuice.rayw.feature.home.presentation.view.HomeChildFragment
 import com.pablojuice.rayw.feature.home.presentation.view.HomeListener
+import com.pablojuice.rayw.feature.rent_list.databinding.FragmentRentListBinding
 import com.pablojuice.rayw.feature.rent_list.presentation.list.list.RentListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 

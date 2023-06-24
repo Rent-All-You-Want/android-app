@@ -13,7 +13,6 @@ import com.pablojuice.core.presentation.utils.GoogleMapUtils
 import com.pablojuice.core.presentation.viewmodel.BaseViewModel
 import com.pablojuice.core.utils.NumberUtils.UNDEFINED
 import com.pablojuice.core.utils.logging.Timber
-import com.pablojuice.rayw.R
 import com.pablojuice.rayw.feature.signin.domain.login.AuthUserUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
@@ -22,6 +21,8 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.joinAll
 import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
+import com.pablojuice.core.presentation.R as CoreR
+import com.pablojuice.rayw.feature.signin.R as SignInR
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
@@ -75,6 +76,6 @@ class MainViewModel @Inject constructor(
         val onBoardingWasViewed: Boolean =
             userPreferences.getUnsafe(UserPreference.ON_BOARDING_VIEWED)
         _navigationGraphId.value =
-            if (onBoardingWasViewed) R.navigation.main_graph else R.navigation.onboarding_graph
+            if (onBoardingWasViewed) CoreR.navigation.main_graph else SignInR.navigation.onboarding_graph
     }
 }

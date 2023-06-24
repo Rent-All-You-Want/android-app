@@ -12,15 +12,15 @@ import com.pablojuice.core.presentation.view.setVisible
 import com.pablojuice.core.presentation.view.text.setErrorLabel
 import com.pablojuice.core.presentation.view.text.setLabel
 import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
-import com.pablojuice.rayw.R
-import com.pablojuice.rayw.databinding.FragmentSignupStepOneBinding
+import com.pablojuice.rayw.feature.signin.databinding.FragmentSignupStepOneBinding
 import com.pablojuice.rayw.feature.signin.presentation.signup.viewmodel.SignUpViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import com.pablojuice.core.presentation.R as CoreR
 
 @AndroidEntryPoint
 class SignUpStepOneFragment : BasicFragment<FragmentSignupStepOneBinding, SignUpViewModel>() {
 
-    override val viewModel: SignUpViewModel by hiltNavGraphViewModels(R.id.signin_signup_graph)
+    override val viewModel: SignUpViewModel by hiltNavGraphViewModels(CoreR.id.signin_signup_graph)
 
     override val layoutClass = FragmentSignupStepOneBinding::class.java
 

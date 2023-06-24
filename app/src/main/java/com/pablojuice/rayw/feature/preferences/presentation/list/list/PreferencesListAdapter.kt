@@ -2,7 +2,7 @@ package com.pablojuice.rayw.feature.preferences.presentation.list.list
 
 import android.view.ViewGroup
 import com.pablojuice.core.presentation.view.list.ListAdapter
-import com.pablojuice.rayw.R
+import com.pablojuice.rayw.feature.preferences.R
 import com.pablojuice.rayw.feature.preferences.data.local.Preference
 
 class PreferencesListAdapter(

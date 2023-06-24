@@ -15,9 +15,9 @@ import com.pablojuice.core.presentation.view.setVisible
 import com.pablojuice.core.presentation.view.toolbar.OnCollapseStateChangedListener
 import com.pablojuice.core.presentation.view.toolbar.setOnCollapseStateChangedListener
 import com.pablojuice.core.presentation.view.toolbar.setTitleLabel
-import com.pablojuice.rayw.databinding.FragmentHomeBinding
 import com.pablojuice.rayw.feature.home.R
 import com.pablojuice.rayw.feature.home.data.HomeMenuData
+import com.pablojuice.rayw.feature.home.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.math.max
 import com.pablojuice.core.presentation.R as CoreR

@@ -5,8 +5,8 @@ import com.pablojuice.core.presentation.view.layout.layoutInflater
 import com.pablojuice.core.presentation.view.list.ListAdapter
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.view.list.ViewHolder
-import com.pablojuice.rayw.R
-import com.pablojuice.rayw.databinding.ItemRentDetailsImageBinding
+import com.pablojuice.rayw.feature.rent_list.R
+import com.pablojuice.rayw.feature.rent_list.databinding.ItemRentDetailsImageBinding
 
 class RentDetailsImageAdapter(items: List<RentDetailsImage>) : ListAdapter(items) {
 

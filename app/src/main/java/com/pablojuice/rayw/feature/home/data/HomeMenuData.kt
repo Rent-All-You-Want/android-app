@@ -6,7 +6,7 @@ import com.pablojuice.core.presentation.view.text.asLabel
 import com.pablojuice.rayw.feature.home.R
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToCreateNewRentScreen
 import com.pablojuice.rayw.feature.preferences.presentation.navigation.ToLoginScreen
-import com.pablojuice.rayw.R as MainR
+import com.pablojuice.core.presentation.R as CoreR
 
 enum class HomeMenuData(
     val id: Int = com.pablojuice.core.utils.NumberUtils.UNDEFINED,
@@ -16,29 +16,29 @@ enum class HomeMenuData(
     val requireLogin: Boolean = false
 ) {
     RENT_LIST(
-        id = MainR.id.rent_list_graph,
+        id = CoreR.id.rent_list_graph,
         title = R.string.home_menu_items.asLabel(),
         menu = R.menu.menu_home_rent_list
     ),
     WISH_LIST(
-        id = MainR.id.wish_graph,
+        id = CoreR.id.wish_graph,
         title = R.string.home_menu_wishlist.asLabel(),
         menu = R.menu.menu_home_wish_list,
         requireLogin = true
     ),
     CREATE_NEW_RENT(
-        id = MainR.id.create_new_rent,
+        id = CoreR.id.create_new_rent,
         requireLogin = true,
         redirectAction = ToCreateNewRentScreen()
     ),
     CHAT_LIST(
-        id = MainR.id.chat_graph,
+        id = CoreR.id.chat_graph,
         title = R.string.home_menu_chats.asLabel(),
         menu = R.menu.menu_home_chat_list,
         requireLogin = true
     ),
     PREFERENCES_LIST(
-        id = MainR.id.preferences_graph,
+        id = CoreR.id.preferences_graph,
         title = R.string.home_menu_preferences.asLabel()
     ),
 

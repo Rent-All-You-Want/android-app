@@ -6,7 +6,7 @@ import com.pablojuice.core.presentation.view.list.getListAdapter
 import com.pablojuice.core.presentation.view.text.asLabel
 import com.pablojuice.core.presentation.view.toolbar.setTitleLabel
 import com.pablojuice.core.utils.StringUtils
-import com.pablojuice.rayw.databinding.FragmentChatConversationBinding
+import com.pablojuice.rayw.feature.chat.databinding.FragmentChatConversationBinding
 import com.pablojuice.rayw.feature.chat.presentation.conversation.list.ChatListMessageAdapter
 import dagger.hilt.android.AndroidEntryPoint
 

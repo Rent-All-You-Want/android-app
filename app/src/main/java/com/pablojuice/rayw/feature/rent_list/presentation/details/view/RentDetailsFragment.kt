@@ -8,8 +8,8 @@ import com.pablojuice.core.presentation.view.setClickListener
 import com.pablojuice.core.presentation.view.setVisible
 import com.pablojuice.core.presentation.view.text.setLabel
 import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
-import com.pablojuice.rayw.databinding.FragmentRentDetailsBinding
 import com.pablojuice.rayw.feature.rent_list.data.local.RentDetailsItem
+import com.pablojuice.rayw.feature.rent_list.databinding.FragmentRentDetailsBinding
 import com.pablojuice.rayw.feature.rent_list.presentation.details.list.RentDetailsImage
 import com.pablojuice.rayw.feature.rent_list.presentation.details.list.RentDetailsImageAdapter
 import dagger.hilt.android.AndroidEntryPoint

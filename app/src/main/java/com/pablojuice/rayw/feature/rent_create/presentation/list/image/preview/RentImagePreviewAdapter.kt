@@ -5,7 +5,7 @@ import com.pablojuice.core.presentation.view.layout.layoutInflater
 import com.pablojuice.core.presentation.view.list.ListAdapter
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.view.list.ViewHolder
-import com.pablojuice.rayw.databinding.ItemRentImagePreviewBinding
+import com.pablojuice.rayw.feature.rent_create.databinding.ItemRentImagePreviewBinding
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.RentImagePreviewItem
 
 class RentImagePreviewAdapter : ListAdapter() {

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/unimplemented_graph"
+    app:startDestination="@id/unimplemented">
+
+    <fragment
+        android:id="@+id/unimplemented"
+        android:name="com.pablojuice.rayw.feature.devoptions.UnimplementedFeatureFragment"
+        android:label="Unimplemented Screen"
+        tools:layout="@layout/fragment_unimplemented" />
+
+</navigation>

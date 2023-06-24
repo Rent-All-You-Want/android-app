@@ -2,7 +2,7 @@ package com.pablojuice.rayw.feature.chat.presentation.list.list
 
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.view.text.Label
-import com.pablojuice.rayw.R
+import com.pablojuice.rayw.feature.chat.R
 
 data class InComingMessageListItem(
     val senderName: Label,

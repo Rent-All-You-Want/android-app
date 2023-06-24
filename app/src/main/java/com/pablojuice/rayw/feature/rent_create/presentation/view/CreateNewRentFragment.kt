@@ -14,12 +14,12 @@ import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.setVisible
 import com.pablojuice.core.presentation.view.text.centerSuffixTextView
 import com.pablojuice.core.utils.logging.Timber
-import com.pablojuice.rayw.R
-import com.pablojuice.rayw.databinding.FragmentRentCreateNewBinding
+import com.pablojuice.rayw.feature.rent_create.databinding.FragmentRentCreateNewBinding
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.picker.RentImagePickerAdapter
 import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.CreateNewRentViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import com.pablojuice.core.presentation.R as CoreR
 
 private val MEDIA_TYPE = ActivityResultContracts.PickVisualMedia.ImageOnly
 
@@ -27,7 +27,7 @@ private val MEDIA_TYPE = ActivityResultContracts.PickVisualMedia.ImageOnly
 class CreateNewRentFragment :
     BasicFragment<FragmentRentCreateNewBinding, CreateNewRentViewModel>() {
 
-    override val viewModel: CreateNewRentViewModel by hiltNavGraphViewModels(R.id.rent_create_graph)
+    override val viewModel: CreateNewRentViewModel by hiltNavGraphViewModels(CoreR.id.rent_create_graph)
 
     override val layoutClass = FragmentRentCreateNewBinding::class.java
 

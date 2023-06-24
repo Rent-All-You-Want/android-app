@@ -3,7 +3,7 @@ package com.pablojuice.rayw.feature.wish.presentation.list
 import android.view.ViewGroup
 import com.pablojuice.core.presentation.view.animation.list.ListAnimator
 import com.pablojuice.core.presentation.view.list.ListAdapter
-import com.pablojuice.rayw.R
+import com.pablojuice.rayw.feature.wishlist.R
 
 class WishListAdapter(private val listener: Listener) :
     ListAdapter(listAnimator = ListAnimator.SlideInBottomListAnimator()) {
@@ -18,7 +18,7 @@ class WishListAdapter(private val listener: Listener) :
             parent
         )
 
-        R.layout.item_chat_no_messages -> NoWishesViewHolder(parent)
+        R.layout.item_wish_no_wishes -> NoWishesViewHolder(parent)
         else -> TODO()
     }
 

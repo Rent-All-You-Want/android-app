@@ -3,7 +3,7 @@ package com.pablojuice.rayw.feature.preferences.presentation.details
 import androidx.fragment.app.viewModels
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
-import com.pablojuice.rayw.databinding.FragmentPreferencesAboutAppBinding
+import com.pablojuice.rayw.feature.preferences.databinding.FragmentPreferencesAboutAppBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -10,8 +10,8 @@ import com.pablojuice.core.presentation.view.layout.constraintWidth
 import com.pablojuice.core.presentation.view.layout.layoutInflater
 import com.pablojuice.core.presentation.view.list.ViewHolder
 import com.pablojuice.core.presentation.view.text.setLabel
-import com.pablojuice.rayw.databinding.ItemRentRegularBinding
 import com.pablojuice.rayw.feature.rent_list.data.local.RentRegularItem
+import com.pablojuice.rayw.feature.rent_list.databinding.ItemRentRegularBinding
 
 internal const val LANDSCAPE_IMAGE_CONSTRAINT_WIDTH_RATIO = 4
 internal const val LANDSCAPE_IMAGE_CONSTRAINT_HEIGHT_RATIO = 3

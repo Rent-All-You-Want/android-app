@@ -19,9 +19,6 @@
     <string name="preference_terms_of_use">Terms of use</string>
     <string name="preference_about_app">About app</string>
     <string name="preference_log_out">Log out</string>
-    <string name="preference_sorry">Sorry…</string>
-    <string name="preference_unimplemented">Unimplemented</string>
-    <string name="preference_unimplemented_description">This screen is not implemented yet</string>
     <string name="preference_app_language">Language</string>
     <string name="preference_app_theme">Theme</string>
     <string name="preference_app_language_changed">App language changed successfully</string>

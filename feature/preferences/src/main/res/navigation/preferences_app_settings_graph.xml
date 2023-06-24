@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/preferences_app_settings_graph"
+    app:startDestination="@id/app_preference_settings">
+    <fragment
+        android:id="@+id/app_preference_settings"
+        android:name="com.pablojuice.rayw.feature.preferences.presentation.details.PreferencesAppSettingsFragment"
+        android:label="App Settings Screen"
+        tools:layout="@layout/fragment_preferences_app_settings" />
+</navigation>

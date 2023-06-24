@@ -3,7 +3,7 @@ package com.pablojuice.rayw.feature.chat.presentation.list.list
 import android.view.ViewGroup
 import com.pablojuice.core.presentation.view.animation.list.ListAnimator
 import com.pablojuice.core.presentation.view.list.ListAdapter
-import com.pablojuice.rayw.R
+import com.pablojuice.rayw.feature.chat.R
 
 class ChatListAdapter(private val listener: Listener) : ListAdapter(
     addDividerDecoration = true,
