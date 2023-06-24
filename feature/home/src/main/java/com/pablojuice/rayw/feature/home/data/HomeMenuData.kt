@@ -3,13 +3,14 @@ package com.pablojuice.rayw.feature.home.data
 import com.pablojuice.core.presentation.navigation.NavigationEvent
 import com.pablojuice.core.presentation.view.text.Label
 import com.pablojuice.core.presentation.view.text.asLabel
+import com.pablojuice.core.utils.NumberUtils
 import com.pablojuice.rayw.feature.home.R
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToCreateNewRentScreen
-import com.pablojuice.rayw.feature.preferences.presentation.navigation.ToLoginScreen
+import com.pablojuice.rayw.feature.home.presentation.navigation.ToLoginScreen
 import com.pablojuice.core.presentation.R as CoreR
 
 enum class HomeMenuData(
-    val id: Int = com.pablojuice.core.utils.NumberUtils.UNDEFINED,
+    val id: Int = NumberUtils.UNDEFINED,
     val title: Label? = null,
     val menu: Int? = null,
     val redirectAction: NavigationEvent? = null,

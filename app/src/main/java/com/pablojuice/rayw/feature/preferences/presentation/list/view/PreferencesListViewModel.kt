@@ -2,11 +2,11 @@ package com.pablojuice.rayw.feature.preferences.presentation.list.view
 
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
+import com.pablojuice.rayw.feature.home.presentation.navigation.ToLoginScreen
 import com.pablojuice.rayw.feature.preferences.data.local.Preference
 import com.pablojuice.rayw.feature.preferences.domain.ProvidePreferenceListItemsUseCase
 import com.pablojuice.rayw.feature.preferences.presentation.list.list.PreferencesListAdapter
 import com.pablojuice.rayw.feature.preferences.presentation.navigation.ToLogOutDialog
-import com.pablojuice.rayw.feature.preferences.presentation.navigation.ToLoginScreen
 import com.pablojuice.rayw.feature.signin.domain.login.LogOutUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
