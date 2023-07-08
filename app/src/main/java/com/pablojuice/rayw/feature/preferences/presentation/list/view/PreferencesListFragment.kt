@@ -6,6 +6,7 @@ import com.pablojuice.rayw.feature.preferences.databinding.FragmentPreferencesLi
 import com.pablojuice.rayw.feature.preferences.presentation.list.list.PreferencesListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
 class PreferencesListFragment :
     HomeChildFragment<FragmentPreferencesListBinding, PreferencesListViewModel>() {

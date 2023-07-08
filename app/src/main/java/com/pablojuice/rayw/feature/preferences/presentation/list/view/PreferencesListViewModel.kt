@@ -2,6 +2,7 @@ package com.pablojuice.rayw.feature.preferences.presentation.list.view
 
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
+import com.pablojuice.rayw.feature.home.presentation.navigation.BackToHomeScreen
 import com.pablojuice.rayw.feature.home.presentation.navigation.ToLoginScreen
 import com.pablojuice.rayw.feature.preferences.data.local.Preference
 import com.pablojuice.rayw.feature.preferences.domain.ProvidePreferenceListItemsUseCase
@@ -35,6 +36,7 @@ class PreferencesListViewModel @Inject constructor(
             ToLogOutDialog {
                 logOut()
                 loadItems()
+                submitNavigationEvent(BackToHomeScreen())
             }
         )
     }

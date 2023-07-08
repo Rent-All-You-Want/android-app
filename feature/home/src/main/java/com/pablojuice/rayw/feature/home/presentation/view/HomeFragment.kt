@@ -3,11 +3,13 @@ package com.pablojuice.rayw.feature.home.presentation.view
 
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.forEach
 import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.behavior.HideBottomViewOnScrollBehavior
 import com.pablojuice.core.presentation.navigation.directional.NavigationAnimation
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.fragment.hideKeyboardIfOpened
@@ -88,6 +90,19 @@ class HomeFragment : BasicFragment<FragmentHomeBinding, HomeViewModel>() {
             binding.homeToolBarContentLayout.setVisible(false)
             binding.homeToolBarCollapsingLayout.updateLayoutParams<ViewGroup.LayoutParams> {
                 height = resources.getDimensionPixelSize(CoreR.dimen.dimen_96)
+            }
+        }
+    }
+
+    fun updateBottomNavigationPosition(isVisible: Boolean) {
+        binding.homeBottomNavigation.updateLayoutParams<CoordinatorLayout.LayoutParams> {
+            val currentBehavior = behavior
+            if (currentBehavior is HideBottomViewOnScrollBehavior) {
+                if (isVisible) {
+                    currentBehavior.slideUp(binding.homeBottomNavigation)
+                } else {
+                    currentBehavior.slideDown(binding.homeBottomNavigation)
+                }
             }
         }
     }

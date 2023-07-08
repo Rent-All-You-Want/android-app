@@ -5,6 +5,7 @@ import com.pablojuice.core.app.config.AppConfig
 import com.pablojuice.core.app.config.AppInfo
 import com.pablojuice.core.app.config.DebugAppConfig
 import com.pablojuice.core.app.config.ReleaseAppConfig
+import com.pablojuice.core.app.manager.AppManager
 import com.pablojuice.core.app.utils.getAppInfo
 import com.pablojuice.core.data.remote.api.http.config.DebugNetworkConfig
 import com.pablojuice.core.data.remote.api.http.config.NetworkConfig
@@ -34,7 +35,7 @@ object AppModule {
 
     @Provides
     @Reusable
-    fun provideAppInfo(@ApplicationContext appContext: Context): AppInfo = appContext.getAppInfo()
+    fun provideAppInfo(@ApplicationContext context: Context): AppInfo = context.getAppInfo()
 
     @Provides
     @Reusable
@@ -44,4 +45,8 @@ object AppModule {
         return if (BuildConfig.DEBUG)
             DebugNetworkConfig(apiUrl, interceptor) else ReleaseNetworkConfig(apiUrl, interceptor)
     }
+
+    @Provides
+    @Singleton
+    fun provideAppManager(@ApplicationContext app: Context) = AppManager(app)
 }

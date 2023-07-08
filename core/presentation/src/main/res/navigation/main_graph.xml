@@ -10,10 +10,11 @@
 
     <action
         android:id="@+id/back_to_home"
+        app:destination="@id/home_graph"
         app:enterAnim="@anim/fragment_fade_in_anim"
         app:exitAnim="@anim/slide_to_left"
         app:popUpTo="@id/home_graph"
-        app:popUpToInclusive="false" />
+        app:popUpToInclusive="true" />
 
     <include app:graph="@navigation/dev_graph" />
 
