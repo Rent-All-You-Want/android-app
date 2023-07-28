@@ -12,93 +12,112 @@
     <dimen name="text_size_12">12sp</dimen>
     <dimen name="text_size_10">10sp</dimen>
 
+    <dimen name="spacing_size_small">-0.05</dimen>
+    <dimen name="spacing_size_medium">-0.025</dimen>
+    <dimen name="spacing_size_large">-0.01</dimen>
+
     <style name="text.displayLarge" parent="TextAppearance.Material3.DisplayLarge">
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:fontFamily">@font/fixel_display_regular</item>
+        <item name="fontFamily">@font/fixel_display_regular</item>
         <item name="android:textSize">@dimen/text_size_54</item>
+        <item name="android:letterSpacing">@dimen/spacing_size_small</item>
     </style>
 
     <style name="text.displayMedium" parent="TextAppearance.Material3.DisplayMedium">
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:fontFamily">@font/fixel_display_regular</item>
+        <item name="fontFamily">@font/fixel_display_regular</item>
         <item name="android:textSize">@dimen/text_size_44</item>
+        <item name="android:letterSpacing">@dimen/spacing_size_small</item>
     </style>
 
     <style name="text.displaySmall" parent="TextAppearance.Material3.DisplaySmall">
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:fontFamily">@font/fixel_display_regular</item>
+        <item name="fontFamily">@font/fixel_display_regular</item>
         <item name="android:textSize">@dimen/text_size_36</item>
+        <item name="android:letterSpacing">@dimen/spacing_size_small</item>
     </style>
 
     <style name="text.headlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:fontFamily">@font/fixel_display_regular</item>
+        <item name="fontFamily">@font/fixel_display_regular</item>
         <item name="android:textSize">@dimen/text_size_32</item>
+        <item name="android:letterSpacing">@dimen/spacing_size_small</item>
     </style>
 
     <style name="text.headlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:fontFamily">@font/fixel_display_regular</item>
+        <item name="fontFamily">@font/fixel_display_regular</item>
         <item name="android:textSize">@dimen/text_size_28</item>
+        <item name="android:letterSpacing">@dimen/spacing_size_small</item>
     </style>
 
     <style name="text.headlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:fontFamily">@font/fixel_display_regular</item>
+        <item name="fontFamily">@font/fixel_display_regular</item>
         <item name="android:textSize">@dimen/text_size_24</item>
+        <item name="android:letterSpacing">@dimen/spacing_size_small</item>
     </style>
 
     <style name="text.titleLarge" parent="TextAppearance.Material3.TitleLarge">
-        <item name="android:fontFamily">@font/roboto_medium</item>
-        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:fontFamily">@font/fixel_text_medium</item>
+        <item name="fontFamily">@font/fixel_text_medium</item>
         <item name="android:textSize">@dimen/text_size_20</item>
+        <item name="android:letterSpacing">@dimen/spacing_size_medium</item>
     </style>
 
     <style name="text.titleMedium" parent="TextAppearance.Material3.TitleMedium">
-        <item name="android:fontFamily">@font/roboto_medium</item>
-        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:fontFamily">@font/fixel_text_medium</item>
+        <item name="fontFamily">@font/fixel_text_medium</item>
         <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:letterSpacing">@dimen/spacing_size_medium</item>
     </style>
 
     <style name="text.titleSmall" parent="TextAppearance.Material3.TitleSmall">
-        <item name="android:fontFamily">@font/roboto_medium</item>
-        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:fontFamily">@font/fixel_text_medium</item>
+        <item name="fontFamily">@font/fixel_text_medium</item>
         <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:letterSpacing">@dimen/spacing_size_medium</item>
     </style>
 
     <style name="text.bodyLarge" parent="TextAppearance.Material3.BodyLarge">
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:fontFamily">@font/fixel_text_regular</item>
+        <item name="fontFamily">@font/fixel_text_regular</item>
         <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:letterSpacing">@dimen/spacing_size_large</item>
     </style>
 
     <style name="text.bodyMedium" parent="TextAppearance.Material3.BodyMedium">
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:fontFamily">@font/fixel_text_regular</item>
+        <item name="fontFamily">@font/fixel_text_regular</item>
         <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:letterSpacing">@dimen/spacing_size_large</item>
     </style>
 
     <style name="text.bodySmall" parent="TextAppearance.Material3.BodySmall">
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:fontFamily">@font/fixel_text_regular</item>
+        <item name="fontFamily">@font/fixel_text_regular</item>
         <item name="android:textSize">@dimen/text_size_12</item>
+        <item name="android:letterSpacing">@dimen/spacing_size_large</item>
     </style>
 
     <style name="text.labelLarge" parent="TextAppearance.Material3.LabelLarge">
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:fontFamily">@font/fixel_text_regular</item>
+        <item name="fontFamily">@font/fixel_text_regular</item>
         <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:letterSpacing">@dimen/spacing_size_medium</item>
     </style>
 
     <style name="text.labelMedium" parent="TextAppearance.Material3.LabelMedium">
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:fontFamily">@font/fixel_text_regular</item>
+        <item name="fontFamily">@font/fixel_text_regular</item>
         <item name="android:textSize">@dimen/text_size_12</item>
+        <item name="android:letterSpacing">@dimen/spacing_size_medium</item>
     </style>
 
     <style name="text.labelSmall" parent="TextAppearance.Material3.LabelSmall">
-        <item name="android:fontFamily">@font/roboto_regular</item>
-        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:fontFamily">@font/fixel_text_regular</item>
+        <item name="fontFamily">@font/fixel_text_regular</item>
         <item name="android:textSize">@dimen/text_size_10</item>
+        <item name="android:letterSpacing">@dimen/spacing_size_medium</item>
     </style>
 </resources>
