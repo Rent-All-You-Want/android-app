@@ -1,5 +1,6 @@
-package com.pablojuice.rayw.feature.rentlist.domain
+package com.pablojuice.core.feature.rent
 
+import com.pablojuice.core.utils.StringUtils
 import dagger.Reusable
 import okhttp3.internal.format
 import javax.inject.Inject
@@ -15,7 +16,7 @@ class RentFieldFormatter @Inject constructor() {
     fun formatPrice(
         price: Double,
         digitsInChunk: Int = 3,
-        sourceString: String = com.pablojuice.core.utils.StringUtils.EMPTY
+        sourceString: String = StringUtils.EMPTY
     ): String {
         round(price)
         val intPrice = price.toInt()

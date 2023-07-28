@@ -1,8 +1,8 @@
 package com.pablojuice.rayw.feature.wishlist.domain
 
+import com.pablojuice.core.feature.rent.RentFieldFormatter
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.view.text.asLabel
-import com.pablojuice.rayw.feature.rentlist.domain.RentFieldFormatter
 import com.pablojuice.rayw.feature.wishlist.data.local.NoWishesListItem
 import com.pablojuice.rayw.feature.wishlist.data.local.WishListRegularItem
 import com.pablojuice.rayw.feature.wishlist.data.remote.WishData

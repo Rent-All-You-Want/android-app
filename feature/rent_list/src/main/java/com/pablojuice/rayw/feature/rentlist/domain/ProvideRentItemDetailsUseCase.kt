@@ -1,5 +1,6 @@
 package com.pablojuice.rayw.feature.rentlist.domain
 
+import com.pablojuice.core.feature.rent.RentFieldFormatter
 import com.pablojuice.core.presentation.view.text.asLabel
 import com.pablojuice.rayw.feature.rentlist.data.local.RentDetailsItem
 import com.pablojuice.rayw.feature.rentlist.data.remote.RentDetailsData

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/wish_list"
-        android:name="com.pablojuice.rayw.feature.wish.presentation.view.WishListFragment"
+        android:name="com.pablojuice.rayw.feature.wishlist.presentation.view.WishListFragment"
         android:label="Wish List Screen"
         tools:layout="@layout/fragment_wish_list" />
 </navigation>
