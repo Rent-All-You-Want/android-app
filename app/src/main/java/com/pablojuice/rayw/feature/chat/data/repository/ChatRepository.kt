@@ -1,7 +1,7 @@
 package com.pablojuice.rayw.feature.chat.data.repository
 
 import com.pablojuice.core.data.repository.Repository
-import com.pablojuice.rayw.R
+import com.pablojuice.rayw.feature.chat.R
 import com.pablojuice.rayw.feature.chat.data.remote.ChatData
 import com.pablojuice.rayw.feature.chat.data.remote.GetChatDetailsResponse
 import com.pablojuice.rayw.feature.chat.data.remote.GetChatsResponse

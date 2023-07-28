@@ -4,7 +4,7 @@ import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.view.text.asLabel
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.core.utils.StringUtils
-import com.pablojuice.rayw.R
+import com.pablojuice.rayw.feature.chat.R
 import com.pablojuice.rayw.feature.chat.domain.ProvideChatMessagesUseCase
 import com.pablojuice.rayw.feature.chat.presentation.list.list.OutComingMessageListItem
 import dagger.hilt.android.lifecycle.HiltViewModel

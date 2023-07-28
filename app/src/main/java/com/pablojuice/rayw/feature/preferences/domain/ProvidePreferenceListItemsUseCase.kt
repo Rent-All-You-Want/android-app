@@ -4,6 +4,7 @@ import com.pablojuice.core.app.config.AppConfig
 import com.pablojuice.core.data.remote.auth.UserManager
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.view.text.asLabel
+import com.pablojuice.rayw.feature.preferences.R
 import com.pablojuice.rayw.feature.preferences.data.local.Preference
 import com.pablojuice.rayw.feature.preferences.presentation.list.list.PreferenceEmptyProfileItem
 import com.pablojuice.rayw.feature.preferences.presentation.list.list.PreferenceItem
@@ -44,7 +45,7 @@ class ProvidePreferenceListItemsUseCase @Inject constructor(
             add(
                 PreferenceProfileItem(
                     "$userName".asLabel(),
-                    com.pablojuice.rayw.R.drawable.ic_mock_avatar_man
+                    R.drawable.ic_mock_avatar
                 )
             )
         }

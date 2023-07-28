@@ -3,7 +3,7 @@ package com.pablojuice.rayw.feature.rent_list.data.repository
 import com.pablojuice.core.data.manager.UserPreference
 import com.pablojuice.core.data.manager.UserPreferences
 import com.pablojuice.core.data.repository.Repository
-import com.pablojuice.rayw.R
+import com.pablojuice.rayw.feature.rent_list.R
 import com.pablojuice.rayw.feature.rent_list.data.remote.RentDetailsData
 import com.pablojuice.rayw.feature.rent_list.data.remote.RentListData
 import dagger.Reusable

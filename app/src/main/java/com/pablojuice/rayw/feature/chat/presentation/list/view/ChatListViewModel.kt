@@ -1,11 +1,11 @@
 package com.pablojuice.rayw.feature.chat.presentation.list.view
 
 import android.view.MenuItem
+import com.pablojuice.core.app.navigation.ToChatConversation
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.rayw.feature.chat.domain.ProvideChatsUseCase
 import com.pablojuice.rayw.feature.chat.presentation.list.list.ChatListAdapter
-import com.pablojuice.rayw.feature.home.presentation.navigation.ToChatConversation
 import com.pablojuice.rayw.feature.home.presentation.view.HomeListener
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow

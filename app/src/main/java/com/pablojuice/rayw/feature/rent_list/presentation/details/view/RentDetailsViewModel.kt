@@ -1,9 +1,9 @@
 package com.pablojuice.rayw.feature.rent_list.presentation.details.view
 
+import com.pablojuice.core.app.navigation.ToChatConversation
+import com.pablojuice.core.app.navigation.ToLoginScreen
 import com.pablojuice.core.data.remote.auth.UserManager
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
-import com.pablojuice.rayw.feature.home.presentation.navigation.ToChatConversation
-import com.pablojuice.rayw.feature.home.presentation.navigation.ToLoginScreen
 import com.pablojuice.rayw.feature.rent_list.data.local.RentDetailsItem
 import com.pablojuice.rayw.feature.rent_list.domain.ProvideRentItemDetailsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel

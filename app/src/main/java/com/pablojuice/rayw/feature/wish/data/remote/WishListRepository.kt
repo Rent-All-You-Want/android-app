@@ -3,7 +3,7 @@ package com.pablojuice.rayw.feature.wish.data.remote
 import com.pablojuice.core.data.manager.UserPreference
 import com.pablojuice.core.data.manager.UserPreferences
 import com.pablojuice.core.data.repository.Repository
-import com.pablojuice.rayw.R
+import com.pablojuice.rayw.feature.wishlist.R
 import dagger.Reusable
 import javax.inject.Inject
 

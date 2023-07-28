@@ -1,11 +1,11 @@
 package com.pablojuice.rayw.feature.wish.presentation.view
 
 import android.view.MenuItem
+import com.pablojuice.core.app.navigation.ToRentDetails
 import com.pablojuice.core.data.manager.UserPreference
 import com.pablojuice.core.data.manager.UserPreferences
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
-import com.pablojuice.rayw.feature.home.presentation.navigation.ToRentDetails
 import com.pablojuice.rayw.feature.home.presentation.view.HomeListener
 import com.pablojuice.rayw.feature.wish.domain.ProvideWishListItemsUseCase
 import com.pablojuice.rayw.feature.wish.presentation.list.WishListAdapter
