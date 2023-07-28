@@ -102,7 +102,7 @@ dependencies {
     implementation project(":feature:home")
     implementation project(":feature:devoptions")
     implementation project(":feature:signin")
-    implementation project(":feature:rent_list")
+    implementation project(":feature:rentlist")
     implementation project(":feature:preferences")
     implementation project(":feature:profile")
     implementation project(":feature:chat")
