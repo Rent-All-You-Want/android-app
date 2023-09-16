@@ -13,7 +13,7 @@ import com.pablojuice.core.presentation.utils.GoogleMapUtils.addScrollLockListen
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.setVisible
 import com.pablojuice.core.presentation.view.text.centerSuffixTextView
-import com.pablojuice.core.utils.logging.Timber
+import com.pablojuice.rayw.feature.rent_create.data.local.RentPricing
 import com.pablojuice.rayw.feature.rent_create.databinding.FragmentRentCreateNewBinding
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.picker.RentImagePickerAdapter
 import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.CreateNewRentViewModel
@@ -61,12 +61,17 @@ class CreateNewRentFragment :
     }
 
     private fun setupPriceFields() {
-        binding.priceChips.setOnCheckedStateChangeListener { group, checkedIds ->
-            Timber.e(checkedIds.joinToString())
-        }
         binding.priceForHourField.centerSuffixTextView()
         binding.priceForDayField.centerSuffixTextView()
         binding.priceForMonthField.centerSuffixTextView()
+        viewModel.selectedPricingOptions.observe { rentOptions ->
+            binding.priceForHourField.setVisible(rentOptions.contains(RentPricing.HOURLY))
+            binding.priceForDayField.setVisible(rentOptions.contains(RentPricing.DAILY))
+            binding.priceForMonthField.setVisible(rentOptions.contains(RentPricing.MONTHLY))
+        }
+        binding.priceChips.setOnCheckedStateChangeListener { _, checkedIds ->
+            viewModel.setSelectedPriceOptions(checkedIds)
+        }
     }
 
     private fun setupPledgeFields() {

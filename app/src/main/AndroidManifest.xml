@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:name=".app.RaywApp"
@@ -50,6 +51,25 @@
                 android:name="autoStoreLocales"
                 android:value="true" />
         </service>
+
+        <!-- notification stuff -->
+        <service
+            android:name="com.pablojuice.rayw.feature.notification.FirebaseNotificationService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_logo_rayw" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/reddish_orange" />
+        <!--        <meta-data-->
+        <!--            android:name="com.google.firebase.messaging.default_notification_channel_id"-->
+        <!--            android:value="@string/default_notification_channel_id" />-->
     </application>
 
 </manifest>

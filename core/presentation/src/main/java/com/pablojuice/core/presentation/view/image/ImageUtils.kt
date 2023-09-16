@@ -22,10 +22,10 @@ fun GlideRequest<Bitmap>.intoWithSizeListener(view: ImageView, sizeListener: (In
             dataSource: DataSource?,
             isFirstResource: Boolean
         ): Boolean {
-            resource?.let {
+            return if (resource != null && !resource.isRecycled) {
                 sizeListener(resource.width, resource.height)
                 view.setImageBitmap(resource)
-            }
-            return false
+                true
+            } else false
         }
     }).preload()

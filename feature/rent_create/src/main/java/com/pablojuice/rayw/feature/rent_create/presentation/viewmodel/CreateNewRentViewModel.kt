@@ -5,6 +5,7 @@ import androidx.navigation.fragment.FragmentNavigatorExtras
 import com.pablojuice.core.presentation.navigation.NavigationEvents
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
+import com.pablojuice.rayw.feature.rent_create.data.local.RentPricing
 import com.pablojuice.rayw.feature.rent_create.domain.ConvertUrisToImageListUseCase
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.RentImagePickerAttachItem
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.RentImagePreviewItem
@@ -33,6 +34,9 @@ class CreateNewRentViewModel @Inject constructor(
 
     private val _currentSelectedImage = MutableStateFlow<RentImagePreviewItem?>(null)
     val currentSelectedImage: StateFlow<RentImagePreviewItem?> = _currentSelectedImage
+
+    private val _selectedPricingOptions = MutableStateFlow(listOf(RentPricing.HOURLY))
+    val selectedPricingOptions: StateFlow<List<RentPricing>> = _selectedPricingOptions
 
     fun setCurrentSelectedImage(position: Int) {
         _currentSelectedImage.value = _imageList.value[position] as? RentImagePreviewItem
@@ -117,5 +121,9 @@ class CreateNewRentViewModel @Inject constructor(
             submitNavigationEvent(ToImageIsAlreadyLoadedSnackBar())
         }
         return filteredList
+    }
+
+    fun setSelectedPriceOptions(options: List<Int>) {
+        _selectedPricingOptions.value = options.map(RentPricing::fromId)
     }
 }

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".feature.rent_create.presentation.view.CreateNewRentFragment">
+    android:orientation="vertical">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/item_tool_bar"
@@ -224,6 +223,7 @@
                             android:ellipsize="end"
                             android:hint="@string/rent_create_price_for_hour"
                             android:maxLines="1"
+                            android:inputType="number|numberDecimal"
                             android:paddingTop="0dp"
                             android:paddingBottom="0dp"
                             android:singleLine="true" />
@@ -246,6 +246,7 @@
                             android:ellipsize="end"
                             android:hint="@string/rent_create_price_for_day"
                             android:maxLines="1"
+                            android:inputType="number|numberDecimal"
                             android:paddingTop="0dp"
                             android:paddingBottom="0dp"
                             android:singleLine="true" />
@@ -268,6 +269,7 @@
                             android:ellipsize="end"
                             android:hint="@string/rent_create_price_for_month"
                             android:maxLines="1"
+                            android:inputType="number|numberDecimal"
                             android:paddingTop="0dp"
                             android:paddingBottom="0dp"
                             android:singleLine="true" />
@@ -281,6 +283,7 @@
                     android:layout_marginTop="@dimen/dimen_8"
                     android:paddingStart="@dimen/dimen_4"
                     android:paddingEnd="@dimen/dimen_16"
+                    android:animateLayoutChanges="true"
                     android:orientation="vertical">
 
                     <com.google.android.material.materialswitch.MaterialSwitch

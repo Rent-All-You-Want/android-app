@@ -107,6 +107,7 @@ dependencies {
     implementation project(":feature:rent_create")
     implementation project(":feature:chat")
     implementation project(":feature:preferences")
+    implementation project(":feature:notification")
     implementation project(":feature:profile")
 
     implementation "androidx.core:core-splashscreen:$versions.splashscreen"

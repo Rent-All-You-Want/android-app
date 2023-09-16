@@ -17,10 +17,10 @@ private const val INFLATE_METHOD = "inflate"
 @Suppress("UNCHECKED_CAST")
 abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
-    private var _binding: VB? = null
+    protected var safeBinding: VB? = null
 
     val binding: VB
-        get() = _binding!!
+        get() = safeBinding!!
 
     private val jobsToClear = mutableListOf<Job>()
 
@@ -35,14 +35,14 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         inflate(inflater, container).run {
-            _binding = this
+            safeBinding = this
             return root
         }
     }
 
     @CallSuper
     override fun onDestroyView() {
-        _binding = null
+        safeBinding = null
         jobsToClear.forEach { job -> job.cancel() }
         jobsToClear.clear()
         super.onDestroyView()
