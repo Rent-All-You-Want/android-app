@@ -4,21 +4,13 @@ import android.os.Bundle
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
-import androidx.lifecycle.lifecycleScope
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.model.LatLng
-import com.pablojuice.core.presentation.utils.GoogleMapUtils.addMapFragmentToContainer
-import com.pablojuice.core.presentation.utils.GoogleMapUtils.addScrollLockListener
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
-import com.pablojuice.core.presentation.view.setVisible
-import com.pablojuice.core.presentation.view.text.centerSuffixTextView
-import com.pablojuice.rayw.feature.rent_create.data.local.RentPricing
+import com.pablojuice.core.presentation.view.setClickListener
+import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
 import com.pablojuice.rayw.feature.rent_create.databinding.FragmentRentCreateNewBinding
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.picker.RentImagePickerAdapter
 import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.CreateNewRentViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 import com.pablojuice.core.presentation.R as CoreR
 
 private val MEDIA_TYPE = ActivityResultContracts.PickVisualMedia.ImageOnly
@@ -31,20 +23,15 @@ class CreateNewRentFragment :
 
     override val layoutClass = FragmentRentCreateNewBinding::class.java
 
-    private var map: GoogleMap? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupPhotoPicker()
     }
 
     override fun setupScreen() {
-        binding.itemToolBar.setNavigationOnClickListener { navigateBack() }
+        binding.itemToolBar.setNavigationClickListener(::navigateBack)
         setupImageLoader()
         setupMainFields()
-        setupPriceFields()
-        setupPledgeFields()
-        setupDeliveryFields()
     }
 
     private fun setupImageLoader() {
@@ -57,46 +44,11 @@ class CreateNewRentFragment :
     }
 
     private fun setupMainFields() {
-
-    }
-
-    private fun setupPriceFields() {
-        binding.priceForHourField.centerSuffixTextView()
-        binding.priceForDayField.centerSuffixTextView()
-        binding.priceForMonthField.centerSuffixTextView()
-        viewModel.selectedPricingOptions.observe { rentOptions ->
-            binding.priceForHourField.setVisible(rentOptions.contains(RentPricing.HOURLY))
-            binding.priceForDayField.setVisible(rentOptions.contains(RentPricing.DAILY))
-            binding.priceForMonthField.setVisible(rentOptions.contains(RentPricing.MONTHLY))
-        }
-        binding.priceChips.setOnCheckedStateChangeListener { _, checkedIds ->
-            viewModel.setSelectedPriceOptions(checkedIds)
-        }
-    }
-
-    private fun setupPledgeFields() {
-
-    }
-
-    private fun setupDeliveryFields() {
-        binding.deliveryChips.setOnCheckedStateChangeListener { _, checkedIds ->
-            checkedIds.forEach { id ->
-
-            }
-        }
-    }
-
-    private fun showMap() {
-        lifecycleScope.launch {
-            addMapFragmentToContainer(binding.mapContainer).getMapAsync {
-                binding.mapContainer.setVisible(true)
-                map = it
-                val latLng = LatLng(37.4219999, -122.0862462)
-                val cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 10f)
-                map?.moveCamera(cameraUpdate)
-                map?.addScrollLockListener(binding.scrollContainer::requestDisallowInterceptTouchEvent)
-            }
-        }
+        binding.categoryField.editText?.setClickListener(viewModel::openCategories)
+        binding.characteristicsField.editText?.setClickListener(viewModel::openCharacteristics)
+        binding.pricingField.editText?.setClickListener(viewModel::openPricing)
+        binding.pledgeField.editText?.setClickListener(viewModel::openPledge)
+        binding.deliveryField.editText?.setClickListener(viewModel::openDelivery)
     }
 
     private fun setupPhotoPicker() {

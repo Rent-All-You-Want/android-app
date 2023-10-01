@@ -9,6 +9,7 @@
         android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.CreateNewRentFragment"
         android:label="Create New Rent Screen"
         tools:layout="@layout/fragment_rent_create_new">
+
         <action
             android:id="@+id/to_image_preview"
             app:destination="@id/rent_image_preview"
@@ -16,6 +17,46 @@
             app:exitAnim="@anim/fragment_fade_out_anim"
             app:popEnterAnim="@anim/fragment_fade_in_anim"
             app:popExitAnim="@anim/fragment_fade_out_anim" />
+
+        <action
+            android:id="@+id/to_choose_rent_category"
+            app:destination="@id/choose_rent_category"
+            app:enterAnim="@anim/anim_side_right_in"
+            app:exitAnim="@anim/fragment_fade_out_anim"
+            app:popEnterAnim="@anim/fragment_fade_in_anim"
+            app:popExitAnim="@anim/anim_side_right_out" />
+
+        <action
+            android:id="@+id/to_choose_rent_characteristics"
+            app:destination="@id/choose_rent_characteristics"
+            app:enterAnim="@anim/anim_side_right_in"
+            app:exitAnim="@anim/fragment_fade_out_anim"
+            app:popEnterAnim="@anim/fragment_fade_in_anim"
+            app:popExitAnim="@anim/anim_side_right_out" />
+
+        <action
+            android:id="@+id/to_choose_rent_price"
+            app:destination="@id/choose_rent_price"
+            app:enterAnim="@anim/anim_side_right_in"
+            app:exitAnim="@anim/fragment_fade_out_anim"
+            app:popEnterAnim="@anim/fragment_fade_in_anim"
+            app:popExitAnim="@anim/anim_side_right_out" />
+
+        <action
+            android:id="@+id/to_choose_rent_pledge"
+            app:destination="@id/choose_rent_pledge"
+            app:enterAnim="@anim/anim_side_right_in"
+            app:exitAnim="@anim/fragment_fade_out_anim"
+            app:popEnterAnim="@anim/fragment_fade_in_anim"
+            app:popExitAnim="@anim/anim_side_right_out" />
+
+        <action
+            android:id="@+id/to_choose_rent_delivery"
+            app:destination="@id/choose_rent_delivery"
+            app:enterAnim="@anim/anim_side_right_in"
+            app:exitAnim="@anim/fragment_fade_out_anim"
+            app:popEnterAnim="@anim/fragment_fade_in_anim"
+            app:popExitAnim="@anim/anim_side_right_out" />
     </fragment>
 
     <fragment
@@ -23,4 +64,34 @@
         android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.RentImagePreviewFragment"
         android:label="Rent Image Preview Screen"
         tools:layout="@layout/fragment_rent_image_preview" />
+
+    <fragment
+        android:id="@+id/choose_rent_category"
+        android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.ChooseRentCategoryFragment"
+        android:label="Choose Rent Category Screen"
+        tools:layout="@layout/fragment_rent_create_choose_category" />
+
+    <fragment
+        android:id="@+id/choose_rent_characteristics"
+        android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.ChooseRentCharacteristicsFragment"
+        android:label="Choose Rent Characteristics Screen"
+        tools:layout="@layout/fragment_rent_create_choose_characteristics" />
+
+    <fragment
+        android:id="@+id/choose_rent_price"
+        android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.ChooseRentPriceFragment"
+        android:label="Choose Rent Price Screen"
+        tools:layout="@layout/fragment_rent_create_choose_price" />
+
+    <fragment
+        android:id="@+id/choose_rent_pledge"
+        android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.ChooseRentPledgeFragment"
+        android:label="Choose Rent Pledge Screen"
+        tools:layout="@layout/fragment_rent_create_choose_pledge" />
+
+    <fragment
+        android:id="@+id/choose_rent_delivery"
+        android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.ChooseRentDeliveryFragment"
+        android:label="Choose Rent Delivery Screen"
+        tools:layout="@layout/fragment_rent_create_choose_delivery" />
 </navigation>

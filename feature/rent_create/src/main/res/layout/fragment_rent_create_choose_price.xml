@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/tool_bar"
+        style="@style/view.toolBar.navigableBack"
+        android:layout_width="match_parent"
+        app:title="Choose price" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/price_chips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleSelection="false"
+                app:selectionRequired="true"
+                app:singleLine="true"
+                app:chipSpacingHorizontal="@dimen/dimen_4"
+                app:chipSpacingVertical="0dp"
+                android:layout_marginTop="@dimen/dimen_8">
+
+                <com.google.android.material.chip.Chip
+                    style="@style/view.chip.filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/rent_create_hour" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/view.chip.filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rent_create_day" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/view.chip.filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rent_create_month" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/view.chip.filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rent_create_custom" />
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/price_for_hour_field"
+                style="@style/view.textField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:suffixText="@string/rent_create_uah_hour"
+                app:startIconDrawable="@drawable/ic_payments_medium">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:hint="@string/rent_create_price_for_hour"
+                    android:maxLines="1"
+                    android:inputType="number|numberDecimal"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/price_for_day_field"
+                style="@style/view.textField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_4"
+                android:visibility="gone"
+                app:suffixText="@string/rent_create_uah_day"
+                app:startIconDrawable="@drawable/ic_payments_medium">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:hint="@string/rent_create_price_for_day"
+                    android:maxLines="1"
+                    android:inputType="number|numberDecimal"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/price_for_month_field"
+                style="@style/view.textField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/dimen_4"
+                app:suffixText="@string/rent_create_uah_month"
+                app:startIconDrawable="@drawable/ic_payments_medium">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:hint="@string/rent_create_price_for_month"
+                    android:maxLines="1"
+                    android:inputType="number|numberDecimal"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

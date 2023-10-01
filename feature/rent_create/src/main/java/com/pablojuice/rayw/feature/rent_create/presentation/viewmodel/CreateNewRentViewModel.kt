@@ -7,24 +7,36 @@ import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.rayw.feature.rent_create.data.local.RentPricing
 import com.pablojuice.rayw.feature.rent_create.domain.ConvertUrisToImageListUseCase
+import com.pablojuice.rayw.feature.rent_create.domain.DragAndDropImageUseCase
+import com.pablojuice.rayw.feature.rent_create.domain.MakeImageMainUseCase
+import com.pablojuice.rayw.feature.rent_create.domain.RemoveSelectedImageUseCase
+import com.pablojuice.rayw.feature.rent_create.domain.updateImageAttachItem
+import com.pablojuice.rayw.feature.rent_create.domain.updateMainItem
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.RentImagePickerAttachItem
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.RentImagePreviewItem
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.picker.RentImagePickerAdapter
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.picker.RentImagePickerImageViewHolder
+import com.pablojuice.rayw.feature.rent_create.presentation.navigation.ToChooseRentCategoriesScreen
+import com.pablojuice.rayw.feature.rent_create.presentation.navigation.ToChooseRentCharacteristicsScreen
+import com.pablojuice.rayw.feature.rent_create.presentation.navigation.ToChooseRentDeliveryScreen
+import com.pablojuice.rayw.feature.rent_create.presentation.navigation.ToChooseRentPledgeScreen
+import com.pablojuice.rayw.feature.rent_create.presentation.navigation.ToChooseRentPriceScreen
 import com.pablojuice.rayw.feature.rent_create.presentation.navigation.ToImageIsAlreadyLoadedSnackBar
 import com.pablojuice.rayw.feature.rent_create.presentation.navigation.ToRentImagePreviewScreen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import java.util.Collections
 import javax.inject.Inject
 
 private const val MAX_MEDIA = 8
 
 @HiltViewModel
 class CreateNewRentViewModel @Inject constructor(
-    private val convertToImageList: ConvertUrisToImageListUseCase
+    private val convertToImageList: ConvertUrisToImageListUseCase,
+    private val makeImageMain: MakeImageMainUseCase,
+    private val removeSelectedImage: RemoveSelectedImageUseCase,
+    private val dragAndDropImage: DragAndDropImageUseCase
 ) : BasicViewModel(), RentImagePickerAdapter.Listener {
 
     private lateinit var imagePickerListener: () -> Unit
@@ -50,20 +62,13 @@ class CreateNewRentViewModel @Inject constructor(
 
     fun makeCurrentSelectedImageMain() {
         currentSelectedImage.value?.let {
-            val currentItemList = _imageList.value.toMutableList()
-            currentItemList.remove(it)
-            currentItemList.add(0, it)
-            currentItemList.updateMainItem()
-            _imageList.value = currentItemList
+            _imageList.value = makeImageMain(it, _imageList.value.toMutableList())
         }
     }
 
     fun removeCurrentSelectedImage() {
         currentSelectedImage.value?.let {
-            val currentItemList = _imageList.value.toMutableList()
-            currentItemList.remove(it)
-            currentItemList.updateImageAttachItem()
-            currentItemList.updateMainItem()
+            val currentItemList = removeSelectedImage(it, _imageList.value.toMutableList())
             if (currentItemList.size <= 1) submitNavigationEvent(NavigationEvents.BackNavigationEvent)
             _imageList.value = currentItemList
         }
@@ -92,23 +97,8 @@ class CreateNewRentViewModel @Inject constructor(
         )
     }
 
-    override fun onDragAndDrop(previousPosition: Int, targetPosition: Int) {
-        val currentItemList = _imageList.value.toMutableList()
-        Collections.swap(currentItemList, previousPosition, targetPosition)
-        if (previousPosition == 0 || targetPosition == 0) currentItemList.updateMainItem()
-        _imageList.value = currentItemList
-    }
-
-    private fun List<ListItem>.updateImageAttachItem() {
-        val listIsNotEmpty = size > 1
-        forEach { item ->
-            if (item is RentImagePickerAttachItem) item.alreadyContainsImages = listIsNotEmpty
-        }
-    }
-
-    private fun List<ListItem>.updateMainItem() {
-        forEach { item -> if (item is RentImagePreviewItem) item.isMainImage = false }
-        firstOrNull()?.let { if (it is RentImagePreviewItem) it.isMainImage = true }
+    override fun onDragAndDrop(previous: Int, target: Int) {
+        _imageList.value = dragAndDropImage(previous, target, _imageList.value.toMutableList())
     }
 
     private fun filterImages(
@@ -125,5 +115,25 @@ class CreateNewRentViewModel @Inject constructor(
 
     fun setSelectedPriceOptions(options: List<Int>) {
         _selectedPricingOptions.value = options.map(RentPricing::fromId)
+    }
+
+    fun openCategories() {
+        submitNavigationEvent(ToChooseRentCategoriesScreen())
+    }
+
+    fun openCharacteristics() {
+        submitNavigationEvent(ToChooseRentCharacteristicsScreen())
+    }
+
+    fun openPricing() {
+        submitNavigationEvent(ToChooseRentPriceScreen())
+    }
+
+    fun openPledge() {
+        submitNavigationEvent(ToChooseRentPledgeScreen())
+    }
+
+    fun openDelivery() {
+        submitNavigationEvent(ToChooseRentDeliveryScreen())
     }
 }

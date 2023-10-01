@@ -9,6 +9,7 @@ import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.list.ListAdapter
 import com.pablojuice.core.presentation.view.setClickListener
 import com.pablojuice.core.presentation.view.setVisible
+import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
 import com.pablojuice.rayw.feature.rent_create.databinding.FragmentRentImagePreviewBinding
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.RentImagePreviewItem
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.preview.RentImagePreviewAdapter
@@ -63,7 +64,7 @@ class RentImagePreviewFragment :
     }
 
     private fun setupClickListeners() {
-        binding.imageToolBar.setNavigationOnClickListener { navigateBack() }
+        binding.imageToolBar.setNavigationClickListener(::navigateBack)
         binding.removeImageButton.setClickListener(viewModel::removeCurrentSelectedImage)
         binding.makeImageMainButton.setClickListener(viewModel::makeCurrentSelectedImageMain)
         binding.next.setOnClickListener {

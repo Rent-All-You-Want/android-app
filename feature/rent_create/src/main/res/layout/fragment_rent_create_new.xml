@@ -8,7 +8,7 @@
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/item_tool_bar"
-        style="@style/view.toolBar.navigableBack"
+        style="@style/view.toolBar.closableBack"
         android:layout_width="match_parent"
         app:title="@string/rent_create_new" />
 
@@ -45,12 +45,6 @@
                 android:paddingHorizontal="@dimen/dimen_32"
                 android:paddingVertical="@dimen/dimen_16">
 
-                <TextView
-                    style="@style/text.bodyMedium"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/rent_create_main_info" />
-
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/title_field"
                     style="@style/view.textField"
@@ -82,6 +76,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_4"
+                    android:layout_marginBottom="@dimen/dimen_16"
                     app:counterEnabled="true"
                     app:counterMaxLength="8000">
 
@@ -102,14 +97,6 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-
-                <TextView
-                    style="@style/text.bodyMedium"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_4"
-                    android:text="@string/rent_create_characteristics" />
-
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/category_field"
                     style="@style/view.textField"
@@ -117,6 +104,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_4"
                     app:endIconDrawable="@drawable/ic_chevron_right_medium"
+                    app:startIconDrawable="@drawable/ic_category_medium"
+                    android:clickable="true"
                     app:endIconMode="custom">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -127,7 +116,11 @@
                         android:maxLines="1"
                         android:paddingTop="0dp"
                         android:paddingBottom="0dp"
-                        android:singleLine="true" />
+                        android:singleLine="true"
+                        android:inputType="none"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:clickable="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -137,7 +130,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_8"
+                    android:layout_marginBottom="@dimen/dimen_16"
                     app:endIconDrawable="@drawable/ic_chevron_right_medium"
+                    app:startIconDrawable="@drawable/ic_category_medium"
                     app:endIconMode="custom">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -148,251 +143,94 @@
                         android:maxLines="1"
                         android:paddingTop="0dp"
                         android:paddingBottom="0dp"
-                        android:singleLine="true" />
+                        android:singleLine="true"
+                        android:inputType="none"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:clickable="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <TextView
-                    style="@style/text.bodyMedium"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_8"
-                    android:text="@string/rent_create_pricing_for" />
-
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:scrollbars="none">
-
-                    <com.google.android.material.chip.ChipGroup
-                        android:id="@+id/price_chips"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:singleSelection="false"
-                        app:selectionRequired="true"
-                        app:singleLine="true"
-                        app:chipSpacingHorizontal="@dimen/dimen_4"
-                        app:chipSpacingVertical="0dp"
-                        android:layout_marginTop="@dimen/dimen_8">
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/view.chip.filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:checked="true"
-                            android:text="@string/rent_create_hour" />
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/view.chip.filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/rent_create_day" />
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/view.chip.filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/rent_create_month" />
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/view.chip.filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/rent_create_custom" />
-                    </com.google.android.material.chip.ChipGroup>
-                </HorizontalScrollView>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_4"
-                    android:orientation="vertical">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/price_for_hour_field"
-                        style="@style/view.textField"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        app:suffixText="@string/rent_create_uah_hour"
-                        app:startIconDrawable="@drawable/ic_payments_medium">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:ellipsize="end"
-                            android:hint="@string/rent_create_price_for_hour"
-                            android:maxLines="1"
-                            android:inputType="number|numberDecimal"
-                            android:paddingTop="0dp"
-                            android:paddingBottom="0dp"
-                            android:singleLine="true" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/price_for_day_field"
-                        style="@style/view.textField"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dimen_4"
-                        android:visibility="gone"
-                        app:suffixText="@string/rent_create_uah_day"
-                        app:startIconDrawable="@drawable/ic_payments_medium">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:ellipsize="end"
-                            android:hint="@string/rent_create_price_for_day"
-                            android:maxLines="1"
-                            android:inputType="number|numberDecimal"
-                            android:paddingTop="0dp"
-                            android:paddingBottom="0dp"
-                            android:singleLine="true" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/price_for_month_field"
-                        style="@style/view.textField"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        android:layout_marginTop="@dimen/dimen_4"
-                        app:suffixText="@string/rent_create_uah_month"
-                        app:startIconDrawable="@drawable/ic_payments_medium">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:ellipsize="end"
-                            android:hint="@string/rent_create_price_for_month"
-                            android:maxLines="1"
-                            android:inputType="number|numberDecimal"
-                            android:paddingTop="0dp"
-                            android:paddingBottom="0dp"
-                            android:singleLine="true" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_48"
-                    android:layout_marginTop="@dimen/dimen_8"
-                    android:paddingStart="@dimen/dimen_4"
-                    android:paddingEnd="@dimen/dimen_16"
-                    android:animateLayoutChanges="true"
-                    android:orientation="vertical">
-
-                    <com.google.android.material.materialswitch.MaterialSwitch
-                        android:id="@+id/pledge_switch"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rent_create_pledge" />
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/pledge_field"
-                        style="@style/view.textField"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        android:layout_marginTop="@dimen/dimen_8"
-                        app:suffixText="@string/rent_create_uah"
-                        app:startIconDrawable="@drawable/ic_savings_medium">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:ellipsize="end"
-                            android:hint="@string/rent_create_price_for_month"
-                            android:maxLines="1"
-                            android:paddingTop="0dp"
-                            android:paddingBottom="0dp"
-                            android:singleLine="true" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-
-                <TextView
-                    style="@style/text.bodyMedium"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_8"
-                    android:text="@string/rent_create_delivery" />
-
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:scrollbars="none">
-
-                    <com.google.android.material.chip.ChipGroup
-                        android:id="@+id/delivery_chips"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:singleSelection="false"
-                        app:selectionRequired="true"
-                        app:singleLine="true"
-                        app:chipSpacingHorizontal="@dimen/dimen_4"
-                        app:chipSpacingVertical="0dp"
-                        android:layout_marginTop="@dimen/dimen_8">
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/view.chip.filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:checked="true"
-                            android:text="@string/rent_create_delivery_personal" />
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/view.chip.filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/rent_create_delivery_courier" />
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/view.chip.filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/rent_create_delivery_post" />
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/view.chip.filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/rent_create_delivery_custom" />
-                    </com.google.android.material.chip.ChipGroup>
-                </HorizontalScrollView>
-
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/delivery_address_field"
+                    android:id="@+id/pricing_field"
                     style="@style/view.textField"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_8"
-                    android:visibility="gone"
                     app:endIconDrawable="@drawable/ic_chevron_right_medium"
+                    app:startIconDrawable="@drawable/ic_payments_medium"
                     app:endIconMode="custom">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ellipsize="end"
-                        android:hint="@string/rent_create_delivery_address"
+                        android:hint="@string/rent_create_pricing_for"
                         android:maxLines="1"
                         android:paddingTop="0dp"
                         android:paddingBottom="0dp"
-                        android:singleLine="true" />
+                        android:singleLine="true"
+                        android:inputType="none"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:clickable="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <FrameLayout
-                    android:id="@+id/map_container"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/pledge_field"
+                    style="@style/view.textField"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_256"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_8"
-                    android:visibility="gone" />
+                    android:layout_marginBottom="@dimen/dimen_16"
+                    app:endIconDrawable="@drawable/ic_chevron_right_medium"
+                    app:startIconDrawable="@drawable/ic_inventory_medium"
+                    app:endIconMode="custom">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:hint="@string/rent_create_pledge"
+                        android:maxLines="1"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp"
+                        android:singleLine="true"
+                        android:inputType="none"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:clickable="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/delivery_field"
+                    style="@style/view.textField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    app:endIconDrawable="@drawable/ic_chevron_right_medium"
+                    app:startIconDrawable="@drawable/ic_local_shipping_medium"
+                    app:endIconMode="custom">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:hint="@string/rent_create_delivery"
+                        android:maxLines="1"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp"
+                        android:singleLine="true"
+                        android:inputType="none"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:clickable="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

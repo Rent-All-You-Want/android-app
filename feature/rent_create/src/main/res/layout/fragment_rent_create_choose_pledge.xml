@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/tool_bar"
+        style="@style/view.toolBar.navigableBack"
+        android:layout_width="match_parent"
+        app:title="Choose pledge" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_48"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:paddingEnd="@dimen/dimen_16"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/pledge_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rent_create_pledge" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/pledge_field"
+                style="@style/view.textField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/dimen_8"
+                app:suffixText="@string/rent_create_uah"
+                app:startIconDrawable="@drawable/ic_savings_medium">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:hint="@string/rent_create_price_for_month"
+                    android:maxLines="1"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
