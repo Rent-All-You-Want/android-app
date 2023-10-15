@@ -5,4 +5,4 @@ import com.pablojuice.core.data.remote.api.ApiResponse
 data class RegisterResponse(
     val accessToken: String,
     val refreshToken: String
-) : ApiResponse()
+) : ApiResponse

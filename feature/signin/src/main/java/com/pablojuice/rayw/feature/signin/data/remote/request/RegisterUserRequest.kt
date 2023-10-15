@@ -8,4 +8,4 @@ data class RegisterUserRequest(
     val birthDate: String,
     val email: String,
     val password: String
-) : ApiRequest()
+) : ApiRequest

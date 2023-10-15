@@ -1,3 +1,3 @@
 package com.pablojuice.core.data.remote.api
 
-abstract class ApiResponse
+interface ApiResponse

@@ -5,26 +5,26 @@ import com.pablojuice.core.data.remote.api.ApiResponse
 data class AuthResponse(
     val user: SimpleUser,
     val token: Tokens
-) : ApiResponse()
+) : ApiResponse
 
 data class Tokens(
     val accessToken: String,
     val refreshToken: String
-) : ApiResponse()
+) : ApiResponse
 
 data class SimpleUser(
     val firstName: String,
     val secondName: String,
     val avatarImage: UserAvatar?,
     val roles: List<UserRole>
-) : ApiResponse()
+) : ApiResponse
 
 data class UserAvatar(
     val name: String,
     val data: List<String>,
     val category: UserAvatarCategory
-) : ApiResponse()
+) : ApiResponse
 
-data class UserAvatarCategory(val type: String) : ApiResponse()
+data class UserAvatarCategory(val type: String) : ApiResponse
 
-data class UserRole(val type: String) : ApiResponse()
+data class UserRole(val type: String) : ApiResponse
