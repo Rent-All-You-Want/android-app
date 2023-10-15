@@ -2,7 +2,7 @@ package com.pablojuice.core.presentation.navigation.directional
 
 import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
-import com.pablojuice.core.R
+import com.pablojuice.core.presentation.R
 
 abstract class AnimatedNavigationEvent(
     destination: NavDirections?,

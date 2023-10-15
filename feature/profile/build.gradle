@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace "com.pablojuice.feature.profile"
+    namespace "com.pablojuice.rayw.feature.profile"
 
     compileSdk application.compileSdk
 

@@ -1,0 +1,13 @@
+<resources>
+    <string name="first_onboarding_title">Будь-де, будь-коли</string>
+    <string name="first_onboarding_description">Використовуйте лише свій телефон, щоб орендувати будь-який доступний товар безпосередньо у власника за найкоротший термін</string>
+
+    <string name="second_onboarding_title">Легкий заробіток</string>
+    <string name="second_onboarding_description">Здавайте речі, якими більше не користуєтеся, вони точно комусь знадобляться! І отримуйте додатковий заробіток</string>
+
+    <string name="third_onboarding_title">Розвивайте бізнес</string>
+    <string name="third_onboarding_description">Ми раді допомогти вам у розвитку вашого бізнесу, здаючи різні види товарів в оренду! Заробляйте легально разом з нами</string>
+
+    <string name="next">Далі</string>
+    <string name="rent_out">Почати</string>
+</resources>

@@ -1,13 +1,11 @@
 ext {
     versions = [
-            gradle      : "7.0.1",
-            splashscreen: "1.0.0",
-            daggerHilt  : '2.45',
+            splashscreen: "1.0.1",
+            daggerHilt  : "2.45",
 
     ]
 
     application = [
-            versionCode          : 1,
             versionName          : "0.0.1",
             defautFlavorDimension: "default",
 

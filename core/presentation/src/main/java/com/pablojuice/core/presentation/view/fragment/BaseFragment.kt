@@ -53,6 +53,12 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     fun <T> Flow<T>.observe(block: (T) -> Unit) =
         submitJob(lifecycleScope.launchWhenCreated { collectLatest(block) })
 
+//    submitJob(
+//    lifecycleScope.launch {
+//        lifecycle.repeatOnLifecycle(Lifecycle.State.CREATED) { collectLatest(block) }
+//    }
+//    )
+
     private fun inflate(
         inflater: LayoutInflater,
         container: ViewGroup?

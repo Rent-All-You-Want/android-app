@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--    <style name="Widget.App.Chip" parent="Widget.Material3.Chip.Input">-->
-    <!--        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Chip</item>-->
-    <!--        <item name="android:textAppearance">@style/TextAppearance.App.BodyMedium</item>-->
-    <!--        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>-->
-    <!--        ...-->
-    <!--    </style>-->
 
-    <!--    <style name="ThemeOverlay.App.Chip" parent="">-->
-    <!--        <item name="colorOnSurface">@color/shrine_pink_900</item>-->
-    <!--    </style>-->
+    <style name="view.chip" parent="Widget.Material3.Chip.Assist">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Chip</item>
+        <item name="android:textAppearance">@style/text.bodyMedium</item>
+        <item name="shapeAppearance">@style/shape.small</item>
+    </style>
+
+    <style name="view.chip.filter" parent="Widget.Material3.Chip.Filter">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Chip</item>
+        <item name="android:textAppearance">@style/text.bodyMedium</item>
+        <item name="shapeAppearance">@style/shape.small</item>
+        <item name="elevation">@dimen/elevation_small</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Chip" parent="">
+        <item name="colorOnSurfaceVariant">?attr/colorPrimary</item>
+        <item name="colorSurface">?attr/colorBackground</item>
+        <item name="colorOutline">?attr/colorPrimary</item>
+        <item name="colorSecondaryContainer">?attr/colorPrimary</item>
+        <item name="colorOnSecondaryContainer">?attr/colorOnPrimary</item>
+    </style>
 </resources>

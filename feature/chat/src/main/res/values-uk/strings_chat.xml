@@ -1,0 +1,7 @@
+<resources>
+    <string name="chat_no_chats_yet">Тут ще немає чатів</string>
+    <string name="chat_start_chatting">Продовжіть пригоду і почніть RAYW\'ити</string>
+    <string name="chat_no_messages_yet">Тут поки немає повідомлень</string>
+    <string name="chat_send_message">Надішліть повідомлення або торкніться нижче</string>
+    <string name="chat_enter_new_message">Введіть нове повідомлення</string>
+</resources>

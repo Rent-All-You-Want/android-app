@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace "com.pablojuice.uitest"
+    namespace "com.pablojuice.rayw.test.uitest"
     compileSdk application.compileSdk
 
     defaultConfig {

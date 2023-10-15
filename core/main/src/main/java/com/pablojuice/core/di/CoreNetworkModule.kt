@@ -7,6 +7,7 @@ import com.pablojuice.core.data.remote.api.factory.ApiFactory
 import com.pablojuice.core.data.remote.api.factory.RetrofitApiFactory
 import com.pablojuice.core.data.remote.api.http.NetworkUtils.createRetrofit
 import com.pablojuice.core.data.remote.auth.UserManager
+import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
@@ -26,8 +27,11 @@ object CoreNetworkModule {
 
     @Provides
     @Reusable
-    fun provideRetrofit(@ApplicationContext appContext: Context, appConfig: AppConfig): Retrofit =
-        appContext.createRetrofit(appConfig.networkConfig)
+    fun provideRetrofit(
+        @ApplicationContext appContext: Context,
+        appConfig: AppConfig,
+        moshi: Moshi
+    ): Retrofit = appContext.createRetrofit(appConfig.networkConfig, moshi)
 
     @Provides
     @Singleton

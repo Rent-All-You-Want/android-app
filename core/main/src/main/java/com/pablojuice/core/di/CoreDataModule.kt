@@ -6,6 +6,7 @@ import com.pablojuice.core.data.converter.StringJsonConverter
 import com.pablojuice.core.data.manager.EncryptedUserPreferences
 import com.pablojuice.core.data.manager.UserPreferences
 import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
@@ -32,5 +33,5 @@ object CoreDataModule {
 
     @Provides
     @Reusable
-    fun provideMoshi(): Moshi = Moshi.Builder().build()
+    fun provideMoshi(): Moshi = Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
 }

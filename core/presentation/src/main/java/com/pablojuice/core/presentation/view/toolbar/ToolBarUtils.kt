@@ -3,7 +3,7 @@ package com.pablojuice.core.presentation.view.toolbar
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.appbar.MaterialToolbar
-import com.pablojuice.core.presentation.view.label.Label
+import com.pablojuice.core.presentation.view.text.Label
 import kotlin.math.abs
 
 inline fun MaterialToolbar.setNavigationClickListener(crossinline listener: () -> Unit) =

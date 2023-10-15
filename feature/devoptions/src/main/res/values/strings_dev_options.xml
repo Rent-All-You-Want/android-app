@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dev_options" translatable="false">Dev Options</string>
+    <string name="preference_sorry" translatable="false">Sorry…</string>
+    <string name="preference_unimplemented" translatable="false">Unimplemented</string>
+    <string name="preference_unimplemented_description" translatable="false">This screen is not implemented yet</string>
+</resources>

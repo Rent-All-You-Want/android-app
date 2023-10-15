@@ -12,7 +12,6 @@ private const val PREFERENCES_KEY = "RAYW_KEY"
 private const val DEFAULT_STRING = StringUtils.EMPTY
 private const val DEFAULT_INT = 0
 private const val DEFAULT_BOOLEAN = false
-private const val DEFAULT_OBJECT = StringUtils.EMPTY_JSON
 
 class EncryptedUserPreferences constructor(
     context: Context,
@@ -21,15 +20,17 @@ class EncryptedUserPreferences constructor(
 
     private val preferences: SharedPreferences = context.createPreferences(PREFERENCES_KEY)
 
-    override fun <T> put(key: UserPreference, value: T) = preferences.edit().run {
-        val keyName = key.encryptedName
-        when (value) {
-            is Int -> putInt(keyName, value)
-            is Boolean -> putBoolean(keyName, value)
-            is String -> putString(keyName, value)
-            else -> putJsonObject(keyName, value, key.details.type)
+    override fun <T> put(key: UserPreference, value: T) {
+        preferences.edit().run {
+            val keyName = key.encryptedName
+            when (value) {
+                is Int -> putInt(keyName, value)
+                is Boolean -> putBoolean(keyName, value)
+                is String -> putString(keyName, value)
+                else -> putJsonObject(keyName, value, key.details.type)
+            }
+            apply()
         }
-        apply()
     }
 
     @Suppress("UNCHECKED_CAST")
@@ -40,10 +41,7 @@ class EncryptedUserPreferences constructor(
             String::class.java -> getString(keyName, default as? String ?: DEFAULT_STRING) as T
             Boolean::class.java -> getBoolean(keyName, default as? Boolean ?: DEFAULT_BOOLEAN) as T
             Int::class.java -> getInt(keyName, default as? Int ?: DEFAULT_INT) as T
-            else -> getJsonObject(
-                keyName, key.details.type,
-                DEFAULT_OBJECT
-            )
+            else -> getJsonObject(keyName, key.details.type, key.details.defaultJsonString)
         }
     }
 

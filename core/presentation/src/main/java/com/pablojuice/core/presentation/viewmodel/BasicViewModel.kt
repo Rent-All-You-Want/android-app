@@ -1,16 +1,16 @@
 package com.pablojuice.core.presentation.viewmodel
 
 import androidx.lifecycle.viewModelScope
-import com.pablojuice.core.R
+import com.pablojuice.core.presentation.R
 import com.pablojuice.core.presentation.navigation.NavigationEvent
 import com.pablojuice.core.presentation.navigation.context.alert.ShowAlertDialogEvent
-import com.pablojuice.core.presentation.view.label.asLabel
+import com.pablojuice.core.presentation.view.text.asLabel
 import com.pablojuice.core.utils.logging.Timber
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 
-abstract class BasicViewModel : BaseViewModel() {
+open class BasicViewModel : BaseViewModel() {
 
     private val errorHandler: ErrorHandler = BasicErrorHandler()
 

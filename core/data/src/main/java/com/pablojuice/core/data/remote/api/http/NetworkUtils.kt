@@ -5,7 +5,8 @@ import com.localebro.okhttpprofiler.OkHttpProfilerInterceptor
 import com.pablojuice.core.data.remote.NetworkHelper.isNetworkAvailable
 import com.pablojuice.core.data.remote.api.http.call.ResultCallAdapterFactory
 import com.pablojuice.core.data.remote.api.http.config.NetworkConfig
-import com.pablojuice.core.data.remote.converter.EnumConverterFactory
+import com.pablojuice.core.data.remote.api.http.converter.EnumConverterFactory
+import com.squareup.moshi.Moshi
 import okhttp3.Cache
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -18,21 +19,21 @@ import java.util.concurrent.TimeUnit
 
 object NetworkUtils {
 
-    private const val TIME_OUT_CONNECTION = 10L
-    private const val STANDARD_HTTP_CACHE_SIZE = 10 * 1024 * 1024L
-    private const val STANDARD_MAX_STALE = 60 * 60 * 24 * 28L
-    private const val STANDARD_MAX_AGE = 10L
+    internal const val TIME_OUT_CONNECTION = 15L * 1000
+    internal const val STANDARD_HTTP_CACHE_SIZE = 10 * 1024 * 1024L
+    internal const val STANDARD_MAX_STALE = 60 * 60 * 24 * 28L
+    internal const val STANDARD_MAX_AGE = 10L
 
     private const val CACHE_FOLDER_NAME = "cachedResponses"
     private const val CACHE_CONTROL = "Cache-Control"
 
-    fun Context.createRetrofit(networkConfig: NetworkConfig): Retrofit =
+    fun Context.createRetrofit(networkConfig: NetworkConfig, moshi: Moshi): Retrofit =
         Retrofit.Builder()
             .baseUrl(networkConfig.baseApiUrl)
-            .addConverterFactory(EnumConverterFactory())
             .callbackExecutor(Executors.newSingleThreadExecutor())
-            .addConverterFactory(MoshiConverterFactory.create())
             .addCallAdapterFactory(ResultCallAdapterFactory())
+            .addConverterFactory(EnumConverterFactory())
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
             .client(createOkHttpClient(networkConfig))
             .build()
 
@@ -41,9 +42,9 @@ object NetworkUtils {
     ): OkHttpClient {
         networkConfig.run {
             val builder = OkHttpClient.Builder()
-                .connectTimeout(TIME_OUT_CONNECTION, TimeUnit.SECONDS)
-                .readTimeout(TIME_OUT_CONNECTION, TimeUnit.SECONDS)
-                .writeTimeout(TIME_OUT_CONNECTION, TimeUnit.SECONDS)
+                .connectTimeout(TIME_OUT_CONNECTION, TimeUnit.MILLISECONDS)
+                .readTimeout(TIME_OUT_CONNECTION, TimeUnit.MILLISECONDS)
+                .writeTimeout(TIME_OUT_CONNECTION, TimeUnit.MILLISECONDS)
             if (withCache) addCacheManager(builder)
             if (addProfilerInterceptor) builder.addInterceptor(OkHttpProfilerInterceptor())
             if (addBodyLoggingInterceptor) builder.addInterceptor(createHttpLoggingInterceptor())

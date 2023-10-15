@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="chat_no_chats_yet">No chats here yet</string>
+    <string name="chat_start_chatting">Go on and start RAYW\'ing</string>
+    <string name="chat_no_messages_yet">No messages here yet</string>
+    <string name="chat_send_message">Send a message or tap below</string>
+    <string name="chat_enter_new_message">Enter new message</string>
+</resources>

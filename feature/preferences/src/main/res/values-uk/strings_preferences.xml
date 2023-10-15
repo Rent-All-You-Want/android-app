@@ -1,0 +1,25 @@
+<resources>
+    <string name="preference_section_rents">Оренди</string>
+    <string name="preference_rent_borrowing">Орендування</string>
+    <string name="preference_rent_lending">Здачі в оренду</string>
+    <string name="preference_pending_rents">Очікуючі оренди</string>
+    <string name="preference_rent_requests">Заявки на оренду</string>
+    <string name="preference_statistics">Статистика</string>
+    <string name="preference_section_settings">Налаштування</string>
+    <string name="preference_profile_settings">Налаштування профілю</string>
+    <string name="preference_profile_balance">Баланс 0.00 ГРН</string>
+    <string name="preference_profile_rents">0 Оренд</string>
+    <string name="preference_app_settings">Налаштування додатку</string>
+    <string name="preference_help">Поміч</string>
+    <string name="preference_section_legal">Правове</string>
+    <string name="preference_section_about">Інформація</string>
+    <string name="preference_about_rayw">Про RAYW</string>
+    <string name="preference_privacy_policy">Політика конфіденційності</string>
+    <string name="preference_terms_of_use">Умови використання</string>
+    <string name="preference_about_app">Про додаток</string>
+    <string name="preference_log_out">Вийти</string>
+    <string name="preference_app_language">Мова</string>
+    <string name="preference_app_theme">Тема</string>
+    <string name="preference_app_language_changed">Мову додатку успішно змінено</string>
+    <string name="preference_app_theme_changed">Тему додатку успішно змінено</string>
+</resources>

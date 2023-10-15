@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/main_graph"
+    app:startDestination="@id/home_graph"
+    tools:ignore="InvalidNavigation">
+
+    <include app:graph="@navigation/home_graph" />
+
+    <action
+        android:id="@+id/back_to_home"
+        app:destination="@id/home_graph"
+        app:enterAnim="@anim/fragment_fade_in_anim"
+        app:exitAnim="@anim/slide_to_left"
+        app:popUpTo="@id/home_graph"
+        app:popUpToInclusive="true" />
+
+    <include app:graph="@navigation/dev_graph" />
+
+    <action
+        android:id="@+id/to_dev_graph"
+        app:destination="@id/dev_graph"
+        app:enterAnim="@anim/slide_from_right"
+        app:exitAnim="@anim/fragment_fade_out_anim"
+        app:popEnterAnim="@anim/fragment_fade_in_anim"
+        app:popExitAnim="@anim/slide_to_right"
+        app:popUpTo="@navigation/main_graph"
+        app:popUpToInclusive="true" />
+
+    <include app:graph="@navigation/unimplemented_graph" />
+
+    <action
+        android:id="@+id/to_unimplemented"
+        app:destination="@id/unimplemented_graph"
+        app:enterAnim="@anim/slide_from_right"
+        app:exitAnim="@anim/fragment_fade_out_anim"
+        app:popEnterAnim="@anim/fragment_fade_in_anim"
+        app:popExitAnim="@anim/slide_to_right" />
+
+    <include app:graph="@navigation/rent_create_graph" />
+
+    <action
+        android:id="@+id/to_create_rent_graph"
+        app:destination="@id/rent_create_graph"
+        app:enterAnim="@anim/slide_from_down"
+        app:exitAnim="@anim/fragment_fade_out_anim"
+        app:popEnterAnim="@anim/fragment_fade_in_anim"
+        app:popExitAnim="@anim/slide_to_down"
+        app:popUpTo="@navigation/main_graph"
+        app:popUpToInclusive="true" />
+
+    <include app:graph="@navigation/rent_details_graph" />
+
+    <action
+        android:id="@+id/to_rent_details"
+        app:destination="@id/rent_details_graph"
+        app:enterAnim="@anim/slide_from_right"
+        app:exitAnim="@anim/fragment_fade_out_anim"
+        app:popUpTo="@navigation/main_graph"
+        app:popEnterAnim="@anim/fragment_fade_in_anim"
+        app:popExitAnim="@anim/slide_to_right">
+        <argument
+            android:name="rentId"
+            app:argType="string" />
+    </action>
+
+    <include app:graph="@navigation/chat_conversation_graph" />
+
+    <action
+        android:id="@+id/to_chat_conversation"
+        app:destination="@id/chat_conversation_graph"
+        app:enterAnim="@anim/slide_from_right"
+        app:exitAnim="@anim/fragment_fade_out_anim"
+        app:popUpTo="@id/home"
+        app:popEnterAnim="@anim/fragment_fade_in_anim"
+        app:popExitAnim="@anim/slide_to_right">
+        <argument
+            android:name="conversationId"
+            app:argType="string" />
+    </action>
+
+    <include app:graph="@navigation/signin_graph" />
+
+    <action
+        android:id="@+id/to_signin_graph"
+        app:destination="@id/signin_graph"
+        app:enterAnim="@anim/slide_from_down"
+        app:exitAnim="@anim/fragment_fade_out_anim"
+        app:popEnterAnim="@anim/fragment_fade_in_anim"
+        app:popExitAnim="@anim/slide_to_down"
+        app:popUpTo="@id/home"
+        app:popUpToInclusive="false" />
+
+    <include app:graph="@navigation/preferences_app_settings_graph" />
+
+    <action
+        android:id="@+id/to_app_preference_settings"
+        app:destination="@id/preferences_app_settings_graph"
+        app:enterAnim="@anim/slide_from_right"
+        app:exitAnim="@anim/fragment_fade_out_anim"
+        app:popEnterAnim="@anim/fragment_fade_in_anim"
+        app:popExitAnim="@anim/slide_to_right" />
+
+    <include app:graph="@navigation/preferences_about_app_graph" />
+
+    <action
+        android:id="@+id/to_about_app"
+        app:destination="@id/preferences_about_app_graph"
+        app:enterAnim="@anim/slide_from_right"
+        app:exitAnim="@anim/fragment_fade_out_anim"
+        app:popEnterAnim="@anim/fragment_fade_in_anim"
+        app:popExitAnim="@anim/slide_to_right" />
+
+</navigation>

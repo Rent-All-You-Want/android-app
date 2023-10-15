@@ -1,0 +1,8 @@
+<resources>
+    <string name="home_menu_items">Дім</string>
+    <string name="home_menu_wishlist">Уподобані</string>
+    <string name="home_menu_new_item">Додати</string>
+    <string name="home_menu_chats">Чати</string>
+    <string name="home_menu_preferences">Профіль</string>
+    <string name="home_search">Пошук</string>
+</resources>

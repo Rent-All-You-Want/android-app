@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace "com.pablojuice.feature.signin"
+    namespace "com.pablojuice.rayw.feature.signin"
 
     compileSdk application.compileSdk
 

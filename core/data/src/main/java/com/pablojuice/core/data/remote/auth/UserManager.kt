@@ -78,5 +78,6 @@ class UserManager(
             )
         }
 
-    private fun tokenCanBeUpdated(): Boolean = NetworkHelper.isOnline()
+    private fun tokenCanBeUpdated(): Boolean =
+        NetworkHelper.isOnline() || NetworkHelper.isOnline() || NetworkHelper.isOnline()
 }

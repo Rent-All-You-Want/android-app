@@ -4,6 +4,10 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import com.pablojuice.core.data.remote.api.http.NetworkUtils.TIME_OUT_CONNECTION
+import java.net.HttpURLConnection
+import java.net.URL
+
 
 object NetworkHelper {
 
@@ -19,10 +23,13 @@ object NetworkHelper {
 
     fun isOnline(): Boolean {
         return try {
-            val p1 = Runtime.getRuntime().exec("ping -c 1 www.google.com")
-            (p1 as Object).wait(500)
-            val returnVal = p1.waitFor()
-            returnVal == 0
+            val connection =
+                URL("https://clients3.google.com/generate_204").openConnection() as HttpURLConnection
+            connection.setRequestProperty("User-Agent", "Android")
+            connection.setRequestProperty("Connection", "close")
+            connection.connectTimeout = TIME_OUT_CONNECTION.toInt()
+            connection.connect()
+            connection.responseCode == 204 && connection.contentLength == 0
         } catch (e: Exception) {
             false
         }

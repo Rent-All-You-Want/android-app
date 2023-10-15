@@ -2,11 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/dev_graph"
+    android:id="@id/dev_graph"
     app:startDestination="@id/dev_options">
     <fragment
         android:id="@+id/dev_options"
-        android:name="com.pablojuice.feature.devoptions.DevOptionsFragment"
+        android:name="com.pablojuice.rayw.feature.devoptions.DevOptionsFragment"
         tools:layout="@layout/fragment_dev_options"
         android:label="Dev Options Screen" />
 </navigation>

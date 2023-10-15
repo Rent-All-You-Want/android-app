@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recycler_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feature.wish.presentation.view.WishListFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fadeScrollbars="true"
+        android:orientation="vertical"
+        android:overScrollMode="ifContentScrolls"
+        android:paddingHorizontal="@dimen/dimen_8"
+        android:paddingBottom="@dimen/dimen_64"
+        android:scrollbarSize="@dimen/dimen_4"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbarThumbVertical="@drawable/shape_scrollbar"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+        app:spanCount="2"
+        tools:layoutAnimation="@null"
+        tools:listitem="@layout/item_rent_regular" />
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="common_ok">ОК</string>
+    <string name="common_error">Помилка</string>
+    <string name="common_slash">/</string>
+    <string name="common_unimplemented">Нереалізований</string>
+
+    <string name="common_theme_default">Системна</string>
+    <string name="common_theme_light">Світла</string>
+    <string name="common_theme_dark">Темна</string>
+
+    <string name="common_language_default">Системна</string>
+    <string name="common_language_english">Англійська</string>
+    <string name="common_language_ukrainian">Українська</string>
+</resources>

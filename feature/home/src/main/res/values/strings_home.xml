@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_menu_items">Home</string>
+    <string name="home_menu_wishlist">Wishlist</string>
+    <string name="home_menu_new_item">Add new</string>
+    <string name="home_menu_chats">Chats</string>
+    <string name="home_menu_preferences">Profile</string>
+    <string name="home_search">Search</string>
+</resources>

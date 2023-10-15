@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="dev_graph" type="id" />
+    <item name="unimplemented_graph" type="id" />
+
+    <item name="main_graph" type="id" />
+
+    <item name="home_graph" type="id" />
+    <item name="home_inner_graph" type="id" />
+
+    <item name="onboarding_graph" type="id" />
+
+    <item name="signin_graph" type="id" />
+    <item name="signin_recovery_graph" type="id" />
+    <item name="signin_signup_graph" type="id" />
+
+    <item name="rent_list_graph" type="id" />
+    <item name="rent_details_graph" type="id" />
+
+    <item name="wish_graph" type="id" />
+
+    <item name="rent_create_graph" type="id" />
+    <item name="create_new_rent" type="id" />
+
+    <item name="chat_graph" type="id" />
+    <item name="chat_conversation_graph" type="id" />
+
+    <item name="preferences_graph" type="id" />
+    <item name="preferences_app_settings_graph" type="id" />
+    <item name="preferences_about_app_graph" type="id" />
+
+    <item name="profile_graph" type="id" />
+
+</resources>

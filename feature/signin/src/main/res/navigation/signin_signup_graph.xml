@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/signin_signup_graph"
+    app:startDestination="@id/signup_first">
+    <fragment
+        android:id="@+id/signup_first"
+        android:name="com.pablojuice.rayw.feature.signin.presentation.signup.view.SignUpStepOneFragment"
+        android:label="Sign Up Screen"
+        tools:layout="@layout/fragment_signup_step_one">
+        <action
+            android:id="@+id/to_signup_second"
+            app:destination="@id/signup_second"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/fragment_fade_out_anim"
+            app:popEnterAnim="@anim/fragment_fade_in_anim"
+            app:popExitAnim="@anim/slide_to_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signup_second"
+        android:name="com.pablojuice.rayw.feature.signin.presentation.signup.view.SignUpStepTwoFragment"
+        android:label="Sign Up Screen"
+        tools:layout="@layout/fragment_signup_step_two">
+        <action
+            android:id="@+id/to_signup_success"
+            app:destination="@id/signup_success"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/fragment_fade_out_anim"
+            app:popEnterAnim="@anim/fragment_fade_in_anim"
+            app:popExitAnim="@anim/slide_to_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signup_success"
+        android:name="com.pablojuice.rayw.feature.signin.presentation.signup.view.SignUpSuccessFragment"
+        android:label="Sign Up Screen"
+        app:enterAnim="@anim/slide_from_right"
+        app:exitAnim="@anim/fragment_fade_out_anim"
+        app:popEnterAnim="@anim/fragment_fade_in_anim"
+        app:popExitAnim="@anim/slide_to_right"
+        tools:layout="@layout/fragment_signup_success" />
+</navigation>
