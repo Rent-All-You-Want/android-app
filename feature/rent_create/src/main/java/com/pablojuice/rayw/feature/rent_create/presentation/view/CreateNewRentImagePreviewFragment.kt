@@ -18,7 +18,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import com.pablojuice.core.presentation.R as CoreR
 
 @AndroidEntryPoint
-class RentImagePreviewFragment :
+class CreateNewRentImagePreviewFragment :
     BasicFragment<FragmentRentImagePreviewBinding, CreateNewRentViewModel>() {
 
     override val viewModel: CreateNewRentViewModel by hiltNavGraphViewModels(CoreR.id.rent_create_graph)

@@ -61,7 +61,7 @@
 
     <fragment
         android:id="@+id/rent_image_preview"
-        android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.RentImagePreviewFragment"
+        android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.CreateNewRentImagePreviewFragment"
         android:label="Rent Image Preview Screen"
         tools:layout="@layout/fragment_rent_image_preview" />
 
