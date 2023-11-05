@@ -12,51 +12,27 @@
 
         <action
             android:id="@+id/to_image_preview"
-            app:destination="@id/rent_image_preview"
-            app:enterAnim="@anim/fragment_fade_in_anim"
-            app:exitAnim="@anim/fragment_fade_out_anim"
-            app:popEnterAnim="@anim/fragment_fade_in_anim"
-            app:popExitAnim="@anim/fragment_fade_out_anim" />
+            app:destination="@id/rent_image_preview" />
 
         <action
             android:id="@+id/to_choose_rent_category"
-            app:destination="@id/choose_rent_category"
-            app:enterAnim="@anim/anim_side_right_in"
-            app:exitAnim="@anim/fragment_fade_out_anim"
-            app:popEnterAnim="@anim/fragment_fade_in_anim"
-            app:popExitAnim="@anim/anim_side_right_out" />
+            app:destination="@id/choose_rent_category" />
 
         <action
             android:id="@+id/to_choose_rent_characteristics"
-            app:destination="@id/choose_rent_characteristics"
-            app:enterAnim="@anim/anim_side_right_in"
-            app:exitAnim="@anim/fragment_fade_out_anim"
-            app:popEnterAnim="@anim/fragment_fade_in_anim"
-            app:popExitAnim="@anim/anim_side_right_out" />
+            app:destination="@id/choose_rent_characteristics" />
 
         <action
             android:id="@+id/to_choose_rent_price"
-            app:destination="@id/choose_rent_price"
-            app:enterAnim="@anim/anim_side_right_in"
-            app:exitAnim="@anim/fragment_fade_out_anim"
-            app:popEnterAnim="@anim/fragment_fade_in_anim"
-            app:popExitAnim="@anim/anim_side_right_out" />
+            app:destination="@id/choose_rent_price" />
 
         <action
             android:id="@+id/to_choose_rent_pledge"
-            app:destination="@id/choose_rent_pledge"
-            app:enterAnim="@anim/anim_side_right_in"
-            app:exitAnim="@anim/fragment_fade_out_anim"
-            app:popEnterAnim="@anim/fragment_fade_in_anim"
-            app:popExitAnim="@anim/anim_side_right_out" />
+            app:destination="@id/choose_rent_pledge" />
 
         <action
             android:id="@+id/to_choose_rent_delivery"
-            app:destination="@id/choose_rent_delivery"
-            app:enterAnim="@anim/anim_side_right_in"
-            app:exitAnim="@anim/fragment_fade_out_anim"
-            app:popEnterAnim="@anim/fragment_fade_in_anim"
-            app:popExitAnim="@anim/anim_side_right_out" />
+            app:destination="@id/choose_rent_delivery" />
     </fragment>
 
     <fragment
@@ -73,9 +49,9 @@
 
     <fragment
         android:id="@+id/choose_rent_characteristics"
-        android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.ChooseRentCharacteristicsFragment"
+        android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.ChooseRentAttributesFragment"
         android:label="Choose Rent Characteristics Screen"
-        tools:layout="@layout/fragment_rent_create_choose_characteristics" />
+        tools:layout="@layout/fragment_rent_create_choose_attributes" />
 
     <fragment
         android:id="@+id/choose_rent_price"

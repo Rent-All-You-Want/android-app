@@ -6,28 +6,28 @@ import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.setClickListener
 import com.pablojuice.core.presentation.view.setVisible
 import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
-import com.pablojuice.rayw.feature.rent_create.databinding.FragmentRentCreateChoosePriceBinding
+import com.pablojuice.rayw.feature.rent_create.databinding.FragmentRentCreateChooseAttributesBinding
 import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.CreateNewRentViewModel
-import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.pricing.list.PricingSelectionListAdapter
+import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.attribute.list.AttributesSelectionListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ChooseRentPriceFragment :
-    BasicFragment<FragmentRentCreateChoosePriceBinding, CreateNewRentViewModel>() {
+class ChooseRentAttributesFragment :
+    BasicFragment<FragmentRentCreateChooseAttributesBinding, CreateNewRentViewModel>() {
 
     override val viewModel: CreateNewRentViewModel by hiltNavGraphViewModels(R.id.rent_create_graph)
 
-    override val layoutClass = FragmentRentCreateChoosePriceBinding::class.java
+    override val layoutClass = FragmentRentCreateChooseAttributesBinding::class.java
 
     override fun setupScreen() {
         binding.toolBar.setNavigationClickListener(::navigateBack)
-        binding.addPricingBtn.setClickListener(viewModel::addPricingOption)
-        binding.recycler.adapter = PricingSelectionListAdapter(viewModel)
-        viewModel.pricingOptions.observe { items ->
-            (binding.recycler.adapter as? PricingSelectionListAdapter)?.setItems(items)
+        binding.addAttributeBtn.setClickListener(viewModel::addAttribute)
+        binding.recycler.adapter = AttributesSelectionListAdapter(viewModel)
+        viewModel.attributes.observe { items ->
+            (binding.recycler.adapter as? AttributesSelectionListAdapter)?.setItems(items)
         }
-        viewModel.canHaveMorePricingOptions.observe { canHave ->
-            binding.addPricingBtn.setVisible(
+        viewModel.canHaveMoreAttributes.observe { canHave ->
+            binding.addAttributeBtn.setVisible(
                 canHave
             )
         }

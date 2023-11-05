@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="@dimen/dimen_8"
+    android:paddingStart="@dimen/dimen_8">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rectangle_with_round_corners_small"
+        android:backgroundTint="?attr/colorBackgroundVariant"
+        android:paddingBottom="@dimen/dimen_4"
+        android:paddingStart="@dimen/dimen_8"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/price_field"
+            style="@style/view.textField"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            app:suffixText="UAH/">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_48"
+                android:ellipsize="end"
+                android:hint="@string/rent_create_price_for_hour"
+                android:maxLines="1"
+                android:inputType="number|numberDecimal"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/timing_field"
+            style="@style/view.textField.dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Month"
+                android:inputType="none" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/remove_pricing_button"
+        style="@style/view.button.icon.negative"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="@dimen/dimen_4"
+        android:layout_marginTop="@dimen/dimen_2"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        app:icon="@drawable/ic_remove_circle_medium"
+        android:visibility="gone"
+        tools:visibility="visible" />
+</LinearLayout>

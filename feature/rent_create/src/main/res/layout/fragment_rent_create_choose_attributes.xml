@@ -9,7 +9,7 @@
         android:id="@+id/tool_bar"
         style="@style/view.toolBar.navigableBack"
         android:layout_width="match_parent"
-        app:title="Choose price"
+        app:title="Choose attributes"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -37,12 +37,12 @@
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <Button
-        android:id="@+id/add_pricing_btn"
+        android:id="@+id/add_attribute_btn"
         style="@style/view.button.large.filled.primary"
         android:layout_width="0dp"
         android:layout_marginBottom="@dimen/dimen_32"
         android:layout_marginHorizontal="@dimen/dimen_64"
-        android:text="Add pricing option"
+        android:text="Add attribute"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

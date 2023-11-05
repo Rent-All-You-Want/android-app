@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.imege
+package com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.image
 
 import android.net.Uri
 import androidx.navigation.fragment.FragmentNavigatorExtras
@@ -28,7 +28,7 @@ class CreateNewRentImageViewModel @Inject constructor(
     private val makeImageMain: MakeImageMainUseCase,
     private val removeSelectedImage: RemoveSelectedImageUseCase,
     private val dragAndDropImage: DragAndDropImageUseCase
-) : BasicViewModel(), CreateNewRentImageLogic {
+) : BasicViewModel(), CreateNewRentImageStrategy {
 
     private lateinit var imagePickerListener: () -> Unit
 

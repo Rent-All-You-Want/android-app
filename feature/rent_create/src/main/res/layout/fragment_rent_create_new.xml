@@ -30,8 +30,8 @@
                 android:layout_height="@dimen/dimen_192"
                 android:clipToPadding="false"
                 android:orientation="horizontal"
-                android:paddingStart="@dimen/dimen_32"
-                android:paddingEnd="@dimen/dimen_32"
+                android:paddingStart="@dimen/dimen_16"
+                android:paddingEnd="@dimen/dimen_16"
                 tools:layout_height="0dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_attach_file_medium"
@@ -42,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingHorizontal="@dimen/dimen_32"
+                android:paddingHorizontal="@dimen/dimen_16"
                 android:paddingVertical="@dimen/dimen_16">
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -139,7 +139,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ellipsize="end"
-                        android:hint="@string/rent_create_characteristics"
+                        android:hint="Attributes"
                         android:maxLines="1"
                         android:paddingTop="0dp"
                         android:paddingBottom="0dp"

@@ -1,37 +1,41 @@
 package com.pablojuice.rayw.feature.rent_create.presentation.viewmodel
 
 import com.pablojuice.core.presentation.viewmodel.CombinedViewModel
-import com.pablojuice.rayw.feature.rent_create.data.local.RentPricing
 import com.pablojuice.rayw.feature.rent_create.presentation.navigation.ToChooseRentCategoriesScreen
 import com.pablojuice.rayw.feature.rent_create.presentation.navigation.ToChooseRentCharacteristicsScreen
 import com.pablojuice.rayw.feature.rent_create.presentation.navigation.ToChooseRentDeliveryScreen
 import com.pablojuice.rayw.feature.rent_create.presentation.navigation.ToChooseRentPledgeScreen
 import com.pablojuice.rayw.feature.rent_create.presentation.navigation.ToChooseRentPriceScreen
-import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.imege.CreateNewRentImageLogic
-import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.imege.CreateNewRentImageViewModel
+import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.attribute.CreateNewRentAttributesStrategy
+import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.attribute.CreateNewRentAttributesViewModel
+import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.image.CreateNewRentImageStrategy
+import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.image.CreateNewRentImageViewModel
+import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.pledge.CreateNewRentPledgeStrategy
+import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.pledge.CreateNewRentPledgeViewModel
+import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.pricing.CreateNewRentPricingStrategy
+import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.pricing.CreateNewRentPricingViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 
 
 @HiltViewModel
 class CreateNewRentViewModel @Inject constructor(
-    private val imageViewModel: CreateNewRentImageViewModel
-) : CombinedViewModel(), CreateNewRentImageLogic by imageViewModel {
+    private val imageViewModel: CreateNewRentImageViewModel,
+    private val attributesViewModel: CreateNewRentAttributesViewModel,
+    private val pricingViewModel: CreateNewRentPricingViewModel,
+    private val pledgeViewModel: CreateNewRentPledgeViewModel,
+) : CombinedViewModel(), CreateNewRentImageStrategy by imageViewModel,
+    CreateNewRentAttributesStrategy by attributesViewModel,
+    CreateNewRentPricingStrategy by pricingViewModel,
+    CreateNewRentPledgeStrategy by pledgeViewModel {
 
     init {
-        combineNavigationEvents(imageViewModel)
-    }
-
-    private val _selectedPricingOptions = MutableStateFlow(listOf<RentPricing>())
-    val selectedPricingOptions: StateFlow<List<RentPricing>> = _selectedPricingOptions
-
-    val availablePricingOptions: StateFlow<List<RentPricing>> =
-        MutableStateFlow(listOf(RentPricing.HOURLY))
-
-    fun setSelectedPriceOptions(options: List<Int>) {
-        _selectedPricingOptions.value = options.map(RentPricing::fromId)
+        combineNavigationEvents(
+            imageViewModel,
+            attributesViewModel,
+            pricingViewModel,
+            pledgeViewModel
+        )
     }
 
     fun openCategories() = submitNavigationEvent(ToChooseRentCategoriesScreen())

@@ -1,10 +1,12 @@
 package com.pablojuice.rayw.feature.rent_create.data.local
 
-enum class RentPricing(val id: Int) {
-    HOURLY(1), DAILY(2), MONTHLY(3), CUSTOM(4);
+import com.pablojuice.core.presentation.view.text.Label
+import com.pablojuice.core.presentation.view.text.asLabel
 
-    companion object {
-
-        fun fromId(id: Int) = RentPricing.values().firstOrNull { it.id == id } ?: CUSTOM
-    }
+enum class RentPricing(val displayName: Label) {
+    HOURLY("Hour".asLabel()),
+    DAILY("Day".asLabel()),
+    WEEKLY("Week".asLabel()),
+    MONTHLY("Month".asLabel()),
+    YEARLY("Year".asLabel());
 }

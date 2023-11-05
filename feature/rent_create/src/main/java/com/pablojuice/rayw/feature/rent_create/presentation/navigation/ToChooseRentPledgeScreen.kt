@@ -1,7 +1,10 @@
 package com.pablojuice.rayw.feature.rent_create.presentation.navigation
 
-import com.pablojuice.core.presentation.navigation.directional.DirectionalNavigationEvent
+import com.pablojuice.core.presentation.navigation.directional.AnimatedNavigationEvent
+import com.pablojuice.core.presentation.navigation.directional.NavigationAnimation
 import com.pablojuice.rayw.feature.rent_create.presentation.view.CreateNewRentFragmentDirections
 
-class ToChooseRentPledgeScreen :
-    DirectionalNavigationEvent(CreateNewRentFragmentDirections.toChooseRentPledge())
+class ToChooseRentPledgeScreen : AnimatedNavigationEvent(
+    destination = CreateNewRentFragmentDirections.toChooseRentPledge(),
+    navigationAnimation = NavigationAnimation.SlideToRight()
+)

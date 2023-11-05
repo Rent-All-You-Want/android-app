@@ -10,6 +10,7 @@ import com.pablojuice.core.presentation.view.list.ListAdapter
 import com.pablojuice.core.presentation.view.setClickListener
 import com.pablojuice.core.presentation.view.setVisible
 import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
+import com.pablojuice.core.utils.NumberUtils.DELAY_SMALL
 import com.pablojuice.rayw.feature.rent_create.databinding.FragmentRentImagePreviewBinding
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.RentImagePreviewItem
 import com.pablojuice.rayw.feature.rent_create.presentation.list.image.preview.RentImagePreviewAdapter
@@ -45,7 +46,10 @@ class CreateNewRentImagePreviewFragment :
         binding.viewPager.setPageTransformer(AlphaPageTransformer())
         binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
-                if (position == selectedItemPosition) startPostponedEnterTransition()
+                if (position == selectedItemPosition) launchDelayed(
+                    DELAY_SMALL,
+                    ::startPostponedEnterTransition
+                )
                 binding.previous.setVisible(position > 0)
                 binding.next.setVisible(position < adapter.itemCount - 1)
                 viewModel.setCurrentSelectedImage(position)
@@ -55,6 +59,7 @@ class CreateNewRentImagePreviewFragment :
         viewModel.imageList.observe { items ->
             if (items.isEmpty()) return@observe
             (binding.viewPager.adapter as? RentImagePreviewAdapter)?.setItems(items)
+
             if (selectedItemPosition == -1) {
                 selectedItemPosition =
                     items.indexOfFirst { it is RentImagePreviewItem && it.imageUri == previewedImageUri }
