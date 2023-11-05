@@ -2,12 +2,14 @@ package com.pablojuice.core.presentation.navigation.directional
 
 import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
+import androidx.navigation.Navigator
 import com.pablojuice.core.presentation.R
 
 abstract class AnimatedNavigationEvent(
     destination: NavDirections?,
-    navigationAnimation: NavigationAnimation = NavigationAnimation.None
-) : DirectionalNavigationEvent(destination, navigationAnimation.options)
+    navigationAnimation: NavigationAnimation = NavigationAnimation.None,
+    extras: Navigator.Extras? = null
+) : DirectionalNavigationEvent(destination, navigationAnimation.options, extras)
 
 sealed class NavigationAnimation(val options: NavOptions?) {
 

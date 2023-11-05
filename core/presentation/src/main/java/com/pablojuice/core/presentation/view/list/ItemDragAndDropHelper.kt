@@ -27,7 +27,7 @@ class ItemDragAndDropHelper(
 
 }) {
 
-    interface DragAndDroppable {
+    fun interface DragAndDroppable {
         fun canBeDragged(): Boolean
     }
 

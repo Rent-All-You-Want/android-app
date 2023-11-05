@@ -2,6 +2,7 @@ package com.pablojuice.core.presentation.view.list
 
 import androidx.annotation.CallSuper
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import com.pablojuice.core.presentation.view.animation.list.ListAnimator
@@ -12,7 +13,8 @@ abstract class ListAdapter(
     items: List<ListItem> = listOf(),
     private val addDividerDecoration: Boolean = false,
     private val itemAnimator: RecyclerView.ItemAnimator? = null, // FadeIn, ScaleIn, SlideIn, Overshoot
-    private val listAnimator: ListAnimator? = null
+    private val listAnimator: ListAnimator? = null,
+    private val touchHelper: ItemTouchHelper? = null
 ) : RecyclerView.Adapter<ViewHolder<ListItem, out ViewBinding>>() {
 
     protected val items: MutableList<ListItem> = items.toMutableList()
@@ -56,6 +58,7 @@ abstract class ListAdapter(
     override fun onAttachedToRecyclerView(recycler: RecyclerView) {
         if (addDividerDecoration) recycler.addItemDecoration(ListItemDivider(recycler.context))
         itemAnimator?.let(recycler::setItemAnimator)
+        touchHelper?.attachToRecyclerView(recycler)
     }
 
     override fun onBindViewHolder(holder: ViewHolder<ListItem, out ViewBinding>, position: Int) {
