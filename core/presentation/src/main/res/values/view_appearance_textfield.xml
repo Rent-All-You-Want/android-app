@@ -13,6 +13,7 @@
     <style name="view.textField" parent="view.textField.outline">
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
         <item name="hintEnabled">false</item>
+        <item name="expandedHintEnabled">false</item>
         <item name="android:paddingTop">@dimen/dimen_4</item>
         <item name="boxStrokeWidth">@dimen/dimen_0</item>
         <item name="boxStrokeWidthFocused">@dimen/dimen_0</item>
@@ -22,7 +23,7 @@
         <item name="hintEnabled">true</item>
     </style>
 
-    <style name="view.textField.dropdown" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+    <style name="view.textField.outline.dropdown" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout.OutlinedBox</item>
         <item name="boxBackgroundColor">?attr/colorBackgroundVariant</item>
         <item name="boxBackgroundMode">outline</item>
@@ -30,6 +31,14 @@
         <item name="startIconTint">?attr/colorDisabled</item>
         <item name="hintTextColor">?attr/colorPrimary</item>
         <item name="endIconTint">?attr/colorDisabled</item>
+    </style>
+
+    <style name="view.textField.dropdown" parent="view.textField.outline.dropdown">
+        <item name="hintEnabled">false</item>
+        <item name="expandedHintEnabled">false</item>
+        <item name="android:paddingTop">@dimen/dimen_4</item>
+        <item name="boxStrokeWidth">@dimen/dimen_0</item>
+        <item name="boxStrokeWidthFocused">@dimen/dimen_0</item>
     </style>
 
     <style name="ThemeOverlay.App.TextInputLayout" parent="ThemeOverlay.App.TextInputLayout.OutlinedBox">

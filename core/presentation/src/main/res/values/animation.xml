@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer name="animation_extra_short">200</integer>
-    <integer name="animation_short">300</integer>
-    <integer name="animation_medium">400</integer>
-    <integer name="animation_long">500</integer>
+    <integer name="animation_short">250</integer>
+    <integer name="animation_medium">300</integer>
+    <integer name="animation_long">400</integer>
+    <integer name="animation_extra_long">500</integer>
 </resources>
