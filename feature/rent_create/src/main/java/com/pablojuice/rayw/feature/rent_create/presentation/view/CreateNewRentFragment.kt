@@ -8,8 +8,8 @@ import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.setClickListener
 import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
 import com.pablojuice.rayw.feature.rent_create.databinding.FragmentRentCreateNewBinding
-import com.pablojuice.rayw.feature.rent_create.presentation.list.image.picker.RentImagePickerAdapter
 import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.CreateNewRentViewModel
+import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.image.picker.RentImagePickerAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import com.pablojuice.core.presentation.R as CoreR
 

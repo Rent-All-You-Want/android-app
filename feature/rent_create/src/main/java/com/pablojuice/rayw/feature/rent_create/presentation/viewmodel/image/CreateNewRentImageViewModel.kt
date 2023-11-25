@@ -11,11 +11,9 @@ import com.pablojuice.rayw.feature.rent_create.domain.MakeImageMainUseCase
 import com.pablojuice.rayw.feature.rent_create.domain.RemoveSelectedImageUseCase
 import com.pablojuice.rayw.feature.rent_create.domain.updateImageAttachItem
 import com.pablojuice.rayw.feature.rent_create.domain.updateMainItem
-import com.pablojuice.rayw.feature.rent_create.presentation.list.image.RentImagePickerAttachItem
-import com.pablojuice.rayw.feature.rent_create.presentation.list.image.RentImagePreviewItem
-import com.pablojuice.rayw.feature.rent_create.presentation.list.image.picker.RentImagePickerImageViewHolder
 import com.pablojuice.rayw.feature.rent_create.presentation.navigation.ToImageIsAlreadyLoadedSnackBar
 import com.pablojuice.rayw.feature.rent_create.presentation.navigation.ToRentImagePreviewScreen
+import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.image.picker.RentImagePickerImageViewHolder
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

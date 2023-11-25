@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.rent_create.presentation.list.image.picker
+package com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.image.picker
 
 import android.view.View
 import android.view.ViewGroup
@@ -10,8 +10,8 @@ import com.pablojuice.core.presentation.view.list.ViewHolder
 import com.pablojuice.core.presentation.view.setClickListener
 import com.pablojuice.rayw.feature.rent_create.databinding.ItemRentImagePickerAttachBinding
 import com.pablojuice.rayw.feature.rent_create.databinding.ItemRentImagePickerImageBinding
-import com.pablojuice.rayw.feature.rent_create.presentation.list.image.RentImagePickerAttachItem
-import com.pablojuice.rayw.feature.rent_create.presentation.list.image.RentImagePreviewItem
+import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.image.RentImagePickerAttachItem
+import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.image.RentImagePreviewItem
 import com.pablojuice.core.presentation.R as CoreR
 
 class RentImagePickerAttachViewHolder(onClick: () -> Unit, parent: ViewGroup) :

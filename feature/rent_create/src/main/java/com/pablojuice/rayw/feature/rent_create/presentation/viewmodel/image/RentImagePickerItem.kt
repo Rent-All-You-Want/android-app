@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.rent_create.presentation.list.image
+package com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.image
 
 import android.net.Uri
 import com.pablojuice.core.presentation.view.list.ListItem

@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.rent_create.presentation.list.image.preview
+package com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.image.preview
 
 import android.view.ViewGroup
 import com.pablojuice.core.presentation.view.layout.layoutInflater
@@ -6,7 +6,7 @@ import com.pablojuice.core.presentation.view.list.ListAdapter
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.view.list.ViewHolder
 import com.pablojuice.rayw.feature.rent_create.databinding.ItemRentImagePreviewBinding
-import com.pablojuice.rayw.feature.rent_create.presentation.list.image.RentImagePreviewItem
+import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.image.RentImagePreviewItem
 
 class RentImagePreviewAdapter : ListAdapter() {
 

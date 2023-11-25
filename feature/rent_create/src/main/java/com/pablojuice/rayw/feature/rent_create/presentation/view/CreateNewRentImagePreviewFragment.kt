@@ -12,9 +12,9 @@ import com.pablojuice.core.presentation.view.setVisible
 import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
 import com.pablojuice.core.utils.NumberUtils.DELAY_SMALL
 import com.pablojuice.rayw.feature.rent_create.databinding.FragmentRentImagePreviewBinding
-import com.pablojuice.rayw.feature.rent_create.presentation.list.image.RentImagePreviewItem
-import com.pablojuice.rayw.feature.rent_create.presentation.list.image.preview.RentImagePreviewAdapter
 import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.CreateNewRentViewModel
+import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.image.RentImagePreviewItem
+import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.image.preview.RentImagePreviewAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import com.pablojuice.core.presentation.R as CoreR
 

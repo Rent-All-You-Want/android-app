@@ -1,4 +1,4 @@
-package com.pablojuice.rayw.feature.rent_create.presentation.list.image.picker
+package com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.image.picker
 
 import android.view.ViewGroup
 import com.pablojuice.core.presentation.view.list.ItemDragAndDropHelper
