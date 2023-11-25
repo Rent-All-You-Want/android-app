@@ -15,7 +15,7 @@ class PreferenceLogInItem : ListItem(R.layout.item_preferences_log_in)
 
 class PreferenceLogOutItem : ListItem(R.layout.item_preferences_log_out)
 
-class PreferenceTitleItem(val title: Label) : ListItem(R.layout.item_preferences_section_title)
+data class PreferenceTitleItem(val title: Label) : ListItem(R.layout.item_preferences_section_title)
 
-class PreferenceItem(val preference: Preference) :
+data class PreferenceItem(val preference: Preference) :
     ListItem(R.layout.item_preferences_section, ListItemDivider.Type.LARGE)

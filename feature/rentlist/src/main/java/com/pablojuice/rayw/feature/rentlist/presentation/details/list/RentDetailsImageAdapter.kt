@@ -28,4 +28,4 @@ class RentDetailsImageViewHolder(parent: ViewGroup) :
     }
 }
 
-class RentDetailsImage(val imageId: Int) : ListItem(R.layout.item_rent_details_image)
+data class RentDetailsImage(val imageId: Int) : ListItem(R.layout.item_rent_details_image)

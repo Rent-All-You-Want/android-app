@@ -6,8 +6,6 @@ import com.pablojuice.core.presentation.view.layout.layoutInflater
 import com.pablojuice.core.presentation.view.list.ItemSwipeToRemoveHelper
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.view.list.ViewHolder
-import com.pablojuice.core.presentation.view.setClickListener
-import com.pablojuice.core.presentation.view.setVisible
 import com.pablojuice.core.presentation.view.text.Label
 import com.pablojuice.core.presentation.view.text.centerSuffixTextView
 import com.pablojuice.core.presentation.view.text.setMenuItemClickListener
@@ -18,7 +16,7 @@ import com.pablojuice.rayw.feature.rent_create.data.local.RentPrice
 import com.pablojuice.rayw.feature.rent_create.data.local.RentPricing
 import com.pablojuice.rayw.feature.rent_create.databinding.ItemRentPricingSelectionBinding
 
-class PricingSelectionListItem(
+data class PricingSelectionListItem(
     var pricing: RentPricing? = RentPricing.DAILY,
     var cost: RentPrice = RentPrice(0.0),
     val removable: Boolean = true
@@ -38,7 +36,7 @@ class PricingSelectionViewHolder(
                 updateItem(item, text.toString().toDoubleOrNull() ?: 0.0, null)
             }
         }
-        binding.timingField?.setOnTouchListener { v, event ->
+        binding.timingField.setOnTouchListener { v, event ->
             binding.timingField.editText?.setMenuItems(getAvailableOptions(currentItem?.pricing))
             v.onTouchEvent(event)
         }
@@ -48,15 +46,12 @@ class PricingSelectionViewHolder(
                 binding.timingField.editText?.setMenuSelectedItem(displayName)
             }
         }
-        binding.removePricingButton.setClickListener {
-            currentItem?.let { updateItem(it, null, null) }
-        }
     }
 
     override fun bind(item: PricingSelectionListItem) {
         super.bind(item)
         item.run {
-            binding.removePricingButton.setVisible(removable)
+//            binding.removePricingButton.setVisible(removable)
             binding.timingField.editText?.setMenuItems(getAvailableOptions(currentItem?.pricing))
             pricing?.run { binding.timingField.editText?.setMenuSelectedItem(displayName) }
 //            binding.priceField.suffixText = cost.currency

@@ -1,10 +1,12 @@
 package com.pablojuice.core.presentation.view.image
 
 import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
 import android.widget.ImageView
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
+import kotlin.math.roundToInt
 
 fun GlideRequest<Bitmap>.intoWithSizeListener(view: ImageView, sizeListener: (Int, Int) -> Unit) =
     addListener(object : RequestListener<Bitmap> {
@@ -29,3 +31,11 @@ fun GlideRequest<Bitmap>.intoWithSizeListener(view: ImageView, sizeListener: (In
             } else false
         }
     }).preload()
+
+const val MAX_ALPHA = 255
+const val MIN_ALPHA = 0
+
+fun Drawable.setAlphaFloat(value: Float) {
+    alpha =
+        if (value <= 0) MIN_ALPHA else if (value >= 1) MAX_ALPHA else (value * MAX_ALPHA).roundToInt()
+}

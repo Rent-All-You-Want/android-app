@@ -17,7 +17,6 @@ class AttributesSelectionListAdapter(private val listener: Listener) : ListAdapt
     ) = when (viewType) {
         R.layout.item_rent_attributes_selection -> AttributesSelectionViewHolder(
             listener::updateAttribute,
-            listener::removeAttribute,
             parent
         )
 

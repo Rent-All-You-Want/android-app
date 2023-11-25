@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
     android:paddingVertical="@dimen/dimen_8"
-    android:paddingStart="@dimen/dimen_8">
+    android:paddingHorizontal="@dimen/dimen_8">
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_rectangle_with_round_corners_small"
         android:backgroundTint="?attr/colorBackgroundVariant"
         android:paddingBottom="@dimen/dimen_4"
         android:paddingStart="@dimen/dimen_8"
-        android:layout_weight="1"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -66,16 +62,4 @@
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/remove_attribute_button"
-        style="@style/view.button.icon.negative"
-        android:layout_width="wrap_content"
-        android:layout_marginStart="@dimen/dimen_4"
-        android:layout_marginTop="@dimen/dimen_2"
-        android:paddingLeft="0dp"
-        android:paddingRight="0dp"
-        app:icon="@drawable/ic_remove_circle_medium"
-        android:visibility="gone"
-        tools:visibility="visible" />
-</LinearLayout>
+</FrameLayout>
