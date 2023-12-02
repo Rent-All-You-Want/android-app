@@ -20,7 +20,10 @@ data class PricingSelectionListItem(
     var pricing: RentPricing? = RentPricing.DAILY,
     var cost: RentPrice = RentPrice(0.0),
     val removable: Boolean = true
-) : ListItem(R.layout.item_rent_pricing_selection)
+) : ListItem(R.layout.item_rent_pricing_selection) {
+    override val id: Any?
+        get() = pricing
+}
 
 class PricingSelectionViewHolder(
     private val updateItem: (PricingSelectionListItem, Double?, Int?) -> Unit,

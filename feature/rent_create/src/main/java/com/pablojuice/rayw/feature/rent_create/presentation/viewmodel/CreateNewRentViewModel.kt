@@ -8,6 +8,8 @@ import com.pablojuice.rayw.feature.rent_create.presentation.navigation.ToChooseR
 import com.pablojuice.rayw.feature.rent_create.presentation.navigation.ToChooseRentPriceScreen
 import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.attribute.CreateNewRentAttributesStrategy
 import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.attribute.CreateNewRentAttributesViewModel
+import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.category.CreateNewRentCategoryStrategy
+import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.category.CreateNewRentCategoryViewModel
 import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.image.CreateNewRentImageStrategy
 import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.image.CreateNewRentImageViewModel
 import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.pledge.CreateNewRentPledgeStrategy
@@ -21,10 +23,12 @@ import javax.inject.Inject
 @HiltViewModel
 class CreateNewRentViewModel @Inject constructor(
     private val imageViewModel: CreateNewRentImageViewModel,
+    private val categoryViewModel: CreateNewRentCategoryViewModel,
     private val attributesViewModel: CreateNewRentAttributesViewModel,
     private val pricingViewModel: CreateNewRentPricingViewModel,
     private val pledgeViewModel: CreateNewRentPledgeViewModel,
 ) : CombinedViewModel(), CreateNewRentImageStrategy by imageViewModel,
+    CreateNewRentCategoryStrategy by categoryViewModel,
     CreateNewRentAttributesStrategy by attributesViewModel,
     CreateNewRentPricingStrategy by pricingViewModel,
     CreateNewRentPledgeStrategy by pledgeViewModel {
@@ -32,6 +36,7 @@ class CreateNewRentViewModel @Inject constructor(
     init {
         combineNavigationEvents(
             imageViewModel,
+            categoryViewModel,
             attributesViewModel,
             pricingViewModel,
             pledgeViewModel

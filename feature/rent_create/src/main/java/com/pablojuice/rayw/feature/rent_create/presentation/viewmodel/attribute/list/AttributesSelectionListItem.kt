@@ -15,7 +15,10 @@ data class AttributesSelectionListItem(
     var name: Label? = null,
     var value: Label? = null,
     val removable: Boolean = true
-) : ListItem(R.layout.item_rent_attributes_selection)
+) : ListItem(R.layout.item_rent_attributes_selection) {
+    override val id: Any?
+        get() = name
+}
 
 class AttributesSelectionViewHolder(
     private val updateItem: (AttributesSelectionListItem, String?, String?) -> Unit,

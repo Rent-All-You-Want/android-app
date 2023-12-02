@@ -28,6 +28,6 @@
         android:scrollbars="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:layoutAnimation="@null"
-        tools:listitem="@layout/item_rent_category_section" />
+        tools:listitem="@layout/item_rent_subcategory_section" />
 
 </LinearLayout>

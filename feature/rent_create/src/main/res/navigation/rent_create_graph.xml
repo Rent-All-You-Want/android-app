@@ -43,9 +43,19 @@
 
     <fragment
         android:id="@+id/choose_rent_category"
-        android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.ChooseRentCategoryFragment"
+        android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.category.ChooseRentCategoryFragment"
         android:label="Choose Rent Category Screen"
-        tools:layout="@layout/fragment_rent_create_choose_category" />
+        tools:layout="@layout/fragment_rent_create_choose_category">
+        <action
+            android:id="@+id/to_sub_category"
+            app:destination="@id/choose_rent_subcategory" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/choose_rent_subcategory"
+        android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.category.ChooseRentSubCategoryFragment"
+        android:label="Choose Rent SubCategory Screen"
+        tools:layout="@layout/fragment_rent_create_choose_subcategory" />
 
     <fragment
         android:id="@+id/choose_rent_characteristics"
@@ -70,4 +80,12 @@
         android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.ChooseRentDeliveryFragment"
         android:label="Choose Rent Delivery Screen"
         tools:layout="@layout/fragment_rent_create_choose_delivery" />
+
+    <action
+        android:id="@+id/back_to_create_rent"
+        app:destination="@id/rent_create_graph"
+        app:enterAnim="@anim/fragment_fade_in_anim"
+        app:exitAnim="@anim/slide_to_left"
+        app:popUpTo="@id/rent_create_graph"
+        app:popUpToInclusive="true" />
 </navigation>
