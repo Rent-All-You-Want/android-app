@@ -1,8 +1,18 @@
 ext {
     versions = [
             splashscreen: "1.0.1",
-            daggerHilt  : "2.45",
+            daggerHilt  : "2.49",
 
+    ]
+
+    plugins = [
+            gradle             : "8.2.0",
+            kotlin             : "1.9.21",
+            ksp                : "1.9.21-1.0.15",
+            navigationSafeArgs : "2.7.5",
+            daggerHiltAndroid  : "2.49",
+            googleServices     : "4.3.15",
+            firebaseCrashlytics: "2.9.9",
     ]
 
     application = [
@@ -10,8 +20,8 @@ ext {
             defautFlavorDimension: "default",
 
             minSdk               : 23,
-            compileSdk           : 33,
-            targetSdk            : 33,
+            compileSdk           : 34,
+            targetSdk            : 34,
 
             javaVersion          : JavaVersion.VERSION_17,
 
