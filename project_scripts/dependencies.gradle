@@ -1,8 +1,7 @@
 ext {
     versions = [
             splashscreen: "1.0.1",
-            daggerHilt  : "2.49",
-
+            daggerHilt  : "2.50",
     ]
 
     plugins = [
