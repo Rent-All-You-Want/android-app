@@ -9,7 +9,6 @@ import com.pablojuice.core.app.settings.theme.AppTheme
 import com.pablojuice.core.data.manager.UserPreference
 import com.pablojuice.core.data.manager.UserPreferences
 import com.pablojuice.core.data.remote.auth.UserManager
-import com.pablojuice.core.presentation.utils.GoogleMapUtils
 import com.pablojuice.core.presentation.viewmodel.BaseViewModel
 import com.pablojuice.core.utils.NumberUtils.UNDEFINED
 import com.pablojuice.core.utils.logging.Timber
@@ -67,7 +66,7 @@ class MainViewModel @Inject constructor(
     }
 
     private fun setupContextDependentStuff(context: Context) = launchOnMain {
-        GoogleMapUtils.setupGoogleMapsInitializer(context)
+//        GoogleMapUtils.setupGoogleMapsInitializer(context)
     }
 
     private fun setupSplash() = launch { delay(appConfig.splashAnimationDuration) }

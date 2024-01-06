@@ -12,6 +12,18 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven { url "https://jitpack.io" }
+        maven {
+            url = uri("https://api.mapbox.com/downloads/v2/releases/maven")
+            credentials.username = "mapbox"
+
+            Properties localProperties = new Properties()
+            localProperties.load(
+                    new File(providers.gradleProperty("local_properties_name").get())
+                            .newDataInputStream()
+            )
+            credentials.password = localProperties.getProperty("MAPBOX_DOWNLOADS_TOKEN")
+            authentication { basic(BasicAuthentication) }
+        }
     }
 }
 
