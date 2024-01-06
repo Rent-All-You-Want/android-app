@@ -15,6 +15,7 @@ interface CreateNewRentImageStrategy : RentImagePickerAdapter.Listener {
     fun makeCurrentSelectedImageMain()
     fun removeCurrentSelectedImage()
 
+    fun onAttachClick()
     fun onMediaSelected(uriList: List<Uri>)
     fun getMaxMedia(): Int
 

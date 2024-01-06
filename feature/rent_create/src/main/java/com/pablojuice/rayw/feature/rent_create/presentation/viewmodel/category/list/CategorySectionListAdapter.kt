@@ -9,6 +9,8 @@ import com.pablojuice.core.presentation.view.setClickListener
 import com.pablojuice.core.presentation.view.text.setLabel
 import com.pablojuice.rayw.feature.rent_create.R
 import com.pablojuice.rayw.feature.rent_create.databinding.ItemRentCategorySectionBinding
+import com.pablojuice.rayw.feature.rent_create.databinding.ItemRentCategorySectionTitleBinding
+import com.pablojuice.rayw.feature.rent_create.databinding.ItemRentRecommendedCategorySectionBinding
 import com.pablojuice.rayw.feature.rent_create.databinding.ItemRentSubcategorySectionBinding
 
 class CategorySectionListAdapter(
@@ -23,6 +25,12 @@ class CategorySectionListAdapter(
         )
 
         R.layout.item_rent_subcategory_section -> SubCategorySectionViewHolder(
+            parent,
+            listener::selectSubCategory
+        )
+
+        R.layout.item_rent_category_section_title -> CategorySectionTitleViewHolder(parent)
+        R.layout.item_rent_recommended_category_section -> RecommendedCategorySectionViewHolder(
             parent,
             listener::selectSubCategory
         )
@@ -70,4 +78,35 @@ class SubCategorySectionViewHolder(
             binding.sectionNameLabel.setLabel(title)
         }
     }
+}
+
+class CategorySectionTitleViewHolder(
+    parent: ViewGroup
+) : ViewHolder<CategorySectionTitleListItem, ItemRentCategorySectionTitleBinding>(
+    ItemRentCategorySectionTitleBinding.inflate(parent.layoutInflater, parent, false)
+) {
+
+    override fun bind(item: CategorySectionTitleListItem) {
+        super.bind(item)
+        binding.titleLabel.setLabel(item.title)
+    }
+}
+
+class RecommendedCategorySectionViewHolder(
+    parent: ViewGroup,
+    onClick: (SubCategorySectionListItem) -> Unit
+) : ViewHolder<RecommendedCategorySectionListItem, ItemRentRecommendedCategorySectionBinding>(
+    ItemRentRecommendedCategorySectionBinding.inflate(parent.layoutInflater, parent, false)
+) {
+    init {
+        binding.sectionContainer.setClickListener { currentItem?.asSubCategory()?.let(onClick) }
+    }
+
+    override fun bind(item: RecommendedCategorySectionListItem) {
+        super.bind(item)
+        binding.sectionNameLabel.setLabel(item.title)
+    }
+
+    private fun RecommendedCategorySectionListItem.asSubCategory() =
+        SubCategorySectionListItem(id, title)
 }

@@ -15,7 +15,7 @@ enum class Preference(
     val icon: Int? = null,
     val sectionTitle: Int? = null,
     val shouldBeVisibleForUser: (userIsLoggedIn: Boolean) -> Boolean = { true },
-    val navigationEvent: NavigationEvent = NavigationEvents.EmptyNavigationEvent
+    val navigationEvent: NavigationEvent = NavigationEvents.Empty
 ) {
 
     LOGO,

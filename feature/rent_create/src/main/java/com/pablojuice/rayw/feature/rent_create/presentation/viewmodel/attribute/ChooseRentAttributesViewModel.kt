@@ -3,17 +3,13 @@ package com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.attribute
 import com.pablojuice.core.presentation.view.text.asLabel
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.attribute.list.AttributesSelectionListItem
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
 private const val MAXIMUM_ATTRIBUTES = 15
 
-class CreateNewRentAttributesViewModel @Inject constructor() : BasicViewModel(),
-    CreateNewRentAttributesStrategy {
+class ChooseRentAttributesViewModel @Inject constructor() : BasicViewModel(),
+    ChooseRentAttributesStrategy {
 
     private val _attributes =
         MutableStateFlow(listOf(AttributesSelectionListItem()))

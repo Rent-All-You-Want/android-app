@@ -16,9 +16,6 @@ class RentImagePickerAdapter(private val listener: Listener) : ListAdapter(
         parent: ViewGroup,
         viewType: Int
     ) = when (viewType) {
-        R.layout.item_rent_image_picker_attach ->
-            RentImagePickerAttachViewHolder(listener::onAttachClick, parent)
-
         R.layout.item_rent_image_picker_image ->
             RentImagePickerImageViewHolder(listener::onImageClick, parent)
 
@@ -26,7 +23,6 @@ class RentImagePickerAdapter(private val listener: Listener) : ListAdapter(
     }
 
     interface Listener {
-        fun onAttachClick()
 
         fun onImageClick(item: RentImagePickerImageViewHolder)
 

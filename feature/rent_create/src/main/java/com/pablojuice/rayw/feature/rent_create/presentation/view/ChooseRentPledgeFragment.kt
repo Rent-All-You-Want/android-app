@@ -4,8 +4,8 @@ import androidx.core.widget.doOnTextChanged
 import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import com.pablojuice.core.presentation.R
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
+import com.pablojuice.core.presentation.view.setClickListener
 import com.pablojuice.core.presentation.view.setVisible
-import com.pablojuice.core.presentation.view.text.centerSuffixTextView
 import com.pablojuice.core.presentation.view.text.setLabel
 import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
 import com.pablojuice.rayw.feature.rent_create.databinding.FragmentRentCreateChoosePledgeBinding
@@ -23,19 +23,20 @@ class ChooseRentPledgeFragment :
 
     override fun setupScreen() {
         binding.toolBar.setNavigationClickListener(::navigateBack)
-        binding.pledgeField.centerSuffixTextView()
 
-        viewModel.pledgeAmount.observe { pledge ->
+        viewModel.pledge.observe { pledge ->
             binding.pledgeField.setVisible(pledge.enabled)
         }
         binding.pledgeSwitch.setOnCheckedChangeListener { _, isChecked ->
             viewModel.updatePledgeEnabled(isChecked)
+            binding.doneBtn.setVisible(true)
         }
         binding.pledgeField.editText?.doOnTextChanged { text, _, _, _ ->
-            viewModel.updatePledgeAmount(text.toString().trim())
+            viewModel.updatePledgeDescription(text.toString().trim())
         }
+        binding.doneBtn.setClickListener(viewModel::savePledge)
 
-        viewModel.pledgeAmount.value.run {
+        viewModel.pledge.value.run {
             binding.pledgeSwitch.isChecked = enabled
             binding.pledgeField.setVisible(enabled)
             binding.pledgeField.editText?.setLabel(getAmountLabel())

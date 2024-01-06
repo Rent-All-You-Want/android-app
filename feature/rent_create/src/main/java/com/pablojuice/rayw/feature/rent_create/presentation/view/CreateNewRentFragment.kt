@@ -6,6 +6,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.setClickListener
+import com.pablojuice.core.presentation.view.setVisible
 import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
 import com.pablojuice.rayw.feature.rent_create.databinding.FragmentRentCreateNewBinding
 import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.CreateNewRentViewModel
@@ -37,15 +38,18 @@ class CreateNewRentFragment :
     private fun setupImageLoader() {
         binding.imageRecycler.adapter = RentImagePickerAdapter(viewModel)
         viewModel.imageList.observe { items ->
-            if (items.isEmpty()) return@observe
+            val noItems = items.isEmpty()
+            binding.addImageExpanded.setVisible(noItems)
+            binding.addImageShrinkedContainer.setVisible(!noItems)
             (binding.imageRecycler.adapter as? RentImagePickerAdapter)?.setItems(items)
             if (items.size > 1) binding.imageRecycler.smoothScrollToPosition(0)
         }
+        binding.addImageExpanded.setClickListener(viewModel::onAttachClick)
+        binding.addImageShrinked.setClickListener(viewModel::onAttachClick)
     }
 
     private fun setupMainFields() {
         binding.categoryField.editText?.setClickListener(viewModel::openCategories)
-        binding.characteristicsField.editText?.setClickListener(viewModel::openCharacteristics)
         binding.pricingField.editText?.setClickListener(viewModel::openPricing)
         binding.pledgeField.editText?.setClickListener(viewModel::openPledge)
         binding.deliveryField.editText?.setClickListener(viewModel::openDelivery)

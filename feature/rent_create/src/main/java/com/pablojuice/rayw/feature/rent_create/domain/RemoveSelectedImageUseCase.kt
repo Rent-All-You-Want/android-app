@@ -11,7 +11,6 @@ class RemoveSelectedImageUseCase @Inject constructor() {
         items: MutableList<ListItem>
     ): MutableList<ListItem> {
         items.remove(image)
-        items.updateImageAttachItem()
         items.updateMainItem()
         return items
     }

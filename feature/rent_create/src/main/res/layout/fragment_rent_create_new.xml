@@ -24,19 +24,96 @@
             android:orientation="vertical"
             android:paddingVertical="@dimen/dimen_16">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/image_recycler"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_192"
-                android:clipToPadding="false"
-                android:orientation="horizontal"
-                android:paddingStart="@dimen/dimen_16"
-                android:paddingEnd="@dimen/dimen_16"
-                tools:layout_height="0dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_attach_file_medium"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_rent_image_picker_image" />
+                android:layout_height="@dimen/dimen_240"
+                android:orientation="vertical"
+                android:background="@drawable/shape_rectangle_with_round_corners_medium"
+                android:backgroundTint="?attr/colorPrimaryAccent"
+                android:layout_marginHorizontal="@dimen/dimen_16"
+                android:animateLayoutChanges="true">
+
+                <LinearLayout
+                    android:id="@+id/add_image_expanded"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/dimen_2"
+                    android:background="@drawable/shape_rectangle_with_round_corners_small"
+                    android:backgroundTint="?attr/colorPrimary"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:visibility="visible"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/dimen_8"
+                    android:paddingVertical="@dimen/dimen_16">
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen_64"
+                        android:layout_height="@dimen/dimen_64"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_attach_file_medium"
+                        app:tint="?attr/colorOnPrimary" />
+
+                    <TextView
+                        style="@style/text.titleMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_8"
+                        android:text="@string/rent_create_attach_image"
+                        android:textColor="?attr/colorOnPrimary" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/add_image_shrinked_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/add_image_shrinked"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/dimen_16"
+                        android:paddingEnd="@dimen/dimen_8"
+                        android:paddingVertical="@dimen/dimen_4">
+
+                        <TextView
+                            style="@style/text.bodyLarge"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="?attr/colorOnPrimary"
+                            android:text="@string/rent_create_attach_image" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dimen_32"
+                            android:alpha="0.7"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_chevron_right_medium"
+                            app:tint="?attr/colorOnPrimary"
+                            tools:tint="?attr/colorOnPrimary" />
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/image_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/dimen_16"
+                        android:paddingEnd="@dimen/dimen_16"
+                        android:paddingBottom="@dimen/dimen_16"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_rent_image_picker_image" />
+                </LinearLayout>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -64,8 +141,6 @@
                         android:inputType="textCapSentences|textAutoCorrect"
                         android:maxLength="80"
                         android:maxLines="1"
-                        android:paddingTop="0dp"
-                        android:paddingBottom="0dp"
                         android:singleLine="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -89,23 +164,17 @@
                         android:lines="5"
                         android:maxLength="8000"
                         android:paddingVertical="@dimen/dimen_12"
-                        android:paddingTop="0dp"
-                        android:paddingBottom="0dp"
                         android:scrollbarStyle="outsideOverlay"
-                        android:scrollbars="vertical"
-                        android:singleLine="true" />
+                        android:scrollbars="vertical" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/category_field"
-                    style="@style/view.textField"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_4"
                     app:endIconDrawable="@drawable/ic_chevron_right_medium"
                     app:startIconDrawable="@drawable/ic_category_medium"
-                    android:clickable="true"
                     app:endIconMode="custom">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -114,35 +183,6 @@
                         android:ellipsize="end"
                         android:hint="@string/rent_create_category"
                         android:maxLines="1"
-                        android:paddingTop="0dp"
-                        android:paddingBottom="0dp"
-                        android:singleLine="true"
-                        android:inputType="none"
-                        android:cursorVisible="false"
-                        android:focusable="false"
-                        android:clickable="true" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/characteristics_field"
-                    style="@style/view.textField"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_8"
-                    android:layout_marginBottom="@dimen/dimen_16"
-                    app:endIconDrawable="@drawable/ic_chevron_right_medium"
-                    app:startIconDrawable="@drawable/ic_category_medium"
-                    app:endIconMode="custom">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:hint="Attributes"
-                        android:maxLines="1"
-                        android:paddingTop="0dp"
-                        android:paddingBottom="0dp"
                         android:singleLine="true"
                         android:inputType="none"
                         android:cursorVisible="false"
@@ -167,8 +207,6 @@
                         android:ellipsize="end"
                         android:hint="@string/rent_create_pricing_for"
                         android:maxLines="1"
-                        android:paddingTop="0dp"
-                        android:paddingBottom="0dp"
                         android:singleLine="true"
                         android:inputType="none"
                         android:cursorVisible="false"
@@ -183,7 +221,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_8"
-                    android:layout_marginBottom="@dimen/dimen_16"
                     app:endIconDrawable="@drawable/ic_chevron_right_medium"
                     app:startIconDrawable="@drawable/ic_inventory_medium"
                     app:endIconMode="custom">
@@ -194,8 +231,6 @@
                         android:ellipsize="end"
                         android:hint="@string/rent_create_pledge"
                         android:maxLines="1"
-                        android:paddingTop="0dp"
-                        android:paddingBottom="0dp"
                         android:singleLine="true"
                         android:inputType="none"
                         android:cursorVisible="false"
@@ -221,8 +256,6 @@
                         android:ellipsize="end"
                         android:hint="@string/rent_create_delivery"
                         android:maxLines="1"
-                        android:paddingTop="0dp"
-                        android:paddingBottom="0dp"
                         android:singleLine="true"
                         android:inputType="none"
                         android:cursorVisible="false"

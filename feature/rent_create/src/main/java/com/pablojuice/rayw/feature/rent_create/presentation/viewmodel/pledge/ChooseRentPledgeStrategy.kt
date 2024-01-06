@@ -3,12 +3,12 @@ package com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.pledge
 import com.pablojuice.rayw.feature.rent_create.data.local.RentPledge
 import kotlinx.coroutines.flow.StateFlow
 
-interface CreateNewRentPledgeStrategy {
-    val pledgeAmount: StateFlow<RentPledge>
+interface ChooseRentPledgeStrategy {
+    val pledge: StateFlow<RentPledge>
 
     fun updatePledgeEnabled(enabled: Boolean)
 
-    fun updatePledgeAmount(amountString: String)
+    fun updatePledgeDescription(description: String)
 
-    fun validatePledgeAmount()
+    fun savePledge()
 }

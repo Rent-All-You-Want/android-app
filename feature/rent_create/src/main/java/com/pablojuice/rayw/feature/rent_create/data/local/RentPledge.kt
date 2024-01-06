@@ -1,8 +1,8 @@
 package com.pablojuice.rayw.feature.rent_create.data.local
 
-import com.pablojuice.core.utils.NumberUtils
+import com.pablojuice.core.utils.StringUtils
 
 data class RentPledge(
     val enabled: Boolean = false,
-    val amount: RentPrice = RentPrice(NumberUtils.UNDEFINED.toDouble())
+    val description: String = StringUtils.EMPTY
 )

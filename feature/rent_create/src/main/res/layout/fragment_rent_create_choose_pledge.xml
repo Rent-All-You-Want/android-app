@@ -14,8 +14,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:padding="@dimen/dimen_16"
+        android:layout_weight="1"
         android:orientation="vertical">
 
         <com.google.android.material.materialswitch.MaterialSwitch
@@ -39,19 +40,30 @@
                 android:visibility="invisible"
                 tools:visibility="visible"
                 android:layout_marginTop="@dimen/dimen_8"
-                app:suffixText="@string/rent_create_uah"
-                app:startIconDrawable="@drawable/ic_savings_medium">
+                app:counterEnabled="true"
+                app:counterMaxLength="8000">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:paddingTop="0dp"
-                    android:paddingBottom="0dp"
-                    android:singleLine="true" />
+                    android:gravity="start|top"
+                    android:hint="@string/rent_create_description"
+                    android:inputType="textCapSentences|textMultiLine|textAutoCorrect"
+                    android:lines="5"
+                    android:maxLength="8000"
+                    android:paddingVertical="@dimen/dimen_12"
+                    android:scrollbarStyle="outsideOverlay"
+                    android:scrollbars="vertical" />
 
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/done_btn"
+        style="@style/view.button.large.filled.primary"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="@dimen/dimen_32"
+        android:layout_marginVertical="@dimen/dimen_16"
+        android:text="Done" />
 </LinearLayout>

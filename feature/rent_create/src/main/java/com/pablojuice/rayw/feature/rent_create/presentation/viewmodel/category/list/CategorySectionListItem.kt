@@ -18,6 +18,15 @@ class SubCategorySectionListItem(
     val icon: Int = getRandomCategoryIcon()
 ) : ListItem(layoutId = R.layout.item_rent_subcategory_section)
 
+class CategorySectionTitleListItem(
+    val title: Label,
+) : ListItem(layoutId = R.layout.item_rent_category_section_title)
+
+class RecommendedCategorySectionListItem(
+    override val id: Int,
+    val title: Label,
+) : ListItem(layoutId = R.layout.item_rent_recommended_category_section)
+
 private fun getRandomCategoryIcon() = listOf(
     CoreR.drawable.ic_category_medium,
     CoreR.drawable.ic_cake_medium,

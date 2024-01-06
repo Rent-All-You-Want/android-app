@@ -4,13 +4,13 @@ import androidx.navigation.NavController
 
 class NavigationEvents {
 
-    object EmptyNavigationEvent : NavigationEvent {
+    object Empty : NavigationEvent {
         override fun handle(controller: NavController) {
             /* no-op */
         }
     }
 
-    object BackNavigationEvent : NavigationEvent {
+    object Back : NavigationEvent {
         override fun handle(controller: NavController) {
             controller.popBackStack()
         }

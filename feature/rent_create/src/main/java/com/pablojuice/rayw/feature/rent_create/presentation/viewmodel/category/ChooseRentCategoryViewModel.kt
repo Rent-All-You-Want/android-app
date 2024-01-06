@@ -3,16 +3,23 @@ package com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.category
 import com.pablojuice.core.presentation.view.list.ListItem
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.rayw.feature.rent_create.domain.FetchAvailableCategoriesUseCase
+import com.pablojuice.rayw.feature.rent_create.domain.FetchRecommendedCategoryUseCase
 import com.pablojuice.rayw.feature.rent_create.presentation.navigation.BackToCreateRentScreen
 import com.pablojuice.rayw.feature.rent_create.presentation.navigation.ToChooseRentSubCategoriesScreen
+import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.category.list.RecommendedCategorySectionListItem
 import com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.category.list.SubCategorySectionListItem
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 
-class CreateNewRentCategoryViewModel @Inject constructor(
-    private val fetchCategories: FetchAvailableCategoriesUseCase
-) : BasicViewModel(), CreateNewRentCategoryStrategy {
+class ChooseRentCategoryViewModel @Inject constructor(
+    private val fetchCategories: FetchAvailableCategoriesUseCase,
+    private val fetchRecommendedCategory: FetchRecommendedCategoryUseCase
+) : BasicViewModel(), ChooseRentCategoryStrategy {
+
+    private val _recommendedCategory = MutableStateFlow(fetchRecommendedCategory())
+    override val recommendedCategory: StateFlow<RecommendedCategorySectionListItem?> =
+        _recommendedCategory
 
     private val _categories = MutableStateFlow(fetchCategories())
     override val categories: StateFlow<List<ListItem>> = _categories
