@@ -1,134 +1,41 @@
-InteractiveLayout
-=====
+![Header](docs/assets/github-header.png)
 
-InteractiveLayout is ...
+# RAYW Android
 
-InteractiveLayout supports ...
+![Google Play](https://img.shields.io/badge/Google_Play-WAITING-yellow?logo=googleplay&logoColor=white)
 
-InteractiveLayout's primary focus is ...
+RAYW is a cutting-edge digital platform that democratizes access to goods by allowing to renting and
+renting out anything. Platform is designed to revolutionize the way we think about ownership, making
+it easier and more efficient for individuals and businesses to rent and rent out a wide range of
+products and services.
 
-Download
---------
-For detailed instructions and requirements, see ...
+## Setup instruction
 
-You can download a jar from GitHub's ...
+### Requirements
 
-Or use Gradle:
+- minSdk = 23
+- javaVersion = 17
+- gradle = 8.2.0
+- kotlin = 1.9.21
 
-```gradle
-repositories {
-  google()
-  mavenCentral()
-}
+Some functions might be limited because of missing private keys. If you have such, place them into "
+local.properties" file.
 
-dependencies {
-  implementation ...
-}
-```
+### Build
 
-Or Maven:
+1. Sync gradle
+2. Choose relevant build variant (local/stage/prod & debug/release )
+3. Just click "Run" :)
 
-```xml
+## Supported languages
 
-<dependency>
-    <groupId>...</groupId>
-    <artifactId>...</artifactId>
-    <version>...</version>
-</dependency>
-```
+App uses the language provided by OS default settings.
 
-R8 / Proguard
---------
-The specific rules are [already bundled](interactivelayout/proguard-rules.pro) into the aar which
-can be interpreted by R8 automatically
+User interface of the app is translated for languages listed in this table:
 
-How do I use InteractiveLayout?
--------------------
-Check out the [documentation] for pages on a variety of topics, and see the [javadocs].
+| Language  | Status       |
+|-----------|--------------|
+| English   | `Translated` |
+| Ukrainian | `Translated` |
 
-Simple use cases will look something like this: ...
-
-Status
-------
-Version ... is now released and stable. Updates are released periodically with new features and bug
-fixes.
-
-Comments/bugs/questions/pull requests are always welcome!
-
-Compatibility
--------------
-
-* **Minimum Android SDK**: InteractiveLayout requires a minimum API level of ...
-* **Compile Android SDK**: InteractiveLayout requires you to compile against API ... or later.
-
-Build
------
-Building InteractiveLayout with gradle is fairly straight forward:
-
-```shell
-git clone https://github.com/...
-cd ...
-./gradlew jar
-```
-
-**Note**: Make sure your *Android SDK* has the *Android Support Repository* installed, and that
-your `$ANDROID_HOME` environment variable is pointing at the SDK or add a `local.properties` file in
-the root project with a `sdk.dir=...` line.
-
-Samples
--------
-Follow the steps in the [Build](#build) section to set up the project and then:
-
-```shell
-./gradlew :samples:flickr:run
-./gradlew :samples:giphy:run
-./gradlew :samples:svg:run
-./gradlew :samples:contacturi:run
-```
-
-You may also find precompiled APKs on the ...
-
-Development
------------
-Follow the steps in the [Build](#build) section to setup the project and then edit the files however
-you wish.
-[Android Studio] cleanly imports both InteractiveLayout's source and tests and is the recommended
-way to work with InteractiveLayout.
-
-To open the project in Android Studio:
-
-1. Go to *File* menu or the *Welcome Screen*
-2. Click on *Open...*
-3. Navigate to InteractiveLayout's root directory.
-4. Select `setting.gradle`
-
-For more details, see the ...
-
-Getting Help
-------------
-To report a specific problem or feature request, [open a new issue on Github]. For questions,
-suggestions, or anything else, email ...
-
-Contributing
-------------
-Before submitting pull requests, contributors must sign
-Google's [individual contributor license agreement].
-
-Thanks
-------
-
-* Everyone who has contributed code and reported issues!
-
-Author
-------
-PabloJuice - @pablojuice on GitHub, @pablojuice_dev on Twitter
-
-License
--------
-Apache 2.0. See the [LICENSE][1] file for details.
-
-Disclaimer
----------
-This is not an official Google product.
-
-[1]: https://github.com/PabloJuice/InteractiveLayout/blob/main/LICENSE
+Any contributions to the translations are welcome.
