@@ -4,6 +4,7 @@ import com.pablojuice.core.app.navigation.ToChatConversation
 import com.pablojuice.core.app.navigation.ToLoginScreen
 import com.pablojuice.core.data.remote.auth.UserManager
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
+import com.pablojuice.core.utils.StringUtils
 import com.pablojuice.rayw.feature.rentlist.data.local.RentDetailsItem
 import com.pablojuice.rayw.feature.rentlist.domain.ProvideRentItemDetailsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -28,7 +29,7 @@ class RentDetailsViewModel @Inject constructor(
 
     fun requestRent() {
         val destination =
-            if (userManager.isUserLoggedIn()) ToChatConversation(_itemDetails.value?.id.toString()) else ToLoginScreen()
+            if (userManager.isUserLoggedIn()) ToChatConversation(StringUtils.EMPTY) else ToLoginScreen()
         submitNavigationEvent(destination)
     }
 }

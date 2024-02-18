@@ -24,7 +24,7 @@ class ChooseRentPledgeFragment :
     override fun setupScreen() {
         binding.toolBar.setNavigationClickListener(::navigateBack)
 
-        viewModel.pledge.observe { pledge ->
+        viewModel.temporaryPledge.observe { pledge ->
             binding.pledgeField.setVisible(pledge.enabled)
         }
         binding.pledgeSwitch.setOnCheckedChangeListener { _, isChecked ->
@@ -41,6 +41,7 @@ class ChooseRentPledgeFragment :
             binding.pledgeField.setVisible(enabled)
             binding.pledgeField.editText?.setLabel(getAmountLabel())
         }
+        viewModel.prepareTemporaryPledge()
     }
 
 }

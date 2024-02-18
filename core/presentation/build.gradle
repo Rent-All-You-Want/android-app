@@ -67,9 +67,14 @@ dependencies {
     api "androidx.navigation:navigation-ui-ktx:2.7.6"
 
     // Map
-//    api "com.google.android.gms:play-services-maps:18.2.0"
+    api "com.google.android.gms:play-services-maps:18.2.0"
 //    api "org.osmdroid:osmdroid-android:6.1.17"
-    api "com.mapbox.maps:android:11.0.0"
+    api "com.mapbox.maps:android:11.1.0"
+
+    // Remove when lib bug is resolved
+    implementation 'com.github.tobrun.kotlin-data-compat:annotation:0.9.0'
+    implementation "com.google.android.gms:play-services-location:21.1.0"
+
 
     testImplementation project(":test:unittest")
 }

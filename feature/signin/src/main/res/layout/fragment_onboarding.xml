@@ -73,5 +73,5 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:background="@color/dark_charcoal"
         tools:progress="50"
-        tools:progressTint="@color/reddish_orange" />
+        tools:progressTint="@color/main_basic" />
 </androidx.constraintlayout.widget.ConstraintLayout>

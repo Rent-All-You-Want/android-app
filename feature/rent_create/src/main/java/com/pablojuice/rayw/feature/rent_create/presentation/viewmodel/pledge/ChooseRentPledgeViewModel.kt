@@ -1,10 +1,13 @@
 package com.pablojuice.rayw.feature.rent_create.presentation.viewmodel.pledge
 
+import com.pablojuice.core.presentation.navigation.NavigationEvents
 import com.pablojuice.core.presentation.view.text.asLabel
 import com.pablojuice.core.presentation.viewmodel.BasicViewModel
 import com.pablojuice.rayw.feature.rent_create.data.local.RentPledge
+import com.pablojuice.rayw.feature.rent_create.presentation.navigation.BackToCreateRentScreen
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.update
 import javax.inject.Inject
 
 class ChooseRentPledgeViewModel @Inject constructor() : BasicViewModel(),
@@ -12,18 +15,24 @@ class ChooseRentPledgeViewModel @Inject constructor() : BasicViewModel(),
     private val _pledge = MutableStateFlow(RentPledge())
     override val pledge: StateFlow<RentPledge> = _pledge
 
-    private var temporaryPledge = RentPledge()
+    private val _temporaryPledge = MutableStateFlow(RentPledge())
+    override val temporaryPledge: StateFlow<RentPledge> = _temporaryPledge
+
+    override fun prepareTemporaryPledge() {
+        _temporaryPledge.value = _pledge.value
+    }
 
     override fun updatePledgeEnabled(enabled: Boolean) {
-        temporaryPledge = temporaryPledge.copy(enabled = enabled)
+        _temporaryPledge.update { it.copy(enabled = enabled) }
     }
 
     override fun updatePledgeDescription(description: String) {
-        temporaryPledge = temporaryPledge.copy(description = description)
+        _temporaryPledge.update { it.copy(description = description) }
     }
 
     override fun savePledge() {
-        _pledge.value = temporaryPledge
+        _pledge.value = temporaryPledge.value
+        submitNavigationEvent(NavigationEvents.Back)
     }
 }
 

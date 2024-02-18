@@ -9,6 +9,7 @@ import com.pablojuice.core.presentation.view.toolbar.setTitleLabel
 import com.pablojuice.core.utils.StringUtils
 import com.pablojuice.rayw.feature.chat.databinding.FragmentChatConversationBinding
 import com.pablojuice.rayw.feature.chat.presentation.conversation.list.ChatListMessageAdapter
+import com.pablojuice.rayw.feature.chat.presentation.list.list.NoMessagesListItem
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -25,6 +26,7 @@ class ChatConversationFragment :
         viewModel.items.observe { items ->
             if (items.isEmpty()) return@observe
             binding.recycler.getListAdapter<ChatListMessageAdapter>()?.run {
+                if (itemCount == 1 && getListItem(0) is NoMessagesListItem) removeItemAt(0)
                 addItems(items)
                 binding.recycler.smoothScrollToPosition(itemCount - 1)
             }

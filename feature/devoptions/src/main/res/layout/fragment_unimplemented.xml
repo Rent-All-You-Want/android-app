@@ -19,7 +19,7 @@
         android:layout_height="0dp"
         android:layout_marginHorizontal="@dimen/dimen_16"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_work_progress"
+        android:src="@drawable/il_work_progress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.4"

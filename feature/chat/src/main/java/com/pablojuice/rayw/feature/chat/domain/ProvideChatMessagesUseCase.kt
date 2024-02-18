@@ -13,8 +13,8 @@ class ProvideChatMessagesUseCase @Inject constructor(
     private val repository: ChatRepository
 ) {
 
-    suspend operator fun invoke(): List<ListItem> =
-        repository.getChatMessages().messageList.map { it.toListItem() }
+    suspend operator fun invoke(id: Int?): List<ListItem> =
+        (id?.let { repository.getChatMessages().messageList.map { it.toListItem() } } ?: emptyList())
             .ifEmpty { listOf(NoMessagesListItem()) }
 
     private fun MessageData.toListItem(): ListItem =

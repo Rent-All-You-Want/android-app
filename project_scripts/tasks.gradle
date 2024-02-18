@@ -28,12 +28,14 @@ ext.localIp = {
     def ip4s = []
     NetworkInterface.getNetworkInterfaces()
             .findAll {
-                it.isUp() && !it.isLoopback() && !it.isVirtual() && it.getName().contains("wlan")
-            }.each {
-        it.getInetAddresses()
-                .findAll { !it.isLoopbackAddress() && it instanceof Inet4Address }
-                .each { ip4s << it.getHostAddress() }
-    }
+                it.isUp() && !it.isLoopback() && !it.isVirtual()
+                        && (it.getName().contains("wlan") || it.getName().contains("eth"))
+            }
+            .each {
+                it.getInetAddresses()
+                        .findAll { !it.isLoopbackAddress() && it instanceof Inet4Address }
+                        .each { ip4s << it.getHostAddress() }
+            }
     return ip4s[0].toString().trim()
 }
 

@@ -34,12 +34,12 @@
         style="@style/view.checkbox"
         android:layout_width="@dimen/dimen_32"
         android:layout_height="@dimen/dimen_32"
-        android:buttonTint="?attr/colorPrimaryVariant"
+        android:buttonTint="?attr/colorPrimary"
         app:buttonCompat="@drawable/anim_ic_like"
         app:layout_constraintBottom_toTopOf="@+id/title"
         app:layout_constraintEnd_toEndOf="@+id/title"
         app:layout_constraintTop_toBottomOf="@+id/image"
-        tools:buttonTint="?attr/colorPrimaryVariant" />
+        tools:buttonTint="?attr/colorPrimary" />
 
 
     <LinearLayout
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dimen_4"
         android:background="@drawable/shape_rectangle_with_round_corners_medium"
-        android:backgroundTint="?attr/colorBackgroundVariant"
+        android:backgroundTint="?attr/colorPrimary"
         android:elevation="@dimen/elevation_extra_small"
         android:orientation="horizontal"
         android:paddingVertical="@dimen/dimen_2"
@@ -61,7 +61,7 @@
             style="@style/text.labelMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="?attr/colorOnBackground"
+            android:textColor="?attr/colorOnPrimary"
             tools:text="4.5" />
 
         <ImageView
@@ -73,7 +73,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/rating_label"
             app:layout_constraintStart_toEndOf="@+id/rating_label"
             app:layout_constraintTop_toTopOf="@+id/rating_label"
-            app:tint="?attr/colorPrimary" />
+            app:tint="?attr/colorOnPrimary" />
     </LinearLayout>
 
     <TextView
@@ -87,8 +87,8 @@
         android:maxLines="2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Nintendo Switch very good very nice lol asdjknasd"
-        app:layout_constraintTop_toBottomOf="@+id/price" />
+        app:layout_constraintTop_toBottomOf="@+id/price"
+        tools:text="Nintendo Switch very good very nice lol asdjknasd" />
 
     <TextView
         android:id="@+id/price"
@@ -97,6 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_8"
         android:maxLines="1"
+        android:textColor="?attr/colorPrimary"
         app:layout_constraintEnd_toStartOf="@id/currency"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -109,13 +110,14 @@
         style="@style/text.titleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxLines="1"
         android:layout_marginStart="@dimen/dimen_4"
+        android:maxLines="1"
+        android:textColor="?attr/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/price"
         app:layout_constraintEnd_toStartOf="@+id/pricing_divider"
         app:layout_constraintStart_toEndOf="@+id/price"
         app:layout_constraintTop_toTopOf="@+id/price"
-        tools:text="UAH" />
+        tools:text="₴" />
 
     <TextView
         android:id="@+id/pricing_divider"
@@ -124,6 +126,7 @@
         android:layout_height="wrap_content"
         android:maxLines="1"
         android:text="@string/common_slash"
+        android:textColor="?attr/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/price"
         app:layout_constraintEnd_toStartOf="@+id/timing"
         app:layout_constraintStart_toEndOf="@+id/currency"
@@ -134,11 +137,12 @@
         style="@style/text.labelMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxLines="1"
         android:layout_marginEnd="@dimen/dimen_4"
-        app:layout_constraintStart_toEndOf="@+id/pricing_divider"
+        android:maxLines="1"
+        android:textColor="?attr/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/currency"
         app:layout_constraintEnd_toStartOf="@+id/add_to_wishlist"
+        app:layout_constraintStart_toEndOf="@+id/pricing_divider"
         tools:text="Month" />
 
     <TextView

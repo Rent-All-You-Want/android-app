@@ -5,6 +5,9 @@ import kotlinx.coroutines.flow.StateFlow
 
 interface ChooseRentPledgeStrategy {
     val pledge: StateFlow<RentPledge>
+    val temporaryPledge: StateFlow<RentPledge>
+
+    fun prepareTemporaryPledge()
 
     fun updatePledgeEnabled(enabled: Boolean)
 

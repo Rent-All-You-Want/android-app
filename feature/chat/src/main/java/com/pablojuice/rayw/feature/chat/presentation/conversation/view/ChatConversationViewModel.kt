@@ -27,7 +27,7 @@ class ChatConversationViewModel @Inject constructor(
     fun loadMessages(conversationId: String = conversationDetails.value) {
         launch {
             _conversationDetails.value = conversationId
-            _items.value = provideMessages()
+            _items.value = provideMessages(conversationId.toIntOrNull())
         }
     }
 

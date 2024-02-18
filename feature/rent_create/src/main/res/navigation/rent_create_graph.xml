@@ -83,9 +83,9 @@
 
     <action
         android:id="@+id/back_to_create_rent"
-        app:destination="@id/rent_create_graph"
+        app:destination="@id/create_new_rent"
         app:enterAnim="@anim/fragment_fade_in_anim"
         app:exitAnim="@anim/slide_to_left"
-        app:popUpTo="@id/rent_create_graph"
+        app:popUpTo="@id/create_new_rent"
         app:popUpToInclusive="true" />
 </navigation>
