@@ -3,14 +3,14 @@
     <style name="Theme.Rayw" parent="Theme.Material3.Dark.NoActionBar">
 
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/reddish_orange</item>
-        <item name="colorPrimaryVariant">@color/hestia_red</item>
-        <item name="colorPrimaryAccent">@color/portland_orange</item>
+        <item name="colorPrimary">@color/main_dark</item>
+        <item name="colorPrimaryVariant">@color/main_dark_variant</item>
+        <item name="colorPrimaryAccent">@color/main_accent</item>
         <item name="colorOnPrimary">@color/whitest_white</item>
 
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/warm_pink</item>
-        <item name="colorSecondaryVariant">@color/radical_red</item>
+        <item name="colorSecondary">@color/alt_dark</item>
+        <item name="colorSecondaryVariant">@color/alt_dark_variant</item>
         <item name="colorOnSecondary">@color/whitest_white</item>
 
         <!-- Cards, sheets, and menus colors. -->
@@ -36,6 +36,8 @@
         <item name="colorOnError">@color/white</item>
 
         <!-- Disabled colors. -->
+        <item name="colorNegative">@color/coral_red</item>
+        <item name="colorPositive">@color/laser_lime</item>
         <item name="colorDisabled">@color/platinum_granite</item>
 
         <!-- Shapes. -->

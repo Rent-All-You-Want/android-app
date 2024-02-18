@@ -5,6 +5,9 @@
     <attr format="color" name="colorBackgroundVariant" />
     <attr format="color" name="colorOnBackgroundVariant" />
 
+    <attr format="color" name="colorNegative" />
+    <attr format="color" name="colorPositive" />
+
     <attr format="color" name="colorDisabled" />
 
     <attr format="color" name="colorOnSurfaceOverlay" />
