@@ -6,6 +6,8 @@ data class RentDetailsData(
     val title: String,
     val description: String,
     val isInWishList: Boolean,
+    val isCurrentlyAvailable: Boolean,
+    val lastRentDescription: String,
     val price: Double,
     val priceCurrency: String,
     val priceDescription: String,

@@ -2,6 +2,7 @@ package com.pablojuice.core.presentation.view.list
 
 import androidx.recyclerview.widget.DiffUtil
 
+// TODO Fix list flickering
 class ListAdapterDiffUtilCallback(
     private val oldList: List<ListItem>,
     private val newList: List<ListItem>

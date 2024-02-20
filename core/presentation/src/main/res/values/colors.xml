@@ -11,18 +11,43 @@
     <color name="black">#FF000000</color>
 
     <color name="coral_red">#ff3333</color>
-
-    <!--lighter-->
-    <color name="portland_orange">#fea034</color>
-    <color name="warm_pink">#ff512f</color>
+    <color name="laser_lime">#33ff33</color>
 
     <!--main-->
-    <color name="reddish_orange">#fe8d08</color>
-    <color name="radical_red">#f14426</color>
+    <color name="main_basic">#FF9A05</color>
+    <color name="main_accent">#ffb009</color>
+
+    <!--lighter-->
+    <color name="main_light">#FF9500</color>
+    <color name="main_light_variant">#f57902</color>
 
     <!--darker-->
-    <color name="hestia_red">#fe6d09</color>
-    <color name="cool_red">#c92f18</color>
+    <color name="main_dark">#FF9F0A</color>
+    <color name="main_dark_variant">#fe6c0b</color>
+
+    <!--lighter-->
+    <color name="main_bg_light">#F2F4F5</color>
+    <color name="main_bg_light_variant">#e3e6e8</color>
+
+    <!--darker-->
+    <color name="main_bg_dark">#141414</color>
+    <color name="main_bg_dark_variant">#343434</color>
+
+    <!--lighter-->
+    <color name="alt_light">#F02166</color>
+    <color name="alt_light_variant">#c91a5e</color>
+
+    <!--darker-->
+    <color name="alt_dark">#EA3370</color>
+    <color name="alt_dark_variant">#d50055</color>
+
+    <!--lighter-->
+    <color name="alt_bg_light">#EFEFEF</color>
+    <color name="alt_bg_light_variant">#e1e1e1</color>
+
+    <!--darker-->
+    <color name="alt_bg_dark">#15141B</color>
+    <color name="alt_bg_dark_variant">#35343b</color>
 
     <!--transparent-->
     <color name="whitest_white_transparent">#1Af7f7f7</color>

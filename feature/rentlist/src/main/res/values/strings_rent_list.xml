@@ -4,4 +4,15 @@
     <string name="rent_item_added_to_wishlist">Item added to wishlist</string>
     <string name="rent_item_removed_from_wishlist">Item removed from wishlist</string>
     <string name="rent_details_rent_request">Request Rent</string>
+    <string name="rent_details_rent_available">Available now</string>
+    <string name="rent_details_rent_unavailable">Currently unavailable</string>
+    <string name="rent_details_rent_pricing">Pricing</string>
+    <string name="rent_details_rent_other_items">Other items by author</string>
+    <string name="rent_details_rent_no_other_items">Author has no available items</string>
+
+
+    <string name="rent_details_menu_like">Like</string>
+    <string name="rent_details_menu_share">Share</string>
+    <string name="rent_details_menu_map">Show on map</string>
+    <string name="rent_details_menu_report">Report</string>
 </resources>

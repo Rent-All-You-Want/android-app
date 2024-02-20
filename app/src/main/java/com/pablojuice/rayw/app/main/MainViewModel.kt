@@ -9,7 +9,6 @@ import com.pablojuice.core.app.settings.theme.AppTheme
 import com.pablojuice.core.data.manager.UserPreference
 import com.pablojuice.core.data.manager.UserPreferences
 import com.pablojuice.core.data.remote.auth.UserManager
-import com.pablojuice.core.presentation.utils.GoogleMapUtils
 import com.pablojuice.core.presentation.viewmodel.BaseViewModel
 import com.pablojuice.core.utils.NumberUtils.UNDEFINED
 import com.pablojuice.core.utils.logging.Timber
@@ -67,7 +66,7 @@ class MainViewModel @Inject constructor(
     }
 
     private fun setupContextDependentStuff(context: Context) = launchOnMain {
-        GoogleMapUtils.setupGoogleMapsInitializer(context)
+//        GoogleMapUtils.setupGoogleMapsInitializer(context)
     }
 
     private fun setupSplash() = launch { delay(appConfig.splashAnimationDuration) }
@@ -78,4 +77,22 @@ class MainViewModel @Inject constructor(
         _navigationGraphId.value =
             if (onBoardingWasViewed) CoreR.navigation.main_graph else SignInR.navigation.onboarding_graph
     }
+
+//    private fun askNotificationPermission(permissionLauncher) {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+//            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) ==
+//                PackageManager.PERMISSION_GRANTED
+//            ) {
+//                // FCM SDK (and your app) can post notifications.
+//            } else if (shouldShowRequestPermissionRationale(Manifest.permission.POST_NOTIFICATIONS)) {
+//                // TODO: display an educational UI explaining to the user the features that will be enabled
+//                //       by them granting the POST_NOTIFICATION permission. This UI should provide the user
+//                //       "OK" and "No thanks" buttons. If the user selects "OK," directly request the permission.
+//                //       If the user selects "No thanks," allow the user to continue without notifications.
+//            } else {
+//                // Directly ask for the permission
+//                requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+//            }
+//        }
+//    }
 }

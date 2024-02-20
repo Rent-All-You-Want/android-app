@@ -25,12 +25,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingVertical="@dimen/dimen_16"
-            android:paddingHorizontal="@dimen/dimen_32"
+            android:paddingHorizontal="@dimen/dimen_16"
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/language_input"
-                style="@style/view.textField.dropdown"
+                style="@style/view.textField.outline.dropdown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/preference_app_language"
@@ -44,7 +44,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/theme_input"
-                style="@style/view.textField.dropdown"
+                style="@style/view.textField.outline.dropdown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_16"

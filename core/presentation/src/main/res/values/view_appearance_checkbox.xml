@@ -2,7 +2,7 @@
 <resources>
 
     <style name="view.checkbox" parent="Widget.Material3.CompoundButton.CheckBox">
-        <item name="buttonTint">?attr/colorPrimary</item>
-        <item name="buttonIconTint">?attr/colorOnPrimary</item>
+        <!--        <item name="buttonTint">?attr/colorPrimary</item>-->
+        <!--        <item name="buttonIconTint">?attr/colorOnPrimary</item>-->
     </style>
 </resources>

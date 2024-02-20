@@ -4,10 +4,12 @@ import androidx.fragment.app.viewModels
 import com.pablojuice.core.presentation.view.fragment.BasicFragment
 import com.pablojuice.core.presentation.view.list.getListAdapter
 import com.pablojuice.core.presentation.view.text.asLabel
+import com.pablojuice.core.presentation.view.toolbar.setNavigationClickListener
 import com.pablojuice.core.presentation.view.toolbar.setTitleLabel
 import com.pablojuice.core.utils.StringUtils
 import com.pablojuice.rayw.feature.chat.databinding.FragmentChatConversationBinding
 import com.pablojuice.rayw.feature.chat.presentation.conversation.list.ChatListMessageAdapter
+import com.pablojuice.rayw.feature.chat.presentation.list.list.NoMessagesListItem
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -19,11 +21,12 @@ class ChatConversationFragment :
     override val layoutClass = FragmentChatConversationBinding::class.java
 
     override fun setupScreen() {
-        binding.itemToolBar.setNavigationOnClickListener { navigateBack() }
+        binding.itemToolBar.setNavigationClickListener(::navigateBack)
         binding.recycler.adapter = ChatListMessageAdapter()
         viewModel.items.observe { items ->
             if (items.isEmpty()) return@observe
             binding.recycler.getListAdapter<ChatListMessageAdapter>()?.run {
+                if (itemCount == 1 && getListItem(0) is NoMessagesListItem) removeItemAt(0)
                 addItems(items)
                 binding.recycler.smoothScrollToPosition(itemCount - 1)
             }

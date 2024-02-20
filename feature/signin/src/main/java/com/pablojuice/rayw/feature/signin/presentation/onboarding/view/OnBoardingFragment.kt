@@ -58,14 +58,16 @@ class OnBoardingFragment : BasicFragment<FragmentOnboardingBinding, OnBoardingVi
     }
 
     private fun animateProgressBar(position: Int) {
-        val animator = ValueAnimator.ofInt(
-            binding.progressBar.progress,
-            (position + 1) * PAGE_PROGRESS_SCALE,
-        )
-        animator.duration = EXTRA_SHORT_ANIMATION_TIME
-        animator.addUpdateListener {
-            binding.progressBar.progress = Integer.parseInt(it.animatedValue.toString())
+        safeBinding?.run {
+            val animator = ValueAnimator.ofInt(
+                progressBar.progress,
+                (position + 1) * PAGE_PROGRESS_SCALE,
+            )
+            animator.duration = EXTRA_SHORT_ANIMATION_TIME
+            animator.addUpdateListener {
+                progressBar.progress = Integer.parseInt(it.animatedValue.toString())
+            }
+            animator.start()
         }
-        animator.start()
     }
 }

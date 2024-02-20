@@ -41,9 +41,9 @@ dependencies {
     // Multithreading
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
 
-    // Analytics
-    implementation "com.google.firebase:firebase-analytics-ktx:21.2.1"
-    implementation "com.google.firebase:firebase-crashlytics-ktx:18.3.6"
+    // Firebase
+    implementation "com.google.firebase:firebase-analytics-ktx:21.3.0"
+    implementation "com.google.firebase:firebase-crashlytics-ktx:18.4.0"
 
     testImplementation project(":test:unittest")
 }

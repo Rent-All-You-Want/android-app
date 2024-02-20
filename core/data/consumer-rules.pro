@@ -8,6 +8,6 @@
 -keep,allowobfuscation,allowshrinking class kotlin.Result
 -keep,allowobfuscation,allowshrinking class kotlin.coroutines.Continuation
 
--keep class * extends com.pablojuice.core.data.remote.api.ApiRequest{*;}
--keep class * extends com.pablojuice.core.data.remote.api.ApiResponse{*;}
+-keep class * implements com.pablojuice.core.data.remote.api.ApiRequest{*;}
+-keep class * implements com.pablojuice.core.data.remote.api.ApiResponse{*;}
 -keep class * implements com.pablojuice.core.data.remote.api.Api{*;}

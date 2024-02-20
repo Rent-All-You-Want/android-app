@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="@dimen/dimen_8"
+    android:paddingHorizontal="@dimen/dimen_8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rectangle_with_round_corners_small"
+        android:backgroundTint="?attr/colorBackgroundVariant"
+        android:paddingBottom="@dimen/dimen_4"
+        android:paddingStart="@dimen/dimen_8"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/attribute_name_field"
+            style="@style/view.textField"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_48"
+                android:ellipsize="end"
+                android:hint="Attribute name"
+                android:maxLines="1"
+                android:inputType="textShortMessage"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="@dimen/dimen_1"
+            android:layout_marginTop="@dimen/dimen_2"
+            android:layout_height="@dimen/dimen_40"
+            android:background="?attr/colorOnBackgroundVariant" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/attribute_value_field"
+            style="@style/view.textField"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_48"
+                android:ellipsize="end"
+                android:hint="Attribute value"
+                android:maxLines="1"
+                android:inputType="textShortMessage"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+</FrameLayout>

@@ -3,7 +3,7 @@ package com.pablojuice.rayw.feature.rentlist.data.repository
 import com.pablojuice.core.data.manager.UserPreference
 import com.pablojuice.core.data.manager.UserPreferences
 import com.pablojuice.core.data.repository.Repository
-import com.pablojuice.rayw.feature.rentlist.R
+import com.pablojuice.rayw.feature.home.R
 import com.pablojuice.rayw.feature.rentlist.data.remote.RentDetailsData
 import com.pablojuice.rayw.feature.rentlist.data.remote.RentListData
 import dagger.Reusable
@@ -32,27 +32,27 @@ class RentRepository @Inject constructor(
             RentListData(
                 id = lastId++,
                 icon = R.drawable.ic_mock_bike,
-                title = "Велосипед Україна",
+                title = "Bike Canyon G3310",
                 isInWishList = wishlist.any { it == lastId - 1 },
                 price = 300.0,
-                priceCurrency = "Грн",
-                priceDescription = "Місяць",
+                priceCurrency = "₴",
+                priceDescription = "Month",
                 rating = 3.8,
-                location = "Львів, Україна",
-                timeAdded = "Сьогодні 12:08",
+                location = "Lviv, Ukraine",
+                timeAdded = "Today 12:08",
             )
         )
         add(
             RentListData(
                 id = lastId++,
                 icon = R.drawable.ic_mock_ps_1,
-                title = "Приставка PlayStation 4 250GB з іграми",
+                title = "Console PlayStation 4 250GB with games",
                 isInWishList = wishlist.any { it == lastId - 1 },
                 price = 199.0,
-                priceCurrency = "Грн",
-                priceDescription = "Година",
+                priceCurrency = "₴",
+                priceDescription = "Hour",
                 rating = 4.5,
-                location = "5 км від тебе",
+                location = "5 km from you",
                 timeAdded = "01.02 16:08",
             )
         )
@@ -60,41 +60,41 @@ class RentRepository @Inject constructor(
             RentListData(
                 id = lastId++,
                 icon = R.drawable.ic_mock_projector,
-                title = "Проектор SAMSUNG 4k",
+                title = "Projector SAMSUNG 4k",
                 isInWishList = wishlist.any { it == lastId - 1 },
                 price = 350.0,
-                priceCurrency = "Грн",
-                priceDescription = "День",
+                priceCurrency = "₴",
+                priceDescription = "Day",
                 rating = 3.9,
-                location = "Київ, Україна",
-                timeAdded = "2 години тому",
+                location = "Kyiv, Ukraine",
+                timeAdded = "2 hours ago",
             )
         )
         add(
             RentListData(
                 id = lastId++,
-                icon = R.drawable.ic_mock_book,
-                title = "Книга Чистий код (Роберт Мартін)",
+                icon = R.drawable.ic_mock_book_1,
+                title = "Book for learning Java",
                 isInWishList = wishlist.any { it == lastId - 1 },
                 price = 59.0,
-                priceCurrency = "Грн",
-                priceDescription = "Місяць",
+                priceCurrency = "₴",
+                priceDescription = "Month",
                 rating = 4.1,
-                location = "Львів, Україна",
-                timeAdded = "Вчора 09:26",
+                location = "Lviv, Ukraine",
+                timeAdded = "Yesterday 09:26",
             )
         )
         add(
             RentListData(
                 id = lastId++,
                 icon = R.drawable.ic_mock_tool_1,
-                title = "Прямий перфоратор Bosch GBH 2-26 DRE Professional",
+                title = "Bosch perforator GBH 2-26 DRE Professional",
                 isInWishList = wishlist.any { it == lastId - 1 },
                 price = 200.0,
-                priceCurrency = "Грн",
-                priceDescription = "День",
+                priceCurrency = "₴",
+                priceDescription = "Day",
                 rating = 3.9,
-                location = "7 км від тебе",
+                location = "7 km from you",
                 timeAdded = "15.05",
             )
         )
@@ -102,41 +102,41 @@ class RentRepository @Inject constructor(
             RentListData(
                 id = lastId++,
                 icon = R.drawable.ic_mock_mic,
-                title = "Студійний мікрофон Fifine k669 pro-1",
+                title = "Studio microphone Fifine k669 pro-1",
                 isInWishList = wishlist.any { it == lastId - 1 },
                 price = 349.0,
-                priceCurrency = "Грн",
-                priceDescription = "Тиждень",
+                priceCurrency = "₴",
+                priceDescription = "Week",
                 rating = 3.5,
-                location = "Київ, Україна",
-                timeAdded = "8 годин тому",
+                location = "Kyiv, Ukraine",
+                timeAdded = "8 hours ago",
             )
         )
         add(
             RentListData(
                 id = lastId++,
                 icon = R.drawable.ic_mock_cam,
-                title = "Фотокамера Canon 6D",
+                title = "Photo camera Canon 6D",
                 isInWishList = wishlist.any { it == lastId - 1 },
                 price = 250.0,
-                priceCurrency = "Грн",
-                priceDescription = "День",
+                priceCurrency = "₴",
+                priceDescription = "Day",
                 rating = 4.2,
-                location = "Львів, Україна",
-                timeAdded = "Сьогодні 10:12",
+                location = "Lviv, Ukraine",
+                timeAdded = "Today 10:12",
             )
         )
         add(
             RentListData(
                 id = lastId++,
                 icon = R.drawable.ic_mock_generator,
-                title = "Бензиновий генератор Al-ko 6500D-C 5.5кВт",
+                title = "Gasoline generator Al-ko 6500D-C 5.5kW",
                 isInWishList = wishlist.any { it == lastId - 1 },
                 price = 449.0,
-                priceCurrency = "Грн",
-                priceDescription = "День",
+                priceCurrency = "₴",
+                priceDescription = "Day",
                 rating = 3.1,
-                location = "Львів, Україна",
+                location = "Lviv, Ukraine",
                 timeAdded = "10.05",
             )
         )
@@ -154,17 +154,18 @@ class RentRepository @Inject constructor(
                     R.drawable.ic_mock_bike,
                     R.drawable.ic_mock_bike
                 ),
-                title = "Велосипед Україна",
+                title = "Bike Canyon G3310",
                 description = DESCRIPTION,
                 isInWishList = wishlist.any { it == id },
+                isCurrentlyAvailable = true,
+                lastRentDescription = "Last rent was 7 days ago",
                 price = 300.0,
-                priceCurrency = "Грн",
-                priceDescription = "Місяць",
+                priceCurrency = "₴",
+                priceDescription = "Month",
                 rating = 3.8,
-                location = "Львів, Україна",
-                timeAdded = "Сьогодні 12:08",
+                location = "Lviv, Ukraine",
+                timeAdded = "Today 12:08",
             )
-
             1 -> RentDetailsData(
                 id = id,
                 icon = listOf(
@@ -175,14 +176,16 @@ class RentRepository @Inject constructor(
                     R.drawable.ic_mock_ps_5,
                     R.drawable.ic_mock_ps_6,
                 ),
-                title = "Приставка PlayStation 4 250GB з іграми",
+                title = "Console PlayStation 4 250GB with games",
                 description = DESCRIPTION,
                 isInWishList = wishlist.any { it == id },
+                isCurrentlyAvailable = false,
+                lastRentDescription = "In rent",
                 price = 199.0,
-                priceCurrency = "Грн",
-                priceDescription = "Година",
+                priceCurrency = "₴",
+                priceDescription = "Hour",
                 rating = 4.5,
-                location = "5 км від тебе",
+                location = "5 km from you",
                 timeAdded = "01.02 16:08",
             )
 
@@ -193,33 +196,36 @@ class RentRepository @Inject constructor(
                     R.drawable.ic_mock_projector,
                     R.drawable.ic_mock_projector
                 ),
-                title = "Проектор SAMSUNG 4k",
+                title = "Projector SAMSUNG 4k",
                 description = DESCRIPTION,
                 isInWishList = wishlist.any { it == id },
+                isCurrentlyAvailable = true,
+                lastRentDescription = "Wasn't in rent yet",
                 price = 350.0,
-                priceCurrency = "Грн",
-                priceDescription = "День",
+                priceCurrency = "₴",
+                priceDescription = "Day",
                 rating = 3.9,
-                location = "Київ, Україна",
-                timeAdded = "2 години тому",
+                location = "Kyiv, Ukraine",
+                timeAdded = "2 hours ago",
             )
 
             3 -> RentDetailsData(
                 id = id,
                 icon = listOf(
-                    R.drawable.ic_mock_book,
-                    R.drawable.ic_mock_book,
-                    R.drawable.ic_mock_book
+                    R.drawable.ic_mock_book_1,
+                    R.drawable.ic_mock_book_2
                 ),
-                title = "Книга Чистий код (Роберт Мартін)",
+                title = "Book for learning Java",
                 description = DESCRIPTION,
                 isInWishList = wishlist.any { it == id },
+                isCurrentlyAvailable = true,
+                lastRentDescription = "Last rent was 3 days ago",
                 price = 59.0,
-                priceCurrency = "Грн",
-                priceDescription = "Місяць",
+                priceCurrency = "₴",
+                priceDescription = "Month",
                 rating = 4.1,
-                location = "Львів, Україна",
-                timeAdded = "Вчора 09:26",
+                location = "Lviv, Ukraine",
+                timeAdded = "Yesterday 09:26",
             )
 
             4 -> RentDetailsData(
@@ -232,14 +238,16 @@ class RentRepository @Inject constructor(
                     R.drawable.ic_mock_tool_5,
                     R.drawable.ic_mock_tool_6
                 ),
-                title = "Прямий перфоратор Bosch GBH 2-26 DRE Professional",
+                title = "Bosch perforator GBH 2-26 DRE Professional",
                 description = DESCRIPTION,
                 isInWishList = wishlist.any { it == id },
+                isCurrentlyAvailable = true,
+                lastRentDescription = "Last rent was 7 days ago",
                 price = 200.0,
-                priceCurrency = "Грн",
-                priceDescription = "День",
+                priceCurrency = "₴",
+                priceDescription = "Day",
                 rating = 3.9,
-                location = "7 км від тебе",
+                location = "7 km from you",
                 timeAdded = "15.05",
             )
 
@@ -250,15 +258,17 @@ class RentRepository @Inject constructor(
                     R.drawable.ic_mock_mic,
                     R.drawable.ic_mock_mic
                 ),
-                title = "Студійний мікрофон Fifine k669 pro-1",
+                title = "Studio microphone Fifine k669 pro-1",
                 description = DESCRIPTION,
                 isInWishList = wishlist.any { it == id },
+                isCurrentlyAvailable = false,
+                lastRentDescription = "In rent",
                 price = 349.0,
-                priceCurrency = "Грн",
-                priceDescription = "Тиждень",
+                priceCurrency = "₴",
+                priceDescription = "Week",
                 rating = 3.5,
-                location = "Київ, Україна",
-                timeAdded = "8 годин тому",
+                location = "Kyiv, Ukraine",
+                timeAdded = "8 hours ago",
             )
 
             6 -> RentDetailsData(
@@ -268,15 +278,17 @@ class RentRepository @Inject constructor(
                     R.drawable.ic_mock_cam,
                     R.drawable.ic_mock_cam
                 ),
-                title = "Фотокамера Canon 6D",
+                title = "Photo camera Canon 6D",
                 description = DESCRIPTION,
                 isInWishList = wishlist.any { it == id },
+                isCurrentlyAvailable = true,
+                lastRentDescription = "Wasn't in rent yet",
                 price = 250.0,
-                priceCurrency = "Грн",
-                priceDescription = "День",
+                priceCurrency = "₴",
+                priceDescription = "Day",
                 rating = 4.2,
-                location = "Львів, Україна",
-                timeAdded = "Сьогодні 10:12",
+                location = "Lviv, Ukraine",
+                timeAdded = "Today 10:12",
             )
 
             else -> RentDetailsData(
@@ -286,14 +298,16 @@ class RentRepository @Inject constructor(
                     R.drawable.ic_mock_generator,
                     R.drawable.ic_mock_generator
                 ),
-                title = "Бензиновий генератор Al-ko 6500D-C 5.5кВт",
+                title = "Gasoline generator Al-ko 6500D-C 5.5kW",
                 description = DESCRIPTION,
                 isInWishList = wishlist.any { it == id },
+                isCurrentlyAvailable = true,
+                lastRentDescription = "Last rent was 7 days ago",
                 price = 449.0,
-                priceCurrency = "Грн",
-                priceDescription = "День",
+                priceCurrency = "₴",
+                priceDescription = "Day",
                 rating = 3.1,
-                location = "Львів, Україна",
+                location = "Lviv, Ukraine",
                 timeAdded = "10.05",
             )
         }

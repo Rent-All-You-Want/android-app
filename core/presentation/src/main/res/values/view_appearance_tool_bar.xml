@@ -15,6 +15,10 @@
         <item name="android:background">?attr/colorBackground</item>
     </style>
 
+    <style name="view.toolBar.closableBack" parent="view.toolBar.navigableBack">
+        <item name="navigationIcon">@drawable/ic_close_medium</item>
+    </style>
+
     <style name="ThemeOverlay.App.Toolbar" parent="">
         <item name="colorSurface">?attr/colorBackground</item>
         <item name="colorOnSurface">?attr/colorOnBackground</item>

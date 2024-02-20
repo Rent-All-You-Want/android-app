@@ -7,10 +7,11 @@
     android:orientation="vertical">
 
     <com.google.android.material.appbar.MaterialToolbar
-        style="@style/view.toolBar.navigableBack"
         android:id="@+id/item_tool_bar"
+        style="@style/view.toolBar.navigableBack"
+        android:layout_width="match_parent"
         app:menu="@menu/menu_rent_details"
-        android:layout_width="match_parent" />
+        app:title="Rent title" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -34,9 +35,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="w, 16:11"
                     app:layout_constraintEnd_toEndOf="parent"
-                    tools:listitem="@layout/item_rent_details_image"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:listitem="@layout/item_rent_details_image" />
 
                 <ImageView
                     android:id="@+id/previous"
@@ -48,9 +49,9 @@
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:tint="?attr/colorOnBackground"
-                    tools:visibility="visible"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    tools:visibility="visible" />
 
                 <ImageView
                     android:id="@+id/next"
@@ -62,38 +63,31 @@
                     android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:tint="?attr/colorOnBackground"
-                    tools:visibility="visible"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/dimen_16"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/date_label"
-                    style="@style/text.labelLarge"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="textEnd"
-                    tools:text="Yesterday 12:28" />
-
-                <TextView
-                    android:id="@+id/title_label"
-                    style="@style/text.titleLarge"
-                    android:layout_marginTop="@dimen/dimen_8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:text="Rent title" />
+                    tools:visibility="visible" />
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_8"
-                    android:orientation="horizontal">
+                    android:layout_margin="@dimen/dimen_16"
+                    android:background="@drawable/shape_rectangle_with_round_corners_medium"
+                    android:backgroundTint="?attr/colorPrimary"
+                    android:elevation="@dimen/elevation_extra_small"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dimen_2"
+                    android:paddingStart="@dimen/dimen_4"
+                    android:paddingEnd="@dimen/dimen_2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:id="@+id/rating_label"
+                        style="@style/text.labelMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="?attr/colorOnPrimary"
+                        tools:text="4.5" />
 
                     <ImageView
                         android:id="@+id/rating_icon"
@@ -104,43 +98,155 @@
                         app:layout_constraintBottom_toBottomOf="@+id/rating_label"
                         app:layout_constraintStart_toEndOf="@+id/rating_label"
                         app:layout_constraintTop_toTopOf="@+id/rating_label"
-                        app:tint="?attr/colorPrimary" />
+                        app:tint="?attr/colorOnPrimary" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <TextView
-                        android:id="@+id/rating_label"
-                        style="@style/text.titleSmall"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_16">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        tools:text="4.5" />
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/price_label"
-                        style="@style/text.titleLarge"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        tools:text="999 999" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/currency_label"
-                        style="@style/text.titleLarge"
-                        android:layout_marginStart="@dimen/dimen_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        tools:text="UAH" />
+                            <ImageView
+                                android:id="@+id/availability_icon"
+                                android:layout_width="@dimen/dimen_12"
+                                android:layout_height="@dimen/dimen_12"
+                                android:src="@drawable/shape_circle_small"
+                                app:tint="?attr/colorPositive" />
 
-                    <TextView
-                        style="@style/text.titleLarge"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/common_slash" />
+                            <TextView
+                                android:id="@+id/availablity_label"
+                                style="@style/text.titleSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dimen_8"
+                                tools:text="Available now" />
+                        </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/price_description_label"
-                        style="@style/text.titleMedium"
-                        android:layout_width="wrap_content"
+                        <TextView
+                            android:id="@+id/last_rent_label"
+                            style="@style/text.labelLarge"
+                            android:layout_marginTop="@dimen/dimen_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            tools:text="Last rent was 7 days ago" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        tools:text="Daily" />
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/location_label"
+                            style="@style/text.titleMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            tools:text="Lviv, Ukraine" />
+
+                        <TextView
+                            android:id="@+id/date_label"
+                            style="@style/text.labelLarge"
+                            android:layout_marginTop="@dimen/dimen_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="textEnd"
+                            tools:text="Yesterday 12:28" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_1"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    android:alpha="0.2"
+                    android:background="@drawable/ic_list_item_divider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/text.titleLarge"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/rent_details_rent_pricing" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_8"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/price_label"
+                                style="@style/text.titleLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="?attr/colorPrimary"
+                                tools:text="999 999" />
+
+                            <TextView
+                                android:id="@+id/currency_label"
+                                style="@style/text.titleLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dimen_4"
+                                android:textColor="?attr/colorPrimary"
+                                tools:text="₴" />
+
+                            <TextView
+                                style="@style/text.titleLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/common_slash"
+                                android:textColor="?attr/colorPrimary" />
+
+                            <TextView
+                                android:id="@+id/price_description_label"
+                                style="@style/text.titleMedium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="?attr/colorPrimary"
+                                tools:text="day" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dimen_128"
+                        android:layout_weight="1"
+                        android:src="@drawable/il_cash_payment" />
                 </LinearLayout>
 
                 <TextView
@@ -151,14 +257,34 @@
                     android:layout_marginTop="@dimen/dimen_8"
                     tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod, erat sed sodales finibus, lectus erat sollicitudin massa, sed venenatis sem quam vel arcu. Pellentesque sed semper risus. Vestibulum pretium tincidunt libero, a condimentum ante rhoncus at. Mauris sagittis orci nibh, eu condimentum odio condimentum a. Ut bibendum porta lacinia. Quisque egestas dictum justo ut elementum. Vivamus in nisl ut metus dictum placerat a dapibus erat. Integer eu pretium sem." />
 
-                <TextView
-                    android:id="@+id/location_label"
-                    style="@style/text.labelLarge"
+<!--                <com.mapbox.maps.MapView-->
+<!--                    android:id="@+id/mapView"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="@dimen/dimen_256"-->
+<!--                    android:layout_marginTop="@dimen/dimen_16"-->
+<!--                    app:mapbox_renderTextureMode="true"/>-->
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAlignment="textEnd"
-                    android:layout_marginTop="@dimen/dimen_8"
-                    tools:text="Lviv, Ukraine" />
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/text.titleLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_8"
+                        android:text="@string/rent_details_rent_other_items" />
+
+                    <TextView
+                        style="@style/text.labelLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimen_16"
+                        android:gravity="center_horizontal"
+                        android:text="@string/rent_details_rent_no_other_items" />
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>

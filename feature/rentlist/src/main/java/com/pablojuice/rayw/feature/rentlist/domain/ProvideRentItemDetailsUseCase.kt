@@ -19,6 +19,8 @@ class ProvideRentItemDetailsUseCase @Inject constructor(
         title = formatter.formatTitle(title).asLabel(),
         description = formatter.formatDescription(description).asLabel(),
         isInWishList = isInWishList,
+        isCurrentlyAvailable = isCurrentlyAvailable,
+        lastRentDescription = lastRentDescription.asLabel(),
         price = formatter.formatPrice(price).asLabel(),
         priceCurrency = formatter.formatCurrency(priceCurrency).asLabel(),
         priceDescription = priceDescription.asLabel(),

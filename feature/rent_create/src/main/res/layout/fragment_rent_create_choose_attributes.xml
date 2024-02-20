@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/tool_bar"
+        style="@style/view.toolBar.navigableBack"
+        android:layout_width="match_parent"
+        app:title="Choose attributes"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fadeScrollbars="true"
+        android:orientation="vertical"
+        android:overScrollMode="ifContentScrolls"
+        android:paddingHorizontal="@dimen/dimen_8"
+        android:paddingBottom="@dimen/dimen_64"
+        android:scrollbarSize="@dimen/dimen_4"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbarThumbVertical="@drawable/shape_scrollbar"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:layoutAnimation="@null"
+        tools:listitem="@layout/item_rent_pricing_selection"
+        app:layout_constraintTop_toBottomOf="@+id/tool_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <Button
+        android:id="@+id/add_attribute_btn"
+        style="@style/view.button.large.filled.primary"
+        android:layout_width="0dp"
+        android:layout_marginBottom="@dimen/dimen_32"
+        android:layout_marginHorizontal="@dimen/dimen_64"
+        android:text="Add attribute"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.6"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>

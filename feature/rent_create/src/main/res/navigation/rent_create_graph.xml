@@ -9,18 +9,83 @@
         android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.CreateNewRentFragment"
         android:label="Create New Rent Screen"
         tools:layout="@layout/fragment_rent_create_new">
+
         <action
             android:id="@+id/to_image_preview"
-            app:destination="@id/rent_image_preview"
-            app:enterAnim="@anim/fragment_fade_in_anim"
-            app:exitAnim="@anim/fragment_fade_out_anim"
-            app:popEnterAnim="@anim/fragment_fade_in_anim"
-            app:popExitAnim="@anim/fragment_fade_out_anim" />
+            app:destination="@id/rent_image_preview" />
+
+        <action
+            android:id="@+id/to_choose_rent_category"
+            app:destination="@id/choose_rent_category" />
+
+        <action
+            android:id="@+id/to_choose_rent_characteristics"
+            app:destination="@id/choose_rent_characteristics" />
+
+        <action
+            android:id="@+id/to_choose_rent_price"
+            app:destination="@id/choose_rent_price" />
+
+        <action
+            android:id="@+id/to_choose_rent_pledge"
+            app:destination="@id/choose_rent_pledge" />
+
+        <action
+            android:id="@+id/to_choose_rent_delivery"
+            app:destination="@id/choose_rent_delivery" />
     </fragment>
 
     <fragment
         android:id="@+id/rent_image_preview"
-        android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.RentImagePreviewFragment"
+        android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.CreateNewRentImagePreviewFragment"
         android:label="Rent Image Preview Screen"
         tools:layout="@layout/fragment_rent_image_preview" />
+
+    <fragment
+        android:id="@+id/choose_rent_category"
+        android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.category.ChooseRentCategoryFragment"
+        android:label="Choose Rent Category Screen"
+        tools:layout="@layout/fragment_rent_create_choose_category">
+        <action
+            android:id="@+id/to_sub_category"
+            app:destination="@id/choose_rent_subcategory" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/choose_rent_subcategory"
+        android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.category.ChooseRentSubCategoryFragment"
+        android:label="Choose Rent SubCategory Screen"
+        tools:layout="@layout/fragment_rent_create_choose_subcategory" />
+
+    <fragment
+        android:id="@+id/choose_rent_characteristics"
+        android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.ChooseRentAttributesFragment"
+        android:label="Choose Rent Characteristics Screen"
+        tools:layout="@layout/fragment_rent_create_choose_attributes" />
+
+    <fragment
+        android:id="@+id/choose_rent_price"
+        android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.ChooseRentPriceFragment"
+        android:label="Choose Rent Price Screen"
+        tools:layout="@layout/fragment_rent_create_choose_price" />
+
+    <fragment
+        android:id="@+id/choose_rent_pledge"
+        android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.ChooseRentPledgeFragment"
+        android:label="Choose Rent Pledge Screen"
+        tools:layout="@layout/fragment_rent_create_choose_pledge" />
+
+    <fragment
+        android:id="@+id/choose_rent_delivery"
+        android:name="com.pablojuice.rayw.feature.rent_create.presentation.view.ChooseRentDeliveryFragment"
+        android:label="Choose Rent Delivery Screen"
+        tools:layout="@layout/fragment_rent_create_choose_delivery" />
+
+    <action
+        android:id="@+id/back_to_create_rent"
+        app:destination="@id/create_new_rent"
+        app:enterAnim="@anim/fragment_fade_in_anim"
+        app:exitAnim="@anim/slide_to_left"
+        app:popUpTo="@id/create_new_rent"
+        app:popUpToInclusive="true" />
 </navigation>

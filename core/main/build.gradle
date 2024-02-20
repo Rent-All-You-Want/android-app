@@ -50,7 +50,7 @@ dependencies {
 
     // DI
     implementation "com.google.dagger:hilt-android:$versions.daggerHilt"
-    api "androidx.hilt:hilt-navigation-fragment:1.0.0"
+    api "androidx.hilt:hilt-navigation-fragment:1.1.0"
     kapt "com.google.dagger:hilt-android-compiler:$versions.daggerHilt"
 
     testImplementation project(":test:unittest")

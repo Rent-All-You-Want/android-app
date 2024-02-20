@@ -3,4 +3,14 @@
     <string name="rent_item_added_to_wishlist">Товар додано до списку бажань</string>
     <string name="rent_item_removed_from_wishlist">Товар видалено зі списку бажань</string>
     <string name="rent_details_rent_request">Орендувати</string>
+    <string name="rent_details_rent_available">Доступний зараз</string>
+    <string name="rent_details_rent_unavailable">Недоступний зараз</string>
+    <string name="rent_details_rent_pricing">Ціна</string>
+    <string name="rent_details_rent_other_items">Інші оголошення автора</string>
+    <string name="rent_details_rent_no_other_items">Автор немає інших оголошень</string>
+
+    <string name="rent_details_menu_like">Вподобати</string>
+    <string name="rent_details_menu_share">Поширити</string>
+    <string name="rent_details_menu_map">Показати на мапі</string>
+    <string name="rent_details_menu_report">Поскаржитися</string>
 </resources>

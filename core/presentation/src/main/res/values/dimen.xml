@@ -24,5 +24,7 @@
     <dimen name="dimen_128">128dp</dimen>
     <dimen name="dimen_160">160dp</dimen>
     <dimen name="dimen_192">192dp</dimen>
+    <dimen name="dimen_224">224dp</dimen>
+    <dimen name="dimen_240">240dp</dimen>
     <dimen name="dimen_256">256dp</dimen>
 </resources>

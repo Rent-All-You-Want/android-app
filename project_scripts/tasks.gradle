@@ -27,7 +27,10 @@ ext.localProperties = {
 ext.localIp = {
     def ip4s = []
     NetworkInterface.getNetworkInterfaces()
-            .findAll { it.isUp() && !it.isLoopback() && !it.isVirtual() }
+            .findAll {
+                it.isUp() && !it.isLoopback() && !it.isVirtual()
+                        && (it.getName().contains("wlan") || it.getName().contains("eth"))
+            }
             .each {
                 it.getInetAddresses()
                         .findAll { !it.isLoopbackAddress() && it instanceof Inet4Address }

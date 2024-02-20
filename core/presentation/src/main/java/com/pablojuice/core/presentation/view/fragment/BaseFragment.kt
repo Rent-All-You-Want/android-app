@@ -8,19 +8,24 @@ import androidx.annotation.CallSuper
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
+import kotlin.coroutines.CoroutineContext
 
 private const val INFLATE_METHOD = "inflate"
 
 @Suppress("UNCHECKED_CAST")
 abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
-    private var _binding: VB? = null
+    protected var safeBinding: VB? = null
 
     val binding: VB
-        get() = _binding!!
+        get() = safeBinding!!
 
     private val jobsToClear = mutableListOf<Job>()
 
@@ -35,14 +40,14 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         inflate(inflater, container).run {
-            _binding = this
+            safeBinding = this
             return root
         }
     }
 
     @CallSuper
     override fun onDestroyView() {
-        _binding = null
+        safeBinding = null
         jobsToClear.forEach { job -> job.cancel() }
         jobsToClear.clear()
         super.onDestroyView()
@@ -52,6 +57,16 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
     fun <T> Flow<T>.observe(block: (T) -> Unit) =
         submitJob(lifecycleScope.launchWhenCreated { collectLatest(block) })
+
+    fun launch(
+        context: CoroutineContext = Dispatchers.Main,
+        block: suspend CoroutineScope.() -> Unit
+    ) = lifecycleScope.launch(context = context, block = block)
+
+    fun launchDelayed(
+        time: Long,
+        block: () -> Unit
+    ) = launch { delay(time).also { block() } }
 
 //    submitJob(
 //    lifecycleScope.launch {

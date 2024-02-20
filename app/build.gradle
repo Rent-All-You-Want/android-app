@@ -53,9 +53,17 @@ android {
             if (localProperties().isEmpty()) {
                 signingConfig signingConfigs.debug
             } else signingConfig signingConfigs.release
+
+            firebaseCrashlytics {
+                mappingFileUploadEnabled true
+            }
         }
         debug {
             manifestPlaceholders.crashlyticsCollectionEnabled = false
+
+            firebaseCrashlytics {
+                mappingFileUploadEnabled false
+            }
         }
     }
 
@@ -68,8 +76,14 @@ android {
             buildConfigField application.apiUrlType, application.apiUrl, application.localUrl
             manifestPlaceholders.usesLocalBackEnd = true
         }
-        stage { buildConfigField application.apiUrlType, application.apiUrl, application.stageUrl }
-        prod { buildConfigField application.apiUrlType, application.apiUrl, application.prodUrl }
+
+        stage {
+            buildConfigField application.apiUrlType, application.apiUrl, application.stageUrl
+        }
+
+        prod {
+            buildConfigField application.apiUrlType, application.apiUrl, application.prodUrl
+        }
     }
 
     compileOptions {
@@ -107,6 +121,7 @@ dependencies {
     implementation project(":feature:rent_create")
     implementation project(":feature:chat")
     implementation project(":feature:preferences")
+    implementation project(":feature:notification")
     implementation project(":feature:profile")
 
     implementation "androidx.core:core-splashscreen:$versions.splashscreen"
